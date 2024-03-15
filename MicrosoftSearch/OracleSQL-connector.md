@@ -1,5 +1,6 @@
 ---
-title: "Oracle SQL Graph connector for Microsoft Search"
+ms.date: 10/08/2019
+title: "Oracle SQL Microsoft Graph connector"
 ms.author: mecampos
 author: mecampos
 manager: umas
@@ -7,32 +8,35 @@ audience: Admin
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
-localization_priority: Normal
+ms.localizationpriority: medium
 search.appverid:
 - BFB160
 - MET150
 - MOE150
 ROBOTS: NoIndex
-description: "Set up the Oracle SQL Graph connector for Microsoft Search."
+description: "Set up the Oracle SQL Microsoft Graph connector for Microsoft Search."
 ---
 <!---Previous ms.author:vivg --->
 
-# Oracle SQL Graph connector
+# Oracle SQL Microsoft Graph connector
 
 The Oracle SQL Graph connector allows your organization to discover and index data from an on-premises Oracle database. The connector indexes specified content into Microsoft Search. To keep the index up to date with source data, it supports periodic full and incremental crawls. With the Oracle SQL connector, you can also restrict access to search results for certain users.
 
 > [!NOTE]
-> Read the [**Setup for your Graph connector**](configure-connector.md) article to understand the general Graph connectors setup instructions.
+> Read the [**Set up Microsoft Graph connectors in the Microsoft 365 admin center**](configure-connector.md) article to understand the general Microsoft Graph connectors setup instructions.
 
 This article is for anyone who configures, runs, and monitors an Oracle SQL Graph connector. It supplements the general setup process, and shows instructions that apply only for the Oracle SQL Graph connector. This article also includes information about [Troubleshooting](#troubleshooting) and [Limitations](#limitations).
 
 ## Before you get started
 
-### Install the Graph connector agent
+### Install the connector agent
 
-In order to access your on-premises third-party data, you must install and configure the Graph connector agent. See [Install the Graph connector agent](on-prem-agent.md) to learn more.  
+In order to access your on-premises third-party data, you must install and configure the Graph connector agent. See [Install the Graph connector agent](graph-connector-agent.md) to learn more.  
 
-## Step 1: Add a Graph connector in the Microsoft 365 admin center
+## Step 1: Add a connector in the Microsoft 365 admin center
+
+
+[Add Oracle SQL connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_OracleSqlConnector&type=OracleSqlConnector​)
 
 Follow the general [setup instructions](./configure-connector.md).
 <!---If the above phrase does not apply, delete it and insert specific details for your data source that are different from general setup instructions.-->
@@ -48,6 +52,10 @@ To connect your Oracle SQL connector to a data source, you must configure the da
 
 For Oracle SQL connector, you need to specify the Hostname, Port and Service (database) name along with the preferred authentication method, username, and password.
 
+If Service Name is not available and you connect using SID, the Service Name can be derived using one of the following commands (to be executed as sys admin) - 
+* select SERVICE_NAME from gv$session where sid in (select sid from v$MYSTAT);
+* select sys_context('userenv','service_name') from dual;
+
 > [!NOTE]
 > Your database must run Oracle database version 11g or later for the connector to be able to connect. The connector supports Oracle database hosted on Windows, Linux and Azure VM platforms.
 
@@ -60,7 +68,7 @@ In this step, you configure the SQL query that runs a full crawl of the database
 > [!Tip]
 > To get all the columns that you need, you can join multiple tables.
 
-![Script showing the OrderTable and AclTable with example properties](media/MSSQL-fullcrawl.png)
+![Script showing the OrderTable and AclTable with example properties.](media/MSSQL-fullcrawl.png)
 
 ### Select data columns (Required) and ACL columns (Optional)
 
@@ -78,7 +86,7 @@ The use of each of the ACL columns in the above query is described below. The fo
 * **DeniedUsers**: This option specifies the list of users who do **not** have access to the search results. In the following example, users john@contoso.com and keith@contoso.com do not have access to record with OrderId = 13, whereas everyone else has access to this record.
 * **DeniedGroups**: This option specifies the group of users who do **not** have access to the search results. In the following example, groups engg-team@contoso.com and pm-team@contoso.com do not have access to record with OrderId = 15, whereas everyone else has access to this record.  
 
-![Sample data showing the OrderTable and AclTable with example properties](media/MSSQL-ACL1.png)
+![Sample data showing the OrderTable and AclTable with example properties.](media/MSSQL-ACL1.png)
 
 ### Supported data types
 
@@ -106,7 +114,7 @@ Create query snippets for watermarks as shown in these examples:
 
 In the configuration shown in the following image, `CreatedDateTime` is the selected watermark column. To fetch the first batch of rows, specify the data type of the watermark column. In this case, the data type is `DateTime`.
 
-![Watermark column configuration](media/MSSQL-watermark.png)
+![Watermark column configuration.](media/MSSQL-watermark.png)
 
 The first query fetches the first **N** number of rows by using: "CreatedDateTime > January 1, 1753 00:00:00" (min value of DateTime data type). After the first batch is fetched, the highest value of `CreatedDateTime` returned in the batch is saved as the checkpoint if the rows are sorted in ascending order. An example is March 1, 2019 03:00:00. Then the next batch of **N** rows is fetched by using "CreatedDateTime > March 1, 2019 03:00:00" in the query.
 
@@ -114,7 +122,7 @@ The first query fetches the first **N** number of rows by using: "CreatedDateTim
 
 To exclude soft-deleted rows in your database from being indexed, specify the soft-delete column name and value that indicates the row is deleted.
 
-![Soft delete settings: "Soft delete column" and "Value of soft delete column which indicates a deleted row"](media/MSSQL-softdelete.png)
+![Soft delete settings: "Soft delete column" and "Value of soft delete column which indicates a deleted row."](media/MSSQL-softdelete.png)
 
 ### Full crawl: Manage search permissions
 
@@ -125,10 +133,10 @@ Each of the ACL columns is expected to be a multi-valued column. These multiple 
 The following ID types are supported for using as ACLs:
 
 * **User Principal Name (UPN)**: A User Principal Name (UPN) is the name of a system user in an email address format. A UPN (for example: john.doe@domain.com) consists of the username (logon name), separator (the @ symbol), and domain name (UPN suffix).
-* **Azure Active Directory (AAD) ID**: In Azure AD, every user or group has an object ID that looks something like 'e0d3ad3d-0000-1111-2222-3c5f5c52ab9b'
+* **Microsoft Entra ID**: In Microsoft Entra ID, every user or group has an object ID that looks something like 'e0d3ad3d-0000-1111-2222-3c5f5c52ab9b'
 * **Active Directory (AD) Security ID**: In an on-premises AD setup, every user and group have an immutable, unique security identifier that looks something like 'S-1-5-21-3878594291-2115959936-132693609-65242.'
 
-![Search permission settings to configure access control lists](media/MSSQL-ACL2.png)
+![Search permission settings to configure access control lists.](media/MSSQL-ACL2.png)
 
 ## Step 3b: Incremental crawl (Optional)
 
@@ -179,11 +187,12 @@ Underneath is a list of common errors observed while configuring the connector a
 | Database settings | Error from database server: ORA-12541: TNS: No listener | Invalid Port |
 | Database settings | Error from database server: ORA-12514: TNS: listener does not currently know of service requested in connector descriptor | Invalid service (database) name |
 | Database settings | Error from database server: Login failed for user '`user`'. | Invalid username or password |
+| Full crawl | Column column_name returned from full crawl SQL query contains non-alphanumeric character | Non-alphanumeric characters (like underscores) are not allowed in column names in SELECT clause. Use aliases to rename columns and remove non-alphanumeric characters (Example - SELECT column_name AS columnName). |
 
 ## Limitations
 
 The Oracle SQL connector has these limitations in the preview release:
 
 * The on-premises database must run Oracle Database version 11g or later.
-* ACLs are only supported by using a User Principal Name (UPN), Azure Active Directory (Azure AD), or Active Directory Security.
+* ACLs are only supported by using a User Principal Name (UPN), Microsoft Entra ID, or Active Directory Security.
 * Indexing rich content inside database columns is not supported. Examples of such content are HTML, JSON, XML, blobs, and document parsings that exist as links inside the database columns.

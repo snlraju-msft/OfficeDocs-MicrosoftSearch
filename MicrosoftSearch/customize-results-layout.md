@@ -1,4 +1,5 @@
 ---
+ms.date: 10/21/2019
 title: "Manage search result layouts"
 ms.author: jypal
 author: jypal6
@@ -6,7 +7,7 @@ manager: jeffkizn
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
-localization_priority: Normal
+ms.localizationpriority: medium
 search.appverid:
 - BFB160
 - MET150
@@ -32,64 +33,67 @@ There are two main steps in creating your own layout:
 
 ### Design the layout
 
-In this example, we show a layout with a header, link, and descriptive text.
+In this example, we show a layout with a header, logo, link, and descriptive text.
 
 ![Example of a layout with a header, link, and description.](media/Verts-ExampleLayout.png)
 
 And here's the layout's associated JSON file:
 
 ```json
-{
-    "type": "AdaptiveCard",
-    "version": "1.0",
-     "body": [
-{
-
-            "type": "ColumnSet",
-             "columns": [
-                 {
-                     "type": "Column",
-                     "width": 8,
-                     "items": [
-                         {
-                             "type": "TextBlock",
-                             "text": "Contoso Marketing Analysis - Q3 FY18",
-                             "color": "Accent",
-                             "size": "Medium",
-                             "spacing": "None",
-                             "$when": "{title != \"\"}",
-                             "weight": "Bolder"
-                        },
-                        {
-						"type": "TextBlock",  
-						"text": "https://contoso.com/hr/link",
-						"spacing": "None",  
-						"color": "Dark",
-						"weight": "Bolder"
-
-                        },
-
-                        {  
-						"type": "TextBlock",
-						"text": "Marketing team at Contoso.., and looking at the Contoso Marketing documents on the team site. This contains the data from FY20 and will taken over to FY21...Marketing Planning is ongoing for FY20..",  
-						"wrap": true,
-						"maxLines": 2,
-						"spacing": "Medium"
-						}
-						],
-
-					"horizontalAlignment": "Center",
-					"spacing": "None"
-
-                }
-
-            ]
-
-        }
-		],
-
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
-}
+{ 
+    "type": "AdaptiveCard", 
+    "version": "1.3", 
+    "body": [ 
+        { 
+            "type": "ColumnSet", 
+            "columns": [ 
+                { 
+                    "type": "Column", 
+                    "width": "auto", 
+                    "items": [ 
+                        { 
+                            "type": "Image", 
+                            "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/OOTBLayouts/search.png", 
+                            "altText": "Thumbnail image", 
+                            "horizontalAlignment": "center", 
+                            "size": "small" 
+                        } 
+                    ], 
+                    "horizontalAlignment": "center" 
+                }, 
+                { 
+                    "type": "Column", 
+                    "width": 10, 
+                    "items": [ 
+                        { 
+                            "type": "TextBlock", 
+                            "text": "[Contoso Solutions](https://contoso.com)", 
+                            "weight": "bolder", 
+                            "color": "accent", 
+                            "size": "medium", 
+                            "maxLines": 3 
+                        }, 
+                        { 
+                            "type": "TextBlock", 
+                            "text": "[https://contoso.com](https://contoso.com)", 
+                            "weight": "bolder", 
+                            "spacing": "small", 
+                            "maxLines": 3 
+                        }, 
+                        { 
+                            "type": "TextBlock", 
+                            "text": "Marketing team at Contoso.., and looking at the Contoso Marketing documents on the team site. This contains the data from FY20 and will taken over to FY21...Marketing Planning is ongoing for FY20..", 
+                            "maxLines": 3, 
+                            "wrap": true 
+                        } 
+                    ], 
+                    "spacing": "medium" 
+                } 
+            ] 
+        } 
+    ], 
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json" 
+} 
 ```
 
 ### Separate the data from the layout
@@ -99,68 +103,71 @@ You can separate the data from the layout and bind the data.
 Here's Layout JSON after binding the data:
 
 ```json
-{
-
-    "type": "AdaptiveCard",
-	"version": "1.0",
-	"body": [
-	{
-	"type": "ColumnSet",
-"columns": [
-
-                {
-				"type": "Column",
-				"width": 8,
-				"items": [
-				{
-				"type": "TextBlock",
-				"text": "[{title}]({titleUrl})",
-				"color": "Accent",
-				"size": "Medium",
-				"spacing": "None",
-				"weight": "Bolder"
-
-                 },
-				 {
-				 "type": "TextBlock",
-				 "text": "{link}",
-				 "spacing": "None",
-				 "color": "Dark",
-				 "weight": "Bolder"
-				 },
-				 {
-				 "type": "TextBlock",
-				 "text": "{description}",
-				 "wrap": true,
-				 "maxLines": 2,
-				 "spacing": "Medium"
-				 }
-				 ],
-				 "horizontalAlignment": "Center",
-				 "spacing": "None"
-				 }
-				 ]
-
-        }
-
-    ],
-
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
-}
+{ 
+    "type": "AdaptiveCard", 
+    "version": "1.3", 
+    "body": [ 
+        { 
+            "type": "ColumnSet", 
+            "columns": [ 
+                { 
+                    "type": "Column", 
+                    "width": "auto", 
+                    "items": [ 
+                        { 
+                            "type": "Image", 
+                            "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/OOTBLayouts/search.png", 
+                            "altText": "Thumbnail image", 
+                            "horizontalAlignment": "center", 
+                            "size": "small" 
+                        } 
+                    ], 
+                    "horizontalAlignment": "center" 
+                }, 
+                { 
+                    "type": "Column", 
+                    "width": 10, 
+                    "items": [ 
+                        { 
+                            "type": "TextBlock", 
+                            "text": "[${title}](${titleLink})", 
+                            "weight": "bolder", 
+                            "color": "accent", 
+                            "size": "medium", 
+                            "maxLines": 3 
+                        }, 
+                        { 
+                            "type": "TextBlock", 
+                            "text": "[${titleLink}](${titleLink})", 
+                            "weight": "bolder", 
+                            "spacing": "small", 
+                            "maxLines": 3 
+                        }, 
+                        { 
+                            "type": "TextBlock", 
+                            "text": "${description}", 
+                            "maxLines": 3, 
+                            "wrap": true 
+                        } 
+                    ], 
+                    "spacing": "medium" 
+                } 
+            ] 
+        } 
+    ], 
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json" 
+} 
 ```
 
 Sample data:
 Specify sample data in the **Sample Data Editor** to view the data-bound card when in **Preview Mode**.
 
 ```json
-{
-
-    "title": "Contoso Marketing Analysis - Q3 FY18",
-    "titleUrl": "https://contoso.com/hr/link",
-    "link": "https://contoso.com/hr/link",
-    "description": "Marketing team, and looking at the Contoso Marketing documents on the team site. Yo can't see right...Marketing Planning presentation?"
-
-}
+{ 
+    "title": "Contoso Solutions", 
+    "titleLink": "https://contoso.com", 
+    "description": "Marketing team at Contoso.., and looking at the Contoso Marketing documents on the team site. This contains the data from FY20 and will taken over to FY21...Marketing Planning is ongoing for FY20.." 
+} 
 ```
 
 ## Map the layout to the result properties
@@ -181,12 +188,15 @@ Before you get started, there are a few things that you should do and a few thin
 
 ### Do
 
-- Edit a template to provide the logo link in the layout if you're using static links for logos and not result properties.
+- While designing the layouts think of the layout structure as row and column and create those by adding column set elements 
+- Provide a logo/icon for every result layout as this maintains consistency and easy scanning with other results. Edit a template to provide the logo link in the layout if you're using static links for logos and not result properties.
+- It is recommended to use a square logo to ensure proper alignment of results. To avoid pixelation, use a logo with a minimum size of 32px by 32px.
+- Think of theme requirements when designing a result layout, your result icon should be visible in dark theme as well.
 - Validate the result layout for scenarios where no data is returned for a result property used in the result JSON. Use the `$when` condition to hide an element if the property doesn't contain data.  
 - Make sure that data types of the `$when` condition and the result property match. For example, don't compare `Number` with `Text` in the `$when` condition.  
-- Think of theme requirements when designing a result layout.  
 - Make sure that the `Textblock` element can handle dynamic content. You can use the `wrap` and `maxLines` element properties for this purpose.
 - Properly format the date when using `{DATE()}` in Markdown.  
+- Ensure properties of type StringCollection are wrapped in a join method as: ```json ${propertyName} -> ${join(propertyName, ‘,’)} ``` . If you want to show a single value (say, the ith item) from a StringCollection, you can specify it as follows:  ```json ${propertyName} -> ${propertyName[i]}  ``` (Note: indexing in StringCollection types start from 0 )
 
 ### Don't
 
@@ -204,3 +214,4 @@ Before you get started, there are a few things that you should do and a few thin
 [Adaptive Cards Template language](/adaptive-cards/templating/language)
 
 [Adaptive card schema](https://adaptivecards.io/explorer/)
+

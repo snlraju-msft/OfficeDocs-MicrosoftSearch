@@ -6,13 +6,14 @@ manager: shohara
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
-localization_priority: Normal
+ms.localizationpriority: medium
 search.appverid:
 - BFB160
 - MET150
 - MOE150
 ms.assetid: c020bd72-9906-4dfd-bc77-57287f5927ce
 description: "Learn how to set Bing as the default homepage for your company with Microsoft Search."
+ms.date: 01/08/2019
 ---
 
 # Make Bing.com the default home page
@@ -81,7 +82,7 @@ Users can still change the home page after this policy is set.
     
 5. Press **F8** to disable all settings before configuring anything. The screen should look like this: 
     
-    ![Internet Explorer 10 Properties dialog](media/2fd55755-5007-4e33-a795-c42ce2fcef4a.jpg)
+    ![Internet Explorer 10 Properties dialog.](media/2fd55755-5007-4e33-a795-c42ce2fcef4a.jpg)
   
 6. Press **F6** on the Home page setting and enter `https://www.bing.com/business?form=BFBSPR`
     

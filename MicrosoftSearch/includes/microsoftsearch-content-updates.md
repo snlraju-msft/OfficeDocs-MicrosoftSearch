@@ -2,45 +2,43 @@
 
 
 
-## Week of May 10, 2021
+## Week of February 26, 2024
 
 
 | Published On |Topic title | Change |
 |------|------------|--------|
-| 5/10/2021 | [FAQs](/MicrosoftSearch/faqs) | modified |
-| 5/11/2021 | [Manage Microsoft Graph Connectors for Microsoft Search](/MicrosoftSearch/manage-connector) | modified |
-| 5/13/2021 | [Manage Power BI answers](/MicrosoftSearch/manage-powerbi) | modified |
+| 2/29/2024 | [Overview of Microsoft Search in Bing](/MicrosoftSearch/overview-microsoft-search-bing) | modified |
 
 
-## Week of May 03, 2021
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 5/4/2021 | [Add a search box to your intranet site](/MicrosoftSearch/add-a-search-box-to-your-intranet-site) | modified |
-
-
-## Week of April 26, 2021
+## Week of February 19, 2024
 
 
 | Published On |Topic title | Change |
 |------|------------|--------|
+| 2/20/2024 | [Semantic Index for Copilot](/MicrosoftSearch/semantic-index-for-copilot) | modified |
+| 2/20/2024 | [ServiceNow Knowledge Microsoft Graph connector](/MicrosoftSearch/servicenow-knowledge-connector) | modified |
 
 
-## Week of April 19, 2021
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 4/20/2021 | [Connector gallery](/MicrosoftSearch/connectors-gallery) | modified |
-| 4/20/2021 | [License requirements and pricing](/MicrosoftSearch/licensing) | modified |
-| 4/21/2021 | [Connector gallery](/MicrosoftSearch/connectors-gallery) | modified |
-| 4/22/2021 | [Enterprise websites Graph connector for Microsoft Search](/MicrosoftSearch/enterprise-web-connector) | modified |
-
-
-## Week of April 12, 2021
+## Week of February 12, 2024
 
 
 | Published On |Topic title | Change |
 |------|------------|--------|
-| 4/13/2021 | [Search Usage Reports](/MicrosoftSearch/usage-reports) | modified |
+| 2/13/2024 | [Microsoft Graph connectors license requirements and pricing](/MicrosoftSearch/licensing) | modified |
+| 2/14/2024 | [ServiceNow Tickets Microsoft Graph connector](/MicrosoftSearch/servicenow-tickets-connector) | modified |
+
+
+## Week of February 05, 2024
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 2/5/2024 | [Microsoft Graph connector agent](/MicrosoftSearch/graph-connector-agent) | modified |
+
+
+## Week of January 29, 2024
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 2/2/2024 | [Semantic Index for Copilot](/MicrosoftSearch/semantic-index-for-copilot) | modified |

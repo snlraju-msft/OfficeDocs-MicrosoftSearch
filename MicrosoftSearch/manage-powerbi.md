@@ -1,19 +1,21 @@
 ---
 title: "Manage Power BI answers"
-ms.author: dawholl
-author: dawholl
-manager: jeffkizn
+ms.author: bstucker
+author: bstuck
+manager: bstucker
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
-localization_priority: Normal
+ms.localizationpriority: medium
 search.appverid:
 - BFB160
 - MET150
 - MOE150
 ms.assetid: c0c814d0-f7e4-444e-b18e-09beb45c9322
 description: "Manage how Power BI reports and data appear in search results"
+ms.date: 01/04/2021
 ---
+
 # Manage Power BI answers
 
 To make it easier for your users to find the data and analytics they need to make informed decisions, Microsoft Search has added support for Power BI dashboards and reports. Here are a few of the benefits of Power BI search:
@@ -36,13 +38,13 @@ Microsoft Search users can find Power BI results by searching from the Windows s
 
 Replace `<topic>` in the examples above with the information you're looking for, like sales, usage, capacity, 2021, Q1, and more, to see relevant results from Power BI.
 
-:::image type="content" source="media/powerbi-answers/powerbi-serp.png" alt-text="Screenshot of a SERP with Power BI answers and vertical" border="true":::
+:::image type="content" source="media/powerbi-answers/powerbi-serp.png" alt-text="Screenshot of a SERP with Power BI answers and vertical." border="true":::
 
 ## Turn Power BI search on or off
 
 Power BI results are enabled for your organization by default. Your Power BI admin can disable them at any time. In the Power BI Admin portal, go to Tenant settings and disable the **Use global search for Power BI** setting. To learn more, see [Administering Power BI in the admin portal](/power-bi/admin/service-admin-portal#use-global-search-for-power-bi-preview).
 
-:::image type="content" source="media/powerbi-answers/powerbi-admin.png" alt-text="Screenshot of setting to turn Power BI answers on or off" border="true":::
+:::image type="content" source="media/powerbi-answers/powerbi-admin.png" alt-text="Screenshot of setting to turn Power BI answers on or off." border="true":::
 
 > [!NOTE]
 > When using Microsoft Search, your search query and the results returned from Power BI may be processed in a region or geography that's different than where your Power BI tenant data is located.

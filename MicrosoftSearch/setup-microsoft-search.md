@@ -1,17 +1,18 @@
 ---
 title: "Set up Microsoft Search"
-ms.author: jeffkizn
-author: jeffkizn
-manager: parulm
+ms.author: bstucker
+author: bstuck
+manager: bstucker
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
-localization_priority: Normal
+ms.localizationpriority: medium
 search.appverid:
   - BFB160
   - MET150
   - MOE150
 description: "Set up Microsoft Search for the first time."
+ms.date: 04/23/2019
 ---
 
 # Set up Microsoft Search
@@ -37,13 +38,13 @@ In Microsoft Search, you can manage your organization’s search settings and co
 1. **Search admin:** This role can create and manage search result content and define query settings for improved search results within the organization. Search admin manages the Microsoft Search configuration and can perform all of the content-management tasks a Search editor can.
 2. **Search editor:** Creates, manages, and deletes content for Microsoft Search in the Microsoft 365 admin center. This role can create and manage editorial content, such as frequently asked questions and answers, important places and locations, frequently searched and used sites and apps.
 
-Currently, the Search admin and Search editor roles must be assigned by a global admin. For more information, see [Assign admin roles](/office365/admin/add-users/assign-admin-roles?view=o365-worldwide).
+Currently, the Search admin and Search editor roles must be assigned by a global admin. For more information, see [Assign admin roles](/office365/admin/add-users/assign-admin-roles).
 
 Search administrators directly influence the search experience for end users. This includes choosing the types of results you want to surface to your users. It may be difficult for one person to choose and create authoritative content on many different topics that users search for in an organization. We recommend that you leverage the expertise and knowledge of subject matter experts (SME) and other users by adding them as Search editors.
 
 ## Step 2: Create answers
 
-Microsoft Search provides administrators with tools that they can use to build a robust search experience for their users. In Microsoft Search, administrators have three different search contents that they can create for a better search experience and to improve the "findability" of content:
+Microsoft Search provides administrators with tools that they can use to build a robust search experience for their users. You can curate answers of different types to provide high-confidence results for users' searches.
 
 Bookmarks are the most commonly used answer type. They promote the best possible results for your users’ queries to the top of the search results and make it easy for your users to find what they are looking for.
 Informational content that is available for everyone; for example, information about the company, help for Windows and Office apps, etc.
