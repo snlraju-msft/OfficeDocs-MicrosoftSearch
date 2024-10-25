@@ -69,7 +69,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Get Started
 
-[![Screenshot that shows connection creation screen for Microsoft Graph Connector for Enterprise Websites on-premises.](media/-----.png)](media/---.png#lightbox)
+[![Screenshot that shows connection creation screen for Microsoft Graph Connector for Enterprise Websites on-premises.](media/enterprise-web-connector/enterprise-website-onprem-create-page.png)](media/enterprise-web-connector/enterprise-website-onprem-create-page.png#lightbox)
 
 ### 1. Display name 
 A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
@@ -134,7 +134,7 @@ The resource ID, client ID, and client secret values depend on how you did the s
     * View of the settings in the branding section:
     
       > [!div class="mx-imgBorder"]
-      > [ ![Image showing the settings section on the branding page.](media/enterprise-web-connector//connectors-enterpriseweb-branding.png) ](media/enterprise-web-connector//connectors-enterpriseweb-branding.png#lightbox)
+      > [ ![Image showing the settings section on the branding page.](media/enterprise-web-connector/connectors-enterpriseweb-branding.png) ](media/enterprise-web-connector/connectors-enterpriseweb-branding.png#lightbox)
     
     * View of the settings in authentication section:
     
@@ -225,11 +225,15 @@ Custom setup is for those admins who want to edit the default values for setting
 
 ### Users
 
+[![Screenshot that shows Users tab](media/enterprise-web-connector/enterprise-website-onprem-users-tab.png)](media/enterprise-web-connector/enterprise-website-onprem-users-tab.png#lightbox)
+
 **Access Permissions**
 
 The Enterprise Websites on-premises connector supports search permissions visible to **Everyone** only. Indexed data will appear in the search results for all users in your organization.
 
 ### Content
+
+[![Screenshot that shows Content tab where you can set exclusion rules and properties](media/enterprise-web-connector/enterprise-website-onprem-content-tab.png)](media/enterprise-web-connector/enterprise-website-onprem-content-tab.png#lightbox)
 
 **Add URLs to exclude (Optional crawl restrictions)**
 
@@ -246,9 +250,6 @@ There are two ways to prevent pages from being crawled: disallow them in your ro
 **Dynamic site configuration**
 
 If your website contains dynamic content, for example, webpages that live in content management systems like Confluence or Unily, you can enable a dynamic crawler. To turn it on, select **Enable crawl for dynamic sites**. The crawler waits for dynamic content to render before it begins crawling.
-
-> [!div class="mx-imgBorder"]
-> ![Screenshot of Connection Settings pane for Enterprise Web connector.](media/enterprise-web-connector/connectors-enterpriseweb-connectionsettings-dynamicconfig-small.png)
 
 In addition to the check box, there are three optional fields available:
 
@@ -283,7 +284,7 @@ The Enterprise Website on-premises connector supports two types of source proper
 
     The connector fetches any meta tags your root URLs may have and shows them. You can select which tags to include for crawling. A selected tag will get indexed for all provided URLs, if available. 
 
-    <Image>
+    [![Screenshot that shows Content tab with meta tags panel](media/enterprise-web-connector/enterprise-website-onprem-metatags.png)](media/enterprise-web-connector/enterprise-website-onprem-metatags.png#lightbox)
 
     Selected meta tags can be used to create custom properties. Also, on the schema page, you can manage them further (Queryable, Searchable, Retrievable, Refinable).
 
@@ -291,7 +292,7 @@ The Enterprise Website on-premises connector supports two types of source proper
 
     You can enrich your indexed data by creating custom properties for your selected meta tags or the connector's default properties. 
 
-    <Image>
+    [![Screenshot that shows Content tab with custom property panel](media/enterprise-web-connector/enterprise-website-onprem-custom-property.png)](media/enterprise-web-connector/enterprise-website-onprem-custom-property.png#lightbox)
 
     To add a custom property:
 
@@ -306,7 +307,7 @@ To learn more about regex expressions, see [.NET regular expressions](/dotnet/st
 
 ### Sync
 
-[![Screenshot that shows Sync tab where you can configure crawl frequency.](media/jira-cloud-sync-tab.png)](media/jira-cloud-sync-tab.png#lightbox)
+[![Screenshot that shows Sync tab where you can configure crawl frequency.](media/enterprise-web-connector/enterprise-website-onprem-sync-tab.png)](media/enterprise-web-connector/enterprise-website-onprem-sync-tab.png#lightbox)
 
 The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
 
@@ -317,6 +318,6 @@ You can change the default values of refresh interval from here if you want to.
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data Sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
-You can find troubleshooting steps for commonly seen issues [here](troubleshoot-enterprise-web-connector.md).
+You can find troubleshooting steps for commonly seen issues [here](troubleshoot-enterprise-web-connector-onprem.md).
 
 If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/en-us/graph/support).
