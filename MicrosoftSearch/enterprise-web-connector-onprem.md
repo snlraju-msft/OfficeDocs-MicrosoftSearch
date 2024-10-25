@@ -106,19 +106,19 @@ If you haven't installed the [Microsoft Graph connector agent](https://www.micro
 The authentication method you choose applies for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the five** supported methods:<br>
 
 a. **None** <br>
-Select this option if your websites are publicly accessible without any authentication requirements. <br>
+    Select this option if your websites are publicly accessible without any authentication requirements. <br>
 
 b. **Basic authentication** <br>
-Enter your account's username and password to authenticate using basic authentication. <br>
+    Enter your account's username and password to authenticate using basic authentication. <br>
 
 c. **Windows** <br>
-Windows authentication requires a username, domain, and password. You need to provide the username and domain in the **Username** field, in any of the following formats: domain\username, or username@domain. A password must be entered in the **Password** field. For Windows authentication, the username provided must also be an administrator in the server where the agent is installed.
+    Windows authentication requires a username, domain, and password. You need to provide the username and domain in the **Username** field, in any of the following formats: domain\username, or username@domain. A password must be entered in the **Password** field. For Windows authentication, the username provided must also be an administrator in the server where the agent is installed.
 
 d. **SiteMinder** <br>
-Siteminder authentication requires a properly formatted URL, `https://custom_siteminder_hostname/smapi/rest/createsmsession`, a username, and a password.
+    Siteminder authentication requires a properly formatted URL, `https://custom_siteminder_hostname/smapi/rest/createsmsession`, a username, and a password.
 
 e. **Microsoft Entra OAuth 2.0 Client credentials** <br>
-OAuth 2.0 with [Microsoft Entra ID](/azure/active-directory/) requires a resource ID, client ID, and a client secret.
+    OAuth 2.0 with [Microsoft Entra ID](/azure/active-directory/) requires a resource ID, client ID, and a client secret.
 
 The resource ID, client ID, and client secret values depend on how you did the setup for Microsoft Entra ID-based authentication for your website. One of the two specified options might be suitable for your website:
 
