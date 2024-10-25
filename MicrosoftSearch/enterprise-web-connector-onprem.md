@@ -65,7 +65,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
 - **Install the Microsoft Graph connector agent**: To access your on-premises websites, you must install and configure the [Microsoft Graph connector agent](https://www.microsoft.com/download/details.aspx?id=104045). [Download the agent installer](https://www.microsoft.com/download/details.aspx?id=104045) and follow the installation instructions to set it up. Once installed, ensure that the agent is configured correctly to connect your on-premises websites with the connector.
 - **Website URLs**: To connect to your website content, you need the URL to the website. You can index multiple websites (up to 50) in a single connection. 
-- **Service Account (optional)**: A service account is only needed when your websites require authentication. Public websites do not require authentication and can be crawled directly. For websites requiring authentication, it is advised to have a dedicated account to authenticate and crawl the content.
+- **Service Account (optional)**: A service account is only needed when your websites require authentication. Public websites don't require authentication and can be crawled directly. For websites requiring authentication, it is advised to have a dedicated account to authenticate and crawl the content.
 
 ## Get Started
 
@@ -80,30 +80,30 @@ Specify the root of the website that you'd like to crawl. The Enterprise Website
 > [!NOTE]
 > The connector always starts crawling from the root of the URL. For example - if your provided URL is `https://www.contoso.com/electronics`, then the connector will start crawl from `https://www.contoso.com`.
 
-The connector only crawls webpages in the domain of root URLs and does not support crawling of out-of-domain URLs. Redirection is only supported within the same domain. If there are redirections in the webpages to be crawled, you may add the redirected URL directly in list of URLs to be crawled.
+The connector only crawls webpages in the domain of root URLs and doesn't support crawling of out-of-domain URLs. Redirection is only supported within the same domain. If there are redirections in the webpages to be crawled, you may add the redirected URL directly in list of URLs to be crawled.
 
 **Use sitemap for crawling**
 
-When selected, the connector only crawls the URLs listed in the sitemap. This also allows you to configure incremental crawling during a later step. If not selected or no sitemap is found, the connector does a deep crawl of all the links found on the root URL of the site.
+When selected, the connector only crawls the URLs listed in the sitemap. This option also allows you to configure incremental crawling during a later step. If not selected or no sitemap is found, the connector does a deep crawl of all the links found on the root URL of the site.
 
 When this option is selected, the crawler performs the following steps:
 
-a. The crawler looks for the robots.txt file in the root location. For example - if your provided URL is `https://www.contoso.com`, then the crawler will look for the robots.txt file at `https://www.contoso.com/robots.txt`.
+a. The crawler looks for the robots.txt file in the root location. For example - if your provided URL is `https://www.contoso.com`, then the crawler looks for the robots.txt file at `https://www.contoso.com/robots.txt`.
 
-b. Upon locating the robots.txt file, the crawler will find the sitemap links in the robots.txt file.
+b. Upon locating the robots.txt file, the crawler finds the sitemap links in the robots.txt file.
 
-c. The crawler will then crawl all webpages as listed in the sitemap files.
+c. The crawler then crawls all webpages as listed in the sitemap files.
 
-d. In case of failure in any of the above steps, the crawler performs a deep crawl of the website, without throwing any error.
+d. If there is failure in any of the above steps, the crawler performs a deep crawl of the website, without throwing any error.
 
 ### 3. Graph Connector Agent
 
 The Graph connector agent acts as a bridge between your website instance and the connector APIs, enabling secure and efficient data transfer. In this step, select the agent configuration you want to use for your connector. 
 
-If you have not installed the [Microsoft Graph connector agent](https://www.microsoft.com/download/details.aspx?id=104045) already, you can [download the agent installer](https://www.microsoft.com/download/details.aspx?id=104045) and follow the installation instructions to set it up. Once installed, ensure that the agent is configured correctly to connect your on-premises websites with the connector.
+If you haven't installed the [Microsoft Graph connector agent](https://www.microsoft.com/download/details.aspx?id=104045) already, you can [download the agent installer](https://www.microsoft.com/download/details.aspx?id=104045) and follow the installation instructions to set it up. Once installed, ensure that the agent is configured correctly to connect your on-premises websites with the connector.
 
 ### 4. Authentication Type
-The authentication method you choose will apply for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the five** supported methods:<br>
+The authentication method you choose applies for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the five** supported methods:<br>
 
 a. **None** <br>
 Select this option if your websites are publicly accessible without any authentication requirements. <br>
@@ -127,7 +127,7 @@ The resource ID, client ID, and client secret values depend on how you did the s
     > [!NOTE]
     > For detailed steps to configure a client application as an Identity provider, see [Quickstart: Register an application with the Microsoft identity platform and Configure your App Service or Azure Functions app to use Microsoft Entra login](/azure/app-service/configure-authentication-provider-aad).
 
-    After the client app is configured, make sure you create a new client secret by going to the **Certificates & Secrets** section of the app. Copy the client secret value shown in the page because it won't be displayed again.
+    After the client app is configured, make sure you create a new client secret by going to the **Certificates & Secrets** section of the app. Copy the client secret value shown in the page because it isn't displayed again.
 
     In the following screenshots, you can see the steps to obtain the client ID, and client secret, and set up the app if you're creating the app on your own.
     
@@ -159,7 +159,7 @@ The resource ID, client ID, and client secret values depend on how you did the s
     > [!NOTE]
     > For steps to configure a client application as an identity provider see [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) and [Configure your App Service or Azure Functions app to use Microsoft Entra login](/azure/app-service/configure-authentication-provider-aad).
 
-    You don't need to configure a client secret in this application, but you'll need to add an app role in the **App roles** section, which will later be assigned to your client application. Refer to the images to see how to add an app role.
+    You don't need to configure a client secret in this application, but you need to add an app role in the **App roles** section, which is later assigned to your client application. Refer to the images to see how to add an app role.
 
     * Creating a new app role:
     
@@ -193,8 +193,8 @@ The resource ID, client ID, and client secret values depend on how you did the s
       > [!div class="mx-imgBorder"]
       > [ ![Image showing the selected permissions.](media/enterprise-web-connector/connectors-enterpriseweb-adding-permissions3.png) ](media/enterprise-web-connector/connectors-enterpriseweb-adding-permissions3.png#lightbox)
     
-    Once the permissions are assigned, you'll need to create a new client secret for this application by going to the Certificates & secrets section.
-    Copy the client secret value shown on the page as it won't be displayed again. Use the application ID from this app as the client ID, the secret from this app as the client secret, and the application ID of the first app as the resource ID.
+    Once the permissions are assigned, you need to create a new client secret for this application by going to the Certificates & secrets section.
+    Copy the client secret value shown on the page as it isn't displayed again. Use the application ID from this app as the client ID, the secret from this app as the client secret, and the application ID of the first app as the resource ID.
 
 ### 4. Roll out to limited audience
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, see [staged rollout](staged-rollout-for-graph-connectors.md).
@@ -229,7 +229,7 @@ Custom setup is for those admins who want to edit the default values for setting
 
 **Access Permissions**
 
-The Enterprise Websites on-premises connector supports search permissions visible to **Everyone** only. Indexed data will appear in the search results for all users in your organization.
+The Enterprise Websites on-premises connector supports search permissions visible to **Everyone** only. Indexed data appears in the search results for all users in your organization.
 
 ### Content
 
@@ -282,7 +282,7 @@ The Enterprise Website on-premises connector supports two types of source proper
 
 1. Meta tag
 
-    The connector fetches any meta tags your root URLs may have and shows them. You can select which tags to include for crawling. A selected tag will get indexed for all provided URLs, if available. 
+    The connector fetches any meta tags your root URLs may have and shows them. You can select which tags to include for crawling. A selected tag gets indexed for all provided URLs, if available. 
 
     [![Screenshot that shows Content tab with meta tags panel](media/enterprise-web-connector/enterprise-website-onprem-metatags.png)](media/enterprise-web-connector/enterprise-website-onprem-metatags.png#lightbox)
 
@@ -296,8 +296,8 @@ The Enterprise Website on-premises connector supports two types of source proper
 
     To add a custom property:
 
-      1. Enter a property name. This name will appear in search results from this connector.
-      2. For the value, select Static or String/Regex Mapping. A static value will be included in all search results from this connector. A string/regex value will vary based on the rules you add.
+      1. Enter a property name. This name appears in search results from this connector.
+      2. For the value, select Static or String/Regex Mapping. A static value is included in all search results from this connector. A string/regex value varies based on the rules you add.
       3. If you selected a static value, enter the value you want to appear.
       4. If you selected a String/rRegex value:
           * In the **Add expressions** section, in the **Property** list, select a default property or meta tag from the list. For **Sample value**, enter a string to represent the type of values that could appear. This sample is used when you preview your rule. For **Expression**, enter a regex expression to define the portion of the property value that should appear in search results. You can add up to three expressions.
