@@ -123,12 +123,18 @@ items:
             href: csv-connector.md
           - name: Troubleshooting
             href: troubleshoot-csv-connector.md
-        - name: Enterprise websites
+        - name: Enterprise websites Cloud
           items:
           - name: Setup
             href: enterprise-web-connector.md
           - name: Troubleshooting
             href: troubleshoot-enterprise-web-connector.md
+        - name: Enterprise websites on-premises
+          items:
+          - name: Setup
+            href: enterprise-web-connector-onprem.md
+          - name: Troubleshooting
+            href: troubleshoot-enterprise-web-connector-onprem.md
         - name: File Share
           items:
           - name: Setup
