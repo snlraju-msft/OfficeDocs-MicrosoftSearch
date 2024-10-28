@@ -1,6 +1,6 @@
 ---
 ms.date: 10/08/2019
-title: "Enterprise Websites cloud Microsoft Graph connector"
+title: "Enterprise Websites on-premises Microsoft Graph connector"
 ms.author: vivg
 author: vivg
 manager: harshkum
@@ -13,20 +13,17 @@ search.appverid:
 - BFB160
 - MET150
 - MOE150
-description: "Set up the Enterprise Websites cloud Microsoft Graph connector for Microsoft Search and Microsoft 365 Copilot"
+description: "Set up the Enterprise Websites on-premises Microsoft Graph connector for Microsoft Search and Microsoft 365 Copilot"
 ---
 
-# Enterprise Websites cloud Microsoft Graph connector
+# Enterprise Websites on-premises Microsoft Graph connector
 
-The Enterprise Websites cloud Microsoft Graph connector allows your organization to index webpages and **content from your company-owned websites** or public websites on the internet. After you configure the connector and index content from the website, end users can search for that content in Microsoft Search and Microsoft 365 Copilot.
+The Enterprise Websites on premises Microsoft Graph connector allows your organization to index webpages and **content from your company-owned websites**. After you configure the connector and index content from the websites, end users can search for that content from in Microsoft Search and Microsoft 365 Copilot.
 
-This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors a Enterprise Websites cloud Microsoft Graph connector. 
-
->[!IMPORTANT]
->You may utilize the [Enterprise Websites on-premises Microsoft Graph connector](enterprise-web-connector-onprem.md) to index websites hosted on-premises or on private clouds.
+This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors a Enterprise Websites on-premises Microsoft Graph connector. 
 
 ## Capabilities
-- Index webpages from cloud accessible websites.
+- Index webpages from on-premises or private cloud hosted websites.
 - Index up to 50 websites in a single connection.
 - Exclude webpages from crawl using exclusion rules.
 - Use [Semantic search in Copilot](semantic-index-for-copilot.md) to enable users to find relevant content.
@@ -63,22 +60,22 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Limitations
 - The connector doesn't support authentication mechanisms like SAML, JWT token, Forms-based authentication, etc.
-- The connector doesn't support crawling of dynamic content in webpages.
 
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
+- **Install the Microsoft Graph connector agent**: To access your on-premises websites, you must install and configure the [Microsoft Graph connector agent](https://www.microsoft.com/download/details.aspx?id=104045). [Download the agent installer](https://www.microsoft.com/download/details.aspx?id=104045) and follow the installation instructions to set it up. Once installed, ensure that the agent is configured correctly to connect your on-premises websites with the connector.
 - **Website URLs**: To connect to your website content, you need the URL to the website. You can index multiple websites (up to 50) in a single connection. 
 - **Service Account (optional)**: A service account is only needed when your websites require authentication. Public websites don't require authentication and can be crawled directly. For websites requiring authentication, it is advised to have a dedicated account to authenticate and crawl the content.
 
 ## Get Started
 
-[![Screenshot that shows connection creation screen for Microsoft Graph Connector for Enterprise Websites cloud.](media/enterprise-web-connector/enterprise-website-cloud-create-page.png)](media/enterprise-web-connector/enterprise-website-cloud-create-page.png#lightbox)
+[![Screenshot that shows connection creation screen for Microsoft Graph Connector for Enterprise Websites on-premises.](media/enterprise-web-connector/enterprise-website-onprem-create-page.png)](media/enterprise-web-connector/enterprise-website-onprem-create-page.png#lightbox)
 
 ### 1. Display name 
 A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
 
 ### 2. Website URLs to index
-Specify the root of the website that you'd like to crawl. The Enterprise Websites cloud Microsoft Graph connector uses this URL as the starting point and follow all the links from this URL for its crawl. You can index up to 50 different site URLs in a single connection. In the URLs field, enter the site URLs separated by commas (,). For example, `https://www.contoso.com,https://www.contosoelectronics.com`.
+Specify the root of the website that you'd like to crawl. The Enterprise Websites on-premises Microsoft Graph connector uses this URL as the starting point and follow all the links from this URL for its crawl. You can index up to 50 different site URLs in a single connection. In the URLs field, enter the site URLs separated by commas (,). For example, `https://www.contoso.com,https://www.contosoelectronics.com`.
 
 > [!NOTE]
 > The connector always starts crawling from the root of the URL. For example - if your provided URL is `https://www.contoso.com/electronics`, then the connector will start crawl from `https://www.contoso.com`.
@@ -99,20 +96,29 @@ c. The crawler then crawls all webpages as listed in the sitemap files.
 
 d. If there is failure in any of the above steps, the crawler performs a deep crawl of the website, without throwing any error.
 
-### 3. Authentication Type
-The authentication method you choose applies for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the four** supported methods:<br>
+### 3. Graph Connector Agent
+
+The Graph connector agent acts as a bridge between your website instance and the connector APIs, enabling secure and efficient data transfer. In this step, select the agent configuration you want to use for your connector. 
+
+If you haven't installed the [Microsoft Graph connector agent](https://www.microsoft.com/download/details.aspx?id=104045) already, you can [download the agent installer](https://www.microsoft.com/download/details.aspx?id=104045) and follow the installation instructions to set it up. Once installed, ensure that the agent is configured correctly to connect your on-premises websites with the connector.
+
+### 4. Authentication Type
+The authentication method you choose applies for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the five** supported methods:<br>
 
 a. **None** <br>
-Select this option if your websites are publicly accessible without any authentication requirements. <br>
+    Select this option if your websites are publicly accessible without any authentication requirements. <br>
 
 b. **Basic authentication** <br>
-Enter your account's username and password to authenticate using basic authentication. <br>
+    Enter your account's username and password to authenticate using basic authentication. <br>
 
-c. **SiteMinder** <br>
-Siteminder authentication requires a properly formatted URL, `https://custom_siteminder_hostname/smapi/rest/createsmsession`, a username, and a password.
+c. **Windows** <br>
+    Windows authentication requires a username, domain, and password. You need to provide the username and domain in the **Username** field, in any of the following formats: domain\username, or username@domain. A password must be entered in the **Password** field. For Windows authentication, the username provided must also be an administrator in the server where the agent is installed.
 
-d. **Microsoft Entra OAuth 2.0 Client credentials** <br>
-OAuth 2.0 with [Microsoft Entra ID](/azure/active-directory/) requires a resource ID, client ID, and a client secret.
+d. **SiteMinder** <br>
+    Siteminder authentication requires a properly formatted URL, `https://custom_siteminder_hostname/smapi/rest/createsmsession`, a username, and a password.
+
+e. **Microsoft Entra OAuth 2.0 Client credentials** <br>
+    OAuth 2.0 with [Microsoft Entra ID](/azure/active-directory/) requires a resource ID, client ID, and a client secret.
 
 The resource ID, client ID, and client secret values depend on how you did the setup for Microsoft Entra ID-based authentication for your website. One of the two specified options might be suitable for your website:
 
@@ -193,7 +199,7 @@ The resource ID, client ID, and client secret values depend on how you did the s
 ### 4. Roll out to limited audience
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, see [staged rollout](staged-rollout-for-graph-connectors.md).
 
-At this point, you're ready to create the connection for your cloud websites. You can click **Create** to publish your connection and index webpages from your websites.
+At this point, you're ready to create the connection for your on-premises websites. You can click **Create** to publish your connection and index webpages from your websites.
 
 For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, **Crawl frequency**, etc., we have defaults based on what works best with websites. You can see the default values below:
 
@@ -219,15 +225,15 @@ Custom setup is for those admins who want to edit the default values for setting
 
 ### Users
 
-[![Screenshot that shows Users tab](media/enterprise-web-connector/enterprise-website-cloud-users-tab.png)](media/enterprise-web-connector/enterprise-website-cloud-users-tab.png#lightbox)
+[![Screenshot that shows Users tab](media/enterprise-web-connector/enterprise-website-onprem-users-tab.png)](media/enterprise-web-connector/enterprise-website-onprem-users-tab.png#lightbox)
 
 **Access Permissions**
 
-The Enterprise Websites cloud connector supports search permissions visible to **Everyone** only. Indexed data appears in the search results for all users in your organization.
+The Enterprise Websites on-premises connector supports search permissions visible to **Everyone** only. Indexed data appears in the search results for all users in your organization.
 
 ### Content
 
-[![Screenshot that shows Content tab where you can set exclusion rules and properties](media/enterprise-web-connector/enterprise-website-cloud-content-tab.png)](media/enterprise-web-connector/enterprise-website-cloud-content-tab.png#lightbox)
+[![Screenshot that shows Content tab where you can set exclusion rules and properties](media/enterprise-web-connector/enterprise-website-onprem-content-tab.png)](media/enterprise-web-connector/enterprise-website-onprem-content-tab.png#lightbox)
 
 **Add URLs to exclude (Optional crawl restrictions)**
 
@@ -240,6 +246,20 @@ There are two ways to prevent pages from being crawled: disallow them in your ro
 2. Add URLs to exclude
 
     You can optionally create an **Exclusion list** to exclude some URLs from getting crawled if that content is sensitive or not worth crawling. To create an exclusion list, browse through the root URL. You can add the excluded URLs to the list during the configuration process.
+
+**Dynamic site configuration**
+
+If your website contains dynamic content, for example, webpages that live in content management systems like Confluence or Unily, you can enable a dynamic crawler. To turn it on, select **Enable crawl for dynamic sites**. The crawler waits for dynamic content to render before it begins crawling.
+
+In addition to the check box, there are three optional fields available:
+
+1. **DOM ready**: Enter the DOM element the crawler should use as the signal that the content is fully rendered and the crawl should begin.
+2. **Headers to add**: Specify which HTTP headers the crawler should include when sending that specific web URL. You can set multiple headers for different websites. We suggest including auth token values.
+3. **Headers to skip**: Specify any unnecessary headers that should be excluded from dynamic crawling requests.
+
+Headers should be added in the following syntax: `{"Root-URL":["TKey=TValue"]}`
+
+Example: `{"https://www.contoso.com":["Token=Value","Type=Value2"]}`
 
 **Manage Properties**
 
@@ -258,13 +278,13 @@ Here, you can add or remove available properties from your websites, assign a sc
 | Title | Title | The title of the item that you want shown in Copilot and other search experiences | Retrieve, Search |
 | URL | url | The target URL of the item in the data source | Retrieve |
 
-The Enterprise Website cloud connector supports two types of source properties:
+The Enterprise Website on-premises connector supports two types of source properties:
 
 1. Meta tag
 
     The connector fetches any meta tags your root URLs may have and shows them. You can select which tags to include for crawling. A selected tag gets indexed for all provided URLs, if available. 
 
-    [![Screenshot that shows Content tab with meta tags panel](media/enterprise-web-connector/enterprise-website-cloud-metatags.png)](media/enterprise-web-connector/enterprise-website-cloud-metatags.png#lightbox)
+    [![Screenshot that shows Content tab with meta tags panel](media/enterprise-web-connector/enterprise-website-onprem-metatags.png)](media/enterprise-web-connector/enterprise-website-onprem-metatags.png#lightbox)
 
     Selected meta tags can be used to create custom properties. Also, on the schema page, you can manage them further (Queryable, Searchable, Retrievable, Refinable).
 
@@ -272,7 +292,7 @@ The Enterprise Website cloud connector supports two types of source properties:
 
     You can enrich your indexed data by creating custom properties for your selected meta tags or the connector's default properties. 
 
-    [![Screenshot that shows Content tab with custom property panel](media/enterprise-web-connector/enterprise-website-cloud-custom-property.png)](media/enterprise-web-connector/enterprise-website-cloud-custom-property.png#lightbox)
+    [![Screenshot that shows Content tab with custom property panel](media/enterprise-web-connector/enterprise-website-onprem-custom-property.png)](media/enterprise-web-connector/enterprise-website-onprem-custom-property.png#lightbox)
 
     To add a custom property:
 
@@ -287,7 +307,7 @@ To learn more about regex expressions, see [.NET regular expressions](/dotnet/st
 
 ### Sync
 
-[![Screenshot that shows Sync tab where you can configure crawl frequency.](media/enterprise-web-connector/enterprise-website-cloud-sync-tab.png)](media/enterprise-web-connector/enterprise-website-cloud-sync-tab.png#lightbox)
+[![Screenshot that shows Sync tab where you can configure crawl frequency.](media/enterprise-web-connector/enterprise-website-onprem-sync-tab.png)](media/enterprise-web-connector/enterprise-website-onprem-sync-tab.png#lightbox)
 
 The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
 
@@ -298,6 +318,6 @@ You can change the default values of refresh interval from here if you want to.
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data Sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
-You can find troubleshooting steps for commonly seen issues [here](troubleshoot-enterprise-web-connector.md).
+You can find troubleshooting steps for commonly seen issues [here](troubleshoot-enterprise-web-connector-onprem.md).
 
 If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/en-us/graph/support).
