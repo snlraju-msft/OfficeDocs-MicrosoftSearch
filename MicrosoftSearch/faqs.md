@@ -45,7 +45,7 @@ We require [Microsoft Entra ID](/azure/active-directory/) authentication to acce
 
 ## Filename vs. Title in search results
 
-In the modern Microsoft Search experience, search results display the filename for files, similar to the default view in SharePoint or OneDrive libraries. This approach avoids showing the `Title` property, which can often be misleading if it carries over from copied documents or from document templates. Unlike the classic search experience that displays the title, the modern experience prioritizes filenames for consistency. However, for sites, pages and list items, the `Title` property is shown as it provides more relevant information.
+Unlike the classic search experience in SharePoint which prefers the `Title` property of a file, search results in Microsoft Search display the filename for files, similar to the default view in SharePoint or OneDrive libraries. This approach avoids showing the `Title` property, which can often be misleading when it carries over from copied documents or from document templates. However, for sites, pages and list items, the `Title` property is shown.
 
 Text in the `Title` property is still indexed and searchable, and can be used in the hit highlighting of a search results if decided by the search engine.
 
