@@ -103,7 +103,7 @@ items:
             href: confluence-cloud-connector.md
           - name: Troubleshooting
             href: troubleshoot-confluence-cloud-connector.md
-        - name: Confluence On-premises (preview)
+        - name: Confluence On-premises
           items:
             - name: Setup
               href: confluence-onpremises-connector.md
