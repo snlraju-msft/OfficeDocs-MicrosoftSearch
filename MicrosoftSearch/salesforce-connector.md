@@ -111,31 +111,60 @@ You can now use the [Microsoft 365 Admin Center](https://admin.microsoft.com/) t
 
 ## Get Started
 
-[Add Salesforce connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Salesforce&type=Salesforce)
+[![Screenshot that shows connection creation screen for Microsoft Graph Connector for Salesforce CRM.](media/salesforce-connector/SalesforceCRMSetup.jpg)](media/salesforce-connector/SalesforceCRMSetup.jpg#lightbox)
 
-## Step 2: Name the connection
+### 1. Display name
 
-Follow the general [setup instructions](./configure-connector.md).
-<!---If the above phrase does not apply, delete it and insert specific details for your data source that are different from general setup instructions.-->
+A display name is used to identify each reference in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
 
-## Step 3: Configure the connection settings
+### 2. Salesforce CRM URL
 
 For the Instance URL, use https://[domain].my.salesforce.com where the domain would be the Salesforce domain for your organization.
 
-Enter the client ID and client Secret you obtained from your Salesforce instance and select Sign in.
+### 3. Authentication Type
+
+To authenticate and sync content from Salesforce CRM, choose **OAuth 2.0**.  Enter the client ID and client Secret you obtained from your Salesforce instance and select Sign in.
 
 The first time you've attempted to sign in with these settings, you'll get a pop-up asking you to log in to Salesforce with your admin username and password. The screenshot below shows the popup. Enter your credentials and select "Log In".
 
   ![Login pop up asking for Username and password.](media/salesforce-connector/sf4.png)
 
   >[!NOTE]
-  >If the pop-up does not appear, it might be getting blocked in your browser, so you must allow pop-ups and redirects.
-  >Ensure that the Salesforce account being used to log in for the Graph connector is the same as the user already logged into Salesforce.
+  >
+  > - If the pop-up does not appear, it might be getting blocked in your browser, so you must allow pop-ups and redirects.
+  > - Ensure that the Salesforce account being used to log in for the Graph connector is the same as the user already logged into Salesforce.
+  > - Ensure the user logging in has all the necessary object permissions for the organization.
 
 Check that the connection was successful by searching for a green banner that says "connection successful" as shown in the screenshot below.
 
   > [!div class="mx-imgBorder"]
   > ![Screenshot of successful login. The green banner that says "Connection successful" is located under the field for your Salesforce Instance URL](media/salesforce-connector/salesforce-connector-connection-settings.png)
+
+### 4. Roll out to limited audience
+
+Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, see [staged rollout](staged-rollout-for-graph-connectors.md).
+
+At this point, you're ready to create the connection for Salesforce CRM. You can click **Create** to publish your connection and index content from your Salesforce instance.
+
+For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, **Crawl frequency**, etc., we have defaults based on what works best with Jira data. You can see the default values below:
+
+| Users | Description |
+|----|---|
+| Access permissions | _Only people with access to content in Data source._ |
+| Map Identities | _Data source identities mapped using Microsoft Entra IDs._ |
+
+| Content | Description |
+|---|---|
+| Salesforce objects | _All objects are indexed._ |
+| Filter data | _All objects are indexed. No time filter or SOQL criteria is applied._ |
+| Manage Properties | _To check default properties and their schema, see [content](#content)_ |
+
+| Sync | Description |
+|---|---|
+| Incremental Crawl | _Frequency: Every 15 mins_ |
+| Full Crawl | _Frequency: Every Day_ |
+
+If you want to edit any of these values, you need to choose the "Custom Setup" option.
 
 ## Step 4: Select properties
 
