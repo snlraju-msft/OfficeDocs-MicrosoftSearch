@@ -20,6 +20,10 @@ For help on installation, refer to [this page](graph-connector-agent.md#installa
 
 [Download latest Graph Connector Agent](https://aka.ms/gca)
 
+## Version 3.1.2.0 (*November 11, 2024*)
+
+* Bug fixes and reliability improvements.
+
 ## Version 3.1.1.0 (*October 10, 2024*)
 
 * Bug fixes and reliability improvements.
@@ -98,7 +102,7 @@ For help on installation, refer to [this page](graph-connector-agent.md#installa
 
 ## Version 2.2.5.0 (*August 30, 2023*)
 
-* Added functionality to keep trying the multiple instances if they are unreachable in the first crawl. Before the update if the connectivity with one of the instances was interrupted, Graph connector agent did not retry the path in the subsequent crawl and threw a warning for the instance path.
+* Added functionality to keep trying the multiple instances if they're unreachable in the first crawl. Before the update if the connectivity with one of the instances was interrupted, Graph connector agent did not retry the path in the subsequent crawl and threw a warning for the instance path.
 * Bug fixes and reliability improvements
 
 ## Version 2.2.4.0 (*August 28, 2023*)
@@ -164,7 +168,7 @@ For help on installation, refer to [this page](graph-connector-agent.md#installa
 
 ## Version 1.8.2.0 (*October 06, 2022*)
 
-* Upgrade Graph Connector Agent with just one click in the UI. For later builds, if there are any upgrades available for Graph Connector Agent, the one-click upgrade feature is available in the connection details pane. For builds older than this version, there is an option to download and install the GCA build.
+* Upgrade Graph Connector Agent with just one click in the UI. For later builds, if there are any upgrades available for Graph Connector Agent, the one-click upgrade feature is available in the connection details pane. For builds older than this version, there's an option to download and install the GCA build.
 ![Sample snapshot of how to upgrade GCA with one-click from the connection pane.](media/gca-releases/one-click-upgrade.png)
 
 * Bug fixes and reliability improvements
