@@ -1,6 +1,6 @@
 ---
 ms.date: 11/03/2020
-title: "Salesforce Microsoft Graph connector"
+title: "Salesforce CRM Microsoft Graph connector"
 ms.author: mecampos
 author: mecampos
 manager: umas
@@ -17,14 +17,52 @@ description: "Set up the Salesforce Microsoft Graph connector for Microsoft Sear
 ---
 <!---Previous ms.author: rusamai --->
 
-# Salesforce Microsoft Graph connector
+# Salesforce CRM Microsoft Graph connector
 
 The Salesforce Microsoft Graph connector, allows your organization to index contacts, opportunities, leads, cases, and accounts objects in your Salesforce instance. After you configure the connector and index content from Salesforce, end users can search for those items from any Microsoft Search and Microsoft 365 Copilot client.
 
-This article is for anyone who configures, runs, and monitors a Salesforce Microsoft Graph connector. It supplements the general setup process and shows instructions that apply only to the Salesforce Microsoft Graph connector. This article also includes information about [Limitations](#limitations).
+This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors a Salesforce CRM Microsoft Graph connector.
 
 >[!IMPORTANT]
 >The Salesforce Microsoft Graph connector currently supports Summer '19 or later.
+
+## Capabilities
+
+- Index contacts, opportunities, leads, cases, and accounts objects in your Salesforce instance
+- Filter content basis what you want to index  
+-	Access Salesforce CRM data using the power of Semantic search
+-	Retain ACLs defined by your organization
+-	Customize your crawl frequency
+-	Create agents and workflows using this connection and plugins from Microsoft Copilot Studio
+
+## Limitations
+
+- The Salesforce Microsoft Graph connector doesn't currently support Apex-based, territory-based sharing and sharing using personal groups from Salesforce.
+- There's a known bug in the Salesforce API the connector uses, where the private org-wide defaults for leads aren't honored currently.  
+- If a field has field level security (FLS) set for a profile, the connector won't ingest that field for any profiles in that Salesforce org. As a result, users won't be able to search for values for those fields or  show up in the results.  
+- In the manage schema screen these common standard property names are listed once, the options are **Query**, **Search**, **Retrieve**, and **Refine**, and apply to all or none.
+    - Name
+    - Url
+    - Description
+    - Fax
+    - Phone
+    - MobilePhone
+    - Email
+    - Type
+    - Title
+    - AccountId
+    - AccountName
+    - AccountUrl
+    - AccountOwner
+    - AccountOwnerUrl
+    - Owner
+    - OwnerUrl
+    - CreatedBy
+    - CreatedByUrl
+    - LastModifiedBy
+    - LastModifiedByUrl
+    - LastModifiedDate
+    - ObjectName
 
 ## Before you get started
 
@@ -71,12 +109,9 @@ To connect to your Salesforce instance, you need your Salesforce instance URL, t
 
 You can now use the [Microsoft 365 Admin Center](https://admin.microsoft.com/) to complete the rest of the setup process for your Microsoft Graph connector.
 
-## Step 1: Add a connector in the Microsoft 365 admin center
+## Get Started
 
 [Add Salesforce connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Salesforce&type=Salesforce)
-
-Follow the general [setup instructions](./configure-connector.md).
-<!---If the above phrase does not apply, delete it and insert specific details for your data source that are different from general setup instructions.-->
 
 ## Step 2: Name the connection
 
@@ -198,35 +233,6 @@ Follow the general [setup instructions](./configure-connector.md).
 
 <!---## Troubleshooting-->
 <!---Insert troubleshooting recommendations for this data source-->
-
-## Limitations
-
-- The Salesforce Microsoft Graph connector doesn't currently support Apex-based, territory-based sharing and sharing using personal groups from Salesforce.
-- There's a known bug in the Salesforce API the connector uses, where the private org-wide defaults for leads aren't honored currently.  
-- If a field has field level security (FLS) set for a profile, the connector won't ingest that field for any profiles in that Salesforce org. As a result, users won't be able to search for values for those fields or  show up in the results.  
-- In the manage schema screen these common standard property names are listed once, the options are **Query**, **Search**, **Retrieve**, and **Refine**, and apply to all or none.
-    - Name
-    - Url
-    - Description
-    - Fax
-    - Phone
-    - MobilePhone
-    - Email
-    - Type
-    - Title
-    - AccountId
-    - AccountName
-    - AccountUrl
-    - AccountOwner
-    - AccountOwnerUrl
-    - Owner
-    - OwnerUrl
-    - CreatedBy
-    - CreatedByUrl
-    - LastModifiedBy
-    - LastModifiedByUrl
-    - LastModifiedDate
-    - ObjectName
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data Sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md). 
