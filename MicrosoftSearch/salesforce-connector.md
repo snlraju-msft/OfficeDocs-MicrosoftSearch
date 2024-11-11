@@ -95,6 +95,7 @@ The first time you've attempted to sign in with these settings, you'll get a pop
 
   >[!NOTE]
   >If the pop-up does not appear, it might be getting blocked in your browser, so you must allow pop-ups and redirects.
+  >Ensure that the Salesforce account being used to log in for the Graph connector is the same as the user already logged into Salesforce.
 
 Check that the connection was successful by searching for a green banner that says "connection successful" as shown in the screenshot below.
 
