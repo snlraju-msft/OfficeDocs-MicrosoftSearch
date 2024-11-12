@@ -156,7 +156,7 @@ For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Sch
 | Content | Description |
 |---|---|
 | Salesforce objects | _All objects are indexed._ |
-| Filter data | _All objects are indexed. No time filter or SOQL criteria is applied._ |
+| Filter data | _All objects are indexed. No time filter or [SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_conditionexpression.htm) criteria is applied._ |
 | Manage Properties | _To check default properties and their schema, see [content](#content)._ |
 
 | Sync | Description |
@@ -183,11 +183,11 @@ The Salesforce CRM connector supports search permissions visible to **Everyone
 You can choose to ingest Access Control Lists (ACLs) from your Salesforce instance or allow everyone in your organization to see search results from this data source. ACLs can include Microsoft Entra identities (users who are federated from Microsoft Entra ID to Salesforce), non-Azure AD identities (native Salesforce users who have corresponding identities in Microsoft Entra ID), or both.
 
 >[!NOTE]
->If you use a third-party Identity Provider like Ping ID or secureAuth, you should select "non-AAD" as the identity type.
+>If you use a third-party Identity Provider like Ping ID or secureAuth, you should select "non-Microsoft Entra" as the identity type.
 
-If you chose to ingest an ACL from your Salesforce instance and selected "non-AAD" for the identity type, see [Map your non-Microsoft Entra Identities](map-non-aad.md) for instructions on mapping the identities.
+If you chose to ingest an ACL from your Salesforce instance and selected "non-ME ID" for the identity type, see [Map your non-Microsoft Entra Identities](map-non-aad.md) for instructions on mapping the identities.
 
-If you chose to ingest an ACL from your Salesforce instance and selected "AAD" for the identity type, see [Map your Microsoft Entra Identities](map-aad.md) for instructions on mapping the identities. To learn how to set up Microsoft Entra SSO for Salesforce, see this [tutorial](/azure/active-directory/saas-apps/salesforce-tutorial).
+If you chose to ingest an ACL from your Salesforce instance and selected "ME-ID" for the identity type, see [Map your Microsoft Entra Identities](map-aad.md) for instructions on mapping the identities. To learn how to set up Microsoft Entra SSO for Salesforce, see this [tutorial](/azure/active-directory/saas-apps/salesforce-tutorial).
 
 >[!NOTE]
 >
