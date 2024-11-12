@@ -64,7 +64,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
     - LastModifiedDate
     - ObjectName
 
-## Before you get started
+## Prerequisites
 
 To connect to your Salesforce instance, you need your Salesforce instance URL, the client ID, and the client secret for OAuth authentication. The following steps explain how you or your Salesforce administrator can get this information from your Salesforce account:
 
@@ -123,7 +123,7 @@ For the Instance URL, use https://[domain].my.salesforce.com where the domain wo
 
 ### 3. Authentication Type
 
-To authenticate and sync content from Salesforce CRM, choose **OAuth 2.0**.  Enter the client ID and client Secret you obtained from your Salesforce instance and select Sign in.
+To authenticate and sync content from Salesforce CRM, choose **OAuth 2.0**.  Enter the client ID and client Secret you obtained from your Salesforce instance and select Authorize.
 
 The first time you've attempted to sign in with these settings, you'll get a pop-up asking you to log in to Salesforce with your admin username and password. The screenshot below shows the popup. Enter your credentials and select "Log In".
 
@@ -135,7 +135,7 @@ The first time you've attempted to sign in with these settings, you'll get a pop
   > - Ensure that the Salesforce account being used to log in for the Graph connector is the same as the user already logged into Salesforce.
   > - Ensure the user logging in has all the necessary object permissions for the organization.
 
-Check that the connection was successful by searching for a green banner that says "connection successful" as shown in the screenshot below.
+Check that the connection was successful by looking for a green tick that shows correct credentials as shown in the screenshot below.
 
   > [!div class="mx-imgBorder"]
   > ![Screenshot of successful login. The green banner that says "Connection successful" is located under the field for your Salesforce Instance URL](media/salesforce-connector/salesforce-connector-connection-settings.png)
@@ -157,7 +157,7 @@ For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Sch
 |---|---|
 | Salesforce objects | _All objects are indexed._ |
 | Filter data | _All objects are indexed. No time filter or SOQL criteria is applied._ |
-| Manage Properties | _To check default properties and their schema, see [content](#content)_ |
+| Manage Properties | _To check default properties and their schema, see [content](#content)._ |
 
 | Sync | Description |
 |---|---|
@@ -166,7 +166,40 @@ For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Sch
 
 If you want to edit any of these values, you need to choose the "Custom Setup" option.
 
-## Step 4: Select properties
+## Custom Setup
+
+Custom setup is for those admins who want to edit the default values for settings listed in the above table. Once you click on the "Custom Setup" option, you see three more tabs - Users, Content, and Sync.
+
+### Users
+
+[![Screenshot that shows Users tab where you can configure access permissions and user mapping rules.](media/salesforce-connector/SalesforceUsersTab.png)](media/salesforce-connector/SalesforceUsersTab.png#lightbox)
+
+**Access Permissions**
+
+The Salesforce CRM connector supports search permissions visible to **Everyone** or **Only people with access to this data source**. If you choose **Everyone**, indexed data will appear in the search results for all users. If you choose **Only people with access to this data source**, indexed data will appear in the search results for users who have access to them. Choose the one that is most appropriate for your organization.
+
+**Mapping Identities**
+
+You can choose to ingest Access Control Lists (ACLs) from your Salesforce instance or allow everyone in your organization to see search results from this data source. ACLs can include Microsoft Entra identities (users who are federated from Microsoft Entra ID to Salesforce), non-Azure AD identities (native Salesforce users who have corresponding identities in Microsoft Entra ID), or both.
+
+>[!NOTE]
+>If you use a third-party Identity Provider like Ping ID or secureAuth, you should select "non-AAD" as the identity type.
+
+If you chose to ingest an ACL from your Salesforce instance and selected "non-AAD" for the identity type, see [Map your non-Microsoft Entra Identities](map-non-aad.md) for instructions on mapping the identities.
+
+If you chose to ingest an ACL from your Salesforce instance and selected "AAD" for the identity type, see [Map your Microsoft Entra Identities](map-aad.md) for instructions on mapping the identities. To learn how to set up Microsoft Entra SSO for Salesforce, see this [tutorial](/azure/active-directory/saas-apps/salesforce-tutorial).
+
+>[!NOTE]
+>
+> Updates to groups governing access permissions are synced in full crawls only. Incremental crawls don't support processing of updates to permissions.
+
+In this video, you can see the process to authenticate to your Salesforce instance, sync your non-Microsoft Entra identities to your Microsoft Entra identities, and apply the proper security trimmings to your Salesforce items.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/SZYiFxZMKcM]
+
+### Content
+
+**Choose Salesforce objects and filter data**
 
 Select the Salesforce objects that you want the connector to crawl and include in search results. If Contact is selected, Account is automatically selected as well.
 
@@ -186,39 +219,9 @@ _Filter data_
    > [!TIP]
    > You may leave the **WHERE** clause empty if you want to index all the content of the particular entity
 
-## Step 5: Manage search permissions
+**Manage Properties**
 
-You'll need to choose which users see search results from this data source. If you allow only certain Microsoft Entra ID or non-Azure AD users to see the search results, make sure you map the identities.
-
-### Step 5.a: Select permissions
-
-You can choose to ingest Access Control Lists (ACLs) from your Salesforce instance or allow everyone in your organization to see search results from this data source. ACLs can include Microsoft Entra identities (users who are federated from Microsoft Entra ID to Salesforce), non-Azure AD identities (native Salesforce users who have corresponding identities in Microsoft Entra ID), or both.
-
->[!NOTE]
->If you use a third-party Identity Provider like Ping ID or secureAuth, you should select "non-AAD" as the identity type.
-
-> [!div class="mx-imgBorder"]
-> ![Select permissions screen that has been completed by an admin. The admin has selected the "Only people with access to this data source" option and has also selected "AAD" from a drop down menu of identity types.](media/salesforce-connector/sf6.png)
-
-If you chose to ingest an ACL from your Salesforce instance and selected "non-AAD" for the identity type, see [Map your non-Azure AD Identities](map-non-aad.md) for instructions on mapping the identities.
-
-<a name='step-5b-map-aad-identities'></a>
-
-### Step 5.b: Map Microsoft Entra identities
-
-If you chose to ingest an ACL from your Salesforce instance and selected "AAD" for the identity type, see [Map your Microsoft Entra identities](map-aad.md) for instructions on mapping the identities. To learn how to set up Microsoft Entra SSO for Salesforce, see this [tutorial](/azure/active-directory/saas-apps/salesforce-tutorial).
-
-<a name='apply-user-mapping-to-sync-your-salesforce-identities-to-azure-ad-identities'></a>
-
-### Apply user mapping to sync your Salesforce identities to Microsoft Entra identities
-
-In this video, you can see the process to authenticate to your Salesforce instance, sync your non-Microsoft Entra identities to your Microsoft Entra identities, and apply the proper security trimmings to your Salesforce items.
-
-> [!VIDEO https://www.youtube-nocookie.com/embed/SZYiFxZMKcM]
-
-## Step 6: Assign property labels
-
-You can assign a source property to each label by choosing from a menu of options. While this step is not mandatory, having some property labels improves the search relevance and ensures better search results for end users. By default, some of the Labels like "Title," "URL," "CreatedBy," and  "LastModifiedBy" have already been assigned source properties.
+Here, you can add or remove available properties from your Salesforce CRM data source, assign a schema to the property (define whether a property is searchable, queryable, retrievable, or refinable), change the semantic label and add an alias to the property. While this step is not mandatory, having some property labels improves the relevance and ensures better results for end users. By default, some of the Labels like "Title," "URL," "CreatedBy," and  "LastModifiedBy" have already been assigned source properties. Properties that are selected by default are listed below.
 
 *The list of properties that you select here, can impact how you can filter, search, and view your results in Microsoft 365 Copilot.*
 
@@ -232,26 +235,17 @@ LastModifiedBy   | `lastModifiedBy` | Name of the person who most recently edite
 LastModifiedDateTime  | `lastModifiedDateTime` | Date and time the item was last modified in the data source.
 Name   | `title` | The title of the item that you want to show in search and other experiences.
 
-## Step 7: Manage schema
+**Preview Data**
 
-You can select what source properties should be indexed so that they show up in search results. The connection wizard by default selects a search schema based on a set of source properties. You can modify it by selecting the check boxes for each property and attribute in the search schema page. Search schema attributes include Search, Query, Retrieve, and Refine.
-Refine allows you to define the properties that can be later used as custom refiners or filters in the search experience.  
+Use the preview results button to verify the sample values of the selected properties and query filter.
 
-> [!div class="mx-imgBorder"]
-> ![Select the schema for each source property. The options are Query, Search, Retrieve, and Refine.](media/salesforce-connector/sf9.png)
+### Sync
 
-## Step 8: Set the refresh schedule
+[![Screenshot that shows Sync tab where you can configure crawl frequency.](media/salesforce-connector/SalesforceSyncTab.png)](media/salesforce-connector/SalesforceSyncTab.png#lightbox)
 
-The Salesforce connector only supports refresh schedules for full crawls currently.
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
 
->[!IMPORTANT]
->A full crawl finds deleted objects and users that were previously synced to the Microsoft Search index.
-
-The recommended schedule is one week for a full crawl.
-
-## Step 9: Review connection
-
-Follow the general [setup instructions](./configure-connector.md).
+You can change the default values of refresh interval from here if you want to.
 
 >[!TIP]
 >**Default result type**
