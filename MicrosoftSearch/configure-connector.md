@@ -21,7 +21,7 @@ description: "Learn how to configure your Microsoft Graph connector for Microsof
 
 # Set up Microsoft Graph connectors in the Microsoft 365 admin center
 
-This article shows the basic process required to set up Microsoft Graph connectors in the [Microsoft 365 admin center](https://admin.microsoft.com). The basic process includes the following steps:
+This article shows the basic process required to set up Microsoft Graph connectors in the [Microsoft 365 admin center](https://admin.microsoft.com). The basic process includes the following steps: **(Let's try to make this content more dynamic.)**
 
 > [!NOTE]
 > The setup process is similar for all the Microsoft Graph connectors but is not exactly the same. In addition to reading this article, be sure to read the connector-specific information for your data source.
