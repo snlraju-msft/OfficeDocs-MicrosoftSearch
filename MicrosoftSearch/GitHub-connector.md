@@ -35,8 +35,8 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 - Use [Semantic search in Copilot](semantic-index-for-copilot.md) to enable users to find relevant content based on keywords, personal preferences, and social connections.
 
 ## Limitations
-- Only repository metadata and markdown files are indexed. Other GitHub entities such as issues, pull requests, and comments are not indexed in the private preview.
-- Only markdown files up to 1 MB in size are supported. Larger files won't be indexed.
+- Only repository metadata and markdown files are indexed. Other GitHub entities such as issues, pull requests, and comments aren't indexed.
+- Only markdown files up to 1 MB in size are supported. Larger files aren't indexed.
 
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
@@ -72,9 +72,9 @@ For the fine-grained token:
   | Repository Permissions | Metadata | Read-only |
   | Repository Permissions | Contents | Read-only |
 
-- If you have organization-owned repositories, follow these additional steps:
+- If you have organization-owned repositories, follow these extra steps:
    - The organization administrator needs to allow access via personal access tokens. For instructions, see [Setting a personal access token policy for your organization - GitHub Docs](https://docs.github.com/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization#restricting-access-by-personal-access-tokens)
-   - If you are using fine-grained tokens, select the organization as the resource owner.
+   - If you're using fine-grained tokens, select the organization as the resource owner.
 
 ## Get Started
 
@@ -86,10 +86,10 @@ A display name is used to identify each citation in Copilot, helping users easil
 To authenticate and sync content from GitHub:<br>
  
 1. **Authentication type** <br>
-Choose the ‘Basic’ option
+Choose the "Basic" option
 
 2. **Personal Access Token (PAT)** <br>
-Use your personal access token in place of a password. The repositories available for indexing will depend on the access granted by your token.
+Use your personal access token in place of a password. The repositories available for indexing depends on the access granted by your token.
  
 ## Custom Setup
 
@@ -99,8 +99,8 @@ Custom setup is for those admins who want to edit the default values for setting
 
 **Access Permissions**
 
-The GitHub connector supports search permissions visible to **Everyone** with access to this data source. For Everyone, indexed data will appear in the search results for all users.
-For identity transformation refer to the [Map your non-Azure AD Identities | Microsoft Learn](map-non-aad.md).
+The GitHub connector supports search permissions visible to **Everyone** with access to this data source. For Everyone, indexed data appears in the search results for all users.
+For identity transformation, refer to the [Map your non-Azure AD Identities | Microsoft Learn](map-non-aad.md).
  
 ### Content
 
@@ -112,7 +112,7 @@ Here, you can add or remove available properties from your GitHub data source, a
 
 ### Sync
 
-The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more information, see [refresh settings](configure-connector.md#step-8-refresh-settings).
 
 You can change the default values of refresh interval from here if you want to.
 
