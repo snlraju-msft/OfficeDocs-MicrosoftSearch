@@ -40,11 +40,13 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
-- You must have an active GitHub account where you have access to all the repositories you intend to index. 
-   For personal repositories, you must be one of:
+- You must have an active GitHub account where you have access to all the repositories you intend to index.
+ 
+   a. For personal repositories, you must be one of:
    - A repository owner
    - A repository collaborator
-   For organization-owned repositories, you must be one of: 
+
+   b. For organization-owned repositories, you must be one of: 
     - An outside collaborator 
     - An organization member as a direct collaborator
     - An organization member with access through team memberships 
