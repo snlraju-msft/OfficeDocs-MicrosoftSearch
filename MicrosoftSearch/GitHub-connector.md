@@ -55,22 +55,21 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 - You must have a personal access token (PAT). To learn more about the personal access tokens, see [Managing your personal access tokens - GitHub Docs](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 - Your personal access token must have access to all repositories you want to index and must be granted the permission listed below.
 
-For classic token: 
+   For classic token: 
 
-  | Category | Permission | Remarks |
-  | ------------ | ------------ | ------------ |
-  | Repo | All | Full control of private repositories |
-  | User  | read:user  | Read ALL user profile data |
-  | User  | read:email  | Access user email addresses (read-only) |
+     | Category | Permission | Remarks |
+     | ------------ | ------------ | ------------ |
+     | Repo | All | Full control of private repositories |
+     | User  | read:user  | Read ALL user profile data |
+     | User  | read:email  | Access user email addresses (read-only) |
 
-For the fine-grained token:
+   For the fine-grained token:
 
-
-  | Category | Permission | Permission Level |
-  | ------------ | ------------ | ------------ |
-  | Account Permissions | Email addresses | Read-only |
-  | Repository Permissions | Metadata | Read-only |
-  | Repository Permissions | Contents | Read-only |
+     | Category | Permission | Permission Level |
+     | ------------ | ------------ | ------------ |
+     | Account Permissions | Email addresses | Read-only |
+     | Repository Permissions | Metadata | Read-only |
+     | Repository Permissions | Contents | Read-only |
 
 - If you have organization-owned repositories, follow these extra steps:
    - The organization administrator needs to allow access via personal access tokens. For instructions, see [Setting a personal access token policy for your organization - GitHub Docs](https://docs.github.com/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization#restricting-access-by-personal-access-tokens)
