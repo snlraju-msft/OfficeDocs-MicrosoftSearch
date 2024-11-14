@@ -39,7 +39,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
     ![Third-party application access via OAuth](media/ado-workitems-connector-security-policies.png)
 
-- - **Service Account**: To connect to Azure DevOps and allow the Microsoft Graph Connector to update wikis regularly, you need a service account with the following permissions granted to it.
+- **Service Account**: To connect to Azure DevOps and allow the Microsoft Graph Connector to update wikis regularly, you need a service account with the following permissions granted to it.
 
 | Permission name | Permission type | Required for |
 | ------------ | ------------ | ------------ |
