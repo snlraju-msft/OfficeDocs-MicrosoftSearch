@@ -89,7 +89,7 @@ The semantic index supports indexing of user mailbox and file types listed in th
 | Graph Connector data      | Not applicable | Supported        |
 
 >[!NOTE]
-> Files up to 512MB are now supported for PDF, PPTX, and DOCX extensions. This enhancement allows Copilot users to effectively analyze, summarize, and generate insights from these large files.
+>Files up to 512MB are now supported for PDF, PPTX, and DOCX extensions. This enhancement allows Copilot users to effectively analyze, summarize, and generate insights from these large files.
 
 ## Index updates
 
@@ -110,9 +110,9 @@ There are times when organizations without Microsoft Purview Data Loss Preventio
 1. Select **View all site settings** to bring up the Site Settings page.
 1. Select **Search and offline availability** under the **Search** category and select **No** for **Allow this site to appear in search results** to exclude it from both Microsoft Search and the semantic index search. This can also be performed with PowerShell for multiple sites.
 
-:::image type="content" source="media/semantic-index-settings.png" alt-text="Screenshot showing the settings for excluding SharePoint online sites." lightbox="media/semantic-index-settings.png":::
+    :::image type="content" source="media/semantic-index-settings.png" alt-text="Screenshot showing the settings for excluding SharePoint online sites." lightbox="media/semantic-index-settings.png":::
 
-Microsoft Search and the semantic index support the exclusion of SharePoint online content from the tenant-level index only. There's no option to exclude results from Microsoft Search only or the semantic index only; actions apply to both at the same time.
+    Microsoft Search and the semantic index support the exclusion of SharePoint online content from the tenant-level index only. There's no option to exclude results from Microsoft Search only or the semantic index only; actions apply to both at the same time.
 
 ## Configuring item insights
 
