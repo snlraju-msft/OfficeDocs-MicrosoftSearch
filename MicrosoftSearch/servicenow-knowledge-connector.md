@@ -65,6 +65,10 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Get Started
 
+Check out our [YouTube video](https://www.youtube.com/watch?v=uS5JV-2M9kw) for a detailed, step-by-step guide on adding the Microsoft Graph Connector for ServiceNow Knowledge. 
+
+[Watch the video](https://www.youtube.com/watch?v=uS5JV-2M9kw)
+
 ![Screenshot that shows Connection creation screen for Microsoft Graph Connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph Connector for ServiceNow Knowledge")
 
 ### 1. Display name
