@@ -1,7 +1,7 @@
 --- 
 title: "GitHub Graph connector for Microsoft Search and Copilot" 
-ms.author: efrat.gilboa
-author: efrat.gilboa
+ms.author: efgilboa
+author: vivg
 manager: igala
 audience: Admin
 ms.audience: Admin 
