@@ -6,7 +6,7 @@ manager: kellis
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
-localization_priority: medium
+ms.localizationpriority: Medium
 search.appverid:
   - BFB160
   - MET150
