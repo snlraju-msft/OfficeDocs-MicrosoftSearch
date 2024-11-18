@@ -1,8 +1,8 @@
 ---
 title: "Create a custom search results page in SharePoint Online"
-ms.author: bstucker
-author: bstuck
-manager: bstuck
+mms.author: misvenso
+author: wobba
+manager: wobba
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
@@ -18,6 +18,7 @@ One way to customize the search experience in SharePoint is to create a custom s
 >[!NOTE]
 > To make changes to the default Microsoft Search results page that is
 available by default, please see [Customize the search results page](customize-search-page.md).
+> A custom redirect URL pointing to the result page provided by Microsoft Search at `_layouts/15/search.aspx` is an unsupported scenario. SharePoint will navigate to `_layouts/15/search.aspx` with the needed parameters based on search box configuration.
 
 With a custom results page, you can create a new page that can be used to control the layout and design of search results to support your organization's needs. You can use any built-in web parts, open-source search web parts from SharePoint Patterns and Practices community, and any custom web parts that you have developed using SharePoint Framework.
 
