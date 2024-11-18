@@ -1,6 +1,6 @@
 ---
 title: "Create a custom search results page in SharePoint Online"
-mms.author: misvenso
+ms.author: misvenso
 author: wobba
 manager: wobba
 ms.audience: Admin
