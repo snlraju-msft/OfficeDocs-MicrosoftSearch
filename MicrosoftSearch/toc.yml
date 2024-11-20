@@ -141,6 +141,10 @@ items:
             href: fileshare-connector.md
           - name: Troubleshooting
             href: troubleshoot-file-share-connector.md
+        - name: GitHub (preview)
+          items:
+          - name: Setup
+            href: GitHub-connector.md 
         - name: Google Drive
           items:
           - name: Setup
@@ -150,11 +154,7 @@ items:
           - name: Setup
             href: mediawiki-connector.md
           - name: Troubleshooting
-            href: troubleshoot-media-wiki-connector.md
-        - name: MediaWiki
-          items:
-          - name: Setup
-            href: mediawiki-connector.md  
+            href: troubleshoot-media-wiki-connector.md 
         - name: Oracle SQL
           items:
           - name: Setup
