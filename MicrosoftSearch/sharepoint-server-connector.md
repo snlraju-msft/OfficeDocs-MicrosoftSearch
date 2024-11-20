@@ -18,7 +18,7 @@ description: "Set up the SharePoint Server Microsoft Graph connector for Microso
 
 # SharePoint Server Microsoft Graph connector
 
-The SharePoint on-prem graph connector allows users in your organization to search for content stored in on-prem SharePoint server or use the content in Copilot for specific use cases and scenarios. It crawls over Documents and site pages from the on-prem instance.
+SharePoint server graph connector allows users in your organization to search for content stored in on-premises SharePoint server or use the content in Copilot for specific use cases and scenarios. It crawls over Documents and site pages from the on-premises instance.
 
 > [!NOTE]
 > Active directory synchronization is a pre-requisite for enabling security trimming in SharePoint Server content search.
@@ -26,7 +26,7 @@ The SharePoint on-prem graph connector allows users in your organization to sear
 ## Capabilities
 
 - Uses the authenticated account to crawl SharePoint documents and web-pages along with permissions.
-- Users that do not have permissions on the items do not find the item in their Search or Copilot results.
+- Users that don't have permissions on the items don't find the item in their Search or Copilot results.
 - Lists all available site collections available that the users can choose to include for indexing.
 - Use exclusion feature to exclude sites from indexing.
 - Enable users to utilize connector content for Copilot queries and prompts. Here are some of capabilities:
@@ -43,11 +43,11 @@ The SharePoint on-prem graph connector allows users in your organization to sear
 
 ### Install the Graph connector agent
 
-To index your SharePoint on-prem content, you must install and register the Graph connector agent. See [Install Graph Connector Agent](graph-connector-agent.md) to learn more. The Graph connector agent can be installed on the same machine as the SharePoint server or on a machine which has access to the SharePoint on-prem server.
+To index your SharePoint on-premises content, you must install and register Graph Connector Agent. See [Install Graph Connector Agent](graph-connector-agent.md) to learn more. Graph Connector Agent can be installed on the same machine as the SharePoint server or on a machine which has access to the SharePoint on-premises server.
 
-Each source (SharePoint web application) can be configured in one connection. One Graph Connector Agent can be used to source content from multiple connections of SharePoint on-prem sources. It is advised to limit the number of connections to an agent to three sources, to ensure an optimal ingestion rate.
+Each source (SharePoint web application) can be configured in one connection. One Graph Connector Agent can be used to source content from multiple connections of SharePoint on-premises sources. It's advised to limit the number of connections to an agent to three sources, to ensure an optimal ingestion rate.
 
-User should have full control access to the SharePoint server or should be a farm admin. Items which the user does not have permission are skipped.
+User should have full control access to the SharePoint server or should be a farm admin. Items which the user doesn't have permission are skipped.
 
 ## Mandatory and optional settings
 
@@ -55,7 +55,7 @@ To get you quickly started with Microsoft Graph connectors, the steps in the set
 
 **Mandatory settings** - Default setup screen that you see when you enter the setup flow. You must provide inputs for these fields to create the connection. The inputs (connection name, data source settings, etc.) vary based on your organization's context and use case.
 
-**Custom Setup (optional settings)** - Custom setup has advanced configuration steps for super users. The steps are optional and for your convenience, the settings in the setup process are preconfigured with default values based on the most common selections made by admins. You can choose to accept the default values or modify them to suit your organization's needs.
+**Custom Setup (optional settings)** - Custom setup has advanced configuration steps for super users. The steps are optional and for your convenience, the settings in the setup process are pre-configured with default values based on the most common selections made by admins. You can choose to accept the default values or modify them to suit your organization's needs.
 
 ## Get started
 
@@ -73,7 +73,7 @@ A display name is a user facing name in Copilot. Choose the right display name f
 
 Enter the URL for SharePoint site/site collection in the format https://\{domain}/sites/{site-name}. The connector identifies the site url and lists all site collections present in that web application. Admins can choose from these site collections to index the content.
 
-### 3. Select the Graph Connector Agent
+### 3. Select Graph Connector Agent
 
 Select from the list of available Graph Connector Agents registered to your tenant.
 
@@ -92,13 +92,13 @@ Before using Entra ID based authentication method, ensure the following prerequi
 
 - Microsoft Entra ID based authentication is supported for Graph Connector Agent versions 3.1.2.0 and above. Upgrade your agent before proceeding. See [Install Graph Connector Agent](graph-connector-agent.md) to learn more.
 - Microsoft Entra ID based authentication is supported only for SharePoint Server Edition. Take the path released in November 2024 (patch 16.0.17928.20238) or later from [SharePoint Updates](https://learn.microsoft.com/officeupdates/sharepoint-updates).
-- You will need to set up OpenID Connect (OIDC) with Microsoft Entra ID. Hence, ensure that SharePoint must use HTTPS as OpenID Connect (OIDC) step requires HTTPS.
+- You'll need to set up OpenID Connect (OIDC) with Microsoft Entra ID. Hence, ensure that SharePoint must use HTTPS as OpenID Connect (OIDC) step requires HTTPS.
 
 ##### Steps
 
 - [Download](https://www.microsoft.com/en-us/download/details.aspx?id=47594) Microsoft Entra ID Connect.
 - Follow [steps](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-roadmap#install-azure-ad-connect) to install Microsoft Entra ID Connect.
-- Setup and enable OpenID Connect (OIDC) with Microsoft Entra ID using the steps [here](https://learn.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/set-up-oidc-auth-in-sharepoint-server-with-msaad). This step will require you to setup third party application in your Azure portal. Ensure that you have admin rights to perform this step.
+- Set up and enable OpenID Connect (OIDC) with Microsoft Entra ID using the steps [here](https://learn.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/set-up-oidc-auth-in-sharepoint-server-with-msaad). This step will require you to set up third party application in your Azure portal. Ensure that you have admin rights to perform this step.
 
 ###### Configure "Expose an API"
 
@@ -133,13 +133,13 @@ Once the connection creation is successful, it starts syncing the content. At th
 
 [![Screenshot that shows success screen.](media/sharepoint-server/successscreen.png)](media/sharepoint-server/successscreen.png#lightbox)
 
-## Custom Setup
+## Custom Set up
 
-Custom setup is for those admins who want to edit the default values for settings. Once you click on the "Custom Setup" option, you see three more tabs - Users, Content, and Sync.
+Custom set up is for those admins who want to edit the default values for settings. Once you click on the "Custom Set up" option, you see three more tabs - Users, Content, and Sync.
 
-If you edit any connection, it always opens in a custom setup window.
+If you edit any connection, it always opens in a custom set up window.
 
-[![Screenshot that shows custom setup window.](media/sharepoint-server/customsetup.png)](media/sharepoint-server/customsetup.png#lightbox)
+[![Screenshot that shows custom set up window.](media/sharepoint-server/customsetup.png)](media/sharepoint-server/customsetup.png#lightbox)
 
 ### Users
 
@@ -153,19 +153,19 @@ The below options are available.
 > [!NOTE]
 > Graph Connectors support Users, Security Groups and Distribution Lists. However, the data source (SharePoint Server) does not support Distribution Lists as Access Control Lists. If there are nested distribution lists, members of those distribution lists may also get access to content through Graph connectors.
 
-The default and preferred option is the one where connector honors the data source permissions and only allowed users can see the results. You are free to change it to "Everyone" if you want to make it available for everyone in the organization.
+The default and preferred option is the one where connector honors the data source permissions and only allowed users can see the results. You're free to change it to "Everyone" if you want to make it available for everyone in the organization.
 
 [![Screenshot that shows users tab](media/sharepoint-server/userstabsp.png)](media/sharepoint-server/userstabsp.png#lightbox)
 
-The SharePoint on-prem connector supports existing Access Controlled List on given items. Indexed data appears in the search results and is visible to users who have permission to view it. Microsoft 365 experiences understand and honor Entra Id permissions. To support Access Controlled Lists on items, we require that Active Directory identities and Entra Identities are synced.
+The SharePoint on-premises connector supports existing Access Controlled List on given items. Indexed data appears in the search results and is visible to users who have permission to view it. Microsoft 365 experiences understand and honor Entra Id permissions. To support Access Controlled Lists on items, we require that Active Directory identities and Entra Identities are synced.
 
 ### Content
 
 #### Add site urls to exclude from indexing
 
-Add the URLs of the sites you want to exclude from indexing. Exclusion rules work at the site or subsite level. Add site URLs to exclude them from crawling. Do not add URLs of site contents. If the URL contains site contents such as documents, it is not be honored. To exclude all site contents or subsites that start from these URLs, use * at the end of the URL.
+Add the URLs of the sites you want to exclude from indexing. Exclusion rules work at the site or sub-site level. Add site URLs to exclude them from crawling. Don't add URLs of site contents. If the URL contains site contents such as documents, it isn't honored. To exclude all site contents or sub-sites that start from these URLs, use * at the end of the URL.
 
-If the URL ends with /\*, then all URLs prefixed with this URL are excluded from crawl. Example, abc.com/private/* excludes abc.com/private/terms.html and all content inside "/private". But, if you provide abc.com/private/terms.html as the URL to exclude, it is not honored as exclusion rules work at site or subsite level.
+If the URL ends with /\*, then all URLs prefixed with this URL are excluded from crawl. Example, abc.com/private/* excludes abc.com/private/terms.html and all content inside "/private". But, if you provide abc.com/private/terms.html as the URL to exclude, it is not honored as exclusion rules work at site or sub-site level.
 
 [![Screenshot that shows exclusion rules.](media/sharepoint-server/exclusionrulessp.png)](media/sharepoint-server/exclusionrulessp.png#lightbox)
 
@@ -189,7 +189,7 @@ Properties define what data is available for searching, querying, retrieving and
 | ObjectType | | The type of object as returned from the data source | Query, Retrieve, Search |
 | Url | | Item url | Retrieve |
 
-You can add custom properties defined in your sites to better manage the search or Copilot outcomes for your users. To add the custom property, click "Add Property" where you need to specify the exact string from the data source. To configure a custom property, you define a property name and specify a data type (String, StringCollection, DateTime, Boolean, Int64, and Double). Custom properties match the custom columns in SharePoint. Be careful when specifying property names as the connector ignores any property names that do not match with any existing properties during crawling. To avoid any issues, double check property names to ensure they are spelled correctly.
+You can add custom properties defined in your sites to better manage the search or Copilot outcomes for your users. To add the custom property, click "Add Property" where you need to specify the exact string from the data source. To configure a custom property, you define a property name and specify a data type (String, StringCollection, DateTime, Boolean, Int64, and Double). Custom properties match the custom columns in SharePoint. Be careful when specifying property names as the connector ignores any property names that don't match with any existing properties during crawling. To avoid any issues, double check property names to ensure they're spelled correctly.
 
 > [!NOTE]
 > Currently a total of 128 properties are supported. If you are selecting multiple site collections in a single connection, only default properties are supported. If you want to support custom properties defined in a site, create a different connection and add custom properties for that site.
@@ -198,7 +198,7 @@ You can add custom properties defined in your sites to better manage the search 
 
 The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more information, see [refresh settings](configure-connector.md#step-8-refresh-settings).
 
-The default values setup for the connector are:
+Default values of refresh interval:
 
 | Sync | Description |
 |---|---|
