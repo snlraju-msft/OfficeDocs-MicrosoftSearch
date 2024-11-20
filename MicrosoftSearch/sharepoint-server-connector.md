@@ -79,12 +79,39 @@ Select from the list of available Graph Connector Agents registered to your tena
 
 ### 4. Authentication
 
-Choose the authentication type from the drop-down menu of options. Currently supported options are Basic and Windows. You need to provide the Username and Password for the SharePoint site.
+Choose the authentication type from the drop-down menu of options. Currently supported options are Basic, Windows and Microsoft Entra ID.
 
 > [!NOTE]
 > Use Domain\username format in username to authenticate to the SharePoint server instance using the Windows option.
 
 To authenticate with the provided credentials, you need to click on Sign-in to load the list of available site collections.
+
+#### Microsoft Entra ID based authentication for Microsoft SharePoint Server Graph Connector
+
+Before using Entra ID based authentication method, ensure the following prerequisites are met:
+
+- Microsoft Entra ID based authentication is supported for Graph Connector Agent versions 3.1.2.0 and above. Upgrade your agent before proceeding. See [Install Graph Connector Agent](graph-connector-agent.md) to learn more.
+- Microsoft Entra ID based authentication is supported only for SharePoint Server Edition. Take the path released in November 2024 (patch 16.0.17928.20238) or later from [SharePoint Updates](https://learn.microsoft.com/officeupdates/sharepoint-updates).
+- You will need to set up OpenID Connect (OIDC) with Microsoft Entra ID. Hence, ensure that SharePoint must use HTTPS as OpenID Connect (OIDC) step requires HTTPS.
+
+##### Steps
+
+- [Download](https://www.microsoft.com/en-us/download/details.aspx?id=47594) Microsoft Entra ID Connect.
+- Follow [steps](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-roadmap#install-azure-ad-connect) to install Microsoft Entra ID Connect.
+- Setup and enable OpenID Connect (OIDC) with Microsoft Entra ID using the steps [here](https://learn.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/set-up-oidc-auth-in-sharepoint-server-with-msaad). This step will require you to setup third party application in your Azure portal. Ensure that you have admin rights to perform this step.
+
+###### Configure "Expose an API"
+
+- Go to "Expose an API" tab from the left hand navigation pane. Make sure the application ID uri matches your sharepoint server URL.
+
+[![Screenshot that shows expose an api configuration.](media/sharepoint-server/exposeanapi.png)](media/sharepoint-server/exposeanapi.png#lightbox)
+
+- Click "Add a scope", enter user_impersonation for scope name, admin consent display name, and admin consent description.
+- Click "Add a client application", enter GCA's client id cb15c983-0c91-416f-8dc0-6c0e1de4ed42
+
+[![Screenshot that shows how to add client application](media/sharepoint-server/addclientappgca.png)](media/sharepoint-server/addclientappgca.png#lightbox)
+
+- Check user_impersonation scope
 
 ### 5. Select Site Collections
 
