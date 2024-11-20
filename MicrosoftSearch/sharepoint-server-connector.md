@@ -30,9 +30,9 @@ SharePoint server graph connector allows users in your organization to search fo
 - Lists all available site collections available that the users can choose to include for indexing.
 - Use exclusion feature to exclude sites from indexing.
 - Enable users to utilize connector content for Copilot queries and prompts. Here are some of capabilities:
-  - Ask questions around the content of the documents. Example, What is the current sales projections mentioned in the file Sales_Report.doc.
-  - Summarize the content of documents. Example, Summarize the file Sales_Report.doc.
-  - Create content using existing documents. Example, Create a FAQs document to be shared with sales personnel using file Sales_Report.doc
+  - Ask questions around the content of the documents. Example, What is the current sales projections mentioned in the file *Sales_Report.doc*.
+  - Summarize the content of documents. Example, summarize the file *Sales_Report.doc*.
+  - Create content using existing documents. Example, Create a FAQs document to be shared with sales personnel using file *Sales_Report.doc*.
 
 ## Limitations
 
@@ -59,11 +59,11 @@ To get you quickly started with Microsoft Graph connectors, the steps in the set
 
 ## Get started
 
-[Add the SharePoint Server Microsoft Graph connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add)
+[Add the SharePoint Server Microsoft Graph connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add).
 
-(For more information, see general [setup instructions](./configure-connector.md))
+For more information, see general [setup instructions](./configure-connector.md).
 
-[![Screenshot that shows connection creation screen for Microsoft Graph Connector for SharePoint Server.](media/sharepoint-server/firstscreen.png)](media/sharepoint-server/firstscreen.png#lightbox)
+[![Screenshot that shows connection creation screen for Microsoft Graph Connector for SharePoint Server.](media/sharepoint-server/firstscreen.png)](media/sharepoint-server/firstscreen.png#lightbox).
 
 ### 1. Display name
 
@@ -91,27 +91,27 @@ To authenticate with the provided credentials, you need to click on Sign-in to l
 Before using Entra ID based authentication method, ensure the following prerequisites are met:
 
 - Microsoft Entra ID based authentication is supported for Graph Connector Agent versions 3.1.2.0 and above. Upgrade your agent before proceeding. See [Install Graph Connector Agent](graph-connector-agent.md) to learn more.
-- Microsoft Entra ID based authentication is supported only for SharePoint Server Edition. Take the path released in November 2024 (patch 16.0.17928.20238) or later from [SharePoint Updates](https://learn.microsoft.com/officeupdates/sharepoint-updates).
+- Microsoft Entra ID based authentication is supported only for SharePoint Server Edition. Take the path released in November 2024 (patch 16.0.17928.20238) or later from [SharePoint Updates](/officeupdates/sharepoint-updates).
 - You'll need to set up OpenID Connect (OIDC) with Microsoft Entra ID. Hence, ensure that SharePoint must use HTTPS as OpenID Connect (OIDC) step requires HTTPS.
 
 ##### Steps
 
-- [Download](https://www.microsoft.com/download/details.aspx?id=47594) Microsoft Entra ID Connect.
-- Follow [steps](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-roadmap#install-azure-ad-connect) to install Microsoft Entra ID Connect.
-- Set up and enable OpenID Connect (OIDC) with Microsoft Entra ID using the steps [here](https://learn.microsoft.com/sharepoint/security-for-sharepoint-server/set-up-oidc-auth-in-sharepoint-server-with-msaad). This step will require you to set up third party application in your Azure portal. Ensure that you have admin rights to perform this step.
+1. [Download](https://www.microsoft.com/download/details.aspx?id=47594) Microsoft Entra ID Connect.
+1. Follow [steps](/entra/identity/hybrid/connect/how-to-connect-install-roadmap) to install Microsoft Entra ID Connect.
+1. Set up and enable OpenID Connect (OIDC) with Microsoft Entra ID using the steps [here](/sharepoint/security-for-sharepoint-server/set-up-oidc-auth-in-sharepoint-server-with-msaad). This step will require you to set up third party application in your Azure portal. Ensure that you have admin rights to perform this step.
 
 ###### Configure "Expose an API"
 
 - Go to "Expose an API" tab from the left hand navigation pane. Make sure the application ID uri matches your sharepoint server URL.
 
-[![Screenshot that shows expose an api configuration.](media/sharepoint-server/exposeanapi.png)](media/sharepoint-server/exposeanapi.png#lightbox)
+  [![Screenshot that shows expose an api configuration.](media/sharepoint-server/exposeanapi.png)](media/sharepoint-server/exposeanapi.png#lightbox)
 
 - Click "Add a scope", enter user_impersonation for scope name, admin consent display name, and admin consent description.
 - Click "Add a client application", enter GCA's client id cb15c983-0c91-416f-8dc0-6c0e1de4ed42
 
-[![Screenshot that shows how to add client application](media/sharepoint-server/addclientappgca.png)](media/sharepoint-server/addclientappgca.png#lightbox)
+  [![Screenshot that shows how to add client application](media/sharepoint-server/addclientappgca.png)](media/sharepoint-server/addclientappgca.png#lightbox)
 
-- Check user_impersonation scope
+- Check user_impersonation scope.
 
 ### 5. Select Site Collections
 
