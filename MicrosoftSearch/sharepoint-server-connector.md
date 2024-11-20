@@ -96,9 +96,9 @@ Before using Entra ID based authentication method, ensure the following prerequi
 
 ##### Steps
 
-- [Download](https://www.microsoft.com/en-us/download/details.aspx?id=47594) Microsoft Entra ID Connect.
+- [Download](https://www.microsoft.com/download/details.aspx?id=47594) Microsoft Entra ID Connect.
 - Follow [steps](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-roadmap#install-azure-ad-connect) to install Microsoft Entra ID Connect.
-- Set up and enable OpenID Connect (OIDC) with Microsoft Entra ID using the steps [here](https://learn.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/set-up-oidc-auth-in-sharepoint-server-with-msaad). This step will require you to set up third party application in your Azure portal. Ensure that you have admin rights to perform this step.
+- Set up and enable OpenID Connect (OIDC) with Microsoft Entra ID using the steps [here](https://learn.microsoft.com/sharepoint/security-for-sharepoint-server/set-up-oidc-auth-in-sharepoint-server-with-msaad). This step will require you to set up third party application in your Azure portal. Ensure that you have admin rights to perform this step.
 
 ###### Configure "Expose an API"
 
