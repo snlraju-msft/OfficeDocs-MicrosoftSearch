@@ -1,7 +1,7 @@
 ---
 ms.date: 11/16/2024
 title: "Confluence Cloud Microsoft Graph connector"
-ms.author: mansipakhale10
+ms.author: mansipakhale
 author: mansipakhale
 manager: harshkum
 audience: Admin
