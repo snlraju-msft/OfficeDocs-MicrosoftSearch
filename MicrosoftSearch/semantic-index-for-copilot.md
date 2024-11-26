@@ -28,7 +28,7 @@ Interactions with data in Microsoft Graph are based on keyword matching, persona
 
 ## How the semantic index helps manage your data
 
-Semantic index enhances the features of Microsoft 365 that allow you to find relevant content based on keywords, personal preferences, and social connections. It does this by creating vectorized indices. A vector is a numerical representation of a word, image pixel, or other data point. The vector is arranged or mapped with close numbers placed in proximity to one another to represent similarity. Vectors are stored in multi-dimensional spaces where semantically similar data points are clustered together in the vector space, enabling Microsoft 365 to handle a broader set of search queries beyond “exact match."
+Semantic index enhances the Microsoft 365 Copilot experience in both Business Chat and in the Microsoft 365 apps. It supports an enhanced content grounding and conceptual understanding of your online data that is automatically enabled by Microsoft. It does this by creating vectorized indices. A vector is a numerical representation of a word, image pixel, or other data point. The vector is arranged or mapped with close numbers placed in proximity to one another to represent similarity. Vectors are stored in multi-dimensional spaces where semantically similar data points are clustered together in the vector space, enabling Microsoft 365 to handle a broader set of search queries beyond “exact match."
 
 In practical terms, this means that Microsoft 365 services such as Microsoft 365 Copilot can:
 
@@ -88,6 +88,9 @@ The semantic index supports indexing of user mailbox and file types listed in th
 | OneNote files (one)       | Supported      | Supported        |
 | Graph Connector data      | Not applicable | Supported        |
 
+>[!NOTE]
+>Files up to 512MB are now supported for PDF, PPTX, and DOCX extensions. This enhancement allows Copilot users to effectively analyze, summarize, and generate insights from these large files.
+
 ## Index updates
 
 When Semantic index completes indexing for a customer for the first time, documents created by users are indexed in near real-time in the user's mailbox. New documents that are added to SharePoint Online sites that are accessible, via site inheritance, by two or more users are indexed daily. When an indexed user and tenant level document is updated, the changes are immediately indexed.
@@ -107,9 +110,9 @@ There are times when organizations without Microsoft Purview Data Loss Preventio
 1. Select **View all site settings** to bring up the Site Settings page.
 1. Select **Search and offline availability** under the **Search** category and select **No** for **Allow this site to appear in search results** to exclude it from both Microsoft Search and the semantic index search. This can also be performed with PowerShell for multiple sites.
 
-:::image type="content" source="media/semantic-index-settings.png" alt-text="Screenshot showing the settings for excluding SharePoint online sites." lightbox="media/semantic-index-settings.png":::
+    :::image type="content" source="media/semantic-index-settings.png" alt-text="Screenshot showing the settings for excluding SharePoint online sites." lightbox="media/semantic-index-settings.png":::
 
-Microsoft Search and the semantic index support the exclusion of SharePoint online content from the tenant-level index only. There's no option to exclude results from Microsoft Search only or the semantic index only; actions apply to both at the same time.
+    Microsoft Search and the semantic index support the exclusion of SharePoint online content from the tenant-level index only. There's no option to exclude results from Microsoft Search only or the semantic index only; actions apply to both at the same time.
 
 ## Configuring item insights
 
