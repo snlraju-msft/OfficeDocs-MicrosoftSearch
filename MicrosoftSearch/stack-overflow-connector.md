@@ -1,7 +1,7 @@
 --- 
 title: "Stack Overflow Connector for Microsoft Search and Copilot" 
 ms.author: rerabo
-author: rerabo
+author: vivg
 manager: igala
 audience: Admin
 ms.audience: Admin 
