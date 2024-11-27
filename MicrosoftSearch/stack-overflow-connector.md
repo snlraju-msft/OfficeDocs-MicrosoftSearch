@@ -40,8 +40,8 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 ## Prerequisites
 - You must be a search admin for your organization's Microsoft 365 tenant.
 - To create a new connection, use your organization's Stack Overflow Instance URL.
-   - For Stack Overflow for Teams **Enterprise**, the instance URL is the home page URL, typically `https://stackoverflow.<company_name>.com`.
-   - For Stack Overflow for Teams **Business**, use the API URL, which usually looks like `https://api.stackoverflowteams.com/v3/teams/<company_name>`.
+   - For Stack Overflow for Teams **Enterprise**, the instance URL is the home page URL, typically https://stackoverflow.<company_name>.com.
+   - For Stack Overflow for Teams **Business**, use the API URL, which usually looks like https://api.stackoverflowteams.com/v3/teams/<company_name>
 
 ## Get Started
 
