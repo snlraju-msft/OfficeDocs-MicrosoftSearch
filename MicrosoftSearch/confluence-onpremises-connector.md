@@ -36,13 +36,13 @@ This article is intended for Microsoft 365 administrators and who are responsibl
 
 >[!IMPORTANT]
    >
-   > * The Confluence Global Administrator should create the connection </br>
+   > The Confluence Global Administrator should create the connection </br>
    > 
    > **Who is the confluence global administrator?**
    > A Confluence Administrator is a user who has been granted full administrative permissions. </br>
-   >> * To check this: Go to **Administration** > **General Configuration** > **Global Permissions** </br>
-   >> * Look for the group **Confluence-administrators**, which has all permissions enabled, including - Can Use, Personal Space, Create Space(s), Confluence Administrator, and System Administrator.
-   >> * Any user creating a token must be a member of this group
+   > * To check this: Go to **Administration** > **General Configuration** > **Global Permissions** </br>
+   > * Look for the group **Confluence-administrators**, which has all permissions enabled, including - Can Use, Personal Space, Create Space(s), Confluence Administrator, and System Administrator.
+   > * Any user creating a token must be a member of this group
 
 ## Get Started
 
