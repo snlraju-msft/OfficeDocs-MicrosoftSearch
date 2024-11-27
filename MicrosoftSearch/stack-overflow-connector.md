@@ -40,16 +40,16 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 ## Prerequisites
 - You must be a search admin for your organization's Microsoft 365 tenant.
 - To create a new connection, use your organization's Stack Overflow Instance URL.
-   - For Stack Overflow for Teams **Enterprise**, the instance URL is the home page URL, typically https://stackoverflow.<company_name>.com.
-   - For Stack Overflow for Teams **Business**, use the API URL, which usually looks like https://api.stackoverflowteams.com/v3/teams/<company_name>
-
+   - For Stack Overflow for Teams **Enterprise**, the instance URL is the home page URL, typically `https://stackoverflow.<company_name>.com`. 
+   - For Stack Overflow for Teams **Business**, use the API URL, which usually looks like `https://api.stackoverflowteams.com/v3/teams/<company_name>`.
+     
 ## Get Started
 
 ### 1. Display name 
 A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a content source filter. A default value is present for this field, but you can customize it to a name that users in your organization recognize.
 
 ### 2. Stack Overflow URL
-Use your organization's Stack Overflow Instance URL. For Stack Overflow for Teams **Enterprise**, this will be the home page URL, typically https://stackoverflow.<company_name>.com. For Stack Overflow for Teams **Business**, use the API URL, which usually looks like https://api.stackoverflowteams.com/v3/teams/<company_name>.
+Use your organization's Stack Overflow Instance URL. For Stack Overflow for Teams **Enterprise**, this will be the home page URL, typically `https://stackoverflow.<company_name>.com`. For Stack Overflow for Teams **Business**, use the API URL, which usually looks like `https://api.stackoverflowteams.com/v3/teams/<company_name>`.
 
 ### 3. Authentication Type
 To authenticate and sync content from Stack Overflow, choose one of the two supported methods:<br>
