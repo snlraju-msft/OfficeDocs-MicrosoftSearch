@@ -35,12 +35,12 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 - The Stack Overflow Graph Connector supports Stack Overflow for Teams **Business** and **Enterprise**.
 
 ## Limitations
-- The connector does not support [private teams](https://stackoverflowteams.help/articles/9736637-enable-and-set-up-private-teams) in Stack Overflow for Teams **Enterprise**.
+- The connector doesn't support [private teams](https://stackoverflowteams.help/articles/9736637-enable-and-set-up-private-teams) in Stack Overflow for Teams **Enterprise**.
 
 ## Prerequisites
 - You must be a search admin for your organization's Microsoft 365 tenant.
 - To create a new connection, use your organization's Stack Overflow Instance URL.
-   - For Stack Overflow for Teams **Enterprise**, this will be the home page URL, typically https://stackoverflow.<company_name>.com.
+   - For Stack Overflow for Teams **Enterprise**, the instance URL is the home page URL, typically https://stackoverflow.<company_name>.com.
    - For Stack Overflow for Teams **Business**, use the API URL, which usually looks like https://api.stackoverflowteams.com/v3/teams/<company_name>
 
 ## Get Started
@@ -63,7 +63,7 @@ At this point, you're ready to create the connection for Stack Overflow. You can
 
 ## Custom Setup
 
-Custom setup is for admins who want to edit the default values for settings. Once you click on the 'Custom Setup' option, you will see three other tabs: Users, Content, and Sync.
+Custom setup is for admins who want to edit the default values for settings. Once you click on the 'Custom Setup' option, you see three other tabs: Users, Content, and Sync.
 
 ### Users
 
@@ -75,7 +75,7 @@ Currently, questions and answers from your organization’s Stack Overflow insta
 
 **Manage properties**
 
-Here, you can add or remove available properties from your Stack Overflow data source, assign a schema to the property (define whether a property is searchable, queryable, retrievable or refinable), change the semantic label and add an alias to the property. Properties that are selected by default are listed below:
+Here, you can add or remove available properties from your Stack Overflow data source, assign a schema to the property (define whether a property is searchable, queryable, retrievable, or refinable), change the semantic label and add an alias to the property. Properties that are selected by default are listed below:
 
 **Source Property** | **Semantic Label** |**Description**| **Schema**
 --- | ---- | --- | ---
@@ -96,7 +96,7 @@ Title | Title | Post title | Query, Retrieve, Search
 
 ### Sync
 
-The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more information, see [refresh settings](configure-connector.md#step-8-refresh-settings).
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data Sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md). 
