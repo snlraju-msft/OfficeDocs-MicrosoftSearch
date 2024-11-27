@@ -1,5 +1,5 @@
 ---
-ms.date: 02/02/2022
+ms.date: 20/11/2024
 title: "Confluence On-premises Microsoft Graph connector (preview)"
 ms.author: mansipakhale
 author: Mansipakhale10
