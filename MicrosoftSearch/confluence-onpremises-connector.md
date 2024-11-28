@@ -1,5 +1,5 @@
 ---
-ms.date: 02/02/2022
+ms.date: 11/28/2024
 title: "Confluence On-premises Microsoft Graph connector (preview)"
 ms.author: mansipakhale
 author: Mansipakhale10
@@ -33,6 +33,16 @@ This article is intended for Microsoft 365 administrators and who are responsibl
 1. **Install the GCA [Graph connector agent]**: Ensure that the GCA is installed on a Windows machine within the same network as the data source, accessible via the Confluence URL. You can find more information [Microsoft Graph connector agent](./graph-connector-agent.md)
 2. **Install plugin**: Download and install the confluence on-prem plugin from Atlassian marketplace on your confluence setup. Get the plugin from [Microsoft Graph Connectors Confluence On-prem Plugin | Atlassian Marketplace](https://marketplace.atlassian.com/apps/1234846?tab=reviews&hosting=datacenter)
 3. **Authentication**: Ensure that you have authentication credentials with right access. 
+
+>[!IMPORTANT]
+   >
+   > The Confluence Global Administrator should create the connection </br>
+   > 
+   > **Who is the confluence global administrator?**
+   > A Confluence Administrator is a user who has been granted full administrative permissions. </br>
+   > * To check this: Go to **Administration** > **General Configuration** > **Global Permissions** </br>
+   > * Look for the group **Confluence-administrators**, which has all permissions enabled, including - Can Use, Personal Space, Create Space(s), Confluence Administrator, and System Administrator.
+   > * Any user creating a token must be a member of this group
 
 ## Get Started
 
