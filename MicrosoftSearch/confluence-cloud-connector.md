@@ -1,8 +1,8 @@
 ---
-ms.date: 09/06/2021
+ms.date: 11/16/2024
 title: "Confluence Cloud Microsoft Graph connector"
-ms.author: kam1
-author: TheKarthikeyan
+ms.author: mansipakhale
+author: mansipakhale
 manager: harshkum
 audience: Admin
 ms.audience: Admin
@@ -15,47 +15,50 @@ search.appverid:
 - MOE150
 description: "Set up the Confluence Cloud Microsoft Graph connector for Microsoft Search and Microsoft 365 Copilot"
 ---
-<!---Previous ms.author: kam1 --->
 
-# Confluence Cloud Microsoft Graph connector
+# Confluence Cloud Microsoft Graph Connector
 
 The Confluence Cloud Microsoft Graph connector allows your organization to index Confluence content. After you configure the connector and index data from the Confluence site, end users can search for those contents in Microsoft Search and Microsoft 365 Copilot.
 
-This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors a Confluence Cloud Microsoft Graph connector. It supplements the general instructions provided in the [Set up Microsoft Graph connectors in the Microsoft 365 admin center](configure-connector.md) article. If you haven't already done so, read the entire article to understand the general setup process.
+This article is intended for Microsoft 365 administrators and who are responsible for configuring, running, and monitoring the Confluence Cloud Microsoft Graph connector. It supplements the general instructions provided in setup Microsoft Graph connectors in the Microsoft 365 admin center.
 
-Each step in the setup process is listed below along with either a note that indicates you should follow the general setup instructions OR other instructions that apply to only Confluence Cloud connector including information about [Troubleshooting](#troubleshooting) and [Limitations](#limitations).
+## Benefits
+- **Enhanced Search Capabilities**: Users can ask natural language questions about Wiki content in Copilot, such as:
+   - Summarize the architecture document </br>
+   - How to get access to a portal </br> 
+- **Semantic Search Support**: Users can perform natural language queries for accurate responses. </br>
 
-## Before you get started
+## Prerequisites
+1. You must be the admin for your organization's Microsoft 365 tenant and the admin for your organization's Confluence site.
+2. **Authentication**: Ensure that you have authentication credentials with right access. 
 
-You must be the admin for your organization's Microsoft 365 tenant and the admin for your organization's Confluence site.
+## Limitations
+- Doesn't index attachment files, or comments.
 
 >[!IMPORTANT]
 > * Atlassian is deprecating a set of Confluence cloud APIs (V1 version) and releasing new APIs (V2 version). You may read about their announcements [here](https://developer.atlassian.com/cloud/confluence/changelog/#CHANGE-864) or [here](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcommunity.developer.atlassian.com%2Ft%2Frfc-19-deprecation-of-confluence-cloud-rest-api-v1-endpoints%2F71752&data=05%7C01%7Cvivg%40microsoft.com%7Cb8d049f07c3544de6b2c08dbe98b2a02%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638360556187110970%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=DIw8xhEwulo59mAm8T0f0TTKvbtRr4tIMTMpQYgPDDQ%3D&reserved=0). Some of these deprecating v1 APIs are used by the connector for **OAuth connections** only. Hence, post this change your existing Confluence connection(s) may stop working. This change is scheduled for Jan’24.
 > * The change to migrate to new v2 APIs was released to all customers in **December 2023**. Post this release, your existing connections need to be reauthenticated. The new v2 APIs also require some more scopes (as compared to previous v1 APIs) which need to be provided during re-authentication. A new set of scopes required (complete list) – `read:group:confluence`, `read:user:confluence`, `read:content-details:confluence`, `Read:space:confluence`, `Read:permission:confluence`, `read:audit-log:confluence`, `read:content.metadata:confluence` and `read:page:confluence`.
 
-## Step 1: Add a connector in the Microsoft 365 admin center
+## Get Started
 
-[Add Confluence cloud Microsoft Graph connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Confluence&type=Confluence)
+### 1. Display name
 
-Follow the general [setup instructions](./configure-connector.md).
+A Display name is used to identify each reference in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a [content source filter](./custom-filters.md#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
 
-## Step 2: Name the connection
+### 2. Confluence Cloud URL
 
-Follow the general [setup instructions](./configure-connector.md).
+To connect to your Confluence site, use your site URL. A Confluence cloud site URL typically looks like *https://<organization_name>.atlassian.net/*. 
 
-## Step 3: Configure the connection settings
+### 3. Authentication type
 
-To connect to your Confluence site, use your site URL. A Confluence cloud site URL typically looks like *https://<organization_name>.atlassian.net/*. You can choose either Basic Authentication or OAuth 2.0 (recommended) to authenticate to your Confluence site.
-
+To authenticate and synchronize content from Confluence On-prem, choose **one of two** supported methods:<br> 
 >[!TIP]
 >Make sure the service **account has view access** to the Confluence content you want to index.
 
-### Basic Auth
-
+   **a. Basic authentication** <br>
 Enter your account's username (usually email ID) and API token to authenticate using basic auth. To learn more about generating an API token, refer to Atlassian's documentation on how to [manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
 
-### OAuth 2.0 (recommended)
-
+   **b. OAuth 2.0 (recommended)** <br> 
 Register an app in Confluence Cloud so that the Microsoft Search app and Microsoft 365 Copilot can access the instance. To learn more, see Atlassian Support documentation on how to [Enable OAuth 2.0](https://developer.atlassian.com/cloud/confluence/oauth-2-3lo-apps/#enabling-oauth-2-0--3lo-).
 
 The following steps provide guidance on how to register the app:
@@ -77,34 +80,40 @@ The following steps provide guidance on how to register the app:
 
 Complete the connection settings step using the **Client ID** and **Secret**.
 
-## Step 4: Select properties and filter data
+### 6. Rollout to limited audience
 
-In this step, you can add or remove available properties from your Confluence data source. Microsoft 365 has selected a few properties by default.
+Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, click [here](./staged-rollout-for-graph-connectors.md).
 
-*The list of properties that you select here, can impact how you can filter, search and view your results in Microsoft 365 Copilot.*
+At this point, you are ready to create the connection for ServiceNow Knowledge. You can click on the "Create" button and the Microsoft Graph connector starts indexing page from your Confluence account.
 
-Source property | Label | Description
-|:--- |:--- |:---|
-Authors   | `authors` | Name of people who participated/collaborated on the item in the data source.|
-CreatedByName  | `createdBy` | Name of the person who most recently edited the item in the data source.|
-CreatedOn  | `createdDateTime` | Date and time that the item was created in the data source.|
-IconUrl  | `iconUrl` | The associated icon URL of the item.|
-Title   | `title` | The title of the item that you want to be shown in search and other experiences.|
-UpdatedByName  | `lastModifiedBy` | Name of the person who most recently edited the item in the data source.|
-UpdatedOn  | `lastModifiedDateTime` | Date and time the item was last modified in the data source.|
-Url  | `url` | The target URL of the item in the data source.
+For other settings, like Access Permissions, Data inclusion rules, Schema, Crawl frequency etc., We set defaults based on what works best with Confluence data. The default values are as follows:
 
-With a Confluence Query Language (CQL) string, you can specify conditions for syncing pages. It's like a **Where** clause in a **SQL Select** statement. For example, you can choose to index only the pages that have been modified in the last two years. To learn about creating your own query string, see [Advanced Searching using CQL](https://developer.atlassian.com/server/confluence/advanced-searching-using-cql/). All blogs and pages are indexed by the connector by default.
+|**Users** |&nbsp;|
+|----|---|
+|Access permissions|_Only people with access to content in Data source._|
+|Map Identities|_Data source identities mapped using Microsoft Entra IDs._|
 
->[!TIP]
->You may use the CQL filter to index **content modified after a certain time** using, *lastModified >= "2018/12/31"*
+|**Content**|&nbsp;|
+|---|---|
+|Include/Exclude space|_All_|
+|Manage Properties|_To check default properties and their schema, click here_|
 
-Use the preview results button to verify the sample values of the selected properties and CQL string.
+|**Sync**|&nbsp;|
+|---|---|
+|Incremental Crawl|_Frequency: Every 15 mins_|
+|Full Crawl|_Frequency: Every Day_|
 
-## Step 5: Manage search permissions
+If you want to edit any of these values, you need to choose the `Custom Setup` option.
 
-Confluence Cloud Microsoft Graph connector supports search permissions visible to **Everyone** or **Only people with access to this data source**. If you choose **Everyone**, indexed data appears in the search results for all users. If you choose **Only people with access to this data source**, indexed data appears in the search results for users who have access to them.
+## Custom Setup
 
+Custom setup is for those admins who want to edit the default values for settings listed in the default table. Once you click on the `Custom Setup` option, you see three more tabs – Users, Content, and Sync.
+
+### Users
+
+**Access Permissions**
+
+Confluence Cloud Microsoft Graph connector supports search permissions visible to **Everyone** or **Only people with access to this data source**. If you choose **Everyone**, indexed data appears in the search results for all users. If you choose **Only people with access to this data source**, indexed data appears in the search results for users who have access to them. 
 In Confluence Cloud, security permissions for users and groups are defined using space permissions and page restrictions. Page-level restrictions, if present, take precedence over space permissions.
 
 If there are no page restrictions, the connector checks for space-level permissions - 
@@ -128,41 +137,50 @@ To identify which option is suitable for your organization:
 > * If you chose "Non-AAD" for the identity type see [Map your non-Azure AD Identities](map-non-aad.md) for instructions on mapping the identities. You can use this option to provide the mapping regular expression from email ID to UPN.
 > * Updates to users or groups governing access permissions are synced in full crawls only. Incremental crawls do not currently support the processing of updates to permissions.
 
-## Step 6: Assign property labels
 
-Follow the general [setup instructions](./configure-connector.md).
+### Content
 
-## Step 7: Manage schema
+**Include or exclude data which you want to index**
 
-Follow the general [setup instructions](./configure-connector.md).
+With a Confluence Query Language (CQL) string, you can specify conditions for syncing pages. It's like a **Where** clause in a **SQL Select** statement. For example, you can choose to index only the pages that have been modified in the last two years. To learn about creating your own query string, see [Advanced Searching using CQL](https://developer.atlassian.com/server/confluence/advanced-searching-using-cql/). All blogs and pages are indexed by the connector by default.
 
-## Step 8: Choose refresh settings
+>[!TIP]
+>You may use the CQL filter to index **content modified after a certain time** using, *lastModified >= "2018/12/31"*
 
-Follow the general [setup instructions](./configure-connector.md).
+Use the preview results button to verify the sample values of the selected properties and CQL string.
 
->[!NOTE]
->For access permission updates, only the full crawl schedule is applied.
+**Manage Properties**
 
-## Step 9: Review connection
-
-Follow the general [setup instructions](./configure-connector.md).
-
-After publishing the connection, you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](/microsoftsearch/configure-connector#next-steps-customize-the-search-results-page).
-
-## Step 10: Set up search result page
-
-After publishing the connection, you need to customize the search results page with verticals and result types. To learn about customizing search results, review how to [manage verticals](manage-verticals.md) and [result types](manage-result-types.md).
-You may also use the [sample result layout](confluence-cloud-connector-result-layout.md) for the Confluence cloud connector. Copy-paste the result layout JSON to get started.
+In this step, you can add or remove available properties from your Confluence data source. Microsoft 365 has selected a few properties by default.
+*The list of properties that you select here, can impact how you can filter, search and view your results in Microsoft 365 Copilot.*
 
 
-## Limitations
+Source property | Label | Description
+|:--- |:--- |:---|
+Authors   | `authors` | Name of people who participated/collaborated on the item in the data source.|
+CreatedByName  | `createdBy` | Name of the person who most recently edited the item in the data source.|
+CreatedOn  | `createdDateTime` | Date and time that the item was created in the data source.|
+IconUrl  | `iconUrl` | The associated icon URL of the item.|
+Title   | `title` | The title of the item that you want to be shown in search and other experiences.|
+UpdatedByName  | `lastModifiedBy` | Name of the person who most recently edited the item in the data source.|
+UpdatedOn  | `lastModifiedDateTime` | Date and time the item was last modified in the data source.|
+Url  | `url` | The target URL of the item in the data source.
 
-The Confluence Cloud connector has the following known limitations in its latest release:
+**Preview Data**
 
-* Confluence Cloud connector does not index attachment files and comments.
-* Indexing server and data center deployments are released as separate connectors.
+Use the preview results button to verify selected properties and filters.
 
-## Troubleshooting
-After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md). You can find troubleshooting steps for commonly seen issues [here](troubleshoot-confluence-cloud-connector.md).
+### Sync
 
-If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/en-us/graph/support).
+The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](./configure-connector.md#step-8-refresh-settings).
+You can change the default values of refresh interval from here if you want to.
+
+### Review and Test your connection
+
+- For testing, you can choose [publish to limited audience](./staged-rollout-for-graph-connectors.md#modify-or-stop-staged-rollout)
+- Search and validate your indexed content and permissions using [Index browser](./connectors-index-search.md)
+- You may find answers to common questions in our [FAQ section](./frequently-asked-questions.md)
+
+For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](./configure-connector.md#step-11-customize-the-search-results-page).
+
+If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/graph/support).
