@@ -199,6 +199,10 @@ items:
           items:
           - name: Setup
             href: sharepoint-server-connector.md
+        - name: Stack Overflow
+          items:
+          - name: Setup
+            href: stack-overflow-connector.md
         - name: WordPress.org (on-prem)
           items:
           - name: Setup
