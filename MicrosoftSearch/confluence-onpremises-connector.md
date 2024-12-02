@@ -36,7 +36,7 @@ This article is intended for Microsoft 365 administrators and who are responsibl
 
 >[!IMPORTANT]
    >
-   > The Confluence Global Administrator should create the connection </br>
+   > **Recommended : The Confluence Global Administrator should create the connection** </br>
    > 
    > **Who is the confluence global administrator?**
    > A Confluence Administrator is a user who has been granted full administrative permissions. </br>
@@ -96,7 +96,9 @@ To authenticate and synchronize content from Confluence On-prem, choose **one of
   3. Select External application, and then choose Incoming as the direction. 
   4. Fill in the 
    - Redirect URL: `https://gcs.office.com/v1.0/admin/oauth/callback` 
-   - Scope: **Admin** or **Read**
+   - Scope: 
+     a) If you are a Confluence Global Administrator, either of the following scopes is supported: **Admin** or **Read**. </br>
+     b) If you are any other type of Confluence Administrator, please provide the **Admin** scope </br>
   5. Complete the connection settings step using the client ID and secret. 
 
 ### 6. Rollout to limited audience
