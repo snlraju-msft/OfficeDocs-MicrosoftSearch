@@ -96,9 +96,9 @@ To authenticate and synchronize content from Confluence On-prem, choose **one of
   3. Select External application, and then choose Incoming as the direction. 
   4. Fill in the 
    - Redirect URL: `https://gcs.office.com/v1.0/admin/oauth/callback` 
-   - Scope: 
+   - Scope: </br>
      a) If you are a Confluence Global Administrator, either of the following scopes is supported: **Admin** or **Read**. </br>
-     b) If you are any other type of Confluence Administrator, please provide the **Admin** scope </br>
+     b) If you are any other type of Confluence Administrator, provide the **Admin** scope </br>
   5. Complete the connection settings step using the client ID and secret. 
 
 ### 6. Rollout to limited audience
