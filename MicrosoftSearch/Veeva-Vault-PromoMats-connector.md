@@ -44,19 +44,13 @@ Before you create a Veeva Vault connector, ensure the following steps are comple
 
 ### Obtain Veeva Vault Administrator Credentials
 - You must have a Veeva Vault account with administrative privileges.
-- Credentials include a valid username, password, and API access enabled.
+- API access enabled.
 
 ### Set up API Access
 - Enable REST API access for your Veeva Vault instance. For more information, see [Veeva Vault API documentation](https://developer.veevavault.com/docs/).
 
-### Configure Access Permissions
-- Ensure user roles in Veeva Vault are correctly assigned. Only users with viewing permissions can access content via the connector.
-
 ### Verify the Veeva Vault URL
 - Obtain the correct URL of your Veeva Vault instance. The typical format is `https://<your-vault-domain>.veevavault.com`.
-
-### Decide the Scope of Data to be Indexed
-- Plan whether to crawl specific applications like PromoMats, QualityDocs, or RIM. Each application may require a separate connector depending on its data model.
 
 ## Set Up
 
@@ -67,8 +61,19 @@ Provide a display name for your connector in the Microsoft 365 Admin Center. Thi
 Enter the URL of your Veeva Vault instance. For example: `https://<your-vault-domain>.veevavault.com`.
 
 ### Authentication Details
-- **Basic Authentication**: Enter your Veeva Vault username and password.
-- **OAuth 2.0 Authentication**: Configure the OAuth client in your Veeva Vault admin portal and use the generated credentials.
+To configure the Veeva Vault - PromoMats connector, you must provide authentication credentials. The connector supports the following authentication methods:
+
+#### **1. Basic Authentication**
+- **Username**: The username associated with your Veeva Vault account.
+- **Password**: The password for the account. Ensure this credential is kept secure, as it will be used for authentication.
+
+#### **2. Azure AD Authentication**
+This method leverages Azure Active Directory (AAD) for secure and centralized identity management. Required fields include:
+- **Vault Session ID URL**: The URL endpoint for retrieving session tokens. Typically formatted as: `https://<your-vault-domain>.veevavault.com/api/v<version>/session`.
+- **Client ID**: The application ID for your Azure AD app registered for Veeva Vault.
+- **Client Secret**: The client secret associated with the Azure AD app. Ensure this is securely stored and accessible only to authorized personnel.
+
+**Important:** Ensure that the necessary configurations are made in both Azure AD and Veeva Vault admin settings to enable Azure AD authentication.
 
 ### Rollout to Limited Audience
 Deploy this connection to a limited group of users to validate indexing and access control functionality before a full rollout.
