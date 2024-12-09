@@ -18,7 +18,7 @@ ms.date: 12/05/2024
 
 # Salesforce Knowledge Microsoft Graph connector
 
-The Salesforce Knowledge Graph connector allows your organization to index articles from Salesforce Knowledge. After you configure the connector, end users can search for this in Microsoft Copilot and from any Microsoft Search client. 
+The Salesforce Knowledge Graph connector allows your organization to index articles from Salesforce Knowledge. After you configure the connector, end users can search for Knowledge articles from Salesforce in Microsoft Copilot and from any Microsoft Search client. 
 
 This documentation is for Microsoft 365 administrators or anyone who configures, runs, and monitors a Salesforce Knowledge Graph connector. 
 
@@ -34,7 +34,7 @@ This documentation is for Microsoft 365 administrators or anyone who configures,
 - Use [Semantic search in Copilot](semantic-index-for-copilot.md) to enable users to find relevant content based on keywords, personal preferences, and social connections.
 
 ## Limitations
-- The connector does not support ACLs (access control lists). All the data indexed using the Salesforce Knowledge connector is visible to all Microsoft 365 users in your tenant, accessible through Microsoft Search or Copilot.
+- The connector doesn't support ACLs (access control lists). All the data indexed using the Salesforce Knowledge connector is visible to all Microsoft 365 users in your tenant, accessible through Microsoft Search or Copilot.
 
 ## Prerequisites
 - You must be a search admin for your organization's Microsoft 365 tenant.
@@ -75,7 +75,7 @@ Here, you can add or remove available properties from your Salesforce Knowledge 
 --- | ---- | --- | ---
 ArticleId | | | Query, Retrieve 
 ArticleNumber | | The unique number automatically assigned to the article when it's created. | Query, Retrieve 
-ArticleType | | The type or category of the knowledge article (e.g., FAQ, Support Article, How-To). | Retrieve 
+ArticleType | | The type or category of the knowledge article (for example, FAQ, Support Article, How-To). | Retrieve 
 CondensedBody | | Includes the Full content or main body of the article | Retrieve, Search 
 CreatedById | | | Query, Retrieve, Search 
 CreatedByName | createdBy | The user who initially created the article. | Query, Retrieve, Search 
