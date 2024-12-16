@@ -67,9 +67,9 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
      | Category | Permission | Permission Level |
      | ------------ | ------------ | ------------ |
-     | Account Permissions | Email addresses | Read-only |
-     | Repository Permissions | Metadata | Read-only |
      | Repository Permissions | Contents | Read-only |
+     | Repository Permissions | Metadata | Read-only |
+     | Account Permissions | Email addresses | Read-only |
 
 - If you have organization-owned repositories, follow these extra steps:
    - The organization administrator needs to allow access via personal access tokens. For instructions, see [Setting a personal access token policy for your organization - GitHub Docs](https://docs.github.com/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization#restricting-access-by-personal-access-tokens)
