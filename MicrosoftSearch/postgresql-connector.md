@@ -23,7 +23,7 @@ The PostgreSQL Microsoft Graph connector allows your organization to index recor
 This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors a PostgreSQL Graph connector.
 
 >[!NOTE]
->The PostgreSQL connector is in preview. If you wish to get access to try it, you need to enable [Targeted Release](https://learn.microsoft.com/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center) ring for your Admin account.
+>The PostgreSQL connector is in preview. If you wish to get access to try it, you need to enable [Targeted Release](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center) ring for your Admin account.
 
 ## Capabilities
 - Index records from your PostgreSQL database using a SQL query.
