@@ -37,8 +37,34 @@ This documentation is for Microsoft 365 administrators or anyone who configures,
 - The connector doesn't support ACLs (access control lists). All the data indexed using the Salesforce Knowledge connector is visible to all Microsoft 365 users in your tenant, accessible through Microsoft Search or Copilot.
 
 ## Prerequisites
-- You must be a search admin for your organization's Microsoft 365 tenant.
-- To create a new connection, use your organization’s Salesforce Knowledge Instance URL. This URL is the specific web address used to access and interact with Salesforce Knowledge's API services for data retrieval, which usually looks like `https://[COMPANY_NAME].my.salesforce.com`. 
+To connect to your Salesforce instance, you need your Salesforce instance URL, the client ID, and the client secret for OAuth 2.0 authentication. The following steps explain how you or your Salesforce administrator can get this information from your Salesforce account:
+
+- Log in to your Salesforce instance and go to Setup
+- Navigate to Apps -> App Manager.
+- Select **New connected app**.
+- Complete the API section as follows:
+    - Select the checkbox for **Enable Oauth settings**.
+    - Specify the Callback URL as: For **M365 Enterprise**: `https://gcs.office.com/v1.0/admin/oauth/callback`, for **M365 Government**: `https://gcsgcc.office.com/v1.0/admin/oauth/callback`
+    - Select these required OAuth scopes.
+        - Access and manage your data (API).
+        - Perform requests on your behalf at any time (refresh_token, offline_access).
+    - Select the checkbox for **Require secret for web server flow**.
+    - Save the app.
+      > [!div class="mx-imgBorder"]
+      > ![API section in Salesforce instance after admin has entered all required configurations listed above.](media/salesforce-connector/sf1.png)
+
+- Copy the consumer key and the consumer secret. This information is used as the client ID and the client secret when you configure the connection settings for your Salesforce Knowledge Microsoft Graph connector in the Microsoft 365 admin portal.
+  > [!div class="mx-imgBorder"]
+  > ![Results returned by API section in Salesforce instance after admin has submitted all required configurations. Consumer Key is at top of left column and Consumer Secret is at top of right column.](media/salesforce-connector/clientsecret.png)
+- Before closing your Salesforce instance, follow these steps to ensure that refresh tokens don't expire:
+    - Go to Apps -> App Manager.
+    - Find the app you created and select the drop-down on the right. Select **Manage**.
+    - Select **edit policies**.
+    - For the refresh token policy, select **Refresh token is valid until revoked**.
+  > [!div class="mx-imgBorder"]
+  > ![Select the Refresh Token Policy named "Refresh token is valid until revoked ".](media/salesforce-connector/oauthpolicies.png)
+
+You can now use the [Microsoft 365 Admin Center](https://admin.microsoft.com/) to complete the rest of the setup process for your Salesforce Knowledge Graph connector.
      
 ## Get Started
 
