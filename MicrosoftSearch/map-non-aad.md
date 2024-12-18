@@ -14,7 +14,7 @@ search.appverid:
 
 - MOE150 
 
-description: "Steps on how to map non-AAD identities" 
+description: "Steps on how to map non-Azure AD identities." 
 ms.date: 11/05/2020
 ---
 
@@ -52,11 +52,11 @@ You can select a non-Azure AD user property from the dropdown and provide a regu
 
 Following are some examples of regular expressions and their outputs applied to a sample string: 
 
-| Sample String                  | Regular expression                 | Output of regular expression on sample string           |
+| Sample String        | Regular expression   | Output of regular expression on sample string |
 | :------------------- | :------------------- |:---------------|
-| Alexis Vasquez  | .* | Alexis Vasquez |
-| Alexis Vasquez                 | ..$                 | ez            |
-| Alexis Vasquez                  | (\w+)$                  | Vasquez             |
+| Alexis Vasquez       | `.*`                 | Alexis Vasquez |
+| Alexis Vasquez       | `..$`                | ez             |
+| Alexis Vasquez       | `(\w+)$`             | Vasquez        |
 
 You can add as many non-Azure AD user properties as you would like expressions for. You can apply different regular expressions to the same user property if your final formula warrants that.  
 
