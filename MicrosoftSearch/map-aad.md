@@ -62,14 +62,14 @@ After you provide your formula, you can optionally click **Preview** to see a pr
 
 ## Sample Microsoft Entra ID mapping
 
-See the snapshot below for a sample Microsoft Entra ID mapping.
+See the following snapshot for a sample Microsoft Entra ID mapping.
 
 ![Sample snapshot of how to fill out the Microsoft Entra ID mapping page.](media/aad-mapping.png)
 
 ## Limitations  
 
-- Only one mapping is supported for all users. Conditional mappings are not supported.  
+- Only one mapping is supported for all users. Conditional mappings aren't supported.  
 
-- You cannot change your mapping once the connection is published.  
+- You can't change your mapping once the connection is published.  
 
-- Regex-based expressions against the Microsoft Entra user properties are not supported for the Microsoft Entra ID to Federation ID transformation.
+- Regex-based expressions against the Microsoft Entra user properties aren't supported for the Microsoft Entra ID to Federation ID transformation.
