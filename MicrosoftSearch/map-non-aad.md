@@ -82,7 +82,7 @@ After you provide your formula, you can optionally select **Preview** to see a p
 
 See the following snapshot for a sample non-Azure AD mapping.
 
-![Sample snapshot of how to fill out the non-Azure AD mapping page.](media/non-aad-mapping.png)
+:::image type="content" alt-text="Sample snapshot of how to fill out the non-Azure AD mapping page." source="media/non-aad-mapping.png" lightbox="media/non-aad-mapping.png":::
 
 ## Limitations  
 
