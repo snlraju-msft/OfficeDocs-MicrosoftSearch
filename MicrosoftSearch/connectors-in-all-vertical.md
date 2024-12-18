@@ -1,6 +1,6 @@
 ---
 title: "Connectors in all tab"
-ms.author: maclouti
+ms.author: misvenso
 author: mattcloutier
 manager: jameslau
 ms.audience: Admin
