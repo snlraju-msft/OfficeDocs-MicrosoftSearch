@@ -73,14 +73,14 @@ Following are some examples of formulas with sample regular expression outputs a
 | {0}.{1}@contoso.com  | firstname | lastname |firstname.lastname@contoso.com
 | {0}@domain.com                 | userid                 |             |userid@domain.com
 
-After you provide your formula, you can optionally click **Preview** to see a preview of 5 random users from your data source with their respective user mappings applied. The output of the preview includes the value of the non-Azure AD user properties selected in step 2 for those users and the output of the final formula provided in step 3 for that user. It also indicates whether the output of the formula could be resolved to a Microsoft Entra user in your tenant via a "Success" or "Failed" icon.  
+After you provide your formula, you can optionally select **Preview** to see a preview of 5 random users from your data source with their respective user mappings applied. The output of the preview includes the value of the non-Azure AD user properties selected in step 2 for those users and the output of the final formula provided in step 3 for that user. It also indicates whether the output of the formula could be resolved to a Microsoft Entra user in your tenant via a "Success" or "Failed" icon.  
 
 >[!NOTE]
->You can still proceed with creating your connection if one or more user mappings have a "Failed" status after you click **Preview**. The preview shows 5 random users and their mappings from your data source. If the mapping you provide does not map all users, you may experience this case.
+>You can still proceed with creating your connection if one or more user mappings have a "Failed" status after you select **Preview**. The preview shows 5 random users and their mappings from your data source. If the mapping you provide does not map all users, you may experience this case.
 
 ## Sample non-Azure AD mapping
 
-See the snapshot below for a sample non-Azure AD mapping.
+See the following snapshot for a sample non-Azure AD mapping.
 
 ![Sample snapshot of how to fill out the non-Azure AD mapping page.](media/non-aad-mapping.png)
 
