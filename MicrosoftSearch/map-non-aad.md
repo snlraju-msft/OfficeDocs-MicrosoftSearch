@@ -50,7 +50,7 @@ You can select non-Azure AD properties pulled from your data source to apply reg
 
 You can select a non-Azure AD user property from the dropdown and provide a regular expression to be applied on those user property values.
 
-Below are some examples of regular expressions and their outputs applied to a sample string: 
+Following are some examples of regular expressions and their outputs applied to a sample string: 
 
 | Sample String                  | Regular expression                 | Output of regular expression on sample string           |
 | :------------------- | :------------------- |:---------------|
@@ -66,7 +66,7 @@ You can combine the outputs of the regular expressions applied to each of your n
 
 In the formula box, "{0}" corresponds to the output of the regular expression applied to the *first* non-Azure AD property you selected. "{1}" corresponds to the output of the regular expression applied to the *second* non-Azure AD property you selected. "{2}" corresponds to the output of the regular expression applied to the *third* non-Azure AD property, and so on.  
 
-Below are some examples of formulas with sample regular expression outputs and formula outputs: 
+Following are some examples of formulas with sample regular expression outputs and formula outputs: 
 
 | Sample formula                  | Value of {0} on sample user                 | Value of {1} on sample user           | Output of formula                  |
 | :------------------- | :------------------- |:---------------|:---------------|
