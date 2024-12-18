@@ -50,6 +50,12 @@ items:
       href: connectors-overview.md
     - name: Connectors gallery
       href: connectors-gallery.md
+    - name: Frequently asked questions
+      href: frequently-asked-questions.md
+    - name: Index quota
+      href: licensing.md
+    - name: Terms of use
+      href: terms-of-use.md
     - name: Set up Microsoft-built connectors
       items:
       - name: Setup overview
@@ -103,7 +109,7 @@ items:
             href: confluence-cloud-connector.md
           - name: Troubleshooting
             href: troubleshoot-confluence-cloud-connector.md
-        - name: Confluence On-premises (preview)
+        - name: Confluence On-premises
           items:
             - name: Setup
               href: confluence-onpremises-connector.md
@@ -141,6 +147,10 @@ items:
             href: fileshare-connector.md
           - name: Troubleshooting
             href: troubleshoot-file-share-connector.md
+        - name: GitHub (preview)
+          items:
+          - name: Setup
+            href: GitHub-connector.md 
         - name: Google Drive
           items:
           - name: Setup
@@ -150,11 +160,7 @@ items:
           - name: Setup
             href: mediawiki-connector.md
           - name: Troubleshooting
-            href: troubleshoot-media-wiki-connector.md
-        - name: MediaWiki
-          items:
-          - name: Setup
-            href: mediawiki-connector.md  
+            href: troubleshoot-media-wiki-connector.md 
         - name: Oracle SQL
           items:
           - name: Setup
@@ -171,6 +177,10 @@ items:
             href: salesforce-connector.md
           - name: Troubleshooting
             href: troubleshoot-salesforce-connector.md
+        - name: Salesforce Knowledge
+          items:
+          - name: Setup
+            href: salesforce-knowledge-connector.md
         - name: ServiceNow Catalog
           items:
           - name: Setup
@@ -193,6 +203,10 @@ items:
           items:
           - name: Setup
             href: sharepoint-server-connector.md
+        - name: Stack Overflow
+          items:
+          - name: Setup
+            href: stack-overflow-connector.md
         - name: WordPress.org (on-prem)
           items:
           - name: Setup
@@ -201,8 +215,6 @@ items:
           items:
           - name: Setup
             href: zendesk-help-center-connector.md
-    - name: Deploy Microsoft Graph connectors in Teams admin center
-      href: connectors-deploy-teams.md
     - name: Manage connections
       items:
       - name: Monitor connections
@@ -215,12 +227,8 @@ items:
         href: connector-error-responses.md
       - name: Item delete notification
         href: connectors-viva-topics-item-delete-notification.md
-    - name: Index quota
-      href: licensing.md
-    - name: Frequently asked questions
-      href: frequently-asked-questions.md
-    - name: Terms of use
-      href: terms-of-use.md
+    - name: Deploy Microsoft Graph connectors in Teams admin center
+      href: connectors-deploy-teams.md
   - name: Federated Search connectors
     items:
     - name: Dataverse and Dynamics 365

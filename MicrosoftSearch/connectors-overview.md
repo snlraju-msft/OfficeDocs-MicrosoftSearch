@@ -75,15 +75,24 @@ You can connect to the following data sources by using connectors created by Mic
 * [Confluence On-premises](confluence-onpremises-connector.md)
 * [CSV](csv-connector.md)
 * [Custom connector](/graph/custom-connector-sdk-sample-overview)
-* [Enterprise websites](enterprise-web-connector.md)
+* [Enterprise websites cloud](enterprise-web-connector.md)
+* [Enterprise websites on-premises](enterprise-web-connector-onprem.md)
+* [File share](fileshare-connector.md)
+* [GitHub](github-connector.md)
+* [Google Drive](google-drive-connector.md)
 * [Jira Cloud](jira-connector.md)
 * [MediaWiki](mediawiki-connector.md)
-* [File share](fileshare-connector.md)
 * [Oracle SQL](OracleSQL-connector.md)
-* [Salesforce](salesforce-connector.md)
+* [PostgreSQL](postgresql-connector.md)
+* [Salesforce CRM](salesforce-connector.md)
+* [Salesforce Knowledge](salesforce-knowledge-connector.md)
 * [ServiceNow Knowledge](servicenow-knowledge-connector.md)
 * [ServiceNow Catalog](servicenow-catalog-connector.md)
 * [ServiceNow Tickets](servicenow-tickets-connector.md)
+* [SharePoint Server](sharepoint-server-connector.md)
+* [Stack Overflow](stack-overflow-connector.md)
+* [WordPress.org (on-prem)](wordpress-onprem-connector.md)
+* [Zendesk Help Center](zendesk-help-center-connector.md)
 
 The [Microsoft Graph connectors gallery](https://www.microsoft.com/microsoft-search/connectors) contains a brief description of each of these connectors. If you're ready to connect one of these data sources to your tenant, be sure to read the [Setup overview](configure-connector.md) and any other articles in the setup connectors by Microsoft section that apply to your data source.
 
@@ -131,7 +140,7 @@ After custom data is indexed, developers can [query this data](/graph/search-con
 
 * When you **publish** a Microsoft Graph connector, it can take a few minutes for the connection to be created. During that time, the connection shows its status as 'Publishing'.
 
-* There's a connection limit. Each tenant can create up to 30 connections. If you need more connections reach out to us by filling this [form](https://aka.ms/GraphConnectorsHigherCapacity).
+* There's a connection limit. Each tenant can create up to 30 connections. If you need more connections, fill out this [form](https://aka.ms/GraphConnectorsHigherCapacity).
 
-* There are limited edit capabilities supported after publishing a connection. If you need to change any details other than the ones enabled, you must delete and recreate the connection.
+* There are limited edit capabilities that are supported after publishing a connection. If you need to change any details other than the ones enabled, you must delete and recreate the connection.
 
