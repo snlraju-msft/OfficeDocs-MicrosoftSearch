@@ -1,6 +1,6 @@
 ---
 title: "Map your non-Azure AD Identities" 
-ms.author: monaray 
+ms.author: misvenso 
 author: monaray97 
 manager: jameslau 
 ms.audience: Admin 
