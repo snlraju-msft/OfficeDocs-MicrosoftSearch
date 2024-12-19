@@ -18,28 +18,28 @@ ms.date: 12/02/2024
 
 # Azure File Share Graph Connector (Preview)
 
-The Azure File Share Graph Connector brings Azure File Share data into the Microsoft 365 ecosystem. It allows users to access indexed data via Microsoft Search and Copilot, while maintaining NTFS permissions to ensure secure access for authorized users.
+The Azure File Share Graph Connector allows organizations to integrate Azure File Share data into Microsoft 365. It enables users to access indexed files via Microsoft Search and Copilot while ensuring security by adhering to NTFS permissions.
 
-This guide is for Microsoft 365 administrators responsible for setting up and managing the Azure File Share Graph Connector.
+This guide is designed for Microsoft 365 administrators responsible for configuring, managing, and monitoring the Azure File Share Graph Connector.
 
 ---
 
 ## Key Features
 
 ### Secure Access
-- Enables users to securely access Azure File Share data in Microsoft Search and Copilot.
-- Integrates NTFS permissions with Azure Active Directory (AAD) for seamless security.
+- Seamless access to Azure File Share data within Microsoft Search and Copilot.
+- Ensures data security by integrating NTFS permissions with Azure Active Directory (AAD).
 
-### Data Syncing
-- Supports regular full crawls to keep indexed data up to date.
-- Indexes text-based file content, metadata, directory structures, and access control lists (ACLs).
+### Data Synchronization
+- Performs regular full crawls to update indexed content.
+- Indexes file content, metadata, directory structures, and access control lists (ACLs).
 
 ---
 
 ## Limitations
 
 ### Supported Data
-- Indexes text-based files up to 4MB (3.8MB content + 0.2MB metadata).
+- Files up to **4MB** (3.8MB content + 0.2MB metadata) are indexed.
 - Supported file formats include:
   - Microsoft Office files
   - PDFs
@@ -51,14 +51,14 @@ This guide is for Microsoft 365 administrators responsible for setting up and ma
 
 ## Prerequisites
 
-Before you begin setup, ensure the following requirements are met:
+Ensure the following requirements are met before starting the setup process:
 
 ### Azure File Share Configuration
-- Your Azure File Share must be mounted on a device.
-- Install and register the Graph Connector Agent (GCA) on the same device.
+- Mount your Azure File Share on a device.
+- Install and register the **Graph Connector Agent (GCA)** on the same device.
 
-### Credentials
-Use the same user credentials for:
+### User Credentials
+Use the same credentials for:
 - Mounting the Azure File Share.
 - Running the Graph Connector Agent.
 - Configuring the connector in the Microsoft 365 Admin Center.
@@ -67,78 +67,79 @@ Use the same user credentials for:
 
 ## Setup Guide
 
-### Step 1: Configure the Display Name
-Assign a descriptive name to the connector, such as "Azure File Share - Marketing Team," to easily identify it in the Admin Center.
+### Step 1: Name Your Connector
+Provide a clear, descriptive name for the connector. For example:  
+`Azure File Share - Marketing Team`
 
-### Step 2: Add Source Folder Paths
-Enter the UNC path for the Azure File Share. For example:  
+### Step 2: Specify the Source Folder Paths
+Enter the UNC path for the Azure File Share, such as:  
 `\\testpath.file.core.windows.net\test_folder\test_folder2`
 
-### Step 3: Set Up Authentication
-- Select the registered GCA for your tenant.
+### Step 3: Configure Authentication
+- Select the registered **Graph Connector Agent (GCA)** for your tenant.
 - Use Windows authentication with valid admin credentials.
 
 ### Step 4: Test with a Limited Audience
-Deploy the connector to a small user group to validate indexing and permissions before expanding to the entire organization.
+Deploy the connector to a small group to verify indexing and permissions functionality before expanding it to your entire organization.
 
 ### Step 5: Schedule Full Crawls
-Set up regular full crawls to keep your indexed data updated. By default, full crawls are scheduled daily.
+Set up periodic full crawls to keep indexed data updated. The default schedule is once per day.
 
 ---
 
 ## Default Settings
 
-| Section   | Setting               | Default Value                                                     |
-|-----------|-----------------------|-------------------------------------------------------------------|
+| Section  | Setting               | Default Value                                                     |
+|----------|-----------------------|-------------------------------------------------------------------|
 | **Users** | Access Permissions    | Respects NTFS permissions; only authorized files are accessible. |
-| **Content** | Index Metadata       | Includes properties such as file name, owner, last modified date, and file path. |
+| **Content** | Index Metadata       | Includes properties like file name, owner, last modified, and file path. |
 | **Sync**  | Full Crawl Frequency  | Once daily.                                                      |
 
-To modify these settings, use the **Custom Setup** option during configuration.
+If these defaults don’t suit your requirements, use the **Custom Setup** option to make adjustments.
 
 ---
 
 ## Custom Setup
 
 ### Access Permissions
-The connector strictly adheres to ACLs defined in NTFS setups. While administrators can allow broader access, it is recommended to maintain the default permissions for security.
+The connector adheres to NTFS ACLs to control file access. Administrators can broaden access, but maintaining default permissions is recommended for security.
 
 ### Enhancing Metadata
 
 #### Adding Custom Properties
-You can extend the indexed metadata by creating custom properties.
+Create custom properties to extend the metadata available for search.
 
 **Steps to Add a Custom Property**:
-1. **Name the Property**  
-   Enter a name that will appear in search results.
+1. **Enter a Property Name**  
+   Name the property as it will appear in search results.
 
 2. **Define the Value Type**  
-   Choose either:
-   - **Static Value**: A constant value that applies to all search results.
+   Choose one of the following:
+   - **Static Value**: A constant value applied to all search results.
    - **String/Regex Mapping**: A dynamic value based on specific rules.
 
 3. **Configure the Value**  
-   - For static values, enter the desired string.
+   - For static values, enter the desired text.
    - For regex-based values:
-     - Select a default property in **Add Expressions**.
-     - Provide a sample value for previewing purposes.
-     - Add up to three regex-based expressions.  
+     - In **Add Expressions**, choose a default property.
+     - Provide a sample value for preview.
+     - Add up to three regex expressions.  
        [Learn more about regex expressions](/dotnet/standard/base-types/regular-expression-language-quick-reference).
      - Combine extracted values using a formula in the **Create Formula** section.
 
-#### Managing Schema and Property Labels
-Follow the [general setup instructions](./configure-connector.md) to manage the schema and assign property labels.
+#### Managing Schema and Labels
+To manage schema and assign labels to properties, follow the [general setup instructions](./configure-connector.md).
 
 ---
 
 ## Troubleshooting
 
-Refer to the [Troubleshooting Guide](troubleshoot-azure-file-share-connector.md) for assistance with common issues.
+For help resolving common issues, refer to the [Troubleshooting Guide](troubleshoot-azure-file-share-connector.md).
 
 ---
 
 ## Next Steps
 
-Once your connector is configured, monitor its status under **Data Sources** in the [Admin Center](https://admin.microsoft.com). For instructions on updating or removing the connector, see [Manage Your Connector](manage-connector.md).
+After completing the setup, monitor the connector’s status under the **Data Sources** section in the [Admin Center](https://admin.microsoft.com). For guidance on making updates or removing the connector, see [Manage Your Connector](manage-connector.md).
 
-For additional support or feedback, contact [Microsoft Graph Support](https://developer.microsoft.com/en-us/graph/support).
+If you need additional help or have feedback, contact [Microsoft Graph Support](https://developer.microsoft.com/en-us/graph/support).
