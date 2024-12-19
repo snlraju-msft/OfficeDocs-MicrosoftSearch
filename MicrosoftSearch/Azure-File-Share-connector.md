@@ -107,12 +107,7 @@ The connector respects ACLs defined in NTFS setups. Admins can optionally make a
 
 ## Troubleshooting
 
-| Error                  | Description                                    | Resolution                                                                   |
-|------------------------|------------------------------------------------|-------------------------------------------------------------------------------|
-| `INVALID_SESSION_ID`   | Authentication session expired or invalid.     | Reauthenticate with valid credentials.                                       |
-| `INSUFFICIENT_ACCESS`  | User lacks permissions to access certain files.| Verify user roles and NTFS permissions on the source.                        |
-| `API_LIMIT_EXCEEDED`   | Too many API requests made in a short period.  | Adjust crawl frequency or retry after some time.                             |
-| **Missing Files or Metadata** | Files or metadata not appearing in search results. | Verify permissions, file paths, and the Graph Connector Agent configuration. |
+You can find troubleshooting steps for commonly seen issues [here](troubleshoot-azure-file-share-connector.md).
 
 ## What's Next
 
