@@ -28,16 +28,13 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Capabilities
 - Access Google Drive files using the power of Semantic search
-- Retain ACLs defined by your organization (coming soon) 
+- Retain ACLs defined by your organization
 - Customize your crawl frequency
 - Create workflows using this connection and plugins from Microsoft Copilot Studio
 
 
 ## Limitations
 - Folder, replies & comments aren't indexable 
-- Doesn't crawl user identities and access permissions.
-- Only files accessible to anyone in Google Drive are indexed.
-- All files indexed using the Google Drive connector are visible to all Microsoft 365 users in your tenant, from Microsoft Search or Copilot.
 
 ## Prerequisites
 Before you create a Google Drive connector, you must:
@@ -58,6 +55,7 @@ Add (or ask a user with a super admin role to add) the following OAuth scopes to
 
 `https://www.googleapis.com/auth/admin.directory.user.readonly`
 
+`https://www.googleapis.com/auth/admin.directory.group.readonly`
 
 `https://www.googleapis.com/auth/drive.readonly`   
 
@@ -73,10 +71,7 @@ To sign up for Google Workspace, you need an internet domain name, like your-com
 ### 3. Google Apps administrator account email
 Enter the email of a Google Apps administrator account in the `user@company.com` format.
 
-### 4. Private key file
-Copy and paste the content of private key file that you created when you authorized your Microsoft organization to access your users' Google Drive.  
-
-### 5. Rollout to limited audience
+### 4. Rollout to limited audience
 Deploy this connection to a limited user base if you want to validate it in Copilot and other search surfaces before expanding the rollout to a broader audience.
 
 For other settings, like Access Permissions, Data inclusion rules, Schema, Crawl frequency etc., we set defaults based on what works best with data in Google Drive. The default values settings are as follows.
@@ -114,9 +109,10 @@ Description |  | A short description of the file.  |
 FileExtension | File extension | The final component of fullFileExtension. This parameter is only available for files with binary content in Google Drive.  | Query, Refine, Retrieve
 FileType |  | The type of the file.  | 
 IconLink | IconUrl | A static, unauthenticated link to the file's icon.  | Retrieve
-LastModifingUser | Last modified by | The last user to modify the file. This field is only populated when the last modification was performed by a signed-in user.  | Query, Retrieve, Search
+LastModifingUser | lastModifiedDateTime | The last user to modify the file. This field is only populated when the last modification was performed by a signed-in user.  | Query, Retrieve, Search
+modifiedTime	| Last modified by | The last time the file was modified by anyone (RFC 3339 date-time).  | Query, Retrieve, Search
 Link | url | A link for opening the file in a relevant Google editor or viewer in a browser.  | Retrieve
-Name | Title | The name of the file.  | Query, Retrieve, Search
+Name | File Name | The name of the file.  | Query, Retrieve, Search
 Owner | Created by | The owner of this file. Only certain legacy files may have more than one owner. This field isn't populated for items in shared drives.  | Search, Query, Retrieve
 ParentFolderLink |  |  A link for the parent folder containing the file.  | Retrieve
 ParentFolderName |  | The name of the parent folder containing the file.  | Search, Query, Retrieve
@@ -135,7 +131,11 @@ Authentication error, one or more required OAuth scopes to your service account 
 
 `https://www.googleapis.com/auth/admin.directory.user.readonly` 
 
-`https://www.googleapis.com/auth/drive.readonly` 
+`https://www.googleapis.com/auth/drive.readonly`
+
+`https://www.googleapis.com/auth/admin.directory.group.readonly`
+
+
 ### Failed to capture file information. Ensure the workspace is not empty and has files accessible to the admin.
  During the connector setup, at least one file must be present in your organization's workspace to test the connection successfully.
 
