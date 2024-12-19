@@ -6,7 +6,7 @@ manager: kellis
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
-localization_priority: Normal
+ms.localizationpriority: Medium
 ms.date: 03/15/2022
 search.appverid:
 - BFB160

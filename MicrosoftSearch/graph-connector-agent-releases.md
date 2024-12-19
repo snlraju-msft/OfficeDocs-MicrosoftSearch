@@ -20,16 +20,28 @@ For help on installation, refer to [this page](graph-connector-agent.md#installa
 
 [Download latest Graph Connector Agent](https://aka.ms/gca)
 
-## Version 3.1.0.0 (*September 24, 2024)
-
-* This update marks the General Availability of [Confluence On-premises](confluence-onpremises-connector.md) and [SharePoint Server](sharepoint-server-connector.md) connectors.
-* Bug fixes and reliability improvements.
-
-## Version 3.0.1.0 (*September 12, 2024)
+## Version 3.1.3.0 (*December 19, 2024*)
 
 * Bug fixes and reliability improvements.
 
-## Version 3.0.0.0 (*August 08, 2024)
+## Version 3.1.2.0 (*November 11, 2024*)
+
+* Bug fixes and reliability improvements.
+
+## Version 3.1.1.0 (*October 10, 2024*)
+
+* Bug fixes and reliability improvements.
+
+## Version 3.1.0.0 (*September 24, 2024*)
+
+* This update marks the General Availability of [Confluence On-premises](confluence-onpremises-connector.md) connector.
+* Bug fixes and reliability improvements.
+
+## Version 3.0.1.0 (*September 12, 2024*)
+
+* Bug fixes and reliability improvements.
+
+## Version 3.0.0.0 (*August 08, 2024*)
 
 * This update is with a critical security patch that enhances the secure communication between endpoints. We recommend you to upgrade to this version immediately as Microsoft will deprecate the previous versions by September 30, 2024. For more details, follow the communication from Microsoft in the Message Center.
 
@@ -94,7 +106,7 @@ For help on installation, refer to [this page](graph-connector-agent.md#installa
 
 ## Version 2.2.5.0 (*August 30, 2023*)
 
-* Added functionality to keep trying the multiple instances if they are unreachable in the first crawl. Before the update if the connectivity with one of the instances was interrupted, Graph connector agent did not retry the path in the subsequent crawl and threw a warning for the instance path.
+* Added functionality to keep trying the multiple instances if they're unreachable in the first crawl. Before the update if the connectivity with one of the instances was interrupted, Graph connector agent did not retry the path in the subsequent crawl and threw a warning for the instance path.
 * Bug fixes and reliability improvements
 
 ## Version 2.2.4.0 (*August 28, 2023*)
@@ -160,7 +172,7 @@ For help on installation, refer to [this page](graph-connector-agent.md#installa
 
 ## Version 1.8.2.0 (*October 06, 2022*)
 
-* Upgrade Graph Connector Agent with just one click in the UI. For later builds, if there are any upgrades available for Graph Connector Agent, the one-click upgrade feature is available in the connection details pane. For builds older than this version, there is an option to download and install the GCA build.
+* Upgrade Graph Connector Agent with just one click in the UI. For later builds, if there are any upgrades available for Graph Connector Agent, the one-click upgrade feature is available in the connection details pane. For builds older than this version, there's an option to download and install the GCA build.
 ![Sample snapshot of how to upgrade GCA with one-click from the connection pane.](media/gca-releases/one-click-upgrade.png)
 
 * Bug fixes and reliability improvements

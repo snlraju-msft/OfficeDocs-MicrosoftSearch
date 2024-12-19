@@ -50,6 +50,12 @@ items:
       href: connectors-overview.md
     - name: Connectors gallery
       href: connectors-gallery.md
+    - name: Frequently asked questions
+      href: frequently-asked-questions.md
+    - name: Index quota
+      href: licensing.md
+    - name: Terms of use
+      href: terms-of-use.md
     - name: Set up Microsoft-built connectors
       items:
       - name: Setup overview
@@ -103,30 +109,48 @@ items:
             href: confluence-cloud-connector.md
           - name: Troubleshooting
             href: troubleshoot-confluence-cloud-connector.md
-        - name: Confluence On-premises (preview)
+        - name: Confluence On-premises
           items:
-          - name: Setup
-            href: confluence-onpremises-connector.md
-          - name: Troubleshooting
-            href: troubleshoot-confluence-onpremises-connector.md
+            - name: Setup
+              href: confluence-onpremises-connector.md
+            - name: Troubleshooting
+              href: troubleshoot-confluence-onpremises-connector.md
+            - name: License agreement for Microsoft Graph connector plugin for Confluence
+              href: graph-connector-atlassian-plugin-eula.md
+        - name: Jira Cloud
+          items:
+            - name: Setup
+              href: jira-connector.md
+            - name: Troubleshooting
+              href: troubleshoot-jira-cloud-connector.md
         - name: CSV
           items:
           - name: Setup
             href: csv-connector.md
           - name: Troubleshooting
             href: troubleshoot-csv-connector.md
-        - name: Enterprise websites
+        - name: Enterprise websites Cloud
           items:
           - name: Setup
             href: enterprise-web-connector.md
           - name: Troubleshooting
             href: troubleshoot-enterprise-web-connector.md
+        - name: Enterprise websites on-premises
+          items:
+          - name: Setup
+            href: enterprise-web-connector-onprem.md
+          - name: Troubleshooting
+            href: troubleshoot-enterprise-web-connector-onprem.md
         - name: File Share
           items:
           - name: Setup
             href: fileshare-connector.md
           - name: Troubleshooting
             href: troubleshoot-file-share-connector.md
+        - name: GitHub (preview)
+          items:
+          - name: Setup
+            href: GitHub-connector.md 
         - name: Google Drive
           items:
           - name: Setup
@@ -136,17 +160,7 @@ items:
           - name: Setup
             href: mediawiki-connector.md
           - name: Troubleshooting
-            href: troubleshoot-media-wiki-connector.md
-        - name: Jira Cloud
-          items:
-          - name: Setup
-            href: jira-connector.md
-          - name: Troubleshooting
-            href: troubleshoot-jira-cloud-connector.md            
-        - name: MediaWiki
-          items:
-          - name: Setup
-            href: mediawiki-connector.md  
+            href: troubleshoot-media-wiki-connector.md 
         - name: Oracle SQL
           items:
           - name: Setup
@@ -163,6 +177,10 @@ items:
             href: salesforce-connector.md
           - name: Troubleshooting
             href: troubleshoot-salesforce-connector.md
+        - name: Salesforce Knowledge
+          items:
+          - name: Setup
+            href: salesforce-knowledge-connector.md
         - name: ServiceNow Catalog
           items:
           - name: Setup
@@ -185,6 +203,10 @@ items:
           items:
           - name: Setup
             href: sharepoint-server-connector.md
+        - name: Stack Overflow
+          items:
+          - name: Setup
+            href: stack-overflow-connector.md
         - name: WordPress.org (on-prem)
           items:
           - name: Setup
@@ -193,8 +215,6 @@ items:
           items:
           - name: Setup
             href: zendesk-help-center-connector.md
-    - name: Deploy Microsoft Graph connectors in Teams admin center
-      href: connectors-deploy-teams.md
     - name: Manage connections
       items:
       - name: Monitor connections
@@ -207,12 +227,8 @@ items:
         href: connector-error-responses.md
       - name: Item delete notification
         href: connectors-viva-topics-item-delete-notification.md
-    - name: Index quota
-      href: licensing.md
-    - name: Frequently asked questions
-      href: frequently-asked-questions.md
-    - name: Terms of use
-      href: terms-of-use.md
+    - name: Deploy Microsoft Graph connectors in Teams admin center
+      href: connectors-deploy-teams.md
   - name: Federated Search connectors
     items:
     - name: Dataverse and Dynamics 365
