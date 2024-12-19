@@ -2,7 +2,7 @@
 
 title: "Veeva Vault - PromoMats Graph connector for Microsoft Search and Copilot" 
 ms.author: dannyyao
-author: ms-dannyyao
+author: dannyyaou
 manager: jecui
 audience: Admin
 ms.audience: Admin 
