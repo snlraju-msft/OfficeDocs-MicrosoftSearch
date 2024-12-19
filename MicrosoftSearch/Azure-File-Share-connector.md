@@ -1,46 +1,46 @@
---- 
-title: "Azure File Share Graph connector for Microsoft Search and Copilot" 
+---
+title: "Azure File Share Graph Connector for Microsoft Search and Copilot"
 ms.author: dannyyao
 author: dannyyaou
 manager: jecui
 audience: Admin
-ms.audience: Admin 
-ms.topic: article 
-ms.service: mssearch 
-ms.localizationpriority: Medium 
-search.appverid: 
-- BFB160 
-- MET150 
-- MOE150 
-description: "Set up the Azure File Share Graph connector for Microsoft Search and Copilot" 
+ms.audience: Admin
+ms.topic: article
+ms.service: mssearch
+ms.localizationpriority: Medium
+search.appverid:
+- BFB160
+- MET150
+- MOE150
+description: "Set up the Azure File Share Graph Connector for Microsoft Search and Copilot"
 ms.date: 12/02/2024
 ---
 
 # Azure File Share Graph Connector (Preview)
 
-The Azure File Share Graph Connector integrates Azure File Share data into the Microsoft 365 ecosystem, enabling advanced search and interaction capabilities via Microsoft Search and Copilot. By respecting NTFS permissions, it ensures that only authorized users can access indexed content within Microsoft 365.
+The Azure File Share Graph Connector brings Azure File Share data into the Microsoft 365 ecosystem. It allows users to access indexed data via Microsoft Search and Copilot, while maintaining NTFS permissions to ensure secure access for authorized users.
 
-This guide is intended for Microsoft 365 administrators responsible for configuring, managing, and monitoring the Azure File Share Graph Connector.
+This guide is for Microsoft 365 administrators responsible for setting up and managing the Azure File Share Graph Connector.
 
 ---
 
-## Key Capabilities
+## Key Features
 
-### Access
-- Provides secure access to Azure File Share data via Microsoft Search and Copilot.
-- Integrates Azure Active Directory (AAD) and NTFS permissions for seamless security.
+### Secure Access
+- Enables users to securely access Azure File Share data in Microsoft Search and Copilot.
+- Integrates NTFS permissions with Azure Active Directory (AAD) for seamless security.
 
 ### Data Syncing
-- Supports periodic full crawls.
-- Indexes text-based file content, metadata, directory structures, and ACLs.
+- Supports regular full crawls to keep indexed data up to date.
+- Indexes text-based file content, metadata, directory structures, and access control lists (ACLs).
 
 ---
 
 ## Limitations
 
-### Indexing
-- Files up to 4MB (3.8MB content + 0.2MB metadata) are indexed.
-- Supported formats include:
+### Supported Data
+- Indexes text-based files up to 4MB (3.8MB content + 0.2MB metadata).
+- Supported file formats include:
   - Microsoft Office files
   - PDFs
   - Text files
@@ -51,14 +51,14 @@ This guide is intended for Microsoft 365 administrators responsible for configur
 
 ## Prerequisites
 
-Before setting up the Azure File Share Connector, ensure the following requirements are met:
+Before you begin setup, ensure the following requirements are met:
 
 ### Azure File Share Configuration
-- Mount your Azure File Share on a device.
-- Install and register the Graph Connector Agent (GCA) on the device.
+- Your Azure File Share must be mounted on a device.
+- Install and register the Graph Connector Agent (GCA) on the same device.
 
-### User Credentials
-Use the same credentials for:
+### Credentials
+Use the same user credentials for:
 - Mounting the Azure File Share.
 - Running the Graph Connector Agent.
 - Configuring the connector in the Microsoft 365 Admin Center.
@@ -67,85 +67,78 @@ Use the same credentials for:
 
 ## Setup Guide
 
-### Step 1: Configure Display Name
-Provide a descriptive name for the connector, such as "Azure File Share - Marketing Team."
+### Step 1: Configure the Display Name
+Assign a descriptive name to the connector, such as "Azure File Share - Marketing Team," to easily identify it in the Admin Center.
 
 ### Step 2: Add Source Folder Paths
-Specify the UNC path for the Azure File Share, e.g.,  
+Enter the UNC path for the Azure File Share. For example:  
 `\\testpath.file.core.windows.net\test_folder\test_folder2`
 
-### Step 3: Configure Authentication
-- Select the GCA for your tenant.
+### Step 3: Set Up Authentication
+- Select the registered GCA for your tenant.
 - Use Windows authentication with valid admin credentials.
 
-### Step 4: Deploy to Limited Audience
-Deploy the connector to a small group to validate indexing and access controls before a broader rollout.
+### Step 4: Test with a Limited Audience
+Deploy the connector to a small user group to validate indexing and permissions before expanding to the entire organization.
 
 ### Step 5: Schedule Full Crawls
-Set up periodic full crawls to update indexed data (default: daily).
+Set up regular full crawls to keep your indexed data updated. By default, full crawls are scheduled daily.
 
 ---
 
 ## Default Settings
 
-| Section  | Setting               | Default Value                                                      |
-|----------|-----------------------|--------------------------------------------------------------------|
-| Users    | Access Permissions    | Respects NTFS permissions; only authorized files are indexed.      |
-| Content  | Index Metadata        | Includes properties such as file name, created by, last modified, and file path. |
-| Sync     | Full Crawl Frequency  | Every day.                                                        |
+| Section   | Setting               | Default Value                                                     |
+|-----------|-----------------------|-------------------------------------------------------------------|
+| **Users** | Access Permissions    | Respects NTFS permissions; only authorized files are accessible. |
+| **Content** | Index Metadata       | Includes properties such as file name, owner, last modified date, and file path. |
+| **Sync**  | Full Crawl Frequency  | Once daily.                                                      |
 
-To adjust these defaults, use the **Custom Setup** option during configuration.
+To modify these settings, use the **Custom Setup** option during configuration.
 
 ---
 
 ## Custom Setup
 
-### Users
+### Access Permissions
+The connector strictly adheres to ACLs defined in NTFS setups. While administrators can allow broader access, it is recommended to maintain the default permissions for security.
 
-**Access Permissions**  
-The connector respects ACLs defined in NTFS setups. Admins can optionally make all indexed content visible to all Microsoft 365 users, though this is not recommended.
+### Enhancing Metadata
 
-### Content
+#### Adding Custom Properties
+You can extend the indexed metadata by creating custom properties.
 
-#### Custom Properties
+**Steps to Add a Custom Property**:
+1. **Name the Property**  
+   Enter a name that will appear in search results.
 
-You can enrich indexed data by creating custom properties based on the connector's default properties.
+2. **Define the Value Type**  
+   Choose either:
+   - **Static Value**: A constant value that applies to all search results.
+   - **String/Regex Mapping**: A dynamic value based on specific rules.
 
-##### To Add a Custom Property:
+3. **Configure the Value**  
+   - For static values, enter the desired string.
+   - For regex-based values:
+     - Select a default property in **Add Expressions**.
+     - Provide a sample value for previewing purposes.
+     - Add up to three regex-based expressions.  
+       [Learn more about regex expressions](/dotnet/standard/base-types/regular-expression-language-quick-reference).
+     - Combine extracted values using a formula in the **Create Formula** section.
 
-1. **Enter a Property Name**  
-   Provide a name for the property that will appear in search results.
-
-2. **Select a Value Type**  
-   Choose between **Static** or **String/Regex Mapping**:
-   - **Static Value**: Appears in all search results.
-   - **String/Regex Value**: Varies based on added rules.
-
-3. **Edit the Value**  
-   - **For Static Value**: Enter the desired string.
-   - **For String/Regex Value**:
-     - In **Add Expressions**, select a default property.
-     - Enter a **Sample Value** for preview purposes.
-     - Add up to three **Expressions** using regex.  
-       [Learn about regex expressions](/dotnet/standard/base-types/regular-expression-language-quick-reference).
-     - Combine the extracted values in the **Create Formula** section.
-
-#### Assign Property Labels
-Follow the general [setup instructions](./configure-connector.md).
-
-#### Manage Schema  
-Follow the general [setup instructions](./configure-connector.md).
+#### Managing Schema and Property Labels
+Follow the [general setup instructions](./configure-connector.md) to manage the schema and assign property labels.
 
 ---
 
 ## Troubleshooting
 
-For common issues and resolutions, refer to the [Troubleshooting Guide](troubleshoot-azure-file-share-connector.md).
+Refer to the [Troubleshooting Guide](troubleshoot-azure-file-share-connector.md) for assistance with common issues.
 
 ---
 
-## What's Next
+## Next Steps
 
-Once the connector is configured and published, monitor its status under **Data Sources** in the [Admin Center](https://admin.microsoft.com). To make updates or delete the connection, see [Manage Your Connector](manage-connector.md).
+Once your connector is configured, monitor its status under **Data Sources** in the [Admin Center](https://admin.microsoft.com). For instructions on updating or removing the connector, see [Manage Your Connector](manage-connector.md).
 
 For additional support or feedback, contact [Microsoft Graph Support](https://developer.microsoft.com/en-us/graph/support).
