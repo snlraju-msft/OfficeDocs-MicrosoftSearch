@@ -2,7 +2,7 @@
 ms.date: 08/28/2024 
 title: "Troubleshooting the Veeva Vault - PromoMats Microsoft Graph connector" 
 ms.author: dannyyao
-author: ms-dannyyao
+author: dannyyaou
 manager: jecui
 audience: Admin 
 ms.audience: Admin 
