@@ -1,5 +1,5 @@
 ---
-ms.date: 02/02/2022
+ms.date: 11/28/2024
 title: "Confluence On-premises Microsoft Graph connector (preview)"
 ms.author: mansipakhale
 author: Mansipakhale10
@@ -33,6 +33,16 @@ This article is intended for Microsoft 365 administrators and who are responsibl
 1. **Install the GCA [Graph connector agent]**: Ensure that the GCA is installed on a Windows machine within the same network as the data source, accessible via the Confluence URL. You can find more information [Microsoft Graph connector agent](./graph-connector-agent.md)
 2. **Install plugin**: Download and install the confluence on-prem plugin from Atlassian marketplace on your confluence setup. Get the plugin from [Microsoft Graph Connectors Confluence On-prem Plugin | Atlassian Marketplace](https://marketplace.atlassian.com/apps/1234846?tab=reviews&hosting=datacenter)
 3. **Authentication**: Ensure that you have authentication credentials with right access. 
+
+>[!IMPORTANT]
+   >
+   > **Recommended : The Confluence Global Administrator should create the connection** </br>
+   > 
+   > **Who is the confluence global administrator?**
+   > A Confluence Administrator is a user who has been granted full administrative permissions. </br>
+   > * To check this: Go to **Administration** > **General Configuration** > **Global Permissions** </br>
+   > * Look for the group **Confluence-administrators**, which has all permissions enabled, including - Can Use, Personal Space, Create Space(s), Confluence Administrator, and System Administrator.
+   > * Any user creating a token must be a member of this group
 
 ## Get Started
 
@@ -86,7 +96,9 @@ To authenticate and synchronize content from Confluence On-prem, choose **one of
   3. Select External application, and then choose Incoming as the direction. 
   4. Fill in the 
    - Redirect URL: `https://gcs.office.com/v1.0/admin/oauth/callback` 
-   - Scope: **Admin** or **Read**
+   - Scope: </br>
+     a) If you are a Confluence Global Administrator, either of the following scopes is supported: **Admin** or **Read**. </br>
+     b) If you are any other type of Confluence Administrator, provide the **Admin** scope </br>
   5. Complete the connection settings step using the client ID and secret. 
 
 ### 6. Rollout to limited audience

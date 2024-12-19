@@ -32,4 +32,6 @@ Review the setup of the configured user profile. The `View Setup and Configurati
 
  ![Salesforce view setup and configuration permission](media/salesforce-connector/sf-view-setup-troubleshoot.png)
 
+Under **Administrative Permissions**, ensure `View Roles and Role Hierarchy`, `View All Profiles`, and`View All Users` permissions are in place. Under **Standard Object Permissions**, ensure `Read` and `View All` permissions to the following objects: Accounts, Cases, Contacts, Leads and Opportunities.
+
 To get more information on the types of errors, go to the **error details** page after selecting the connection. Select the **error code** to see more detailed errors. Also refer to [Monitor your connections](./manage-connector.md) to learn more.
