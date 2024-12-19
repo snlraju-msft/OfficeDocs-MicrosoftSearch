@@ -1,6 +1,6 @@
 ---
 title: "Connectors result cluster"
-ms.author: masingh
+ms.author: misvenso
 author: maheshsinghania
 manager: bstucker
 ms.audience: Admin
