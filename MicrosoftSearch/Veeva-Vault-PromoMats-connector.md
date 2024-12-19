@@ -16,101 +16,117 @@ search.appverid:
 description: "Set up the Veeva Vault - PromoMats Graph connector for Microsoft Search and Copilot" 
 ms.date: 12/02/2024
 ---
-
 # Veeva Vault - PromoMats Graph Connector (Preview)
 
-With the Microsoft Graph connector, your organization in M365 can index documents that are managed by Veeva Vault - PromoMats, using Microsoft Copilot and Search. The connector respects permission rules to ensure only authorized users can interact with documents within the M365 ecosystem.
+The Veeva Vault - PromoMats Graph Connector allows organizations to index documents managed in Veeva Vault - PromoMats, making them accessible through Microsoft Search and Copilot. The connector respects Veeva Vault permission rules to ensure that only authorized users can interact with indexed documents in the Microsoft 365 ecosystem.
 
-This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors the Veeva Vault - PromoMats connector.
+This guide is for Microsoft 365 administrators or anyone responsible for configuring, managing, and monitoring the Veeva Vault - PromoMats Graph Connector.
 
-## Capabilities
+---
+
+## Key Capabilities
 
 ### Access
-- Users can access documents and metadata stored in Veeva Vault through Microsoft 365 applications like Microsoft Search and Copilot.
-- Access is controlled by Veeva Vault's ACLs and integrated with Microsoft Entra ID for seamless permission mapping.
+- Provides seamless access to Veeva Vault documents and metadata via Microsoft Search and Copilot.
+- Integrates Veeva Vault's ACLs with Microsoft Entra ID for secure permission mapping.
 
 ### Data Syncing
-- The connector supports periodic full crawls and incremental syncs, configurable by the admin.
-- Data crawled includes document metadata, lifecycle stages, and ACLs.
+- Supports periodic full crawls, configurable based on organizational needs.
+- Captures document metadata, lifecycle stages, and ACLs during crawls.
+
+---
 
 ## Limitations
+
 ### Indexing
-- Only the latest document versions are indexed.
-- Supported file types include text-based and Microsoft Office documents, PDFs, and more.
-- Files larger than 4MB are indexed partially.
+- Only the latest versions of documents are indexed.
+- Supported file types include:
+  - Microsoft Office documents
+  - PDFs
+  - Text-based files
+- Files larger than 4MB are only partially indexed.
+
+---
 
 ## Prerequisites
-Before you create a Veeva Vault connector, ensure the following steps are completed:
 
-### Obtain Veeva Vault Administrator Credentials
-- You must have a Veeva Vault account with administrative privileges.
-- API access enabled.
+### Administrator Credentials
+- Ensure you have a Veeva Vault account with administrative privileges.
+- Enable API access in your Veeva Vault instance.
 
-### Set up API Access
-- Enable REST API access for your Veeva Vault instance. For more information, see [Veeva Vault API documentation](https://developer.veevavault.com/docs/).
-
-### Verify the Veeva Vault URL
-- Obtain the correct URL of your Veeva Vault instance. The typical format is `https://<your-vault-domain>.veevavault.com`.
-
-## Set Up
-
-### Display Name
-Provide a display name for your connector in the Microsoft 365 Admin Center. This name helps identify the connection in your workspace.
+### API Configuration
+- Activate REST API access in your Veeva Vault instance. For details, refer to the [Veeva Vault API documentation](https://developer.veevavault.com/docs/).
 
 ### Veeva Vault URL
-Enter the URL of your Veeva Vault instance. For example: `https://<your-vault-domain>.veevavault.com`.
+- Verify the URL for your Veeva Vault instance. The format typically looks like:  
+  `https://<your-vault-domain>.veevavault.com`
 
-### Authentication Details
-To configure the Veeva Vault - PromoMats connector, you must provide authentication credentials. The connector supports the following authentication methods:
+---
 
-#### **1. Basic Authentication**
-- **Username**: The username associated with your Veeva Vault account.
-- **Password**: The password for the account. Ensure this credential is kept secure, as it will be used for authentication.
+## Set Up Guide
 
-#### **2. Azure AD Authentication**
-This method leverages Azure Active Directory (AAD) for secure and centralized identity management. Required fields include:
-- **Vault Session ID URL**: The URL endpoint for retrieving session tokens. Typically formatted as: `https://<your-vault-domain>.veevavault.com/api/v<version>/session`.
-- **Client ID**: The application ID for your Azure AD app registered for Veeva Vault.
-- **Client Secret**: The client secret associated with the Azure AD app. Ensure this is securely stored and accessible only to authorized personnel.
+### Step 1: Configure Display Name
+Provide a meaningful display name in the Microsoft 365 Admin Center to identify the connector.
 
-**Important:** Ensure that the necessary configurations are made in both Azure AD and Veeva Vault admin settings to enable Azure AD authentication.
+### Step 2: Add Veeva Vault URL
+Enter the verified URL of your Veeva Vault instance, e.g.,  
+`https://<your-vault-domain>.veevavault.com`
 
-### Rollout to Limited Audience
-Deploy this connection to a limited group of users to validate indexing and access control functionality before a full rollout.
+### Step 3: Authentication Details
 
-### Customize Sync Schedules
-- Set up periodic incremental crawls (default: 15 minutes) and full crawls (default: daily).
+#### Azure AD Authentication
+To use Azure AD authentication, ensure the following configurations are in place:
+- **Vault Session ID URL**:  
+  Example: `https://<your-vault-domain>.veevavault.com/api/v<version>/session`
+- **Client ID**: The application ID of your Azure AD app registered for Veeva Vault.
+- **Client Secret**: The corresponding client secret. Securely store and restrict access to this value.
+
+**Important:** Configure both Azure AD and Veeva Vault admin settings to enable Azure AD authentication.
+
+### Step 4: Deploy to Limited Audience
+Test the connector by rolling it out to a small user group to validate indexing and access control.
+
+### Step 5: Customize Sync Schedules
+- Full Crawls: Default is daily.
+
+---
 
 ## Default Settings
 
-| Section | Setting               | Default Value |
-|---------|-----------------------|---------------|
-| Users   | Access Permissions   | Data indexed respects Veeva Vault permissions; only viewable documents are accessible. |
-| Content | Index Metadata       | Key metadata, such as document name, owner, and lifecycle stage, are indexed by default. |
-| Content | Manage Properties    | Metadata properties such as title, created by, and last modified by are enabled by default. |
-| Sync    | Incremental Crawl Frequency | Every 15 minutes. |
-| Sync    | Full Crawl Frequency | Every day. |
+| Section  | Setting               | Default Value |
+|----------|-----------------------|---------------|
+| **Users**   | Access Permissions   | Respects Veeva Vault permissions; only viewable documents are accessible. |
+| **Content** | Index Metadata       | Indexes key metadata, such as document name, owner, and lifecycle stage. |
+| **Content** | Manage Properties    | Enables metadata like title, created by, and last modified by. |
+| **Sync**    | Full Crawls          | Every day. |
 
-To change any of these defaults, choose the **Custom Setup** option during configuration.
+To modify these defaults, select the **Custom Setup** option during configuration.
+
+---
 
 ## Custom Setup
 
 ### Users
+
 **Access Permissions**  
-The connector adheres to the ACLs defined in Veeva Vault. Only users with view permissions in Veeva Vault can see the indexed content in Microsoft 365. Admins can optionally allow all users access to all indexed content, though this is not recommended.
+The connector adheres to the ACLs defined in Veeva Vault. Only users with appropriate permissions in Veeva Vault can view indexed content in Microsoft 365. It is possible to override this and allow all users access to indexed content, though this is not recommended.
 
 ### Sync
-**Schedule Adjustments**  
-Adjust crawl frequency to fit your organization's requirements:
-- **Incremental Crawl**: Default is 15 minutes.
-- **Full Crawl**: Default is daily.
+
+**Adjust Sync Schedules**  
+You can modify the frequency of full crawls to fit your organization's requirements:
+- Full Crawls: Default is daily.
+
+---
 
 ## Troubleshooting
 
-You can find troubleshooting steps for commonly seen issues [here](troubleshoot-veeva-vault-promomats-connector.md).
+For common issues and their resolutions, refer to the [Troubleshooting Guide](troubleshoot-veeva-vault-promomats-connector.md).
 
-## What's Next
+---
 
-After publishing your connection, review the status under the **Data Sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
+## Next Steps
 
-If you have additional issues or feedback, contact us at [Microsoft Graph | Support](https://developer.microsoft.com/en-us/graph/support).
+Once the connector is configured and published, monitor its status under the **Data Sources** tab in the [Admin Center](https://admin.microsoft.com). To make updates or remove the connector, refer to the [Manage Your Connector](manage-connector.md) guide.
+
+For additional support, contact [Microsoft Graph Support](https://developer.microsoft.com/en-us/graph/support).
