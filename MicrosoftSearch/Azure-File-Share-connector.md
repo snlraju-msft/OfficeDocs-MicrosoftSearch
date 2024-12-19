@@ -92,36 +92,38 @@ The connector respects ACLs defined in NTFS setups. Admins can optionally make a
 
 ### Content
 
-**Custom Properties**
+#### Custom Properties
 
 You can enrich indexed data by creating custom properties based on the connector's default properties.
 
-:::image type="content" source="media/file-connector/connectors-custom-property-setup.png" alt-text="Custom property setup with a rule for URL.":::
+##### To Add a Custom Property:
 
-To add a custom property:
-1. Enter a property name that will appear in search results.
-2. For the value, select **Static or String/Regex Mapping**:
-   - A static value appears in all search results.
-   - A string/regex value varies based on added rules.
-3. Select **Edit value**:
-   - For a static value, enter the desired string.
-   - For a string/regex value:
-     * In **Add expressions**, select a default property.
-     * Enter a **Sample value** for preview.
-     * Add up to three **Expression** values using regex.  
+1. **Enter a Property Name**  
+   Provide a name for the property that will appear in search results.
+
+2. **Select a Value Type**  
+   Choose between **Static** or **String/Regex Mapping**:
+   - **Static Value**: Appears in all search results.
+   - **String/Regex Value**: Varies based on added rules.
+
+3. **Edit the Value**  
+   - **For Static Value**: Enter the desired string.
+   - **For String/Regex Value**:
+     - In **Add Expressions**, select a default property.
+     - Enter a **Sample Value** for preview purposes.
+     - Add up to three **Expressions** using regex.  
        [Learn about regex expressions](/dotnet/standard/base-types/regular-expression-language-quick-reference).
-     * Combine extracted values in **Create formula**.
+     - Combine the extracted values in the **Create Formula** section.
 
-**Assign Property Labels**  
+#### Assign Property Labels
 Follow the general [setup instructions](./configure-connector.md).
 
-**Manage Schema**  
+#### Manage Schema  
 Follow the general [setup instructions](./configure-connector.md).
 
 ### Sync
 
-**Schedule Adjustments**  
-- **Incremental Crawl**: Default is every 15 minutes.  
+#### Schedule Adjustments
 - **Full Crawl**: Default is daily.
 
 ## Troubleshooting
