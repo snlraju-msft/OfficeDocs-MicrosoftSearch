@@ -107,14 +107,7 @@ Adjust crawl frequency to fit your organization's requirements:
 
 ## Troubleshooting
 
-### Common Errors
-
-| Error                   | Description                               | Resolution                                                                 |
-|-------------------------|-------------------------------------------|---------------------------------------------------------------------------|
-| `INVALID_SESSION_ID`    | Authentication session expired or invalid.| Reauthenticate with valid credentials.                                   |
-| `INSUFFICIENT_ACCESS`   | User lacks permissions to access files.   | Verify user roles and ACLs in Veeva Vault.                               |
-| `API_LIMIT_EXCEEDED`    | Too many API requests made in a short period. | Adjust crawl frequency or retry after some time.                        |
-| **Missing Properties or Documents** | Required metadata properties are not enabled. | Ensure metadata properties are enabled in Veeva Vault and test retrieval.|
+You can find troubleshooting steps for commonly seen issues [here](troubleshoot-veeva-vault-promomats-connector.md).
 
 ## What's Next
 
