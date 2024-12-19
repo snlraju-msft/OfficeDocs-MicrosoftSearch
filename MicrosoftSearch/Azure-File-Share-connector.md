@@ -22,9 +22,6 @@ The Azure File Share Graph Connector integrates Azure File Share data with the M
 
 This guide is designed for Microsoft 365 administrators responsible for configuring, managing, and monitoring the Azure File Share Graph Connector.
 
->[!NOTE]
->The Azure File Share Graph Connector is in preview. If you wish to get early access, sign up using [this form](https://forms.office.com/r/JniPmK5bzm).
-
 ## Capabilities
 
 ### Access
@@ -38,16 +35,15 @@ This guide is designed for Microsoft 365 administrators responsible for configur
 ## Limitations
 
 ### Indexing
-- Only the latest file versions are indexed.
 - Text-based files are indexed up to 4MB in size (3.8MB content + 0.2MB metadata).
-- Supported formats include Microsoft Office files, PDFs, text files, JSON files, and other text-based files. The content of non-text files is excluded by default.
+- Supported formats include Microsoft Office files, PDFs, text files, JSON files, and other text-based files. The content indexing of non-text files is excluded by default.
 
 ## Prerequisites
 
 Before you set up an Azure File Share connector, ensure the following prerequisites are met:
 
 ### Azure File Share Configuration
-- Azure File Share should be mounted on a device.
+- Your Azure File Share should be mounted on a device.
 - A Graph Connector Agent (GCA) must be installed and registered on the device.
 
 ### User Credentials
@@ -67,8 +63,9 @@ Use the same credentials for:
 ### Display Name
 Provide a name for the connector, such as "Azure File Share - Marketing Team."
 
-### Add Source Path
-Enter the Azure File Share URL to connect to the data source.
+### Add Source folder Path(s)
+Enter UNC path of the Azure File Share to connect to the data source.
+Foe example, "\\testpath.file.core.windows.net\test_folder\test_folder2"
 
 ### Configure Authentication
 - Select the GCA for your tenant.
@@ -98,6 +95,36 @@ To adjust these defaults, select the **Custom Setup** option during configuratio
 
 **Access Permissions**  
 The connector respects ACLs defined in NTFS setups. Admins can optionally make all indexed content visible to all M365 users, though this is not recommended.
+
+### Content
+
+**Custom Properties**
+
+You can enrich your indexed data by creating custom properties based on the connector's default properties.
+
+:::image type="content" source="media/file-connector/connectors-custom-property-setup.png" alt-text="Custom property set up with a rule for URL.":::
+
+To add a custom property:
+
+  1. Enter a property name. This name appears in the search results from this connector.
+  1. For the value, select **Static or String/Regex Mapping**. A static value is included in all search results from this connector. The string/regex value varies based on the rules you add.
+  1. Select **Edit value**.
+  1. If you selected a static value, enter the string you want to appear.
+  1. If you selected a string/regex value:
+      * In the **Add expressions** section, in the **Property** list, select a default property from the list.
+      * For **Sample value**, enter a string to represent the type of values that could appear. This sample is used when you preview your rule.
+      * For **Expression**, enter a regex expression to define the portion of the property value that should appear in search results. You can add up to three expressions. To learn more about regex expressions, see [Regular expression language quick reference](/dotnet/standard/base-types/regular-expression-language-quick-reference) or search the web for a regex expression reference guide.
+      * In the **Create formula** section, enter a formula to combine the values extracted from the expressions. 
+
+**Assign property labels**
+
+Follow the general [setup instructions](./configure-connector.md).
+<!---If the above phrase does not apply, delete it and insert specific details for your data source that are different from general setup instructions.-->
+
+**Manage schema**
+
+Follow the general [setup instructions](./configure-connector.md).
+<!---If the above phrase does not apply, delete it and insert specific details for your data source that are different from general setup instructions.-->
 
 ### Sync
 
