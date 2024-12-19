@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 description: "Troubleshooting the Azure File Share Graph connector for Microsoft Search and Microsoft 365 Copilot" 
 --- 
 
-# Troubleshooting the File Share Microsoft Graph connector  
+# Troubleshooting the Azure File Share Microsoft Graph connector  
 
 ###  Common errors observed while configuring the connector
 
