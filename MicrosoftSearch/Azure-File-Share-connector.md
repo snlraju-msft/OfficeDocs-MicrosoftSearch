@@ -18,33 +18,44 @@ ms.date: 12/02/2024
 
 # Azure File Share Graph Connector (Preview)
 
-The Azure File Share Graph Connector integrates Azure File Share data into the Microsoft 365 ecosystem, enabling advanced search and interaction capabilities via Microsoft Search and Copilot. It respects NTFS permissions, ensuring that only authorized users can access indexed content within Microsoft 365.
+The Azure File Share Graph Connector integrates Azure File Share data into the Microsoft 365 ecosystem, enabling advanced search and interaction capabilities via Microsoft Search and Copilot. By respecting NTFS permissions, it ensures that only authorized users can access indexed content within Microsoft 365.
 
 This guide is intended for Microsoft 365 administrators responsible for configuring, managing, and monitoring the Azure File Share Graph Connector.
 
-## Capabilities
+---
+
+## Key Capabilities
 
 ### Access
-- Enables access to Azure File Share data via Microsoft Search and Copilot.
-- Integrates Azure Active Directory (AAD) and NTFS permissions for secure data interaction.
+- Provides secure access to Azure File Share data via Microsoft Search and Copilot.
+- Integrates Azure Active Directory (AAD) and NTFS permissions for seamless security.
 
 ### Data Syncing
-- Supports periodic full crawl.
+- Supports periodic full crawls.
 - Indexes text-based file content, metadata, directory structures, and ACLs.
+
+---
 
 ## Limitations
 
 ### Indexing
-- Indexes text-based files up to 4MB (3.8MB content + 0.2MB metadata).
-- Supports formats like Microsoft Office files, PDFs, text files, JSON files, and other text-based files. Non-text files are excluded by default.
+- Files up to 4MB (3.8MB content + 0.2MB metadata) are indexed.
+- Supported formats include:
+  - Microsoft Office files
+  - PDFs
+  - Text files
+  - JSON files
+- Non-text files are excluded by default.
+
+---
 
 ## Prerequisites
 
-Before setting up the Azure File Share Connector, ensure the following:
+Before setting up the Azure File Share Connector, ensure the following requirements are met:
 
 ### Azure File Share Configuration
-- Your Azure File Share must be mounted on a device.
-- Install and register a Graph Connector Agent (GCA) on the device.
+- Mount your Azure File Share on a device.
+- Install and register the Graph Connector Agent (GCA) on the device.
 
 ### User Credentials
 Use the same credentials for:
@@ -52,36 +63,40 @@ Use the same credentials for:
 - Running the Graph Connector Agent.
 - Configuring the connector in the Microsoft 365 Admin Center.
 
-## Set Up
+---
 
-### Display Name
-Provide a descriptive name, e.g., "Azure File Share - Marketing Team."
+## Setup Guide
 
-### Add Source Folder Paths
-Enter the UNC path for the Azure File Share, e.g.,  
+### Step 1: Configure Display Name
+Provide a descriptive name for the connector, such as "Azure File Share - Marketing Team."
+
+### Step 2: Add Source Folder Paths
+Specify the UNC path for the Azure File Share, e.g.,  
 `\\testpath.file.core.windows.net\test_folder\test_folder2`
 
-### Configure Authentication
+### Step 3: Configure Authentication
 - Select the GCA for your tenant.
 - Use Windows authentication with valid admin credentials.
 
-### Rollout to a Limited Audience
+### Step 4: Deploy to Limited Audience
 Deploy the connector to a small group to validate indexing and access controls before a broader rollout.
 
-### Customize Sync Schedules
-- Set periodic full crawls (default: daily).
-- Configure incremental crawls (default: every 15 minutes).
+### Step 5: Schedule Full Crawls
+Set up periodic full crawls to update indexed data (default: daily).
+
+---
 
 ## Default Settings
 
-| Section  | Setting            | Default Value                                                      |
-|----------|--------------------|--------------------------------------------------------------------|
-| Users    | Access Permissions | Respects NTFS permissions; only viewable files are indexed and accessible. |
-| Content  | Index Metadata     | Includes properties like file name, created by, last modified, and file path. |
-| Sync     | Incremental Crawl  | Every 15 minutes.                                                 |
-| Sync     | Full Crawl         | Every day.                                                        |
+| Section  | Setting               | Default Value                                                      |
+|----------|-----------------------|--------------------------------------------------------------------|
+| Users    | Access Permissions    | Respects NTFS permissions; only authorized files are indexed.      |
+| Content  | Index Metadata        | Includes properties such as file name, created by, last modified, and file path. |
+| Sync     | Full Crawl Frequency  | Every day.                                                        |
 
 To adjust these defaults, use the **Custom Setup** option during configuration.
+
+---
 
 ## Custom Setup
 
@@ -121,17 +136,16 @@ Follow the general [setup instructions](./configure-connector.md).
 #### Manage Schema  
 Follow the general [setup instructions](./configure-connector.md).
 
-### Sync
-
-#### Schedule Adjustments
-- **Full Crawl**: Default is daily.
+---
 
 ## Troubleshooting
 
-Find steps for resolving common issues [here](troubleshoot-azure-file-share-connector.md).
+For common issues and resolutions, refer to the [Troubleshooting Guide](troubleshoot-azure-file-share-connector.md).
+
+---
 
 ## What's Next
 
-After publishing your connection, monitor the status under **Data Sources** in the [admin center](https://admin.microsoft.com). To update or delete connections, see [Manage your connector](manage-connector.md).
+Once the connector is configured and published, monitor its status under **Data Sources** in the [Admin Center](https://admin.microsoft.com). To make updates or delete the connection, see [Manage Your Connector](manage-connector.md).
 
-For additional issues or feedback, contact [Microsoft Graph Support](https://developer.microsoft.com/en-us/graph/support).
+For additional support or feedback, contact [Microsoft Graph Support](https://developer.microsoft.com/en-us/graph/support).
