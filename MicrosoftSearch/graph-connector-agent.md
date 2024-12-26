@@ -88,6 +88,9 @@ The upgrade button isn't available for agents upgrading from 1.x version to 2.x 
 8. You can run the checks anytime by closing and opening the GCA Config app or by using the "Health Check" button next to the "Edit" button in the registration details screen.
    :::image type="content" source="media/onprem-agent/health-check-registration.jpg" alt-text="Sample snapshot of Health check success on GCA registration page.":::
 
+>[!NOTE]
+>If Graph Connector Agent is uninstalled and re-installed, all existing connections need to be recreated. Old connections become unusable and cannot be recreated. Post re-installation of the agent, delete older connections and create new ones.
+
 ## Create and configure an app for the agent  
 
 First, sign-in and note that the minimum required privilege on the account is search administrator. The agent then asks you to provide authentication details.
