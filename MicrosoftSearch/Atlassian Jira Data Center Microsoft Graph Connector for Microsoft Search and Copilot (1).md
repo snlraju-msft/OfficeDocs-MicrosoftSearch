@@ -72,18 +72,18 @@ Currently OAuth 2.0 is supported in the connection setup. To enter the Client ID
 
 - Log in to your Jira Data Center 
 - Click on settings icon -> Click on application -> Click on application links
-![Click Application](/media/jira-data-center-gc-screenshot-1.png)
-![Application links](/media/jira-data-center-gc-screenshot-2.png)
+![Click Application](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-1.png)
+![Application links](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-2.png)
 - Select Create link
-![{Select Create link}](/media/jira-data-center-gc-screenshot-3.png)
+![{Select Create link}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-3.png)
 - Select External application and then choose Incoming as the direction. 
-![{Select External application and then choose Incoming as the direction}](/media/jira-data-center-gc-screenshot-4.png)
+![{Select External application and then choose Incoming as the direction}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-4.png)
 - Fill in the "Configure an incoming link" form
   - Redirect URL: for **M365 Enterprise**, `https://gcs.office.com/v1.0/admin/oauth/callback`.
   - Scope: Admin
-  ![{Fill in the “Configure an incoming link” form}](/media/jira-data-center-gc-screenshot-5.png)
+  ![{Fill in the “Configure an incoming link” form}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-5.png)
 - Copy the provided client ID and secret in the "Credentials" page and paste them in the corresponding fields in Jira Data Center connection setup page
-  ![{client ID and secret}](/media/jira-data-center-gc-screenshot-6.png)
+  ![{client ID and secret}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-6.png)
 
 **5.Rollout to limited audience**
 
