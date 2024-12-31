@@ -68,26 +68,35 @@ The graph connector agent acts as a bridge between your Jira Data Center instanc
 
 Currently OAuth 2.0 is supported in the connection setup. To enter the Client ID and Client Secret in the connection setup, refer to below instructions to obtain them. 
 
-- Log in to your Jira Data Center 
-- Click on settings icon -> Click on application -> Click on application links
-![Click Application](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-1.png)
-![Application links](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-2.png)
-- Select Create link
-![{Select Create link}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-3.png)
-- Select External application and then choose Incoming as the direction. 
-![{Select External application and then choose Incoming as the direction}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-4.png)
-- Fill in the "Configure an incoming link" form
+1. Log in to your Jira Data Center 
+1. Click on settings icon -> Click on application -> Click on application links.
+
+  ![Click Application](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-1.png)
+
+  ![Application links](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-2.png)
+
+1. Select **Create link**.
+
+  ![{Select Create link}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-3.png)
+
+1. Select External application and then choose Incoming as the direction. 
+
+  ![{Select External application and then choose Incoming as the direction}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-4.png)
+1. Fill in the "Configure an incoming link" form.
   - Redirect URL: for **M365 Enterprise**, `https://gcs.office.com/v1.0/admin/oauth/callback`.
   - Scope: Admin
+  
   ![{Fill in the “Configure an incoming link” form}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-5.png)
-- Copy the provided client ID and secret in the "Credentials" page and paste them in the corresponding fields in Jira Data Center connection setup page
+
+1. Copy the provided client ID and secret in the "Credentials" page and paste them in the corresponding fields in Jira Data Center connection setup page
+  
   ![{client ID and secret}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-6.png)
 
-**5.Rollout to limited audience**
+**5. Rollout to limited audience**
 
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, click [here](/microsoftsearch/staged-rollout-for-graph-connectors). 
 
-At this point, you are ready to create the connection for your Jira Data Center. You can acknowledge the notice and then click on the "Create" button and the Microsoft Graph connector starts indexing data from your Jira Data Center site. 
+At this point, you are ready to create the connection for your Jira Data Center. You can acknowledge the notice and then click on the **Create** button and the Microsoft Graph connector starts indexing data from your Jira Data Center site. 
 
 For other settings, we set defaults based on what works best with Jira Data Center data. The default values are as follows: 
 
@@ -100,11 +109,11 @@ Content | Manage Properties | To check default properties and their schema, [cli
 Sync | Incremental Crawl | Frequency: Every 15 mins
 Sync | Full crawl | Frequency: Every day
 
-If you want to edit any of these values, you need to choose the Custom Setup option 
+If you want to edit any of these values, you need to choose the **Custom Setup** option.
 
 ## Custom Setup 
 
-Custom setup allows admins to edit the default values mentioned above. Once you click on the Custom Setup option, you see three more tabs – Users, Content, and Sync. 
+Custom setup allows admins to edit the default values mentioned above. Once you click on the **Custom Setup** option, you see three more tabs – Users, Content, and Sync. 
 
 ### Users
 
@@ -116,9 +125,9 @@ If you choose Only people with access to this data source, you need to further c
 
 To identify which option is suitable for your organization: 
 
-1. Choose the **Microsoft Entra ID** option if the email ID of Jira Data Center users is same as the UserPrincipalName (UPN) of users in Microsoft Entra ID. 
+1. Choose the **Microsoft Entra ID** option if the email ID of Jira Data Center users is same as the UserPrincipalName (UPN) of users in Microsoft Entra ID. 
 
-2. Choose the **non-AAD** option if the email ID of Confluence users is **different** from the UserPrincipalName (UPN) of users in Microsoft Entra ID.
+2. Choose the **non-AAD** option if the email ID of Confluence users is **different** from the UserPrincipalName (UPN) of users in Microsoft Entra ID.
 
 >[!Important]
 >- If you choose Microsoft Entra ID as the type of identity source, the connector maps the email IDs of users obtained from Jira Data Center directly to UPN property from Microsoft Entra ID.
@@ -137,7 +146,7 @@ You can filter JiraDataCenter issues based on their creation or last update time
 
 **Manage Properties**
 
-This section defines the schema for the connection. The schema determines how the indexed Jira content is ingested and processed within the Graph Connector. You can add or modify properties to ensure the data structure aligns with your organizational needs for Copilot and search experiences. You can also add custom fields from Jira Data Center as properties. [Learn more.](/microsoftsearch/manage-search-schema)
+This section defines the schema for the connection. The schema determines how the indexed Jira content is ingested and processed within the Graph Connector. You can add or modify properties to ensure the data structure aligns with your organizational needs for Copilot and search experiences. You can also add custom fields from Jira Data Center as properties. [Learn more](/microsoftsearch/manage-search-schema).
 
 
 **Source Property**       | **Semantic Label**          | **Schema**                
@@ -167,17 +176,17 @@ Updated|Last modified date time|Query, Retrieve
 Use the preview results button to verify selected properties and filters. 
 
 ### Synchronization
-The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](/microsoftsearch/configure-connector#step-8-refresh-settings).
+The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, click [here](/microsoftsearch/configure-connector#step-8-refresh-settings).
 
 ## Review and Test your connection 
 
-- For testing, you can choose [publish to limited audience](/microsoftsearch/staged-rollout-for-graph-connectors#modify-or-stop-staged-rollout). 
+- For testing, you can choose [publish to limited audience](/microsoftsearch/staged-rollout-for-graph-connectors#modify-or-stop-staged-rollout). 
 
-- Search and validate your indexed content and permissions using [Index browser](/microsoftsearch/connectors-index-search).
+- Search and validate your indexed content and permissions using [Index browser](/microsoftsearch/connectors-index-search).
 
-- Find answers to common questions in our [FAQ section](/microsoftsearch/connectors-index-search)
+- Find answers to common questions in our [FAQ section](/microsoftsearch/connectors-index-search).
 
-For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](/microsoftsearch/configure-connector#step-11-customize-the-search-results-page)
+For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](/microsoftsearch/configure-connector#step-11-customize-the-search-results-page).
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data Sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
