@@ -16,7 +16,7 @@ description: "Set up the Atlassian Jira Data Center Microsoft Graph Connector fo
 ms.date: 12/26/2024
 ---
 
-# Atlassian Jira Data Center Microsoft Graph Connector(Preview)
+# Atlassian Jira Data Center Microsoft Graph Connector (Preview)
 
 The Jira Data Center Microsoft Graph connector enables your organization to index Jira Data Center issues and related data, making them easily discoverable and actionable within Microsoft 365 ecosystem.  
 
@@ -41,7 +41,7 @@ By using the Jira Data Center Microsoft Graph connector, teams can keep their Ji
 
 **1. Install the Microsoft Graph connector agent (GCA)**
 
-To index your Jira Data Center content, you must install the **GCA** on a Windows machine within the same network as the Jira Data Center site. See [install the Microsoft Graph connector agent](/microsoftsearch/graph-connector-agent) . You must be the administrator for your organization's Microsoft 365 tenant and the administrator for your organization's Jira site. 
+To index your Jira Data Center content, you must install the **GCA** on a Windows machine within the same network as the Jira Data Center site. See [install the Microsoft Graph connector agent](/microsoftsearch/graph-connector-agent). You must be the administrator for your organization's Microsoft 365 tenant and the administrator for your organization's Jira site. 
 
 >[!NOTE]
 > If you have previously installed the GCA, ensure it is updated to version 3.1.3.0 or later.  
@@ -62,7 +62,7 @@ To connect to your Jira Data Center data, use your organization's Jira Data Cent
 
 **3. Graph Connector Agent (GCA)**
 
-The graph connector agent acts as a bridge between your Jira Data Center instance and the connector APIs, enabling secure and efficient data transfer. In this step, select the agent configuration you want to use for your connector. See [install the Microsoft Graph connector agent](/microsoftsearch/graph-connector-agent).
+The graph connector agent acts as a bridge between your Jira Data Center instance and the connector APIs, enabling secure and efficient data transfer. In this step, select the agent configuration you want to use for your connector. See [install the Microsoft Graph connector agent](/microsoftsearch/graph-connector-agent).
 
 **4. Authentication Type**
 
@@ -71,26 +71,27 @@ Currently OAuth 2.0 is supported in the connection setup. To enter the Client ID
 1. Log in to your Jira Data Center 
 1. Click on settings icon -> Click on application -> Click on application links.
 
-  ![Click Application](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-1.png)
+    ![Click Application](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-1.png)
 
-  ![Application links](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-2.png)
+   ![Application links](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-2.png)
 
 1. Select **Create link**.
 
-  ![{Select Create link}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-3.png)
+    ![{Select Create link}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-3.png)
 
 1. Select External application and then choose Incoming as the direction. 
 
-  ![{Select External application and then choose Incoming as the direction}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-4.png)
+    ![{Select External application and then choose Incoming as the direction}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-4.png)
+
 1. Fill in the "Configure an incoming link" form.
   - Redirect URL: for **M365 Enterprise**, `https://gcs.office.com/v1.0/admin/oauth/callback`.
   - Scope: Admin
   
-  ![{Fill in the “Configure an incoming link” form}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-5.png)
+    ![{Fill in the “Configure an incoming link” form}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-5.png)
 
 1. Copy the provided client ID and secret in the "Credentials" page and paste them in the corresponding fields in Jira Data Center connection setup page
   
-  ![{client ID and secret}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-6.png)
+    ![{client ID and secret}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-6.png)
 
 **5. Rollout to limited audience**
 
