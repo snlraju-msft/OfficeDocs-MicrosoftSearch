@@ -68,7 +68,7 @@ The graph connector agent acts as a bridge between your Jira Data Center instanc
 
 Currently OAuth 2.0 is supported in the connection setup. To enter the Client ID and Client Secret in the connection setup, refer to below instructions to obtain them. 
 
-1. Log in to your Jira Data Center 
+1. Log in to your Jira Data Center.
 1. Click on settings icon -> Click on application -> Click on application links.
 
     ![Click Application](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-1.png)
@@ -79,17 +79,17 @@ Currently OAuth 2.0 is supported in the connection setup. To enter the Client ID
 
     ![{Select Create link}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-3.png)
 
-1. Select External application and then choose Incoming as the direction. 
+1. Select **External application** and then choose **Incoming** as the direction. 
 
     ![{Select External application and then choose Incoming as the direction}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-4.png)
 
 1. Fill in the "Configure an incoming link" form.
-  - Redirect URL: for **M365 Enterprise**, `https://gcs.office.com/v1.0/admin/oauth/callback`.
-  - Scope: Admin
+    - Redirect URL: for **M365 Enterprise**, `https://gcs.office.com/v1.0/admin/oauth/callback`.
+    - Scope: Admin
   
     ![{Fill in the “Configure an incoming link” form}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-5.png)
 
-1. Copy the provided client ID and secret in the "Credentials" page and paste them in the corresponding fields in Jira Data Center connection setup page
+1. Copy the provided client ID and secret in the "Credentials" page and paste them in the corresponding fields in Jira Data Center connection setup page.
   
     ![{client ID and secret}](https://github.com/MicrosoftDocs/OfficeDocs-MicrosoftSearch-pr/blob/70c51f4d02219259deb34a3de06f2214ec61033f/MicrosoftSearch/media/jira-data-center-gc-screenshot-6.png)
 
