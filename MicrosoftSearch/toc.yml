@@ -123,6 +123,10 @@ items:
               href: jira-connector.md
             - name: Troubleshooting
               href: troubleshoot-jira-cloud-connector.md
+        - name: Jira Data Center
+          items:
+            - name: Setup
+              href: jira-data-center-connector.md
         - name: CSV
           items:
           - name: Setup
