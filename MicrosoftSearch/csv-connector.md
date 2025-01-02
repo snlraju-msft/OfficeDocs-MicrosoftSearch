@@ -23,8 +23,19 @@ The CSV Microsoft Graph connector allows your organization to ingest content fro
 
 This article is for anyone who configures, runs, and monitors a CSV Microsoft Graph connector. It supplements the general setup process and shows instructions that apply only to this connector.
 
+## Capabilities
+
+- Retain ACLs defined by your organization
+- Customize your crawl frequency
+- Create agents and workflows using this connection and plugins from Microsoft Copilot Studio
+
+## Limitations
+
+- Profile enrichment scenarios aren't supported at this time
+- Spaces in CSV column headers are not supported
+
 <!---## Before you get started-->
-## Before you get started
+## Prerequisites
 
 - Make sure there's no whitespace in the CSV headers
 
