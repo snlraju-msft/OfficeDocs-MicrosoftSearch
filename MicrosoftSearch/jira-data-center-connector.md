@@ -71,27 +71,27 @@ Currently OAuth 2.0 is supported in the connection setup. To enter the Client ID
 1. Log in to your Jira Data Center.
 1. Click on settings icon -> Click on application -> Click on application links.
 
-    ![Click Application](media/jira-data-center-gc-screenshot-1.png)
+    ![Screenshot of Click Application](media/jira-data-center-gc-screenshot-1.png)
 
-   ![Application links](media/jira-data-center-gc-screenshot-2.png)
+   ![Screenshot of Application links](media/jira-data-center-gc-screenshot-2.png)
 
 1. Select **Create link**.
 
-    ![{Select Create link}](media/jira-data-center-gc-screenshot-3.png)
+    ![{Screenshot of Select Create link}](media/jira-data-center-gc-screenshot-3.png)
 
 1. Select **External application** and then choose **Incoming** as the direction. 
 
-    ![{Select External application and then choose Incoming as the direction}](media/jira-data-center-gc-screenshot-4.png)
+    ![{Screenshot of Select External application and then choose Incoming as the direction}](media/jira-data-center-gc-screenshot-4.png)
 
 1. Fill in the "Configure an incoming link" form.
     - Redirect URL: for **M365 Enterprise**, `https://gcs.office.com/v1.0/admin/oauth/callback`.
     - Scope: Admin
   
-    ![{Fill in the “Configure an incoming link” form}](media/jira-data-center-gc-screenshot-5.png)
+    ![{Screenshot of Fill in the “Configure an incoming link” form}](media/jira-data-center-gc-screenshot-5.png)
 
 1. Copy the provided client ID and secret in the "Credentials" page and paste them in the corresponding fields in Jira Data Center connection setup page.
   
-    ![{client ID and secret}](media/jira-data-center-gc-screenshot-6.png)
+    ![{Screenshot of client ID and secret}](media/jira-data-center-gc-screenshot-6.png)
 
 **5. Rollout to limited audience**
 
