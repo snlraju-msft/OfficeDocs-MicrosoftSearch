@@ -123,6 +123,10 @@ items:
               href: jira-connector.md
             - name: Troubleshooting
               href: troubleshoot-jira-cloud-connector.md
+        - name: Jira Data Center
+          items:
+            - name: Setup
+              href: jira-data-center-connector.md
         - name: CSV
           items:
           - name: Setup
@@ -177,6 +181,10 @@ items:
             href: salesforce-connector.md
           - name: Troubleshooting
             href: troubleshoot-salesforce-connector.md
+        - name: Salesforce Knowledge
+          items:
+          - name: Setup
+            href: salesforce-knowledge-connector.md
         - name: ServiceNow Catalog
           items:
           - name: Setup
