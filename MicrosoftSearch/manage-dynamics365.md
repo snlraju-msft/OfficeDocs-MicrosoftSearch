@@ -13,6 +13,8 @@ description: "Manage how Dataverse and Dynamics 365 content appears in search re
 ---
 # Dataverse and Dynamics 365 results in Microsoft Search
 
+**Add deprecation note**
+
 Microsoft Dataverse is a cloud storage platform that lets you securely store and manage data used by your business applications. Microsoft Dynamics 365 is a line of intelligent business applications built on the Dataverse Search platform, designed for enterprise resource planning and customer relationship management. With Dataverse results in Microsoft Search, users of both classic Dynamics 365 applications and custom model-driven Power Apps built on Dataverse are able to easily find their relevant customer data. The Dataverse connector provides some key benefits:
 
 * **Easy to use:** Users can easily and quickly find key information stored in Dataverse and Dynamics 365, without needing to navigate to a new app or page.
