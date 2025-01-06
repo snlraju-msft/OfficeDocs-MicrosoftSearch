@@ -33,7 +33,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
 - To allow the connector to connect to your Azure DevOps organization, you must enable **Third-party application access via OAuth**. Refer Azure DevOps documentation to [manage security policies](/azure/devops/organizations/accounts/change-application-access-policies?view=azure-devops#manage-a-policy&preserve-view=true) to learn more.
 
-    ![Third-party application access via OAuth](media/ado-workitems-connector-security-policies.png)
+    ![Screenshot that shows third-party application access via OAuth.](media/ado-workitems-connector-security-policies.png)
 
 - **Service Account**: To connect to Azure DevOps and allow the Microsoft Graph Connector to update work items regularly, you need a service account with the following permissions granted to it.
 
