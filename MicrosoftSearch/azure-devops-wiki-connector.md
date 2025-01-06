@@ -204,6 +204,7 @@ Here, you can add or remove available properties from your Azure DevOps data sou
 | isParentPage | | | |
 | LastPublishedAuthorEmail | Last modified by | | Retrieve |
 | LastPublishedDate | Last modified date time | Date and time the item was last modified in the data source | Retrieve |
+
 | Organization | | | Retrieve |
 | Path | | | |
 | Project | | | Retrieve |
