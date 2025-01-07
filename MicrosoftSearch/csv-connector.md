@@ -23,8 +23,19 @@ The CSV Microsoft Graph connector allows your organization to ingest content fro
 
 This article is for anyone who configures, runs, and monitors a CSV Microsoft Graph connector. It supplements the general setup process and shows instructions that apply only to this connector.
 
+## Capabilities
+
+- Retain ACLs defined by your organization
+- Customize your crawl frequency
+- Create agents and workflows using this connection and plugins from Microsoft Copilot Studio
+
+## Limitations
+
+- Profile enrichment scenarios aren't supported at this time
+- Spaces in CSV column headers are not supported
+
 <!---## Before you get started-->
-## Before you get started
+## Prerequisites
 
 - Make sure there's no whitespace in the CSV headers
 
@@ -114,11 +125,11 @@ Set-spotenant –DisableCustomAppAuthentication $false
 2. In the App ID field, paste the client ID of the SharePoint app and select **Lookup**.
 3. In the permission Request XML field, paste this code and select **Create**.
 
-```xml
-<AppPermissionRequests AllowAppOnlyPolicy="true">
-    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read" />
-</AppPermissionRequests>
-```
+    ```xml
+    <AppPermissionRequests AllowAppOnlyPolicy="true">
+        <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read" />
+    </AppPermissionRequests>
+    ```
 
 4. Select **Trust it**.
 
@@ -179,7 +190,7 @@ To control access on a file level, enter Microsoft Entra users or groups.
 3. Enter the **Container name** and **Filename**.
 4. Select **Test Connection**. You should get a **The connection is successful** message.
 
-:::image type="content" source="media/csv-connector/csv-connector-adls-data-source-settings.png" alt-text="CSV connector with Data Source Settings for an Azure Data Lake Storage source." lightbox="media/csv-connector/csv-connector-adls-data-source-settings.png":::
+    :::image type="content" source="media/csv-connector/csv-connector-adls-data-source-settings.png" alt-text="CSV connector with Data Source Settings for an Azure Data Lake Storage source." lightbox="media/csv-connector/csv-connector-adls-data-source-settings.png":::
 
 > [!NOTE]
 > If your datasource contains multiple .csv files with the same headers, select **include all CSV files in location**.
@@ -229,15 +240,9 @@ Follow the general [setup instructions](./configure-connector.md).
 
 Follow the general [setup instructions](./configure-connector.md).
 
-<!---## Limitations-->
-## Limitations
-
-The following are known limitations of the CSV Microsoft Graph connector:
-* Profile enrichment scenarios aren't supported at this time.
-
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
 
 You can find troubleshooting steps for commonly seen issues [here](troubleshoot-csv-connector.md).
 
-If you have issues or want to provide feedback, contact [Microsoft Graph | Support (https://developer.microsoft.com/en-us/graph/support).
+If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/en-us/graph/support).
