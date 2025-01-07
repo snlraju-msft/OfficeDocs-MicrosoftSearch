@@ -129,7 +129,7 @@ Set-spotenant –DisableCustomAppAuthentication $false
     <AppPermissionRequests AllowAppOnlyPolicy="true">
         <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read" />
     </AppPermissionRequests>
-```
+    ```
 
 4. Select **Trust it**.
 
