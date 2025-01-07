@@ -240,12 +240,6 @@ Follow the general [setup instructions](./configure-connector.md).
 
 Follow the general [setup instructions](./configure-connector.md).
 
-<!---## Limitations-->
-## Limitations
-
-The following are known limitations of the CSV Microsoft Graph connector:
-* Profile enrichment scenarios aren't supported at this time.
-
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
 
