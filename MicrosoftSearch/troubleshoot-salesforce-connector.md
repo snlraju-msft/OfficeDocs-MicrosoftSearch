@@ -37,6 +37,6 @@ Under **Administrative Permissions**, ensure `View Roles and Role Hierarchy`, `V
 ### 3. **Unable to search for items from a field**
 If you're not seeing any results from a particular field in Salesforce, ensure that the field is being indexed by the connector and does not have Field-Level Security enabled.
 You can check if the field is being indexed by the connector from the **Manage Properties** section of the **Content** tab.
-You can check the Field-Level Security settings in Salesforce from Setup > Object manager > Select Object > Fields & Relationships > Select Field name > View Field Accessibility.
+You can check the Field-Level Security settings in **Salesforce from Setup** > **Object manager** > **Select Object** > **Fields & Relationships** > **Select Field name** > **View Field Accessibility**.
 
 To get more information on the types of errors, go to the **error details** page after selecting the connection. Select the **error code** to see more detailed errors. Also refer to [Monitor your connections](./manage-connector.md) to learn more.
