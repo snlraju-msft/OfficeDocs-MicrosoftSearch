@@ -183,7 +183,7 @@ To identify which option is suitable for your organization:
    * If you choose individual projects, only Jira issues in the selected projects are indexed.
 
    > [!NOTE]
-   > When you grant the _Browse projects_ permission to a Jira projects, it is listed in the project selection and can be crawled. If a project is missing, check the permissions for your account.
+   > When you grant the _Browse projects_ permission to a Jira project, it is listed in the project selection and can be crawled. If a project is missing, check the permissions for your account.
 
 1. _Filter data_
 
@@ -192,7 +192,7 @@ To identify which option is suitable for your organization:
    * Specify the **issue modified time period**. This option will only index the Jira issues that are created or modified in the time period selected on a **rolling basis** based on current crawl.
 
    > [!TIP]
-   > You may use the JQL filter to index only specific Jira issue types using "*issueType in (Bug,Improvement)*"
+   > You may use the JQL filter to index only specific Jira issue types using "*issueType in (Bug, Improvement)*"
 
 **Manage Properties**
 
