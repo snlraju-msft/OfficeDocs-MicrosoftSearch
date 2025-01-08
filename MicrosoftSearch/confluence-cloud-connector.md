@@ -181,6 +181,6 @@ You can change the default values of refresh interval from here if you want to.
 - Search and validate your indexed content and permissions using [Index browser](./connectors-index-search.md)
 - You may find answers to common questions in our [FAQ section](./frequently-asked-questions.md)
 
-For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](./configure-connector.md#step-11-customize-the-search-results-page).
+For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](customize-search-page.md).
 
 If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/graph/support).

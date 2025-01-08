@@ -34,7 +34,7 @@ Result clusters are displayed on the All vertical and can include a maximum of t
 Ensure that the connected content meets the following two criteria, to show up in a result cluster:
 
 1.	The external connection and its items must have the (body) [“content” property](/graph/api/resources/externalconnectors-externalitem?view=graph-rest-beta#properties&preserve-view=true) populated with textual content. The content property should be a meaningful and plain-text representation of the item.
-2.	One of the source properties must be mapped to the [semantic label “title”](configure-connector.md?#step-6-assign-property-labels).
+2.	One of the source properties must be mapped to the [semantic label “title”](configure-connector.md#semantic-labels-for-source-properties).
 
 ### Step 2: Check result type definition to adjust the user experience
 

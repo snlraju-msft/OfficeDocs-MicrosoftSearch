@@ -195,7 +195,7 @@ Use the preview results button to verify selected properties and filters.
 
 ### Synchronization
 
-The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](./configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](configure-connector.md#guidelines-for-sync-settings).
 You can change the default values of refresh interval from here if you want to.
 
 ### Review and Test your connection
@@ -204,7 +204,7 @@ You can change the default values of refresh interval from here if you want to.
 - Search and validate your indexed content and permissions using [Index browser](./connectors-index-search.md).
 - Find answers to common questions in our [FAQ section](./frequently-asked-questions.md).
 
-For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](./configure-connector.md#step-11-customize-the-search-results-page).
+For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](customize-search-page.md).
 
 ## Limitations
 - Doesn't index blogs, attachment files, or comments.

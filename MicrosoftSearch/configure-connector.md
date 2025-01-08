@@ -157,7 +157,30 @@ If you select a content property, you have the option of using the system-genera
 
 #### Aliases for source properties
 
-You can add aliases to your properties under the "Alias" column on the "Manage schema" page. Aliases are friendly names for your properties. They're used in queries and in the creation of filters. They're also used to normalize source properties from multiple connections such that they have the same name. That way you can create a single filter for a vertical with multiple connections. For more information, see [Customize the search results page](customize-search-page.md).  
+You can add aliases to your properties under the "Alias" column. Aliases are friendly names for your properties. They're used in queries and in the creation of filters. They're also used to normalize source properties from multiple connections such that they have the same name. That way you can create a single filter for a vertical with multiple connections. For more information, see [Customize the search results page](customize-search-page.md).
+
+#### Semantic labels for source properties
+You can assign semantic labels to your source properties. Labels are well-known tags provided by Microsoft that provide semantic meaning. They allow Microsoft to integrate your connector data into Microsoft 365 experiences such as Copilot, enhanced search, people cards, intelligent discovery, and more.  
+
+The following table lists the currently supported labels and their descriptions.  
+
+Label | Description
+--- | ---  
+**title** | The title for the item that you want shown in search and other experiences
+**url** | The target URL of the item in the source system
+**Created By** | Name of the person who created the item
+**Last modified by** | Name of the person who most recently edited the item
+**Authors** | Name of the people who participated/collaborated on the item
+**Created date time** | Time when the item was created
+**Last modified date time** | Time when the item was most recently edited
+**File name** | Name of the file item
+**File extension** | Type of file item such as .pdf or .word
+
+The properties on this page are pre-selected based on your data source, but you can change this selection if there's a different property that is better suited for a particular label.  
+
+The label **title** is the most important label. We *strongly recommend* that you have a property assigned to this label for your connection to participate in the [result cluster experience](result-cluster.md).
+
+Incorrectly mapping labels causes a deteriorated search experience. It's okay for some labels to not have a property assigned to it.  
 
 #### Search schema attributes
 
@@ -199,16 +222,16 @@ With a full refresh, the search engine processes and indexes the items that have
 
 * Detecting deletions of data.
 * The incremental refresh found errors, and failed.
-* ACLs were modified.
+* ACLs (Access Control Lists) were modified.
 * Crawl rules were modified.
-* The schema for the connection has been updated.
+* The schema for the connection was updated.
 
 With an **Incremental refresh**, the search engine can process and index only the items that were created or modified since the last successful crawl. As a result, not all the data in the content source is reindexed. Incremental refreshes work best to detect content, metadata, and other updates.
 
 > [!NOTE]
 > Incremental crawls do not currently support processing of updates to **permissions**.
 
-Incremental refreshes are much faster than full refreshes because unchanged items aren't processed. However, if you choose to run incremental refreshes, you still need to run full refreshes periodically to maintain correct data sync between the content source and the search index.
+Incremental refreshes are faster than full refreshes because unchanged items aren't processed. However, if you choose to run incremental refreshes, you still need to run full refreshes periodically to maintain correct data sync between the content source and the search index.
 
 ### Crawl Scheduling
 
@@ -216,18 +239,18 @@ You can configure full and incremental crawls based on the advanced scheduling o
 
 * **Recurrence**: You can choose to run the crawls every day, week, 2nd week or 4th week.
 * **Day(s)**: This option is enabled when you choose to run crawls only on specific days of the week.
-* Run once a day check box lets you choose the start time of the crawl in a day. If not selected, the crawls will be repeated in a day by default. You can choose the repeat interval from the dropdown.
+* Run once a day check box lets you choose the start time of the crawl in a day. If not selected, the crawls will repeat in a day by default. You can choose the repeat interval from the dropdown.
 * **Frequency**: Select this option if you want to repeat crawls in a day after certain time intervals. The smallest repeat frequency is 15 minutes, and the largest is 12 hours.
 * **Starting Time**: Select the time when you want the crawl to start.
-* **Reset**: This will reset the schedule to the connector's default schedule.
+* **Reset**: This option will reset the schedule to the connector's default schedule.
 
 :::image type="content" alt-text="Screenshot that shows sample configuration setting." source="media/refresh-settings/incremental-week-view.png":::
 
 Here are certain points to note while configuring the crawl schedule:
 
-* If you leave any of the fields empty, or unselected, Graph connectors will pick the best time to start a crawl. For example if you choose a crawl Recurrence as "Day" and do not select the start time, Graph connectors will choose the time based on your last crawl to start the new crawl. If you do not want to specify a start time of the crawl, it is a good practice to let the connector decide when to start the crawl.
-* Even if the start time is mentioned, the crawl start may delay by an hour. This can be because of reasons such as network load etc.
-* If the previous crawl overruns to the time of the next crawl, we do not stop the ongoing crawl and queue the next crawl. After the ongoing crawl is complete, we run the queued crawl only if it is of a different type (full/incremental) than the previous crawl. For example, if an incremental crawl overruns the next full crawl, we will not suspend the incremental crawl and queue the full crawl. After the completion of the incremental crawl, since the queued crawl is of different type (full), we will start the full crawl immediately.
+* If you leave any of the fields empty, or unselected, Graph connectors will pick the best time to start a crawl. For example if you choose a crawl Recurrence as "Day" and do not select the start time, Graph connectors choose the time based on your last crawl to start the new crawl. If you do not want to specify a start time of the crawl, it is a good practice to let the connector decide when to start the crawl.
+* Even if the start time is mentioned, the crawl start may delay by an hour. This delay can be because of reasons such as network load etc.
+* If the previous crawl overruns to the time of the next crawl, we do not stop the ongoing crawl and queue the next crawl. After the ongoing crawl is complete, we run the queued crawl only if it is of a different type (full/incremental) than the previous crawl. For example, if an incremental crawl overruns the next full crawl, we do not suspend the incremental crawl and queue the full crawl. After the completion of the incremental crawl, since the queued crawl is of different type (full), we start the full crawl immediately.
 
 These are some of the scenarios:
 
