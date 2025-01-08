@@ -83,7 +83,8 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
 
 ---
 
-**Note:** For most connectors, default settings are optimized for the data source. These settings include access permissions, schema, and sync frequency. If you want to edit any of these settings, you need to choose the ["Custom Setup"](#custom-setup-optional) option.
+> [!NOTE]
+> For most connectors, default settings are optimized for the data source. These settings include access permissions, schema, and sync frequency. If you want to edit any of these settings, you need to choose the ["Custom Setup"](#custom-setup-optional) option.
 
 ## Step 3: Create the Connection
 
