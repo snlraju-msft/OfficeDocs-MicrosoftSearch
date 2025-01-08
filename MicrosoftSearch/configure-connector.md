@@ -116,7 +116,7 @@ Admins who want more control over the configuration can choose the **Custom Setu
      - **Only people with access to content in the data source.**
 
 2. **Map Identities:**
-   - By default, users are mapped by checking whether their email in the data source matches with a `UserPrincipalName` or  `Mail` in Microsoft Entra ID .
+   - By default, users are mapped by checking whether their email in the data source matches with a `UserPrincipalName` or  `Mail` in Microsoft Entra ID.
    - If this default doesn’t work for your organization, provide a custom mapping formula.
 
 ---
