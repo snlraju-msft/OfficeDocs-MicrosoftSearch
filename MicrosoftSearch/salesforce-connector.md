@@ -208,9 +208,9 @@ Select the Salesforce objects that you want the connector to crawl and include i
 
 _Filter data_
 
-   You may further choose to filter the Salesforce content that are indexed in two ways:
+   You may further choose to filter the Salesforce content that is indexed in two ways:
 
-   * Specify the item **modified time period**. This option will only index the Salesforce content that are created or modified in the time period selected on a **rolling basis** based on current crawl.
+   * Specify the item **modified time period**. This option will only index the Salesforce content that is created or modified in the time period selected on a **rolling basis** based on current crawl.
    * Enter the Salesforce query ([SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_conditionexpression.htm)) specifying what you want to index using the **WHERE** clause.
 
   > [!div class="mx-imgBorder"]
