@@ -172,7 +172,7 @@ Use the preview results button to verify selected properties and filters.
 
 ### Sync
 
-The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](./configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](configure-connector.md#guidelines-for-sync-settings).
 You can change the default values of refresh interval from here if you want to.
 
 ### Review and Test your connection
