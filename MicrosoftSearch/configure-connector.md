@@ -60,7 +60,7 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
 3. Add a New Data Source:
    - Go to the [Data sources tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
    - Click on [+Add](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector).
-   - From the list of available connectors, select the data source you wish to connect (e.g., ServiceNow Knowledge, Salesforce, etc.).
+   - From the list of available connectors, select the data source you wish to connect (for example, ServiceNow Knowledge, Salesforce, etc.).
 
 ---
 
@@ -69,7 +69,7 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
 ![Screenshot that shows Connection creation screen for Microsoft Graph Connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph Connector for ServiceNow Knowledge")
 
 1. **Display Name:**
-   - Enter a name to identify the connector. This display name will help users recognize the source in Copilot and search results.
+   - To help users recognize the source in Copilot and search results, enter a name to identify the connector.
    - A default name is provided, but you can customize it to suit your organization's needs.
 
 2. **Data Source URL:**
@@ -79,19 +79,19 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
    - Choose an authentication method to access the data source.
 
 4. **Rollout to limited audience**
-   - Initially, you can deploy the connector to a subset of users for validation in Copilot and other search surfaces. This allows you to test the integration before broader rollout.
+   - Initially, you can deploy the connector to a subset of users for validation in Copilot and other search surfaces. This feature allows you to test the integration before broader rollout.
 
 ---
 
-**Note:** For most connectors, default settings are optimized for the data source. These include access permissions, schema, and sync frequency. If you want to edit any of these settings, you need to choose the ["Custom Setup"](#custom-setup-optional) option.
+**Note:** For most connectors, default settings are optimized for the data source. These settings include access permissions, schema, and sync frequency. If you want to edit any of these settings, you need to choose the ["Custom Setup"](#custom-setup-optional) option.
 
 ## Step 3: Create the Connection
 
-- Click **Create** to set up the connection. The connector will begin indexing content from your data source using default settings.
+- Click **Create** to set up the connection. The connector begins indexing content from your data source using default settings.
 
 ![Screenshot that shows success screen once Graph Connector is created](media/configure-connector-success-page.png "Connection created successfully")
 
-Once the connection is created, you can add a description for the connection in the success screen. To help Copilot enhance connection results for users the description should answer the following questions briefly:  
+Once the connection is created, you can add a description for the connection in the success screen. To help Copilot enhance connection results for users, the description should answer the following questions briefly:  
 * What kind of content does this connection have? 
 * How do users refer to this content source in their respective orgs? 
 * What part of the workflow do users refer to this content in their day-to-day work? 
@@ -103,7 +103,7 @@ To learn more, refer to the [Enhancing Microsoft Copilot discovery with Graph Co
 
 ## Custom Setup (Optional)
 
-Admins who want more control over the configuration can choose the **Custom Setup** option. This provides access to three tabs for detailed settings: **Users**, **Content**, and **Sync**.
+Admins who want more control over the configuration can choose the **Custom Setup** option. This option provides access to three tabs for detailed settings: **Users**, **Content**, and **Sync**.
 
 ### Users
 
@@ -117,7 +117,7 @@ Admins who want more control over the configuration can choose the **Custom Setu
 
 2. **Map Identities:**
    - By default, users are mapped by checking whether their email in the data source matches with a `UserPrincipalName` or  `Mail` in Microsoft Entra ID .
-   - If this doesn’t work for your organization, provide a custom mapping formula.
+   - If this default doesn’t work for your organization, provide a custom mapping formula.
 
 ---
 
@@ -129,7 +129,7 @@ Admins who want more control over the configuration can choose the **Custom Setu
    - Configure properties from the data source, such as making them searchable, queryable, or refinable.
    - Assign semantic labels and aliases to enhance search relevance.
 
-   For more information on Manage Properties see [below](#guidelines-for-manage-properties).
+   For more information on Manage Properties, see [below](#guidelines-for-manage-properties).
 ---
 
 ### Sync
@@ -142,10 +142,10 @@ Admins who want more control over the configuration can choose the **Custom Setu
      - **Incremental Crawl:** Updates only the changed or new data.
    - Adjust the default sync settings as required for your organization.
    
-      For more information on Sync settings see [below](#guidelines-for-sync-settings).
+      For more information on Sync settings, see [below](#guidelines-for-sync-settings).
 ---
 
-## Additional Resources
+## More Resources
 
 ### Guidelines for 'Manage Properties'
 
