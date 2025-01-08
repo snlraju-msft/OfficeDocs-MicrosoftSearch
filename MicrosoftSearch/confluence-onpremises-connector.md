@@ -209,7 +209,7 @@ For MS Search, if you need to customize the search results page. To learn about 
 ## Limitations
 - Doesn't index blogs, attachment files, or comments.
 - Only indexes current pages; archived pages are excluded.
-- CQL(Confluence Query Language) isn't supported for Confluence on-premises howevere we support a space and page level filter
+- CQL (Confluence Query Language) isn't supported for Confluence on-premises howevere we support a space and page level filter
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
