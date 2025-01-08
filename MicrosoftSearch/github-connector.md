@@ -93,7 +93,7 @@ Choose the "Basic" option
 
 [![Screenshot that shows PAT screen for GitHub.](media/github-connector/GitHub-personal-access-token.png)](media/github-connector/GitHub-personal-access-token.png#lightbox)
 
-Use your personal access token in place of a password. The repositories available for indexing depends on the access granted by your token.
+Use your personal access token in place of a password. The repositories available for indexing depend on the access granted by your token.
  
 ## Custom Setup
 
