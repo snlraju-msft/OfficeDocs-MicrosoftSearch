@@ -36,7 +36,7 @@ This article is intended for Microsoft 365 administrators and who are responsibl
 - Doesn't index attachment files, or comments.
 
 >[!IMPORTANT]
-> * Atlassian is deprecating a set of Confluence cloud APIs (V1 version) and releasing new APIs (V2 version). You may read about their announcements [here](https://developer.atlassian.com/cloud/confluence/changelog/#CHANGE-864) or [here](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcommunity.developer.atlassian.com%2Ft%2Frfc-19-deprecation-of-confluence-cloud-rest-api-v1-endpoints%2F71752&data=05%7C01%7Cvivg%40microsoft.com%7Cb8d049f07c3544de6b2c08dbe98b2a02%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638360556187110970%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=DIw8xhEwulo59mAm8T0f0TTKvbtRr4tIMTMpQYgPDDQ%3D&reserved=0). Some of these deprecating v1 APIs are used by the connector for **OAuth connections** only. Hence, post this change your existing Confluence connection(s) may stop working. This change is scheduled for Jan’24.
+> * Atlassian is deprecating a set of Confluence cloud APIs (V1 version) and releasing new APIs (V2 version). You may read about their announcements [here](https://developer.atlassian.com/cloud/confluence/changelog/#CHANGE-864) or [here](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcommunity.developer.atlassian.com%2Ft%2Frfc-19-deprecation-of-confluence-cloud-rest-api-v1-endpoints%2F71752&data=05%7C01%7Cvivg%40microsoft.com%7Cb8d049f07c3544de6b2c08dbe98b2a02%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638360556187110970%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=DIw8xhEwulo59mAm8T0f0TTKvbtRr4tIMTMpQYgPDDQ%3D&reserved=0). Some of these deprecating v1 APIs are used by the connector for **OAuth connections** only. Hence, post this change your existing Confluence connections may stop working. This change is scheduled for Jan’24.
 > * The change to migrate to new v2 APIs was released to all customers in **December 2023**. Post this release, your existing connections need to be reauthenticated. The new v2 APIs also require some more scopes (as compared to previous v1 APIs) which need to be provided during re-authentication. A new set of scopes required (complete list) – `read:group:confluence`, `read:user:confluence`, `read:content-details:confluence`, `Read:space:confluence`, `Read:permission:confluence`, `read:audit-log:confluence`, `read:content.metadata:confluence` and `read:page:confluence`.
 
 ## Get Started
@@ -56,7 +56,7 @@ To authenticate and synchronize content from Confluence On-prem, choose **one of
 >Make sure the service **account has view access** to the Confluence content you want to index.
 
    **a. Basic authentication** <br>
-Enter your account's username (usually email ID) and API token to authenticate using basic auth. To learn more about generating an API token, refer to Atlassian's documentation on how to [manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+To authenticate using basic auth, enter your username (usually your email) and API token. To help generating an API token, see Atlassian's [guide](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
 
    **b. OAuth 2.0 (recommended)** <br> 
 Register an app in Confluence Cloud so that the Microsoft Search app and Microsoft 365 Copilot can access the instance. To learn more, see Atlassian Support documentation on how to [Enable OAuth 2.0](https://developer.atlassian.com/cloud/confluence/oauth-2-3lo-apps/#enabling-oauth-2-0--3lo-).
@@ -142,7 +142,7 @@ To identify which option is suitable for your organization:
 
 **Include or exclude data which you want to index**
 
-With a Confluence Query Language (CQL) string, you can specify conditions for syncing pages. It's like a **Where** clause in a **SQL Select** statement. For example, you can choose to index only the pages that have been modified in the last two years. To learn about creating your own query string, see [Advanced Searching using CQL](https://developer.atlassian.com/server/confluence/advanced-searching-using-cql/). All blogs and pages are indexed by the connector by default.
+With a Confluence Query Language (CQL) string, you can specify conditions for syncing pages. It's like a **Where** clause in a **SQL Select** statement. For example, you can choose to index only the pages that were modified in the last two years. To learn about creating your own query string, see [Advanced Searching using CQL](https://developer.atlassian.com/server/confluence/advanced-searching-using-cql/). The connector indexes all blogs and pages by default.
 
 >[!TIP]
 >You may use the CQL filter to index **content modified after a certain time** using, *lastModified >= "2018/12/31"*
@@ -151,7 +151,7 @@ Use the preview results button to verify the sample values of the selected prope
 
 **Manage Properties**
 
-In this step, you can add or remove available properties from your Confluence data source. Microsoft 365 has selected a few properties by default.
+In this step, you can add or remove available properties from your Confluence data source. A few properties are selected by default.
 *The list of properties that you select here, can impact how you can filter, search and view your results in Microsoft 365 Copilot.*
 
 
