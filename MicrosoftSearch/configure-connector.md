@@ -1,10 +1,10 @@
 ---
 ms.date: 10/08/2019
 title: "Set up Microsoft Graph connectors in the Microsoft 365 admin center"
-ms.author: mecampos
-author: mecampos
-manager: umas
-audience: Admin
+ms.author: souravpoddar
+author: souravpoddar001
+manager: harshkum
+audience: Admin 
 ms.audience: Admin
 ms.topic: article
 ms.service: mssearch
@@ -13,7 +13,7 @@ search.appverid:
 - BFB160
 - MET150
 - MOE150
-description: "Learn how to configure your Microsoft Graph connector for Microsoft Search."
+description: "Learn how to configure your Microsoft Graph connector for Microsoft Copilot."
 ---
 <!-- Previous ms.author: monaray -->
 
@@ -21,27 +21,10 @@ description: "Learn how to configure your Microsoft Graph connector for Microsof
 
 # Set up Microsoft Graph connectors in the Microsoft 365 admin center
 
-This article shows the basic process required to set up Microsoft Graph connectors in the [Microsoft 365 admin center](https://admin.microsoft.com). The basic process includes the following steps: **(Let's try to make this content more dynamic.)**
+This article outlines the steps to set up a Microsoft Graph connector in the Microsoft 365 admin center. The setup process is streamlined, with minimal inputs that simplify connection creation. However, you can opt for a custom setup to fine-tune specific settings.
 
 > [!NOTE]
 > The setup process is similar for all the Microsoft Graph connectors but is not exactly the same. In addition to reading this article, be sure to read the connector-specific information for your data source.
-
-<!---## Before you get started-->
-
-<!---Insert "Before you get started" recommendations for this data source-->
-
-## Step 1: Add a Microsoft Graph connector in the Microsoft 365 admin center
-
-Complete the following steps to configure any of the Microsoft Graph connectors (or [click here](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector) to directly access the Connector Catalog):
-
-1. Sign into your admin account in the [Microsoft 365 admin center](https://admin.microsoft.com).
-
-2. In the navigation pane, select **Settings**, and then select **Search & intelligence**. Select the [Data sources tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
-
-3. Select [**+Add**](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector), and then select the data source of your choice from the menu of available options.
-
-   > [!div class="mx-imgBorder"]
-   > ![Data sources available include: ADLS Gen2, Enterprise websites, Microsoft SQL server, Azure SQL, Oracle SQL database, ServiceNow Knowledge, ServiceNow Catalog, File share, Azure DevOps, and MediaWiki.](media/add-connector.png)
 
 > [!NOTE]
 > You can add a maximum of thirty(30) Microsoft Graph connections to each tenant.
@@ -52,18 +35,63 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
 > 
 > To help us understand your requirements related to connecting more data sources to Copilot or Microsoft Search, we request you to take few minutes to fill out this [survey form](https://forms.office.com/r/0Hh4GJNsJe). Based on the survey results, Microsoft will build connectors for the top demanded data sources.
 
-## Step 2: Name the connection
+## Prerequisites
 
-Specify these attributes:
+Before you begin, ensure the following:
 
-* Name (required)
-* Connection ID (required)
-* Description (optional)
-* Select check box (required)
+- **Admin Access:** You must have either of the following roles in M365 admin center to configure a Graph connector - Global admin, Search admin or Copilot admin.
+- **Data Source Credentials:** Collect the necessary credentials and permissions for the data source you want to connect.
+- **Service Account (if applicable):** If your data source requires a service account, ensure it has the necessary roles or permissions.
 
-The connection ID creates implicit properties for your connector. It must contain only alphanumeric characters and be a maximum of 32 characters.
+---
+## Step 1: Add a Microsoft Graph Connector
+Complete the following steps to configure any of the Microsoft Graph connectors (or [click here](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector) to directly access the Connector Catalog):
 
-To better help administration of the connection and to help Copilot enhance connection results for user the description should answer the following questions briefly:  
+> [!div class="mx-imgBorder"]
+   > ![Data sources available include: ADLS Gen2, Enterprise websites, Microsoft SQL server, Azure SQL, Oracle SQL database, ServiceNow Knowledge, ServiceNow Catalog, File share, Azure DevOps, and MediaWiki.](media/add-connector.png)
+
+1. **Open the Microsoft 365 Admin Center:**
+   - Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
+
+2. Navigate to Settings:
+   - In the left-hand navigation pane, select Settings.
+   - Click on Search & intelligence.
+
+3. Add a New Data Source:
+   - Go to the [Data sources tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
+   - Click on [+Add](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector).
+   - From the list of available connectors, select the data source you wish to connect (e.g., ServiceNow Knowledge, Salesforce, etc.).
+
+---
+
+## Step 2: Enter Basic Connection Details
+
+![Screenshot that shows Connection creation screen for Microsoft Graph Connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph Connector for ServiceNow Knowledge")
+
+1. **Display Name:**
+   - Enter a name to identify the connector. This display name will help users recognize the source in Copilot and search results.
+   - A default name is provided, but you can customize it to suit your organization's needs.
+
+2. **Data Source URL:**
+   - Provide the URL of your data source. For example, if you’re connecting to ServiceNow, the URL might look like `https://your-organization-name.service-now.com`.
+
+3. **Authentication Type:**
+   - Choose an authentication method to access the data source.
+
+4. **Rollout to limited audience**
+   - Initially, you can deploy the connector to a subset of users for validation in Copilot and other search surfaces. This allows you to test the integration before broader rollout.
+
+---
+
+**Note:** For most connectors, default settings are optimized for the data source. These include access permissions, schema, and sync frequency. If you want to edit any of these settings, you need to choose the ["Custom Setup"](#custom-setup-optional) option.
+
+## Step 3: Create the Connection
+
+- Click **Create** to set up the connection. The connector will begin indexing content from your data source using default settings.
+
+![Screenshot that shows success screen once Graph Connector is created](media/configure-connector-success-page.png "Connection created successfully")
+
+Once the connection is created, you can add a description for the connection in the success screen. To help Copilot enhance connection results for users the description should answer the following questions briefly:  
 * What kind of content does this connection have? 
 * How do users refer to this content source in their respective orgs? 
 * What part of the workflow do users refer to this content in their day-to-day work? 
@@ -71,66 +99,67 @@ To better help administration of the connection and to help Copilot enhance conn
 
 To learn more, refer to the [Enhancing Microsoft Copilot discovery with Graph Connector Content](enhancing-microsoft-copilot-discovery-with-graph-connector-content.md) article.
 
-## Step 3: Configure the connection settings
+---
 
-The process to configure the connection settings varies based on the type of data source. For the type of data source to add to your tenant to complete this step in the setup process, see the [Connector-specific information](/microsoftsearch/servicenow-connector#step-31-basic-authentication).
+## Custom Setup (Optional)
 
-To learn more about connecting to an on-premises data source, see [Set up the Microsoft Graph Connector Agent](/microsoftsearch/graph-connector-agent).
+Admins who want more control over the configuration can choose the **Custom Setup** option. This provides access to three tabs for detailed settings: **Users**, **Content**, and **Sync**.
 
-## Step 4: Select properties
+### Users
 
-You can choose the properties that are indexed by Microsoft Search.
+![Screenshot that shows Users tab where you can configure access permissions and user mapping rules](media/servicenow-knowledge-users-tab.png "Configure settings related to Users")
 
-> [!NOTE]
-> To update the crawled properties after creating a connection, refer [manage search schema](manage-search-schema.md) article.
 
-## Step 5: Manage search permissions
+1. **Access Permissions:**
+   - Choose whether indexed data is visible to:
+     - **Everyone** in the organization.
+     - **Only people with access to content in the data source.**
 
-Access control lists (ACLs) determine which users in your organization can access each item.  
+2. **Map Identities:**
+   - By default, users are mapped by checking whether their email in the data source matches with a `UserPrincipalName` or  `Mail` in Microsoft Entra ID .
+   - If this doesn’t work for your organization, provide a custom mapping formula.
 
-Some connectors such as [Microsoft SQL](MSSQL-connector.md) and [Azure Data Lake Storage Gen2](azure-data-lake-connector.md) natively support [Microsoft Entra ID](/azure/active-directory/) ACLs.
+---
 
-Other connectors such as [ServiceNow Knowledge](servicenow-knowledge-connector.md), [ServiceNow Catalog](servicenow-catalog-connector.md), [Azure DevOps Work Items](azure-devops-connector.md), and [Salesforce](salesforce-connector.md) support syncing of non-Azure AD users and groups.  
+### Content
 
-Selecting everyone allows everyone in your organization to see search results from this data source.
+![Screenshot that shows Content tab where you can configure Query string and Properties](media/servicenow-knowledge-content-tab.png "Configure settings related to your content")
 
-## Step 6: Assign property labels
+1. **Manage Properties:**
+   - Configure properties from the data source, such as making them searchable, queryable, or refinable.
+   - Assign semantic labels and aliases to enhance search relevance.
 
-You can assign semantic labels to your source properties on the "Assign property labels" page. Labels are well-known tags provided by Microsoft that provide semantic meaning. They allow Microsoft to integrate your connector data into Microsoft 365 experiences such as enhanced search, people cards, intelligent discovery, and more.  
+   For more information on Manage Properties see [below](#guidelines-for-manage-properties).
+---
 
-The following table lists the currently supported labels and their descriptions.  
+### Sync
 
-Label | Description
---- | ---  
-**title** | The title for the item that you want shown in search and other experiences
-**url** | The target URL of the item in the source system
-**Created By** | Name of the person who created the item
-**Last modified by** | Name of the person who most recently edited the item
-**Authors** | Name of the people who participated/collaborated on the item
-**Created date time** | Time when the item was created
-**Last modified date time** | Time when the item was most recently edited
-**File name** | Name of the file item
-**File extension** | Type of file item such as .pdf or .word
+![Screenshot that shows Sync tab where you can configure crawl frequency](media/servicenow-knowledge-sync-tab.png "Configure Crawl frequency")
 
-The properties on this page are pre-selected based on your data source, but you can change this selection if there's a different property that is better suited for a particular label.  
+**Refresh Intervals:**
+   - Configure the frequency of data syncs between the data source and the Graph connector index.
+     - **Full Crawl:** Synchronizes all data at scheduled intervals.
+     - **Incremental Crawl:** Updates only the changed or new data.
+   - Adjust the default sync settings as required for your organization.
+   
+      For more information on Sync settings see [below](#guidelines-for-sync-settings).
+---
 
-The label **title** is the most important label. We *strongly recommend* that you have a property assigned to this label for your connection to participate in the [result cluster experience](result-cluster.md).
+## Additional Resources
 
-Incorrectly mapping labels causes a deteriorated search experience. It's okay for some labels to not have a property assigned to it.  
+### Guidelines for 'Manage Properties'
 
-## Step 7: Manage schema
-
-### Content property
+#### Content property
 
 We recommend that you select a **Content Property** from the drop-down menu of options, or keep the default if one is present. This property is used for full-text indexing of content, search results page snippet generation, [result cluster](result-cluster.md) participation, language detection, HTML/text support, ranking and relevance, and query formulation.
 
 If you select a content property, you have the option of using the system-generated property **ResultSnippet** when you [create your result type](customize-results-layout.md). This property serves as a placeholder for the dynamic snippets that are generated from the content property at query time. If you use this property in your result type, snippets are generated in your search results.
 
-### Aliases for source properties
+#### Aliases for source properties
 
 You can add aliases to your properties under the "Alias" column on the "Manage schema" page. Aliases are friendly names for your properties. They're used in queries and in the creation of filters. They're also used to normalize source properties from multiple connections such that they have the same name. That way you can create a single filter for a vertical with multiple connections. For more information, see [Customize the search results page](customize-search-page.md).  
 
-### Search schema attributes
+#### Search schema attributes
 
 You can set the search schema attributes to control the search functionality of each source property. A search schema helps determine what results display on the search results page and what information end users can view and access.
 
@@ -147,7 +176,7 @@ For all connectors except the File share connector, custom types must be set man
 
 :::image type="content" alt-text="Screenshot that shows schema for a connector can be customized by adding or removing Query, Search, and Retrieve functions." source="media/manageschema.png" lightbox="media/manageschema.png":::
 
-### Restrictions and recommendations for search schema settings
+#### Restrictions and recommendations for search schema settings
 
 * The **content** property is searchable only. After you select it in the dropdown, this property can't be used with the options **retrieve** or **query**.
 
@@ -160,7 +189,7 @@ For all connectors except the File share connector, custom types must be set man
 > [!NOTE]
 > To update the schema after creating a connection, refer [manage search schema](manage-search-schema.md) article.
 
-## Step 8: Refresh settings
+### Guidelines for Sync settings
 
 The refresh interval determines how often your data is synced between the data source and Microsoft Search. Each type of data source has a different set of optimal refresh schedules based on how often data is modified and the type of modifications.
 
@@ -222,34 +251,4 @@ Here selecting the "Run once in a day" checkbox will let you choose the "Start t
 
 :::image type="content" alt-text="Screenshot that shows run full crawl every week on Friday at 8:00 PM." source="media/refresh-settings/full-week-view.png":::
 
-## Step 9: Review connection
-
-You can review your entire configuration and edit settings as needed before completing the connection. *Be sure to read the connector-specific information for your data source if you haven't already done so.* When you're ready to complete the connection, select **Publish**.
-
-### Staged Rollout
-Staged rollout is a feature that allows you to gradually introduce Microsoft Graph connectors to a select group of users in your production environment. Select **Publish to limited users** to deploy the connector to a limited audience. For more information, see [Staged rollout for Microsoft Graph connectors](staged-rollout-for-graph-connectors.md).
-
-## Step 10: Manage connection results
-
-Results from your connection will be included in the All vertical by default after it’s published. If you do not want the connection results to be immediately available in All after it has been published, you can opt it out in this step.  
-
-## Step 11: Customize the search results page
-
-After publishing the connection, you may want to customize the search results page with verticals and result types. To learn about customizing search results, review how to [manage verticals](manage-verticals.md) and [result types](manage-result-types.md).
-
-## Step 12: Confirm if the connection setup worked
-
-Go to the list of your published connections under the **Connectors** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Monitor your connections](manage-connector.md).
-
-## Troubleshooting
-<!---Insert troubleshooting recommendations for this data source-->
-Read the connector-specific information for your data source.
-
-> [!NOTE]
-> Currently, not all connector-specific articles include troubleshooting recommendations.
-
-## Limitations
-<!---Insert limitations for this data source-->
-To learn about limitations that apply to all data sources, see the [Overview of Microsoft Graph connectors](connectors-overview.md) article.
-
-See the connector-specific information for your data source to find out if other limitations apply to that particular Microsoft Graph connector.
+---
