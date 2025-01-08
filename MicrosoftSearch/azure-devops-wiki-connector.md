@@ -59,10 +59,10 @@ A display name is used to identify each citation in Copilot, helping users easil
 To authenticate and sync wikis from Azure DevOps, choose **one of the two** supported methods:<br>
 
 > [!IMPORTANT]
-> - [Microsoft Entra ID OAuth](/azure/devops/integrate/get-started/authentication/oauth?preserve-view=true&view=azure-devops) is in preview and available to select customers. This is the **recommended** OAuth mechanism.
+> - [Microsoft Entra ID OAuth](/azure/devops/integrate/get-started/authentication/oauth?preserve-view=true&view=azure-devops) is the **recommended** OAuth mechanism.
 > - [Azure DevOps OAuth](/azure/devops/integrate/get-started/authentication/oauth?preserve-view=true&view=azure-devops) is the legacy authentication mechanism, not being actively invested upon.
 
-#### a. **Microsoft Entra ID OAuth (Preview)**
+#### a. **Microsoft Entra ID OAuth**
 
 **Ensure your ADO Organization is connected to Microsoft Entra**
 
@@ -203,7 +203,7 @@ Here, you can add or remove available properties from your Azure DevOps data sou
 | IconUrl | IconUrl | Icon url that represents the wiki | Retrieve |
 | isParentPage | | | |
 | LastPublishedAuthorEmail | Last modified by | | Retrieve |
-| LastPublishedDate | Last modified date time | Date and time the item was last modified in the data source | Retrive |
+| LastPublishedDate | Last modified date time | Date and time the item was last modified in the data source | Retrieve |
 | Organization | | | Retrieve |
 | Path | | | |
 | Project | | | Retrieve |
