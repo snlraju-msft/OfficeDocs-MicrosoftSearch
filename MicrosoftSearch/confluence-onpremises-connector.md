@@ -60,7 +60,7 @@ To index your Confluence server or data center content, you must install and reg
 
 >[!NOTE]
 > GCA can be installed on a different Windows machine and need not be on the same machine as the On-premises server. The machine can help generate App ID and secret which can be used for the setup. You must ensure that the GCA machine is on during the crawling. 
-> You may find answers to common GCA realted questions in [FAQ section](./frequently-asked-questions.md) .
+> You may find answers to common GCA related questions in [FAQ section](./frequently-asked-questions.md) .
 
 ### 4. Install the Confluence on-premises plugin
 
@@ -209,7 +209,7 @@ For MS Search, if you need to customize the search results page. To learn about 
 ## Limitations
 - Doesn't index blogs, attachment files, or comments.
 - Only indexes current pages; archived pages are excluded.
-- CQL (Confluence Query Language) isn't supported for Confluence on-premises howevere we support a space and page level filter
+- CQL (Confluence Query Language) isn't supported for Confluence on-premises however we support a space and page level filter
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
