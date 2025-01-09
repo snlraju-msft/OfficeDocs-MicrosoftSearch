@@ -108,6 +108,12 @@ Select this option if your websites are publicly accessible without any authenti
 b. **Basic authentication** <br>
 Enter your account's username and password to authenticate using basic authentication. <br>
 
+> [!TIP]
+> Try out multiple permutations of the username for authentication. Examples -
+> * username
+> * username@domain.com
+> * domain/username
+
 c. **SiteMinder** <br>
 SiteMinder authentication requires a properly formatted URL, `https://custom_siteminder_hostname/smapi/rest/createsmsession`, a username, and a password.
 
