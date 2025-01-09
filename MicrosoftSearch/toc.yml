@@ -195,6 +195,8 @@ items:
           items:
           - name: Setup
             href: servicenow-knowledge-connector.md
+          - name: Grant Table Access to a Service Account in ServiceNow
+            href: granting-table-access-servicenow.md
           - name: Troubleshooting
             href: troubleshoot-servicenow-knowledge-connector.md
         - name: ServiceNow Tickets

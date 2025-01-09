@@ -39,9 +39,9 @@ This article is intended for Microsoft 365 administrators and who are responsibl
    > **Recommended : The Confluence Global Administrator should create the connection** </br>
    > 
    > **Who is the confluence global administrator?**
-   > A Confluence Administrator is a user who has been granted full administrative permissions. </br>
-   > * To check this: Go to **Administration** > **General Configuration** > **Global Permissions** </br>
-   > * Look for the group **Confluence-administrators**, which has all permissions enabled, including - Can Use, Personal Space, Create Space(s), Confluence Administrator, and System Administrator.
+   > A Confluence Administrator is a user who has full administrative permissions. </br>
+   > * To check permissions: Go to **Administration** > **General Configuration** > **Global Permissions** </br>
+   > * Look for the group **Confluence-administrators**, which has all permissions enabled, including - Can Use, Personal Space, Create Space, Confluence Administrator, and System Administrator.
    > * Any user creating a token must be a member of this group
 
 ## Get Started
@@ -59,8 +59,8 @@ To connect to your Confluence On-premises data, you need your organization's Con
 To index your Confluence server or data center content, you must install and register the connector agent. See [Install the Microsoft Graph connector agent](./graph-connector-agent.md) for details. You must be the administrator for your organization's Microsoft 365 tenant and the administrator for your organization's Confluence site.
 
 >[!NOTE]
-> GCA can be installed on a different Windows machine and need not be on the same machine as that of the On-premises server. The machine can help generate App ID and secret which can be used for the setup. You must ensure that the GCA machine is on during the crawling. 
-> You may find answers to common GCA realted questions in [FAQ section](./frequently-asked-questions.md) .
+> GCA can be installed on a different Windows machine and need not be on the same machine as the On-premises server. The machine can help generate App ID and secret which can be used for the setup. You must ensure that the GCA machine is on during the crawling. 
+> You may find answers to common GCA related questions in [FAQ section](./frequently-asked-questions.md) .
 
 ### 4. Install the Confluence on-premises plugin
 
@@ -146,7 +146,7 @@ To identify which option is suitable for your organization:
 >[!IMPORTANT]
    >
    > * If you choose Microsoft Entra ID as the type of identity source, the connector maps the email IDs of users obtained from Confluence directly to UPN property from Microsoft Entra ID.
-   > * If you chose "non-AAD" for the identity type see [Map your non-Azure AD Identities](map-non-aad.md) for instructions on mapping the identities. You can use this option to provide the mapping regular expression from email ID to UPN.
+   > * If you chose "non-AAD" for the identity type, see [Map your non-Azure AD Identities](map-non-aad.md) for instructions on mapping the identities. You can use this option to provide the mapping regular expression from email ID to UPN.
    > * Updates to users or groups governing access permissions are synced in full crawls only. Incremental crawls do not currently support the processing of updates to permissions.
 
 ### Content
@@ -167,7 +167,7 @@ In this step, you can specify the date range for indexing your documents. The pa
 >[!IMPORTANT]
    >
    > * Ensure that the dates are in chronological order. The "Last Created Date" should not be later than the "Last Modified Date."
-   > * If no dates are specified, all documents will be considered for indexing.
+   > * If no dates are specified, all documents are considered for indexing.
 
 **Manage Properties**
 
@@ -191,11 +191,11 @@ Here, you can add or remove available properties from your Confluence On-prem da
 
 Use the preview results button to verify selected properties and filters.
 >[!NOTE]
-   > Note that the preview only respects space-level filtering.
+   > The preview only respects space-level filtering.
 
 ### Synchronization
 
-The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](./configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synchronized between the data source and the Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](configure-connector.md#guidelines-for-sync-settings).
 You can change the default values of refresh interval from here if you want to.
 
 ### Review and Test your connection
@@ -204,12 +204,12 @@ You can change the default values of refresh interval from here if you want to.
 - Search and validate your indexed content and permissions using [Index browser](./connectors-index-search.md).
 - Find answers to common questions in our [FAQ section](./frequently-asked-questions.md).
 
-For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](./configure-connector.md#step-11-customize-the-search-results-page).
+For MS Search, if you need to customize the search results page. To learn about customizing search results, see [Customize the search results page](customize-search-page.md).
 
 ## Limitations
 - Doesn't index blogs, attachment files, or comments.
 - Only indexes current pages; archived pages are excluded.
-- CQL[Confluence Query Language] isn't supported for Confluence on-premises howevere we support a space and page level filter
+- CQL (Confluence Query Language) isn't supported for Confluence on-premises however we support a space and page level filter
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
