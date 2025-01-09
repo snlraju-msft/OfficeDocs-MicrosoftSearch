@@ -39,22 +39,23 @@ This article is for anyone who configures, runs, and monitors a CSV Microsoft Gr
 
 - Make sure there's no whitespace in the CSV headers
 
-- For a SharePoint data source, you can authenticate using either of the two OAuth providers: **Microsoft Entra ID** (coming soon) or **SharePoint provider** ([retiring soon](/sharepoint/dev/sp-add-ins/retirement-announcement-for-azure-acs)).
-    - For authenticating using Microsoft Entra ID you'll need to create and register an app on Microsoft Entra ID.
-    - For authenticating using SharePoint provider you'll need to create a SharePoint app with OAuth configuration.
+- You can index your CSV files from either of the two data source options: [SharePoint](#sharepoint-data-source) or [ADLS](#adls-data-source)
+  - For a SharePoint data source, you can authenticate using either of the two OAuth providers: **Microsoft Entra ID** or **SharePoint provider** ([retiring soon](/sharepoint/dev/sp-add-ins/retirement-announcement-for-azure-acs)).
+    - For authenticating using Microsoft Entra ID you'll need to [create and register an app on Microsoft Entra ID](#create-an-app-on-microsoft-entra-id).
+    - For authenticating using SharePoint provider you'll need to [create a SharePoint app with OAuth configuration](#create-a-sharepoint-app-with-oauth-configuration-retiring-soon).
 
-> [!TIP]
-> You will be able to switch the OAuth provider for your published connection from SharePoint to Microsoft Entra ID, once available
+    > [!TIP]
+    > You will be able to switch the OAuth provider for your published connection from SharePoint to Microsoft Entra ID, once available
 
-- For an ADLS data source, you'll need to create an ADLS storage account.
+  - For an ADLS data source, you'll need to [create an ADLS storage account](#create-an-adls-storage-account).
 
-## SharePoint data source
+### SharePoint data source
 
-### Upload your CSV files
+#### Upload your CSV files
 
 Verify the .csv files you want to index have been uploaded to a SharePoint document library. You can use an existing SharePoint site or create a new one.
 
-### Create an app on Microsoft Entra ID
+#### Create an app on Microsoft Entra ID
 
 1. Go to the [Azure portal](https://portal.azure.com) and sign in with admin credentials for the tenant.
 
@@ -80,7 +81,7 @@ Verify the .csv files you want to index have been uploaded to a SharePoint docum
     - For **M365 Enterprise**: `https://gcs.office.com/v1.0/admin/oauth/callback`
     - For **M365 Government**: `https://gcsgcc.office.com/v1.0/admin/oauth/callback`
 
-#### Configuring the client secret for authentication
+##### Configuring the client secret for authentication
 
 1. Go to the [Azure portal](https://portal.azure.com) and sign in with admin credentials for the tenant.
 
@@ -90,7 +91,7 @@ Verify the .csv files you want to index have been uploaded to a SharePoint docum
 
 4. Use this Client secret and the application ID to configure the connector.
 
-### Create a SharePoint app with OAuth configuration (retiring soon)
+#### Create a SharePoint app with OAuth configuration (retiring soon)
 
 1. Go to  `https://Org-Name.sharepoint.com/sites/mysite/_layouts/15/appregnew.aspx`.
 2. On the Client ID and Client Secret fields, select **Generate**.
@@ -100,7 +101,7 @@ Verify the .csv files you want to index have been uploaded to a SharePoint docum
 6. Select **Create**.
 7. Copy the app configuration information, including the Client ID and Client Secret. You'll need it when you set up the CSV connector.
 
-#### Enable app permissions to allow customAppAuthentication
+##### Enable app permissions to allow customAppAuthentication
 
 In PowerShell ([SharePoint Online Management Shell](/powershell/sharepoint/sharepoint-online/connect-sharepoint-online)), run these commands in administrative mode. Use the email address of the admin configuring the connector and your organization name. When the password pop-up appears, the admin should enter their password.
 
@@ -119,7 +120,7 @@ Set-spotenant –DisableCustomAppAuthentication $false
 > [!NOTE]
 > If you're using multifactor authentication, use `Connect-SPOService -Url https://$orgName-admin.sharepoint.com`.
 
-#### Complete the app configuration
+##### Complete the app configuration
 
 1. Go to `https://Org-Name.sharepoint.com/sites/mysite/_layouts/15/appinv.aspx`.
 2. In the App ID field, paste the client ID of the SharePoint app and select **Lookup**.
@@ -133,13 +134,15 @@ Set-spotenant –DisableCustomAppAuthentication $false
 
 4. Select **Trust it**.
 
-## ADLS data source
+### ADLS data source
 
-### Create an ADLS storage account
+#### Create an ADLS storage account
 
 For step-by-step guidance, see [Create a storage account](/azure/storage/common/storage-account-create#create-a-storage-account-1). To allow file storage capabilities, on the Advanced tab, select **Enable hierarchical namespace** and **Create a container for this site**.
 
 When you set up the CSV Microsoft Graph connector, you'll need to provide a primary storage connection string. To find it, open the storage account you created and select **Access keys**. Select **Show keys** and copy the connection string for Key1.
+
+## Get Started
 
 ## Step 1: Add a Microsoft Graph connector in the Microsoft 365 admin center
 
@@ -169,7 +172,7 @@ The data source settings are different for SharePoint and ADLS.
 3. In **Document Library**, enter the name of the library where the .csv files are stored.
 4. In **OAuth provider**, you can either select **SharePoint Provider (retiring soon)** or **Microsoft Entra ID** <br>
 
-    a. For **Microsoft Entra ID (coming soon)**: <br>
+    a. For **Microsoft Entra ID**: <br>
         1. **Authentication Type**, select **Oauth2.0(authorization code)**.<br>
         2. Enter the Client ID and Client Secret you copied when you created the Microsoft Entra ID app.<br>
         3. Select **Sign In**. You should get a **Connection successful** message. <br>
