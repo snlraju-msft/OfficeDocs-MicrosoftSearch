@@ -175,7 +175,7 @@ items:
           items:
           - name: Setup
             href: postgresql-connector.md
-        - name: Salesforce
+        - name: Salesforce CRM
           items:
           - name: Setup
             href: salesforce-connector.md
