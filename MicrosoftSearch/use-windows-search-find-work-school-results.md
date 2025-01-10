@@ -138,7 +138,7 @@ The supported values in Windows 11:
 - Enabled (default) or Not Configured: Enabling or not configuring this setting turns on search highlights in the Start menu search box and in Windows Search home.
 - Disabled: Disabling this setting turns off search highlights in the Start menu search box and in Windows Search home.
 
-To access the policy for search highlights, on a device with the March 2022 Cumulative Update Preview or April 2022 monthly quality update, go to **C:\Windows\PolicyDefinitions** and locate **Search.admx**. If needed, the Microsoft Download Center has an updated version of the [Administrative Templates](https://www.microsoft.com/download/details.aspx?id=104042) (.admx) and [Group Policy Settings Reference](https://www.microsoft.com/download/details.aspx?id=104043) for Windows 10, version 20H2. Microsoft Endpoint Manager offers the same policy configuration options.
+To access the policy for search highlights, on a device with the March 2022 Cumulative Update Preview or April 2022 monthly quality update, go to **C:\Windows\PolicyDefinitions** and locate **Search.admx**. Microsoft Endpoint Manager offers the same policy configuration options.
 
 ## Work vertical in Windows
 
