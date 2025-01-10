@@ -17,10 +17,10 @@ description: "Get relevant search suggestions and find work results faster by ad
 ms.date: 01/08/2019
 ---
 
+# Add a search box to your intranet site
+
 > [!IMPORTANT]
 > Beginning March 31, 2025, Office.com and SharePoint will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search users to update your bookmarks now.
-
-# Add a search box to your intranet site
 
 To provide your users with easy access to results from your organization, add a Microsoft Search in Bing search box to any intranet site or page. These are some of the benefits:
 

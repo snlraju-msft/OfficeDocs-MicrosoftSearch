@@ -16,10 +16,10 @@ description: "Protect your company's data and end users while providing informat
 ms.date: 12/10/2019
 ---
 
+# Security and Privacy for Microsoft Search in Bing
+
 > [!IMPORTANT]
 > Beginning March 31, 2025, Office.com and SharePoint will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search users to update your bookmarks now.
-
-# Security and Privacy for Microsoft Search in Bing
 
 With enhanced privacy and security measures, Microsoft Search in Bing helps protect your users and workplace data.
 

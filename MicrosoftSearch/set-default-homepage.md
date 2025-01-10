@@ -16,10 +16,10 @@ description: "Learn how to set Bing as the default homepage for your company wit
 ms.date: 01/08/2019
 ---
 
+# Make Bing.com the default home page
+
 > [!IMPORTANT]
 > Beginning March 31, 2025, Office.com and SharePoint will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search users to update your bookmarks now.
-
-# Make Bing.com the default home page
 
 This article explains how to set Bing.com as the default home page for Microsoft Edge, Google Chrome, and Internet Explorer browsers. 
   
