@@ -16,6 +16,9 @@ description: "Learn how to set Bing as your company's default search engine usin
 ms.date: 01/08/2019
 ---
 
+> [!IMPORTANT]
+> Beginning March 31, 2025, Office.com and SharePoint will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search users to update your bookmarks now.
+
 # Make Bing the default search engine
   
 This article explains how you can make Bing the default search engine for Microsoft Edge, Google Chrome, and Internet Explorer. 
