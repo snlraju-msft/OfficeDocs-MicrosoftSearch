@@ -10,6 +10,7 @@ ms.service: mssearch
 ms.localizationpriority: medium 
 search.appverid: 
 description: "Release history of Microsoft Graph connector agent, which is used to index the on-premises data sources using Microsoft built connectors" 
+ms.date: 01/13/2025
 --- 
 
 # Release history for Microsoft Graph connector agent
@@ -19,6 +20,10 @@ Indexing on-premises data sources require you to install *Microsoft Graph connec
 For help on installation, refer to [this page](graph-connector-agent.md#installation).
 
 [Download latest Graph Connector Agent](https://aka.ms/gca)
+
+## Version 3.1.4.0 (*January 13, 2025*)
+
+* Bug fixes and reliability improvements.
 
 ## Version 3.1.3.0 (*December 19, 2024*)
 
