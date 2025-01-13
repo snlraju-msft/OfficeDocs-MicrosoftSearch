@@ -37,7 +37,7 @@ Clicking or tapping any result opens Dynamics 365 or your custom application and
 
 No matter where your users start their search their experience will be consistent and enable them to quickly find the most relevant Dataverse results. Check out our Microsoft Build 2022 video for a demonstration.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4Zf9u]
+> [!VIDEO a7903454-e34d-4beb-8d64-96d9eb7fb18a]
 
 ### Supported query patterns
 
