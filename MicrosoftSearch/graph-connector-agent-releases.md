@@ -10,6 +10,7 @@ ms.service: mssearch
 ms.localizationpriority: medium 
 search.appverid: 
 description: "Release history of Microsoft Graph connector agent, which is used to index the on-premises data sources using Microsoft built connectors" 
+ms.date: 01/13/2025
 --- 
 
 # Release history for Microsoft Graph connector agent
