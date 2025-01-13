@@ -20,7 +20,7 @@ description: "Set up the Enterprise Websites on-premises Microsoft Graph connect
 
 The Enterprise Websites on premises Microsoft Graph connector allows your organization to index webpages and **content from your company-owned websites**. After you configure the connector and index content from the websites, end users can search for that content from in Microsoft Search and Microsoft 365 Copilot.
 
-This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors a Enterprise Websites on-premises Microsoft Graph connector. 
+This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors an Enterprise Websites on-premises Microsoft Graph connector. 
 
 ## Capabilities
 - Index webpages from on-premises or private cloud hosted websites.
@@ -111,18 +111,24 @@ a. **None** <br>
 b. **Basic authentication** <br>
     Enter your account's username and password to authenticate using basic authentication. <br>
 
+> [!TIP]
+> Try out multiple permutations of the username for authentication. Examples -
+> * username
+> * username@domain.com
+> * domain/username
+
 c. **Windows** <br>
     Windows authentication requires a username, domain, and password. You need to provide the username and domain in the **Username** field, in any of the following formats: domain\username, or username@domain. A password must be entered in the **Password** field. For Windows authentication, the username provided must also be an administrator in the server where the agent is installed.
 
 d. **SiteMinder** <br>
-    Siteminder authentication requires a properly formatted URL, `https://custom_siteminder_hostname/smapi/rest/createsmsession`, a username, and a password.
+    SiteMinder authentication requires a properly formatted URL, `https://custom_siteminder_hostname/smapi/rest/createsmsession`, a username, and a password.
 
 e. **Microsoft Entra OAuth 2.0 Client credentials** <br>
     OAuth 2.0 with [Microsoft Entra ID](/azure/active-directory/) requires a resource ID, client ID, and a client secret.
 
 The resource ID, client ID, and client secret values depend on how you did the setup for Microsoft Entra ID-based authentication for your website. One of the two specified options might be suitable for your website:
 
-1. If you're using an Microsoft Entra application both as an identity provider and the client app to access the website, the client ID and the resource ID are the application ID of this single application, and the client secret is the secret that you generated in this application.
+1. If you're using a Microsoft Entra application both as an identity provider and the client app to access the website, the client ID and the resource ID are the application ID of this single application, and the client secret is the secret that you generated in this application.
     
     > [!NOTE]
     > For detailed steps to configure a client application as an Identity provider, see [Quickstart: Register an application with the Microsoft identity platform and Configure your App Service or Azure Functions app to use Microsoft Entra login](/azure/app-service/configure-authentication-provider-aad).
@@ -309,7 +315,7 @@ To learn more about regex expressions, see [.NET regular expressions](/dotnet/st
 
 [![Screenshot that shows Sync tab where you can configure crawl frequency.](media/enterprise-web-connector/enterprise-website-onprem-sync-tab.png)](media/enterprise-web-connector/enterprise-website-onprem-sync-tab.png#lightbox)
 
-The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#guidelines-for-sync-settings).
 
 You can change the default values of refresh interval from here if you want to.
 

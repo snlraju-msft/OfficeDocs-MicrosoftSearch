@@ -183,7 +183,7 @@ To identify which option is suitable for your organization:
    * If you choose individual projects, only Jira issues in the selected projects are indexed.
 
    > [!NOTE]
-   > When you grant the _Browse projects_ permission to a Jira projects, it is listed in the project selection and can be crawled. If a project is missing, check the permissions for your account.
+   > When you grant the _Browse projects_ permission to a Jira project, it is listed in the project selection and can be crawled. If a project is missing, check the permissions for your account.
 
 1. _Filter data_
 
@@ -192,7 +192,7 @@ To identify which option is suitable for your organization:
    * Specify the **issue modified time period**. This option will only index the Jira issues that are created or modified in the time period selected on a **rolling basis** based on current crawl.
 
    > [!TIP]
-   > You may use the JQL filter to index only specific Jira issue types using "*issueType in (Bug,Improvement)*"
+   > You may use the JQL filter to index only specific Jira issue types using "*issueType in (Bug, Improvement)*"
 
 **Manage Properties**
 
@@ -230,7 +230,7 @@ Use the preview results button to verify the sample values of the selected prope
 
 [![Screenshot that shows Sync tab where you can configure crawl frequency.](media/jira-cloud-sync-tab.png)](media/jira-cloud-sync-tab.png#lightbox)
 
-The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#guidelines-for-sync-settings).
 
 You can change the default values of refresh interval from here if you want to.
 

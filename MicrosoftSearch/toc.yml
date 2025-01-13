@@ -123,6 +123,10 @@ items:
               href: jira-connector.md
             - name: Troubleshooting
               href: troubleshoot-jira-cloud-connector.md
+        - name: Jira Data Center
+          items:
+            - name: Setup
+              href: jira-data-center-connector.md
         - name: CSV
           items:
           - name: Setup
@@ -171,7 +175,7 @@ items:
           items:
           - name: Setup
             href: postgresql-connector.md
-        - name: Salesforce
+        - name: Salesforce CRM
           items:
           - name: Setup
             href: salesforce-connector.md
@@ -191,6 +195,8 @@ items:
           items:
           - name: Setup
             href: servicenow-knowledge-connector.md
+          - name: Grant Table Access to a Service Account in ServiceNow
+            href: granting-table-access-servicenow.md
           - name: Troubleshooting
             href: troubleshoot-servicenow-knowledge-connector.md
         - name: ServiceNow Tickets
