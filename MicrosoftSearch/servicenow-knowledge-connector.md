@@ -67,8 +67,6 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 [!VIDEO https://www.youtube-nocookie.com/embed/uS5JV-2M9kw]
 
-[Watch the video](https://www.youtube.com/watch?v=uS5JV-2M9kw)
-
 ![Screenshot that shows Connection creation screen for Microsoft Graph connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph connector for ServiceNow Knowledge")
 
 ### 1. Display name
