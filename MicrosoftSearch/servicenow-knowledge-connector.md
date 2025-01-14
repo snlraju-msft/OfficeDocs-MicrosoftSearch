@@ -65,7 +65,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Get started
 
-Check out our [YouTube video](https://www.youtube.com/watch?v=uS5JV-2M9kw) for a detailed, step-by-step guide on adding the Microsoft Graph connector for ServiceNow Knowledge. 
+[!VIDEO https://www.youtube-nocookie.com/embed/uS5JV-2M9kw]
 
 [Watch the video](https://www.youtube.com/watch?v=uS5JV-2M9kw)
 
