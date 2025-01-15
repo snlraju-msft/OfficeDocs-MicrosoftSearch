@@ -101,6 +101,8 @@ items:
           items:
           - name: Setup
             href: Azure-File-Share-connector.md
+          - name: Troubleshooting
+            href: troubleshoot-azure-file-share-connector.md
         - name: Azure SQL and Microsoft SQL Server
           items:
           - name: Setup
@@ -221,6 +223,8 @@ items:
           items:
           - name: Setup
             href: Veeva-Vault-PromoMats-connector.md
+          - name: Troubleshooting
+            href: troubleshoot-veeva-vault-promomats-connector.md
         - name: WordPress.org (on-prem)
           items:
           - name: Setup
