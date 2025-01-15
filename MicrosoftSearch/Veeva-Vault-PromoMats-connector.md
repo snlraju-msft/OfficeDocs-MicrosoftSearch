@@ -44,7 +44,7 @@ This guide is for Microsoft 365 administrators or anyone responsible for configu
   - Microsoft Office documents
   - PDFs
   - Text-based files
-- Files larger than 4MB are only partially indexed.
+- Files up to 100 MB in size are indexed, with a maximum of 4 MB of text content extracted per file.
 
 ---
 
@@ -74,14 +74,14 @@ Enter the verified URL of your Veeva Vault instance, e.g.,
 
 ### Step 3: Authentication Details
 
-#### Azure AD Authentication
-To use Azure AD authentication, ensure the following configurations are in place:
+#### Microsoft Entra ID Authentication
+To use Microsoft Entra ID authentication, ensure the following configurations are in place:
 - **Vault Session ID URL**:  
   Example: `https://<your-vault-domain>.veevavault.com/api/v<version>/session`
-- **Client ID**: The application ID of your Azure AD app registered for Veeva Vault.
+- **Client ID**: The application ID of your Microsoft Entra ID app registered for Veeva Vault.
 - **Client Secret**: The corresponding client secret. Securely store and restrict access to this value.
 
-**Important:** Configure both Azure AD and Veeva Vault admin settings to enable Azure AD authentication.
+**Important:** Configure both Microsoft Entra ID and Veeva Vault admin settings to enable Microsoft Entra ID authentication.
 
 ### Step 4: Deploy to Limited Audience
 Test the connector by rolling it out to a small user group to validate indexing and access control.
