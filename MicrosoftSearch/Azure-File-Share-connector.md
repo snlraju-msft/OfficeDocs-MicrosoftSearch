@@ -39,7 +39,7 @@ This guide is designed for Microsoft 365 administrators responsible for configur
 ## Limitations
 
 ### Supported Data
-- Files up to **4MB** (3.8MB content + 0.2MB metadata) are indexed.
+- Files up to 100 MB in size are indexed, with a maximum of 4 MB of text content extracted per file.
 - Supported file formats include:
   - Microsoft Office files
   - PDFs
@@ -81,9 +81,6 @@ Enter the UNC path for the Azure File Share, such as:
 
 ### Step 4: Test with a Limited Audience
 Deploy the connector to a small group to verify indexing and permissions functionality before expanding it to your entire organization.
-
-### Step 5: Schedule Full Crawls
-Set up periodic full crawls to keep indexed data updated. The default schedule is once per day.
 
 ---
 
