@@ -1,6 +1,6 @@
 ---
 ms.date: 10/08/2019
-title: "Azure Data Lake Microsoft Graph connector for Microsoft Search and Microsoft 365 Copilot"
+title: "Azure Data Lake Storage Gen2 Microsoft Graph connector"
 ms.author: mecampos
 author: mecampos
 manager: umas
@@ -83,7 +83,7 @@ For a connection to [Azure Blob Storage](/azure/storage/blobs/storage-blobs-intr
 
 ## Step 7: Set the refresh schedule
 
-On the **Refresh Settings** screen, you can set the incremental crawl interval and the full crawl interval. The default intervals for the Azure Data Lake Storage Gen2 Microsoft Graph connector are 15 minutes for an incremental crawl and one week for a full crawl.
+On the **Refresh settings** screen, you can set the incremental crawl interval and the full crawl interval. The default intervals for the Azure Data Lake Storage Gen2 Microsoft Graph connector are 15 minutes for an incremental crawl and one week for a full crawl.
 
 ## Step 8: Review connection
 
