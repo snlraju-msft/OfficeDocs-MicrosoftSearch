@@ -39,7 +39,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
-- **Adobe Experience Cloud Instance URL**:To connect to your Adobe Experience Manager Sites data, you need your organization's Adobe Experience Cloud instance author environment URL and publish environment URL.
+- **Adobe Experience Cloud Instance URL**: To connect to your Adobe Experience Manager Sites data, you need your organization's Adobe Experience Cloud instance author environment URL and publish environment URL.
   Your organization's Adobe Experience Cloud instance author environment URL typically looks like:`https://author-p<PROGRAM_ID>-e<ENVIRONMENT_ID>.<REGION>.adobeaemcloud.com`.
   Your organization's Adobe Experience Cloud instance publish environment URL typically looks like: `https://publish-p<PROGRAM_ID>-e<ENVIRONMENT_ID>.<REGION>.adobeaemcloud.com`. 
 - **Adobe Experience Cloud Account**: To connect to Adobe Experience Cloud and allow Microsoft Graph Connector to update published webpages and metadata regularly, you need a technical account of your Adobe Experience Manager Sites with the credentials to access published webpages and metadata. Technical account is the secure, service-based account for external access to Adobe Experience Manager Sites. Find more details [here](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/developing/generating-access-tokens-for-server-side-apis#generate-a-jwt-token-and-exchange-it-for-an-access-token).
@@ -80,7 +80,7 @@ Custom setup is for those admins who want to edit the default values for setting
 
 **Access permissions**
 
-Currently only published webpages from your AEM Sites will be indexed. All data indexed using the Adobe Experience Manager Sites connector will be visible to all Microsoft 365 users in your tenant, from Microsoft Search or Copilot.
+Currently only published webpages from your AEM Sites are indexed. All data indexed using the Adobe Experience Manager Sites connector is visible to all Microsoft 365 users in your tenant, from Microsoft Search or Copilot.
 
 ### Content 
 
@@ -96,7 +96,7 @@ Use the preview results button to verify the sample values of the selected prope
 
 **Manage Properties**
 
-Here, you can check available properties from your Adobe Experience Manager Sites, assign a schema to the property (define whether a property is searchable, queryable, retrievable or refinable), change the semantic label and add an alias to the property. Properties that are selected by default are listed below. 
+Here, you can check available properties from your Adobe Experience Manager Sites. Assign a schema to the property (define whether a property is searchable, queryable, retrievable or refinable), change the semantic label and add an alias to the property. Properties that are selected by default are listed below. 
 
 | **Source Property** | **Semantic Label**       | **Description**                                                                 | **Schema**                  |
 |----------------------|--------------------------|---------------------------------------------------------------------------------|-----------------------------|
