@@ -35,14 +35,14 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Limitations
 - Does not index comments.
-- Does not crawl user identities and access permissions. All published webpages indexed using the AEM Sites connector will be visible to all Microsoft 365 users in your tenant, from Microsoft Search or Copilot.   
+- Does not crawl user identities and access permissions. All published webpages indexed using the AEM Sites connector are visible to all Microsoft 365 users in your tenant, from Microsoft Search or Copilot.   
 
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
 - **Adobe Experience Cloud Instance URL**:To connect to your Adobe Experience Manager Sites data, you need your organization's Adobe Experience Cloud instance author environment URL and publish environment URL.
   Your organization's Adobe Experience Cloud instance author environment URL typically looks like:`https://author-p<PROGRAM_ID>-e<ENVIRONMENT_ID>.<REGION>.adobeaemcloud.com`.
   Your organization's Adobe Experience Cloud instance publish environment URL typically looks like: `https://publish-p<PROGRAM_ID>-e<ENVIRONMENT_ID>.<REGION>.adobeaemcloud.com`. 
-- **Adobe Experience Cloud Account**: To connect to Adobe Experience Cloud and allow Microsoft Graph Connector to update published webpages and metadata regularly, you need a technical account of your Adobe Experience Manager Sites with the credentials to access published webpages and metadata. Technical account is the secure, service-based account for external access to Adobe Experience Manager Sites, please find more details [here](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/developing/generating-access-tokens-for-server-side-apis#generate-a-jwt-token-and-exchange-it-for-an-access-token).
+- **Adobe Experience Cloud Account**: To connect to Adobe Experience Cloud and allow Microsoft Graph Connector to update published webpages and metadata regularly, you need a technical account of your Adobe Experience Manager Sites with the credentials to access published webpages and metadata. Technical account is the secure, service-based account for external access to Adobe Experience Manager Sites. Find more details [here](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/developing/generating-access-tokens-for-server-side-apis#generate-a-jwt-token-and-exchange-it-for-an-access-token).
 
 ## Get Started
 
@@ -60,7 +60,7 @@ Deploy this connection to a limited user base if you want to validate it in Copi
 
 At this point, you are ready to create the connection for AEM Sites. You can click on the ‘Create’ button to publish your connection and index published webpages from your AEM Sites. 
 
-For other settings, like Access Permissions, Data inclusion rules, Schema, Crawl frequency etc., we have set defaults based on what works best with AEM Sites data. You can see the default values below: 
+For other settings, like Access Permissions, Data inclusion rules, Schema, Crawl frequency etc., we set defaults based on what works best with AEM Sites data. You can see the default values below: 
 
 **Page** | **Settings** | **Default Values**
 --- | ---- | ---
@@ -112,7 +112,7 @@ Here, you can check available properties from your Adobe Experience Manager Site
 | PublishedBy         | Published by            | Name of the person who published the item in the data source                    | Query, Retrieve             |
 | PublishedTime       | Published date time     | Date and time the item was published in the data source                         | Query, Retrieve             |
 | Subtitle            | Subtitle                | The subtitle of the items                                                      | Query, Retrieve             |
-| Titles              | Title                   | The title of the items                                                          | Query, Retrieve             |
+| Title               | Title                   | The title of the items                                                          | Query, Retrieve             |
 | Tags                | Tags                    | Tags defined in AEM Sites metadata. In AEM, tags are organized hierarchically   | Query, Retrieve, Search     |
 
 
