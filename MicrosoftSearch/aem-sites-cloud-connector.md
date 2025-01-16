@@ -13,7 +13,7 @@ search.appverid:
 - BFB160 
 - MET150 
 - MOE150 
-description: "Set up the WordPress.org Microsoft Graph connector for Microsoft Search and Copilot" 
+description: "Set up the Adobe Experience Manager Sites Microsoft Graph connector for Microsoft Search and Copilot" 
 ms.date: 01/16/2025
 ---
 
