@@ -258,7 +258,7 @@ If a knowledge article isn't enabled with a user criterion, it appears in the re
 > 2. If the article contains '_Cannot Read_' user criteria, and if the corresponding Knowledge base also contains '_Cannot Read_' user criteria, then both the user criteria are stamped on the article.
 
 >[!NOTE]
-> If a user is part of the '_Can Read_' user criteria at the article level but not in the '_Can Read_' / '_Can Contribute_' user criteria at the Knowledge Base level, **then the user will not have access to the article in ServiceNow but will have access to the article in Microsoft Copilot, Microsoft Search, and other M365 surfaces**. The workaround is to remove the user from the '_Can Read_' user criteria at the article level.
+> If a user is part of the '_Can Read_' user criteria at the article level but not in the '_Can Read_' / '_Can Contribute_' user criteria at the Knowledge Base level, **then the user doesn't have access to the article in ServiceNow but does have access to the article in Microsoft Copilot, Microsoft Search, and other M365 surfaces**. The workaround is to remove the user from the '_Can Read_' user criteria at the article level.
 
 **Mapping identities**
 
