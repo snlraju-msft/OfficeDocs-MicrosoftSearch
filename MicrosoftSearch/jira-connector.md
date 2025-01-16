@@ -1,5 +1,5 @@
 --- 
-title: "Atlassian Jira cloud Graph connector for Microsoft Search and Copilot" 
+title: "Atlassian Jira Cloud Microsoft Graph connector" 
 ms.author: vivg 
 author: vivg 
 manager: harshkum 
@@ -28,7 +28,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 ## Capabilities
 - Index issues (or tickets) from Jira cloud
 - Enable your end users to ask questions related to project tracking, support queries, or task execution in Copilot.
-   - Find the issue with mobile app not loading.
+   - Find the issue with the mobile app not loading.
    - Look for Jira tasks reported by John to update documentation about API migration.
    - Summarize CP-1234.
 - Use [Semantic search in Copilot](semantic-index-for-copilot.md) to enable users to find relevant content based on keywords, personal preferences, and social connections.
@@ -39,7 +39,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
-- **Jira cloud instance URL**: To connect to your Jira data, you need your organization's Jira instance URL. Your organization's Jira instance URL typically looks like `https://<your-organization-domain>.atlassian.net`. If you don't have an instance already, refer the [page](https://www.atlassian.com/software/jira) to create a test instance.
+- **Jira cloud instance URL**: To connect to your Jira data, you need your organization's Jira instance URL. Your organization's Jira instance URL typically looks like `https://<your-organization-domain>.atlassian.net`. If you don't have an instance already, refer to the [page](https://www.atlassian.com/software/jira) to create a test instance.
 - **Service Account**: To connect to Jira and allow the Microsoft Graph Connector to update issues regularly, you need a service account with the following permissions granted to it.
 
   | Permission name | Permission type | Required for |
@@ -50,11 +50,11 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
   | Administer Jira | [Global permission](https://support.atlassian.com/jira-cloud-administration/docs/manage-global-permissions/) | Security trimming based on access permissions of search results. This permission is **optional** and is required to select `Only people with access to this data source` option in step 4 below. |
 
 ## Get Started
-
-[![Screenshot that shows connection creation screen for Microsoft Graph Connector for Jira cloud.](media/jira-cloud-create-page.png)](media/jira-cloud-create-page.png#lightbox)
+This video provides a step-by-step guide on adding the Atlassian Jira cloud Microsoft Graph connector.
+[!VIDEO https://www.youtube-nocookie.com/embed/SzNui9dK4oU]
 
 ### 1. Display name 
-A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
+A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. The display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
 
 ### 2. Jira cloud URL
 To connect to your Jira cloud data, you need your organization's Jira instance URL. Your organization's Jira instance URL typically looks like `https://<your-organization-domain>.atlassian.net`.
@@ -63,7 +63,7 @@ To connect to your Jira cloud data, you need your organization's Jira instance U
 To authenticate and sync issues from Jira, choose **one of the two** supported methods:<br>
 
    a. **Basic authentication** <br>
-     Enter your account's username (usually email ID) and API token to authenticate using basic auth. Refer Atlassian's documentation on how to [manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) to learn more about generating an API token.
+     Enter your account's username (usually email ID) and API token to authenticate using basic auth. Refer to Atlassian's documentation on how to [manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) to learn more about generating an API token.
      <br>
 
    b. **Atlassian Jira OAuth 2.0 (Recommended)** <br>
@@ -76,7 +76,7 @@ The following steps provide guidance on how to register the app:
 1. Sign in to [Atlassian Developer console](https://developer.atlassian.com/console/myapps/) with your Atlassian Jira admin account.
 2. Select on `Create` and select `OAuth 2.0 integration`.
 3. Provide an appropriate name for the application and create the new app.
-4. Navigate to `Permissions` from the navigation pane on left. Select `Add` for `Jira API` and click on `Configure`. Under the 'Granular Permissions' header, add the following scopes.
+4. Navigate to `Permissions` from the navigation pane on the left. Select `Add` for `Jira API` and click on `Configure`. Under the 'Granular Permissions' header, add the following scopes.
 
    |#|Scope name|Code|
    |:------------|:------------|:------------|
@@ -110,14 +110,14 @@ Complete the connection settings step using the **Client ID** and **Secret**.
 > [!NOTE]
 >
 > * Refer to the [list of scopes](https://developer.atlassian.com/cloud/jira/platform/scopes-for-oauth-2-3LO-and-forge-apps/#list-of-scopes) for OAuth 2.0 apps to learn more about Jira permissions.
-> * The original (Classic) OAuth permissions are being deprecated for the Jira cloud. Refer the [changelog announcement](https://developer.atlassian.com/cloud/jira/platform/changelog/#CHANGE-517) to learn more.
+> * The original (Classic) OAuth permissions are being deprecated for the Jira cloud. Refer to the [changelog announcement](https://developer.atlassian.com/cloud/jira/platform/changelog/#CHANGE-517) to learn more.
 
-### 4. Roll out to limited audience
-Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, see [staged rollout](staged-rollout-for-graph-connectors.md).
+### 4. Roll out to a limited audience
+Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To learn more about limited rollout, see [staged rollout](staged-rollout-for-graph-connectors.md).
 
-At this point, you're ready to create the connection for Jira cloud. You can click **Create** to publish your connection and index issues from your Jira account.
+At this point, you're ready to create the connection for the Jira cloud. You can click **Create** to publish your connection and index issues from your Jira account.
 
-For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, **Crawl frequency**, etc., we have defaults based on what works best with Jira data. You can see the default values below:
+For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, **Crawl frequency**, etc., we have default values based on what works best with Jira data.
 
 | Users | Description |
 |----|---|
@@ -159,7 +159,7 @@ The Atlassian Jira connector supports search permissions visible to **Everyone
 
 **Mapping Identities**
 
-The default method for mapping your data source identities with Microsoft Entra ID is by checking whether the Email ID of Jira users is same as the UserPrincipalName (UPN), or Mail of the users in Microsoft Entra. If you believe the default mapping wouldn't work for your organization, you can provide a custom mapping formula. To know more about, mapping Non-Microsoft Entra ID identities, see [Map your non-Azure AD Identities](map-non-aad.md).
+The default method for mapping your data source identities with Microsoft Entra ID is by checking whether the Email ID of Jira users is the same as the UserPrincipalName (UPN), or Mail of the users in Microsoft Entra. If you believe the default mapping wouldn't work for your organization, you can provide a custom mapping formula. To know more about, mapping Non-Microsoft Entra ID identities, see [Map your non-Azure AD Identities](map-non-aad.md).
 
 To identify which option is suitable for your organization:
 
@@ -168,7 +168,7 @@ To identify which option is suitable for your organization:
 
 >[!NOTE]
 >
-> Updates to groups governing access permissions are synced in full crawls only. Incremental crawls don't support processing of updates to permissions.
+> Updates to groups governing access permissions are synced in full crawls only. Incremental crawls don't support the processing of updates to permissions.
 
 ### Content
 
@@ -178,7 +178,7 @@ To identify which option is suitable for your organization:
 
    You can choose for the connection to index either the entire Jira site or specific projects only.
 
-   * If you choose to index the entire Jira site, Jira issues in all projects in the site are indexed. New projects and issues are indexed during the next crawl after they're created.
+   * If you choose to index the entire Jira site, Jira issues in all projects on the site are indexed. New projects and issues are indexed during the next crawl after they're created.
 
    * If you choose individual projects, only Jira issues in the selected projects are indexed.
 
@@ -189,7 +189,7 @@ To identify which option is suitable for your organization:
 
    You may further choose to filter the Jira issues that are indexed in two ways.
 
-   * Specify the **issue modified time period**. This option will only index the Jira issues that are created or modified in the time period selected on a **rolling basis** based on current crawl.
+   * Specify the **issue modified time period**. This option will only index the Jira issues that are created or modified in the time period selected on a **rolling basis** based on the current crawl.
 
    > [!TIP]
    > You may use the JQL filter to index only specific Jira issue types using "*issueType in (Bug, Improvement)*"
@@ -217,10 +217,10 @@ Here, you can add or remove available properties from your Jira data source, ass
 
 
 > [!NOTE]
-> - The Atlassian Jira connector can index both default issue fields and custom created issue fields.
-> - If a selected custom created field is not present in some Jira issue type(s), the field will be ingested as *NULL* (blank).
+> - The Atlassian Jira Cloud Microsoft Graph connector can index both default issue fields and custom-created issue fields.
+> - If a selected custom-created field is not present in some Jira issue type(s), the field will be ingested as *NULL* (blank).
 
-*The list of properties that you select here, can impact how you can filter, search and view your results in Copilot for Microsoft 365.*
+*The list of properties that you select here, can impact how you can filter, search, and view your results in Copilot for Microsoft 365.*
 
 **Preview Data**
 
@@ -232,7 +232,7 @@ Use the preview results button to verify the sample values of the selected prope
 
 The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#guidelines-for-sync-settings).
 
-You can change the default values of refresh interval from here if you want to.
+You can change the default values of the refresh interval from here if you want to.
 
 ### Set up search result page
 
