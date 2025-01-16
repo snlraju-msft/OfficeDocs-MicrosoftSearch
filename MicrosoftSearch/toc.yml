@@ -79,6 +79,10 @@ items:
       - name: Microsoft Graph built connectors
         href: pre-built-connectors-overview.md
         items:
+        - name: Adobe Experience Manager Sites
+          items:
+          - name: Setup
+            href: aem-sites-cloud-connector.md
         - name: Azure Data Lake Storage Gen2
           items:
           - name: Setup
