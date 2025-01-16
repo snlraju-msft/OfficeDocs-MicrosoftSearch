@@ -52,7 +52,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 ## Get started
 This video provides a step-by-step guide on adding the Atlassian Jira Cloud Microsoft Graph connector.
 
-> [!VIDEO](https://www.youtube-nocookie.com/embed/SzNui9dK4oU]
+> [!VIDEO](https://www.youtube-nocookie.com/embed/SzNui9dK4oU)
 
 ### 1. Display name 
 A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. The display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
