@@ -43,7 +43,7 @@ The Windows search box is removing the "Work" tab, but continues to support work
 
 ## Is enterprise branding on Bing.com being removed?
 
-Yes. Bing is removing organizational branding. Likewise, custom branding is being removed from new tab pages in Edge.
+Yes. Bing is removing organizational branding. Likewise, organizational branding is being removed from new tab pages in Edge.
 
 ## What actions are required for customers? 
 
@@ -54,7 +54,9 @@ Yes. Bing is removing organizational branding. Likewise, custom branding is bein
 
 ## Why is this announcement important?  
 
-Searching for files, people, intranet sites, and more is an important part of daily productivity. We understand that the retirement of Microsoft Search in Bing may create some disruption in daily work. To help mitigate this disruption, we're ensuring that customers are aware of this change before it happens. Just as importantly, we want users to know that they have other options for accessing Microsoft Search. They can also continue to use the Edge for Business address bar and Windows search box to find work results, with some adjustments.
+Searching for files, people, intranet sites, and more is an important part of daily productivity. We understand that the retirement of Microsoft Search in Bing may create some disruption in daily work. To help mitigate this disruption, we're ensuring that customers are aware of this change before it happens. 
+
+Just as importantly, we want users to know that they have other options for accessing Microsoft Search. They can also continue to use the Edge for Business address bar and Windows search box to find work results, with some adjustments.
 
 ## Why is this happening?
 
@@ -62,7 +64,7 @@ Customer productivity is our mission and making work search a better experience 
 
 ## Is there any impact on users before March 31, 2025? 
 
-Users who click on suggestions in the Edge for Business address bar may be redirected to Microsoft365.com before March 31, 2025. Also, as we begin testing the deprecation experience, a small set of users may find before that date that Bing isn't available as an endpoint for work search. We recommend that you inform your users of the change and direct them to Microsoft365.com, Office.com, and SharePoint Online instead. Adding these entry points to their favorites or to the favorites bar in Edge for Business may be a helpful alternative pathway.
+Users who click on suggestions in the Edge for Business address bar may be redirected to Microsoft365.com before March 31, 2025. Also, as we begin testing the deprecation experience, a small set of users may find before March 31 that Bing isn't available as an endpoint for work search. We recommend that you inform your users of the change and direct them to Microsoft365.com, Office.com, and SharePoint Online instead. Adding these entry points to their favorites or to the favorites bar in Edge for Business may be a helpful alternative pathway.
 
 ## Can customers try to opt out of this change? 
 
