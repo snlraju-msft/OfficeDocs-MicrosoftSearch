@@ -60,7 +60,7 @@ Searching for files, people, intranet sites, and more is an important part of da
 
 Customer productivity is our mission and making work search a better experience remains a priority for Microsoft. We hope to better serve you through Microsoft Search in the core productivity experiences of Microsoft365.com, Office.com, and SharePoint Online. We’re also continuing to explore new ways to improve the experience and make work search more discoverable.
 
-## Is there any impact on users prior to March 31, 2025? 
+## Is there any impact on users before March 31, 2025? 
 
 Users who click on suggestions in the Edge for Business address bar may be redirected to Microsoft365.com before March 31, 2025. Also, as we begin testing the deprecation experience, a small set of users may find before that date that Bing isn't available as an endpoint for work search. We recommend that you inform your users of the change and direct them to Microsoft365.com, Office.com, and SharePoint Online instead. Adding these entry points to their favorites or to the favorites bar in Edge for Business may be a helpful alternative pathway.
 
@@ -70,7 +70,7 @@ No, customers can't opt out of the change, but customers may opt to set their ow
 
 ## What's happening to bookmarks? 
 
-Editorial bookmarks (bookmarks that an IT admin has curated) will continue to work on the other Microsoft Search entry points (Microsoft365.com, Office.com, SharePoint Online, and the Edge for Business address bar).  
+Editorial bookmarks (bookmarks that an IT admin has curated) will continue to work on the other Microsoft Search entry points. These include Microsoft365.com, Office.com, SharePoint Online, and the Edge for Business address bar.  
 
 Today, Microsoft Search also recommends bookmarks based on your organization's SharePoint links. After March 31, Microsoft Search will no longer recommend bookmarks.  
 
