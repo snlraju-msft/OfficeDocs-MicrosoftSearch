@@ -88,7 +88,7 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 1. **ServiceNow OAuth (recommended)**
 
    <details>
-   <summary>[Click to expand]To use the ServiceNow OAuth for authentication, follow these steps.</summary>
+   <summary>[Click to expand] To use the ServiceNow OAuth for authentication, follow these steps.</summary>
     
    A ServiceNow admin needs to provision an endpoint in your ServiceNow instance, so that the ServiceNow Knowledge Microsoft Graph connector can access it. To learn more, see [Create an endpoint for clients to access the instance](https://docs.servicenow.com/bundle/vancouver-platform-security/page/administer/security/task/t_CreateEndpointforExternalClients.html) in the ServiceNow documentation.
 
@@ -243,7 +243,7 @@ Custom setup is for those admins who want to edit the default values for setting
 
 ### Users
 
-![Screenshot that shows Users tab where you can configure access permissions and user mapping rules](media/servicenow-knowledge-users-tab.png "Configure settings related to Users")
+:::image type="content" alt-text="Screenshot that shows Users tab where you can configure access permissions and user mapping rules" source="media/servicenow-knowledge-users-tab.png "Configure settings related to Users"" lightbox="media/servicenow-knowledge-users-tab.png "Configure settings related to Users"":::
 
 **Access permissions**
 
@@ -266,7 +266,7 @@ The default method for mapping your data source identities with Microsoft Entra 
 
 ### Content
 
-![Screenshot that shows Content tab where you can configure Query string and Properties](media/servicenow-knowledge-content-tab.png "Configure settings related to your content")
+:::image type="content" alt-text="Screenshot that shows Content tab where you can configure Query string and Properties" source="media/servicenow-knowledge-content-tab.png "Configure settings related to your content"" lightbox="media/servicenow-knowledge-content-tab.png "Configure settings related to your content"":::
 
 **Query string**
 
@@ -301,11 +301,11 @@ Here, you can add or remove available properties from your ServiceNow data sourc
 
 Use the preview results button to verify the sample values of the selected properties and query filter.
 
-![Screenshot that shows Preview data option to check the query filter and properties you have configured](media/servicenow-knowledge-preview-data.png "Preview data to validate your Query filter and Manage Properties settings")
+:::image type="content" alt-text="Screenshot that shows Preview data option to check the query filter and properties you have configured" source="media/servicenow-knowledge-preview-data.png "Preview data to validate your Query filter and Manage Properties settings"" lightbox="media/servicenow-knowledge-preview-data.png "Preview data to validate your Query filter and Manage Properties settings"":::
 
 ### Sync
 
-![Screenshot that shows Sync tab where you can configure crawl frequency](media/servicenow-knowledge-sync-tab.png "Configure Crawl frequency")
+:::image type="content" alt-text="Screenshot that shows Sync tab where you can configure crawl frequency" source="media/servicenow-knowledge-sync-tab.png "Configure Crawl frequency"" lightbox="media/servicenow-knowledge-sync-tab.png "Configure Crawl frequency"":::
 
 The refresh interval determines how often your data is synced between the data source and the ServiceNow Knowledge Microsoft Graph connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](/MicrosoftSearch/configure-connector#step-8-refresh-settings).
 
@@ -320,7 +320,7 @@ You can change the default values of the refresh interval from here if you want 
 > Terms used in the table below:
 > * **No criteria**: No user criteria are defined for the article or Knowledge base. (Different from empty criteria where a user criteria is defined but within the criteria all fields are empty)
 > * **Default user criteria**: User criteria defined using ServiceNow fields like Users, Groups, Roles, Location, Department, etc.
->* **Empty criteria**: A User criteria where all fields have empty values.
+> * **Empty criteria**: A User criteria where all fields have empty values.
 
 ### How Read access is determined
 
@@ -344,11 +344,12 @@ You can change the default values of the refresh interval from here if you want 
 | Any criteria | Advanced criteria | Deny access to everyone. |
 | Empty criteria + Default user criteria | Any criteria | Deny access to everyone. |
 | Any criteria | Empty criteria | Deny access to everyone. |
+
 </details>
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](./manage-connector.md).
-You can find troubleshooting steps for commonly seen issues [here](./troubleshoot-servicenow-knowledge-connector.md).
+You can find troubleshooting steps for commonly seen issues here: [Troubleshooting the ServiceNow Knowledge Microsoft Graph connector](./troubleshoot-servicenow-knowledge-connector.md).
 
 If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/en-us/graph/support).
 
