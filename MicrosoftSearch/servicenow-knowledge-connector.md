@@ -235,7 +235,7 @@ For other settings, like Access permissions, Data inclusion rules, Schema, Crawl
 |Incremental Crawl|_Frequency: Every 15 mins_|
 |Full Crawl|_Frequency: Every Day_|
 
-If you want to edit any of these values, you need to choose the "Custom Setup" option.
+If you want to edit any of these values, you need to choose the **Custom Setup** option.
 
 [Get started with the ServiceNow Knowledge Microsoft Graph connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_ServiceNowKB&type=ServiceNowKB)
 
