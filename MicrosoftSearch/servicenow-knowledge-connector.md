@@ -87,6 +87,7 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
 1. **ServiceNow OAuth (recommended)**
 
+   <br/>
    <details>
    <summary>[Click to expand] To use the ServiceNow OAuth for authentication, follow these steps.</summary>
     
@@ -110,6 +111,7 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
 1. **Microsoft Entra ID OpenID Connect**
 
+   <br/>
    <details>
    <summary>To use Microsoft Entra ID OpenID Connect for authentication, follow the steps below.</summary>
    <a name='step-331-register-a-new-application-in-azure-active-directory'></a>
