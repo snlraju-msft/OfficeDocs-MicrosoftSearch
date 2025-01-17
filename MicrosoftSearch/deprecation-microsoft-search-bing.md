@@ -27,11 +27,11 @@ Bing.com will no longer show work search results. Work-related answers will no l
 
 ## When and where are these changes taking place? 
 
-Microsoft Search in Bing is being retired in all regions worldwide on March 31, 2025. It is being retired on all devices, including mobile. 
+Microsoft Search in Bing is being retired in all regions worldwide on March 31, 2025. It's being retired on all devices, including mobile. 
 
 ## Where can users search for work answers? 
 
-Microsoft365.com, Office.com, and SharePoint Online are the new homes for Microsoft Search. The Edge for Business address bar and Windows search box will also continue to deliver work search results with some adjustments, detailed here: 
+Microsoft365.com, Office.com, and SharePoint Online are the new homes for Microsoft Search. The Edge for Business address bar and Windows search box also continue to deliver work search results with some adjustments, detailed here: 
 
 ## Edge address bar 
 
@@ -43,7 +43,7 @@ The Windows search box is removing the "Work" tab, but continues to support work
 
 ## Is enterprise branding on Bing.com being removed?
 
-Yes. Bing will no longer display any organizational branding. Likewise, new tab pages in Edge will no longer display any custom branding.
+Yes. Bing is removing organizational branding. Likewise, custom branding is being removed from new tab pages in Edge.
 
 ## What actions are required for customers? 
 
