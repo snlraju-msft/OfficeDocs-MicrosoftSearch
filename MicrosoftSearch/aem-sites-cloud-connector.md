@@ -30,7 +30,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 - Index published webpages of your AEM Sites.
 - Supports ingestion filters based on page paths, allowing for exact matching and phrase matching using regular expressions.
 - Customize your crawl frequency.
-- Create workflows using this connection and plugins from Microsoft Copilot Studio.   
+- Create workflows using this connection and plugins from Microsoft Copilot Studio.  
 - Use [Semantic search in Copilot](semantic-index-for-copilot.md) to enable users to find relevant content.
 
 ## Limitations
@@ -58,7 +58,7 @@ Authentication Type - We support the technical account for Adobe Experience Clou
 ### 4. Staged rollout to a limited audience
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience.
 
-At this point, you are ready to create the connection for AEM Sites. You can click the ‘Create’ button to publish your connection and index published web pages from your AEM Sites. 
+At this point, you are ready to create the connection for AEM Sites. You can click the **Create** button to publish your connection and index published web pages from your AEM Sites. 
 
 For other settings, like Access Permissions, Data inclusion rules, Schema, Crawl frequency, etc., we set defaults based on what works best with AEM Sites data. You can see the default values below: 
 
@@ -70,11 +70,11 @@ Content | Manage properties | To check default properties and their schema, [cli
 Sync | Incremental crawl | Frequency: Every 15 mins
 Sync | Full crawl | Frequency: Every day
 
-If you want to edit any of these values, you need to choose the ‘**Custom setup**’ option. 
+If you want to edit any of these values, you need to choose the **Custom setup** option. 
 
 ## Custom setup 
 
-Custom setup is for those admins who want to edit the default values for settings. Once you click the ‘Custom setup’ option, you should see three other tabs – Users, Content, and Sync. 
+Custom setup is for those admins who want to edit the default values for settings. Once you click the **Custom setup** option, you should see three other tabs – **Users**, **Content**, and **Sync**. 
 
 ### Users 
 
@@ -102,7 +102,7 @@ Here, you can check available properties from your Adobe Experience Manager Site
 |----------------------|--------------------------|---------------------------------------------------------------------------------|-----------------------------|
 | CreatedBy           | Created by              | Date and time that the item was created in the data source                      | Query, Retrieve, Search     |
 | CreatedTime         | Created date time       | Date and time that the item was created in the data source                      | Query, Retrieve             |
-| Description         | Description             | A brief summary of the page’s content                                           | Query, Retrieve             |
+| Description         | Description             | A brief summary of the page's content                                           | Query, Retrieve             |
 | HtmlContent         | Content                 | The content of static webpages, not available for dynamic webpages              | Search                      |
 | JcrTitle            |                          |                                                                                 | Query, Retrieve             |
 | LastModifiedBy      | Last modified by        | Name of the person who most recently edited the item in the data source         | Search, Query, Retrieve     |
