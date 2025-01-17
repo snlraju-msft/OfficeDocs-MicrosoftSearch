@@ -39,7 +39,7 @@ The Microsoft Edge for Business address bar will no longer send users to a Bing.
 
 ## Windows search box 
 
-The Windows search box is removing the "Work" tab, but continues to support work search. Windows searches deliver work results only for documents initially, with more content types returned as quickly as possible. With these changes, UX changes are also coming to the Windows search box.
+The Windows search box is removing the "Work" tab, but continues to support work search. Windows searches deliver work results only for documents initially, with more content types returned as quickly as possible. UX changes are also coming to the Windows search box.
 
 ## Is enterprise branding on Bing.com being removed?
 
@@ -64,7 +64,7 @@ Customer productivity is our mission and making work search a better experience 
 
 ## Is there any impact on users before March 31, 2025? 
 
-Users who click on suggestions in the Edge for Business address bar may be redirected to Microsoft365.com before March 31, 2025. Also, as we begin testing the deprecation experience, a small set of users may find before March 31 that Bing isn't available as an endpoint for work search. We recommend that you inform your users of the change and direct them to Microsoft365.com, Office.com, and SharePoint Online instead. Adding these entry points to their favorites or to the favorites bar in Edge for Business may be a helpful alternative pathway.
+Users who click on suggestions in the Edge for Business address bar may be redirected to Microsoft365.com before March 31, 2025. Also, as we begin testing the deprecation experience, a small set of users may find before March 31 that Bing is intermittently unavailable as an endpoint for work search. We recommend that you inform your users of the change and direct them to Microsoft365.com, Office.com, and SharePoint Online instead. Adding these entry points to their favorites or to the favorites bar in Edge for Business may be a helpful alternative pathway.
 
 ## Can customers try to opt out of this change? 
 
