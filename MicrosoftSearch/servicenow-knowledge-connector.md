@@ -165,7 +165,7 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
          1. Register a new OAuth OIDC entity. To learn, see [Create an OAuth OIDC provider](https://docs.servicenow.com/bundle/vancouver-platform-security/page/administer/security/task/add-OIDC-entity.html).
 
-         1. The following table provides guidance on how to fill out OIDC provider registration form
+         1. The following table provides guidance on how to fill out OIDC provider registration form:
 
               Field | Description | Recommended Value
               --- | --- | ---
@@ -175,9 +175,9 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
             All other values can be default.
 
-         1. In the OIDC provider registration form, you need to add a new OIDC provider configuration. Select the search icon against *OAuth OIDC Provider Configuration* field to open the records of OIDC configurations. Select New.
+         1. In the OIDC provider registration form, you need to add a new OIDC provider configuration. Select the search icon against *OAuth OIDC Provider Configuration* field to open the records of OIDC configurations. Select **New**.
 
-         1. The following table provides guidance on how to fill out OIDC provider configuration form
+         1. The following table provides guidance on how to fill out OIDC provider configuration form:
 
              Field | Recommended Value
              --- | ---
@@ -189,9 +189,9 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
              User Field | User ID
              Enable JTI claim verification | Disabled
 
-         1. Select Submit and Update the OAuth OIDC Entity form.
+         1. Select **Submit** and update the OAuth OIDC Entity form.
 
-   5. Create a ServiceNow account
+   5. Create a ServiceNow account.
 
       Refer to the instructions to create a ServiceNow account, [create a user in ServiceNow](https://docs.servicenow.com/bundle/vancouver-platform-administration/page/administer/users-and-groups/task/t_CreateAUser.html).
 
@@ -216,9 +216,9 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, click [here](/MicrosoftSearch/staged-rollout-for-graph-connectors).
 
-At this point, you are ready to create the connection for ServiceNow Knowledge. You can click the "Create" button and the ServiceNow Knowledge Microsoft Graph connector starts indexing articles from your ServiceNow account.
+At this point, you are ready to create the connection for ServiceNow Knowledge. You can select the **Create** button and the ServiceNow Knowledge Microsoft Graph connector starts indexing articles from your ServiceNow account.
 
-For other settings, like Access permissions, Data inclusion rules, Schema, Crawl frequency, etc., we have set defaults based on what works best with ServiceNow data. You can see the default values below:
+For other settings, like Access permissions, Data inclusion rules, Schema, and Crawl frequency, we have set defaults based on what works best with ServiceNow data. You can see the default values below:
 
 |**Users** |&nbsp;|
 |----|---|
@@ -241,7 +241,7 @@ If you want to edit any of these values, you need to choose the **Custom Setup**
 
 ## Custom setup
 
-Custom setup is for those admins who want to edit the default values for settings listed in the above table. Once you click on the "Custom Setup" option, you see three more tabs – Users, Content, and Sync.
+Custom setup is for those admins who want to edit the default values for settings listed in the above table. Once you click on the "Custom Setup" option, you see three more tabs – **Users**, **Content**, and **Sync**.
 
 ### Users
 
@@ -353,3 +353,4 @@ After publishing your connection, you can review the status under the **Data sou
 You can find troubleshooting steps for commonly seen issues [here](./troubleshoot-servicenow-knowledge-connector.md).
 
 If you have issues or want to provide feedback, contact [Microsoft Graph | Support](https://developer.microsoft.com/en-us/graph/support).
+
