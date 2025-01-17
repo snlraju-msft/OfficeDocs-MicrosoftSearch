@@ -41,7 +41,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
    Feature | Read access required tables | Description
    --- | --- | ---
-   Index knowledge articles available to <em>Everyone</em> | kb_knowledge | For crawling knowledge articles
+   Index knowledge articles available to _Everyone_ | kb_knowledge | For crawling knowledge articles
    Index and support user criteria permissions | kb_uc_can_read_mtom | Who can read this knowledge base
    | | kb_uc_can_contribute_mtom | Who can contribute to this knowledge base
    | | kb_uc_cannot_read_mtom | Who cannot read this knowledge base
@@ -79,18 +79,18 @@ To connect to your ServiceNow data, you need your organization's ServiceNow inst
 
 ### 3. Authentication type
 
-To authenticate and sync content from ServiceNow, choose **one of three** supported methods:<br>
+To authenticate and sync content from ServiceNow, choose **one of three** supported methods:
 
-   a. **Basic authentication** <br>
-     Enter the username and password of ServiceNow account with **knowledge** role to authenticate to your instance.
-     <br>
+1. **Basic authentication**
 
-   b. **ServiceNow OAuth (recommended)**
+   Enter the username and password of ServiceNow account with **knowledge** role to authenticate to your instance.
+
+1. **ServiceNow OAuth (recommended)**
+
    <details>
-   <summary>[Click to expand]To use the ServiceNow OAuth for authentication, follow these steps.</summary><br>
+   <summary>[Click to expand]To use the ServiceNow OAuth for authentication, follow these steps.</summary>
     
    A ServiceNow admin needs to provision an endpoint in your ServiceNow instance, so that the ServiceNow Knowledge Microsoft Graph connector can access it. To learn more, see [Create an endpoint for clients to access the instance](https://docs.servicenow.com/bundle/vancouver-platform-security/page/administer/security/task/t_CreateEndpointforExternalClients.html) in the ServiceNow documentation.
-
 
    The following table provides guidance on how to fill out the endpoint creation form:
 
@@ -106,14 +106,12 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
    Access token lifespan | The number of seconds that an access token is valid. | 43,200 (12 hours)
    
    Enter the client ID and client secret to connect to your instance. After connecting, use a ServiceNow account credential to authenticate permission to crawl. The account should at least have **knowledge** role. Refer to the table mentioned under the Service account in the [Prerequisites](#prerequisites) section for providing read access to more ServiceNow table records and index user criteria permissions.
-</details> <br>
+   </details>
 
-   c. **Microsoft Entra ID OpenID Connect**
+1. **Microsoft Entra ID OpenID Connect**
 
    <details>
-
    <summary>To use Microsoft Entra ID OpenID Connect for authentication, follow the steps below.</summary>
-
    <a name='step-331-register-a-new-application-in-azure-active-directory'></a>
 
    1. Register a new application in Microsoft Entra ID
@@ -128,36 +126,36 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
       Follow the steps to retrieve Service Principal Object Identifier
 
-         1. Run PowerShell.
+      1. Run PowerShell.
 
-         1. Install Azure PowerShell using the following command.
+      1. Install Azure PowerShell using the following command.
 
-            ```powershell
-            Install-Module -Name Az -AllowClobber -Scope CurrentUser
-            ```
+         ```powershell
+         Install-Module -Name Az -AllowClobber -Scope CurrentUser
+         ```
 
-         1. Connect to Azure.
+      1. Connect to Azure.
 
-             ```powershell
-             Connect-AzAccount
-             ```
+         ```powershell
+         Connect-AzAccount
+         ```
 
-         1. Get Service Principal Object Identifier.
+      1. Get Service Principal Object Identifier.
 
-             ```powershell
-             Get-AzADServicePrincipal -ApplicationId "Application-ID"
-             ```
+         ```powershell
+         Get-AzADServicePrincipal -ApplicationId "Application-ID"
+         ```
    
-            Replace "Application-ID" with Application (client) ID (without quotes) of the application you registered in step 1. Note the value of ID object from PowerShell output. It's the Service Principal ID.
+         Replace "Application-ID" with Application (client) ID (without quotes) of the application you registered in step 1. Note the value of ID object from PowerShell output. It's the Service Principal ID.
 
-            Now you have all the information required from Azure portal. A quick summary of the information is given in the table below.
+         Now you have all the information required from Azure portal. A quick summary of the information is given in the table below.
 
-            Property | Description
-            --- | ---
-            Directory ID (Tenant ID) | Unique ID of the Microsoft Entra tenant, from step 3.a.
-            Application ID (Client ID) | Unique ID of the application registered in step 3.a.
-            Client Secret | The secret key of the application (from step 3.b). Treat it like a password.
-            Service Principal ID | An identity for the application running as a service. (from step 3.c)
+         Property | Description
+         --- | ---
+         Directory ID (Tenant ID) | Unique ID of the Microsoft Entra tenant, from step 3.a.
+         Application ID (Client ID) | Unique ID of the application registered in step 3.a.
+         Client Secret | The secret key of the application (from step 3.b). Treat it like a password.
+         Service Principal ID | An identity for the application running as a service. (from step 3.c)
 
    4. Register the ServiceNow Application
 
@@ -167,11 +165,11 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
          1. The following table provides guidance on how to fill out OIDC provider registration form:
 
-              Field | Description | Recommended Value
-              --- | --- | ---
-              Name | A unique name that identifies the OAuth OIDC entity. | Microsoft Entra ID
-              Client ID | The client ID of the application registered in the third-party OAuth OIDC server. The instance uses the client ID when requesting an access token. | Application (Client) ID from step 3.a
-              Client Secret | The client secret of the application registered in the third-party OAuth OIDC server. | Client Secret from step 3.b
+            Field | Description | Recommended Value
+            --- | --- | ---
+            Name | A unique name that identifies the OAuth OIDC entity. | Microsoft Entra ID
+            Client ID | The client ID of the application registered in the third-party OAuth OIDC server. The instance uses the client ID when requesting an access token. | Application (Client) ID from step 3.a
+            Client Secret | The client secret of the application registered in the third-party OAuth OIDC server. | Client Secret from step 3.b
 
             All other values can be default.
 
@@ -179,15 +177,15 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
          1. The following table provides guidance on how to fill out OIDC provider configuration form:
 
-             Field | Recommended Value
-             --- | ---
-             OIDC Provider |  Microsoft Entra ID
-             OIDC Metadata URL | The URL must be in the form https\://login.microsoftonline.com/<tenandId">/.well-known/openid-configuration <br/>Replace "tenantID" with Directory (tenant) ID from step 3.a.
-             OIDC Configuration Cache Life Span |  120
-             Application | Global
-             User Claim | sub
-             User Field | User ID
-             Enable JTI claim verification | Disabled
+            Field | Recommended Value
+            --- | ---
+            OIDC Provider |  Microsoft Entra ID
+            OIDC Metadata URL | The URL must be in the form https\://login.microsoftonline.com/<tenandId">/.well-known/openid-configuration <br/>Replace "tenantID" with Directory (tenant) ID from step 3.a.
+            OIDC Configuration Cache Life Span |  120
+            Application | Global
+            User Claim | sub
+            User Field | User ID
+            Enable JTI claim verification | Disabled
 
          1. Select **Submit** and update the OAuth OIDC Entity form.
 
@@ -210,7 +208,7 @@ To authenticate and sync content from ServiceNow, choose **one of three** suppor
 
       Use Application ID as Client ID (from step 3.1), and Client secret (from step 3.2) in admin center configuration wizard to authenticate to your ServiceNow instance using Microsoft Entra ID OpenID Connect.
 
-</details>
+   </details>
 
 ### 4. Rollout to a limited audience
 
@@ -220,17 +218,17 @@ At this point, you are ready to create the connection for ServiceNow Knowledge. 
 
 For other settings, like Access permissions, Data inclusion rules, Schema, and Crawl frequency, we have set defaults based on what works best with ServiceNow data. You can see the default values below:
 
-|**Users** |&nbsp;|
+| Users |&nbsp;|
 |----|---|
 |Access permissions|_Only people with access to content in Data source._|
 |Map Identities|_Data source identities mapped using Microsoft Entra IDs._|
 
-|**Content**|&nbsp;|
+| Content |&nbsp;|
 |---|---|
 |Query String|_active=true^workflow_state=published_|
 |Manage Properties|_To check default properties and their schema, click here_|
 
-|**Sync**|&nbsp;|
+| Sync |&nbsp;|
 |---|---|
 |Incremental Crawl|_Frequency: Every 15 mins_|
 |Full Crawl|_Frequency: Every Day_|
@@ -241,7 +239,7 @@ If you want to edit any of these values, you need to choose the **Custom Setup**
 
 ## Custom setup
 
-Custom setup is for those admins who want to edit the default values for settings listed in the above table. Once you click on the "Custom Setup" option, you see three more tabs – **Users**, **Content**, and **Sync**.
+Custom setup is for those admins who want to edit the default values for settings listed in the above table. Once you click **Custom Setup**, you see three more tabs: **Users**, **Content**, and **Sync**.
 
 ### Users
 
@@ -256,7 +254,7 @@ If a knowledge article isn't enabled with a user criterion, it appears in the re
 >[!IMPORTANT]
 > In ServiceNow, while assessing read permissions for a user, both article-level permissions and KB-level permissions are looked at. The ServiceNow Knowledge Microsoft Graph connector treats permissions differently:
 > 1. If the article contains '_Can Read_' user criteria, then they are stamped on the article during ingestion and Knowledge Base '_Can Read_' / '_Can Contribute_' user criteria are ignored.
-
+>
 > 2. If the article contains '_Cannot Read_' user criteria, and if the corresponding Knowledge base also contains '_Cannot Read_' user criteria, then both the user criteria are stamped on the article.
 
 >[!NOTE]
@@ -316,7 +314,7 @@ You can change the default values of the refresh interval from here if you want 
 ## Read and Deny Access to Knowledge Articles in the ServiceNow Knowledge Microsoft Graph connector
 
 <details>
-<summary>[Click to expand] Here is a scenario-wise depiction of how the connector treats access permissions based on user criteria in ServiceNow Knowledge:</summary><br>
+<summary>[Click to expand] Here is a scenario-wise depiction of how the connector treats access permissions based on user criteria in ServiceNow Knowledge:</summary>
 
 >[!NOTE]
 > Terms used in the table below:
