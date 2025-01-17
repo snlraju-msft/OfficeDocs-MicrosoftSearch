@@ -218,7 +218,7 @@ Deploy this connection to a limited user base if you want to validate it in Copi
 
 At this point, you are ready to create the connection for ServiceNow Knowledge. You can click the "Create" button and the ServiceNow Knowledge Microsoft Graph connector starts indexing articles from your ServiceNow account.
 
-For other settings, like Access Permissions, Data inclusion rules, Schema, Crawl frequency etc., we have set defaults based on what works best with ServiceNow data. You can see the default values below:
+For other settings, like Access permissions, Data inclusion rules, Schema, Crawl frequency, etc., we have set defaults based on what works best with ServiceNow data. You can see the default values below:
 
 |**Users** |&nbsp;|
 |----|---|
@@ -249,7 +249,7 @@ Custom setup is for those admins who want to edit the default values for setting
 
 **Access permissions**
 
-ServiceNow Knowledge Microsoft Graph connector supports access permissions visible to "Everyone" or "Only people with access to content in data source". Indexed data appears in results and is visible to all users in the organization or users who have access to them via user criteria permission respectively. Choose the one that is most appropriate for your organization.
+The ServiceNow Knowledge Microsoft Graph connector supports access permissions visible to "Everyone" or "Only people with access to content in data source". Indexed data appears in results and is visible to all users in the organization or users who have access to them via user criteria permission respectively. Choose the one that is most appropriate for your organization.
 
 If a knowledge article isn't enabled with a user criterion, it appears in the results of everyone in the organization.
 
