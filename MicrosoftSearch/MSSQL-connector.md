@@ -34,8 +34,6 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
 - **Install the Microsoft Graph connector agent** (only applicable for MS SQL connector): To access your Microsoft SQL Server, you must install and configure the connector agent. See [Install the Microsoft Graph connector agent](graph-connector-agent.md) to learn more.
-
-
 - **Service Account**: To connect to your SQL database and allow Microsoft Graph Connector to update records regularly, you need a service account with read permissions granted to the service account.
 
 >[!NOTE]
@@ -115,7 +113,7 @@ The use of each of the ACL columns in the above query is described below. The fo
 
 ![Sample data showing the OrderTable and AclTable with example properties.](media/MSSQL-ACL1.png)
 
-</details> <br>
+</details>
 
 b. **Supported data types** <br>
 
@@ -139,7 +137,7 @@ The table summarizes the SQL data types that are supported in the MS SQL and Azu
 
 For any other data type currently not directly supported, the column needs to be explicitly cast to a supported data type.
 
-</details> <br>
+</details>
 
 c. **Watermark (Required)** <br>
 
@@ -159,9 +157,11 @@ In the configuration shown in the following image, `CreatedDateTime` is the sele
 
 The first query fetches the first **N** number of rows by using: "CreatedDateTime > January 1, 1753 00:00:00" (min value of DateTime data type). After the first batch is fetched, the highest value of `CreatedDateTime` returned in the batch is saved as the checkpoint if the rows are sorted in ascending order. An example is March 1, 2019 03:00:00. Then the next batch of **N** rows is fetched by using "CreatedDateTime > March 1, 2019 03:00:00" in the query.
 
+</details>
+
 ### 2. Manage properties
 
-
+The SQL connector picks up all columns specified in the full crawl SQL query as source properties for ingestion. In this step, you can define the search schema for your content. This involves defining the search annotations like search, retrieve, query and refine for selected source properties. This also includes assigning semantic labels and aliases to enhance search relevance. To learn more about search schema, refer to the documentation on [guidelines for 'manage properties'](/MicrosoftSearch/configure-connector#guidelines-for-manage-properties).
 
 ### 3. Incremental crawl (optional)
 
@@ -175,17 +175,17 @@ The components in the following image resemble the full crawl components with on
 
 b. **Soft delete instructions (Optional)**
 
-To exclude soft-deleted rows in your database from being indexed, specify the soft-delete column name and value that indicates the row is deleted.
+In a SQL record system, a soft delete is a technique where, instead of physically removing a record from a database, you mark it as "deleted" by setting a specific flag or column. This allows the record to remain in the database, but it's logically excluded from most operations. To delete soft-deleted rows in your database during incremental crawl, specify the soft-delete column name and value that indicates the row is deleted.
 
 ![Soft delete settings: "Soft delete column" and "Value of soft delete column which indicates a deleted row."](media/MSSQL-softdelete.png)
 
 ## Users
 
-You can choose to use the [ACLs specified in the full crawl screen](#full-crawl-manage-search-permissions) or you can override them to make your content visible to everyone.
+You can choose to use the **Only people with access to this data source** to restrict access to users or groups as selected in full crawl query or you can override them to make your content visible to **Everyone**.
 
 ### 1. Map columns containing access permissions information
 
-Select **Manage permissions** to choose the various access control (ACL) columns that specify the access control mechanism. Select the column name you specified in the full crawl SQL query.
+Choose the various access control (ACL) columns that specify the access control mechanism. Select the column name you specified in the full crawl SQL query. Note that ‘deny’ takes precedence over ‘allow’ permissions.
 
 Each of the ACL columns is expected to be a multi-valued column. These multiple ID values can be separated by separators such as semicolon (;), comma (,), and so on. You need to specify this separator in the **value separator** field.
 
@@ -202,7 +202,7 @@ The refresh interval determines how often your data is synced between the data s
 
 You can configure full and incremental crawls based on the scheduling options present here. By default, incremental crawl (if configured) is set for every 15 minutes, and full crawl is set for every day. If needed, you can adjust these schedules to fit your data refresh needs.
 
-At this point, you're ready to create the connection for PostgreSQL. You can click on the "Create" button to publish your connection and index data from your database.
+At this point, you're ready to create the connection for Azure SQL or MS SQL. You can click on the "Create" button to publish your connection and index data from your database.
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
