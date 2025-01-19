@@ -1,6 +1,6 @@
 ---
 ms.date: 10/08/2019
-title: "Oracle SQL Microsoft Graph connector"
+title: "Oracle SQL Microsoft Graph connector for Microsoft Search and Microsoft 365 Copilot"
 ms.author: mecampos
 author: mecampos
 manager: umas
@@ -13,47 +13,65 @@ search.appverid:
 - BFB160
 - MET150
 - MOE150
-ROBOTS: NoIndex
 description: "Set up the Oracle SQL Microsoft Graph connector for Microsoft Search and Microsoft 365 Copilot."
 ---
 # Oracle SQL Microsoft Graph connector
 
-The Oracle SQL Microsoft Graph connector allows your organization to discover and index data from an on-premises Oracle database. The connector indexes specified content in Microsoft Search and Microsoft Copilot 365. To keep the index up to date with source data, it supports periodic full and incremental crawls. With the Oracle SQL Microsoft Graph connector, you can also restrict access to search results for certain users.
+The Oracle SQL Microsoft Graph connector allows your organization to discover and index data from an on-premises Oracle database. The connector indexes specified content in Microsoft Search and Microsoft Copilot 365. To keep the index up to date with source data, it supports periodic full and incremental crawls. With the Oracle SQL connector, you can also restrict access to search results for certain users.
 
-This article is for anyone who configures, runs, and monitors an Oracle SQL Microsoft Graph connector. It supplements the general setup process and shows instructions that apply only to the Oracle SQL Microsoft Graph connector. It also includes information about [Troubleshooting](#troubleshooting) and [Limitations](#limitations).
+This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors an Oracle SQL Microsoft Graph connector.
 
-## Before you get started
+## Capabilities
+- Index records from your Oracle SQL database using a SQL query.
+- Specify access permissions for every record with list of users or groups added in SQL query.
+- Enable your end users to ask questions related to indexed records in Copilot.
+- Use [Semantic search in Copilot](semantic-index-for-copilot.md) to enable users to find relevant content based on keywords, personal preferences, and social connections.
 
-### Install the connector agent
+## Limitations
+- Oracle SQL version: The on-premises database must run Oracle Database version 11g or later. The connector supports the Oracle database hosted on Windows, Linux, and Azure VM platforms.
+- To support high crawl speed and better performance, the connector is built to support OLTP (Online Transaction Processing) workloads only. OLAP (Online Analytical Processing) workloads which do not execute the provided SQL query in 40 seconds timeout and aren't supported.
+- ACLs are only supported by using a User Principal Name (UPN), Microsoft Entra ID, or Active Directory Security.
+- Indexing rich content inside database columns isn't supported. Examples of such content are HTML, JSON, XML, blobs, and document parsings that exist as links inside the database columns.
 
-In order to access your on-premises third-party data, you must install and configure the Microsoft Graph connector agent. For more information, see [Install the Microsoft Graph connector agent](graph-connector-agent.md).
+## Prerequisites
+- You must be the **search admin** for your organization's Microsoft 365 tenant.
+- **Install the Microsoft Graph connector agent**: To access your Oracle SQL Server, you must install and configure the connector agent. See [Install the Microsoft Graph connector agent](graph-connector-agent.md) to learn more.
+- **Service Account**: To connect to your SQL database and allow Microsoft Graph Connector to update records regularly, you need a service account with read permissions granted to the service account.
 
-## Step 1: Add a connector in the Microsoft 365 admin center
+## Get Started with Setup
 
-[Add the Oracle SQL Microsoft Graph connector](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_OracleSqlConnector&type=OracleSqlConnector​)
+### 1. Display name 
+A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
 
-Follow the general [setup instructions](./configure-connector.md).
-<!---If the above phrase does not apply, delete it and insert specific details for your data source that are different from general setup instructions.-->
-
-## Step 2: Name the connection
-
-Follow the general [setup instructions](./configure-connector.md).
-<!---If the above phrase does not apply, delete it and insert specific details for your data source that are different from general setup instructions.-->
-
-## Step 3: Configure the connection settings
-
-To connect your Oracle SQL Microsoft Graph connector to a data source, you must configure the database server you want to be crawled and the on-premises Microsoft Graph connector agent. You can then connect to the database with the required authentication method.
-
-For the Oracle SQL Microsoft Graph connector, you need to specify the hostname, port, and service (database) name along with the preferred authentication method, username, and password.
+### 2. SQL server
+To connect to your SQL data, you need to specify the hostname, port, and service (database) name.
 
 If the service name is not available and you connect using SID, the service name can be derived using one of the following commands (to be executed as sys admin).
 * select SERVICE_NAME from gv$session where sid in (select sid from v$MYSTAT);
 * select sys_context('userenv','service_name') from dual;
 
-> [!NOTE]
-> Your database must run Oracle database version 11g or later for the connector to be able to connect. The connector supports the Oracle database hosted on Windows, Linux, and Azure VM platforms.
+### 3. Authentication Type
 
-To search your database content, you must specify SQL queries when you configure the connector. These SQL queries need to name all the database columns that you want to index (that is, source properties), including any SQL joins that need to be performed to get all the columns. To restrict access to search results, you must specify Access Control Lists (ACLs) within SQL queries when you configure the connector.
+//Step 3: Configure the connection settings
+//To connect to your SQL data, you need to specify the hostname, port, and service (database) name //along with the preferred authentication method, username, and password.
+
+
+### 4. Roll out to limited audience
+Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the roll out to a broader audience. To know more about limited rollout, [click here](staged-rollout-for-graph-connectors.md).
+
+## Content
+To search your database content, you must specify SQL queries when you configure the connector. These SQL queries need to name all the database columns that you want to index (source properties). This includes any SQL joins that need to be performed to get all the columns. To restrict access to search results, you must specify Access Control Lists (ACLs) within SQL queries when you configure the connector.
+
+### 1. Full crawl (Required)
+
+
+
+
+
+
+
+
+
 
 ## Step 3a: Full crawl (required)
 
@@ -170,14 +188,6 @@ Follow the general [setup instructions](./configure-connector.md).
 Create your own verticals and result types, so end users can view search results from new connections. Without this step, data from your connection won't show up on the search results page.
 
 To learn more about how to create your verticals and MRTs, see [Search results page customization](customize-search-page.md). -->
-
-## Limitations
-
-The Oracle SQL Microsoft Graph connector has these limitations in the preview release:
-
-* The on-premises database must run Oracle Database version 11g or later.
-* ACLs are only supported by using a User Principal Name (UPN), Microsoft Entra ID, or Active Directory Security.
-* Indexing rich content inside database columns is not supported. Examples of such content are HTML, JSON, XML, blobs, and document parsings that exist as links inside the database columns.
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
