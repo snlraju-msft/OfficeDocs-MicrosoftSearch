@@ -64,6 +64,7 @@ If you haven't installed the [Microsoft Graph connector agent](https://www.micro
 To authenticate and sync data from Oracle SQL, choose one of the two supported methods:
 
 a. Basic authentication
+
 b. Windows authentication
 
 ### 5. Roll out to limited audience
