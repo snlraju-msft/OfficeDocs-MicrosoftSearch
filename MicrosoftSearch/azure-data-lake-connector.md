@@ -1,6 +1,6 @@
 ---
 ms.date: 10/08/2019
-title: "Azure Data Lake Microsoft Graph connector for Microsoft Search and Microsoft 365 Copilot"
+title: "Azure Data Lake Storage Gen2 Microsoft Graph connector"
 ms.author: mecampos
 author: mecampos
 manager: umas
@@ -83,7 +83,7 @@ For a connection to [Azure Blob Storage](/azure/storage/blobs/storage-blobs-intr
 
 ## Step 7: Set the refresh schedule
 
-On the **Refresh Settings** screen, you can set the incremental crawl interval and the full crawl interval. The default intervals for the Azure Data Lake Storage Gen2 Microsoft Graph connector are 15 minutes for an incremental crawl and one week for a full crawl.
+On the **Refresh settings** screen, you can set the incremental crawl interval and the full crawl interval. The default intervals for the Azure Data Lake Storage Gen2 Microsoft Graph connector are 15 minutes for an incremental crawl and one week for a full crawl.
 
 ## Step 8: Review connection
 
@@ -91,7 +91,7 @@ Follow the general [setup instructions](./configure-connector.md).
 
 ## Limitations
 
-A published connection for Azure Blob Storage cannot be reconfigured for Azure Data Lake Storage Gen2 source and the other way around. In such scenarios, it's recommended to configure a new connection.
+A published connection for Azure Blob Storage can't be reconfigured for Azure Data Lake Storage Gen2 source and the other way around. In such scenarios, it's recommended to configure a new connection.
 
 Also, the size of the files needs to be 4 MB or less for it to be crawled. File types currently supported are:
 
@@ -103,7 +103,7 @@ Also, the size of the files needs to be 4 MB or less for it to be crawled. File 
 * HTML
 * PDF
 
-Binary files like images (.jpg, .bmp, etc.) are not supported. For example, if a .docx file contains only images, it might be skipped because it didn't return any content.
+Binary files like images (.jpg, .bmp, etc.) aren't supported. For example, if a .docx file contains only images, it might be skipped because it didn't return any content.
 
 ## Troubleshooting
 After publishing your connection, you can review the status under the **Data sources** tab in the [admin center](https://admin.microsoft.com). To learn how to make updates and deletions, see [Manage your connector](manage-connector.md).
