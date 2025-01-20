@@ -78,27 +78,27 @@ The Azure DevOps Graph connector only indexes content from an ADO organization c
 **Create an app on Microsoft Entra ID**
 
 1. Go to the [Azure portal](https://portal.azure.com) and sign in with admin credentials for the tenant.
-2. Navigate to **Microsoft Entra ID** -> **Manage** -> **App registrations** from the navigation pane and select **New registration**.
+2. Navigate to **Microsoft Entra ID** -> **Identity** -> **Applications** -> **App registrations** from the navigation pane and select **New registration**.
 3. Provide a name for the app and select **Register**.
 4. Make a note of the Application (client) ID. This ID is used to grant the Microsoft Entra app access to projects in the ADO organization.
 5. Open **API permissions** from the navigation pane and select **Add a permission**.
 6. Select **Azure DevOps** and then **Delegated permissions**.
-7. Search for the following permissions and select **Add permissions**. <br>
-    a. Identity (read) <br>
-    b. Work Items (read) <br>
-    c. Variable Groups (read) <br>
-    d. Project and Team (read) <br>
-    e. Graph (read) <br>
-    f. Analytics (read) <br>
-8. Select **Grant admin consent for [TenantName]** and confirm by selecting **Yes**.
-9. Check that the permissions are in the "**Granted**" state.
-10. Open **Authentication** from the navigation pane. Select `Add a platform` and choose `Web`. Add one of the following URIs under "Redirect URIs":
+7. Search for the following permissions under **vso** and select **Add permissions**. <br>
+    a. **vso.analytics** - Analytics (read) <br>
+    b. **vso.graph** - Graph (read) <br>
+    c. **vso.identity** - Identity (read) <br>
+    d. **vso.project** - Project and team (read) <br>
+    e. **vso.variablegroups_read** - Variable Groups (read) <br>
+    f. **vso.work** - Work items (read) <br>
+9. Select **Grant admin consent for [TenantName]** and confirm by selecting **Yes**.
+10. Check that the permissions are in the "**Granted**" state.
+11. Open **Authentication** from the navigation pane. Select `Add a platform` and choose `Web`. Add one of the following URIs under "Redirect URIs":
     - For **M365 Enterprise**: https://<span>gcs.office.</span>com/v1.0/admin/oauth/callback
     - For **M365 Government**: https://<span>gcsgcc.office.<span>com/v1.0/admin/oauth/callback
-11. Under **Implicit grant and hybrid flows**, check the option for `ID tokens (used for implicit and hybrid flows)` and click **Configure**.
-12. From the navigation pane, select **Certificates and secrets** under **Manage**.
-13. Select **New Client secret** and select an expiry period for the secret. Copy the generated secret (Value) and save it because it is not shown again.
-14. Use this Client secret and the application ID to configure the connector.
+12. Under **Implicit grant and hybrid flows**, check the option for `ID tokens (used for implicit and hybrid flows)` and click **Configure**.
+13. From the navigation pane, select **Certificates and secrets** under **Manage**.
+14. Select **New Client secret** and select an expiry period for the secret. Copy the generated secret (Value) and save it because it is not shown again.
+15. Use this Client secret and the application ID to configure the connector.
 
 **Grant the Microsoft Entra app access to projects in the ADO organization**
 
@@ -109,7 +109,7 @@ You need to provide the Microsoft Entra app the necessary access to the projects
 3. On the left navigation pane, select `Users` under the 'General' header.
 4. Select `Add users`.
 5. Copy the Application (client) ID obtained from the app to "Users or Service Principals".
-6. Grant the `Basic` access level and select the projects to allow access to index. Also add to the `Project Reader` Azure DevOps group (or equivalent) to ensure access. De-select the option to send email invitation to users.
+6. Grant the `Basic` access level and select the projects to allow access to index. Also add to the `Project Reader` Azure DevOps group (or equivalent) to ensure access. De-select the option to send email invitation to users. Click add.
 
 #### b. Azure DevOps OAuth
 
