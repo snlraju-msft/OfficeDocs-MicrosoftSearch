@@ -79,6 +79,10 @@ items:
       - name: Microsoft Graph built connectors
         href: pre-built-connectors-overview.md
         items:
+        - name: Adobe Experience Manager Sites
+          items:
+          - name: Setup
+            href: aem-sites-cloud-connector.md
         - name: Azure Data Lake Storage Gen2
           items:
           - name: Setup
@@ -175,7 +179,7 @@ items:
           items:
           - name: Setup
             href: postgresql-connector.md
-        - name: Salesforce
+        - name: Salesforce CRM
           items:
           - name: Setup
             href: salesforce-connector.md
@@ -195,6 +199,8 @@ items:
           items:
           - name: Setup
             href: servicenow-knowledge-connector.md
+          - name: Grant Table Access to a Service Account in ServiceNow
+            href: granting-table-access-servicenow.md
           - name: Troubleshooting
             href: troubleshoot-servicenow-knowledge-connector.md
         - name: ServiceNow Tickets

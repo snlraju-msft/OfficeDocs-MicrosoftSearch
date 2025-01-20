@@ -71,8 +71,8 @@ A [search result layout](manage-result-types.md) is needed for Graph connector r
 
 A search vertical can surface results from multiple connector sources. This option provides flexibility in designing your search result page. The vertical setup process enables admins to select multiple connections in the "Content source" step.
 
-If you accurately appoint as many *semantic labels* as possible, this experience is enhanced. You add semantic labels at the point of schema definition and ingestion. [See more about how to create and manage semantic labels](configure-connector.md#step-6-assign-property-labels).
-[Here](configure-connector.md#step-6-assign-property-labels) is additional information on how to create and manage semantic labels.
+If you accurately appoint as many *semantic labels* as possible, this experience is enhanced. You add semantic labels at the point of schema definition and ingestion. [See more about how to create and manage semantic labels](configure-connector.md#semantic-labels-for-source-properties).
+[Here](configure-connector.md#semantic-labels-for-source-properties) is additional information on how to create and manage semantic labels.
 
 > [!NOTE]
 > - A connection can be added as a content source under a single vertical. You can't use connections under multiple verticals.
