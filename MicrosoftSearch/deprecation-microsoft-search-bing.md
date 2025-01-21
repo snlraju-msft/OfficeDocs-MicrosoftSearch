@@ -50,9 +50,7 @@ The Windows search box is removing the "Work" tab, but continues to support work
 
 ## Why is this announcement important?  
 
-Searching for files, people, intranet sites, and more is an important part of daily productivity. We understand that the retirement of Microsoft Search in Bing may create some disruption in daily work. To help mitigate this disruption, we're ensuring that customers are aware of this change before it happens. 
-
-Just as importantly, we want users to know that they have other options for accessing Microsoft Search. They can also continue to use the Edge for Business address bar and Windows search box to find work results, with some adjustments.
+Searching for files, people, intranet sites, and more is an important part of daily productivity. We understand that the retirement of Microsoft Search in Bing may create some disruption in daily work. The key concept to communicate to users is that the existing pathways that they're familiar with will continue to work. Users can continue to use the Edge for Business address bar and Windows search box to access Microsoft Search. 
 
 ## Why is this happening?
 
@@ -72,7 +70,7 @@ Editorial bookmarks (bookmarks that an IT admin has curated) will continue to wo
 
 Today, Microsoft Search also recommends bookmarks based on your organization's SharePoint links. After March 31, Microsoft Search will no longer recommend bookmarks.  
 
-Some organizations have set their recommended bookmarks to automatically publish. Automatically published bookmarks, which currently only appear in Microsoft Search in Bing, are no longer visible after March 31. If your organization automatically publishes recommended bookmarks, and you'd like those bookmarks to be visible on other Microsoft Search entry points, you must publish them before April 30, 2025. You can also export your recommended bookmarks by April 30 if you want to keep them, but don't want to publish them.
+Some organizations have set their recommended bookmarks to automatically publish. Automatically published bookmarks, which currently only appear in Microsoft Search in Bing, are no longer visible after March 31. If your organization automatically publishes recommended bookmarks, and you'd like those bookmarks to be visible on other Microsoft Search entry points, you must manually publish them before April 30, 2025 (to give you a little extra time after the March 31 retirement of Microsoft Search in Bing). You can also export your recommended bookmarks by April 30 if you want to keep them, but don't want to publish them.
 
 Learn more about [managing bookmarks](/microsoftsearch/manage-bookmarks). 
 
