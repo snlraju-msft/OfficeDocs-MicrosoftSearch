@@ -83,7 +83,7 @@ After verifying these settings, follow these steps to set up the connector:
 
 6. After a successful setup, your Dynamics 365 connection should show a Connection state of Ready.
 
-:::image type="content" alt-text="Screenshot of a Dynamics 365 connection successfully set up and showing a Ready connection state in the Microsoft 365 admin center." source="media/dynamics365/dynamic365-connection-setup.png" lightbox="media/dynamics365/dynamic365-connection-setup.png":::
+   :::image type="content" alt-text="Screenshot of a Dynamics 365 connection successfully set up and showing a Ready connection state in the Microsoft 365 admin center." source="media/dynamics365/dynamic365-connection-setup.png" lightbox="media/dynamics365/dynamic365-connection-setup.png":::
 
 > [!TIP]
 > To clarify the type of content users can find in the search vertical, we recommend updating the vertical name. To customize the name of your vertical, click **Edit vertical**. For more information, see [Manage search verticals](/microsoftsearch/manage-verticals).
