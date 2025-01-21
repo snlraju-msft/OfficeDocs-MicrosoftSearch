@@ -14,8 +14,7 @@ description: "Manage how Dataverse and Dynamics 365 content appears in search re
 # Dataverse and Dynamics 365 results in Microsoft Search
 
 > [!Note]
->  [!Note]
-> The Dynamics 365 search provider for Microsoft 365 is deprecated and will stop returning data on January 21, 2025. Please use Microsoft Graph connectors to ingest Dynamics 365 content for Microsoft Search. For more information, see [Use the Microsoft Graph connectors API] (https://learn.microsoft.com/en-us/graph/api/resources/connectors-api-overview?view=graph-rest-1.0).
+> The Dynamics 365 search provider for Microsoft 365 is deprecated and will stop returning data on January 21, 2025. Please use Microsoft Graph connectors to ingest Dynamics 365 content for Microsoft Search. For more information, see [Use the Microsoft Graph connectors API](https://learn.microsoft.com//graph/api/resources/connectors-api-overview?view=graph-rest-1.0).
 
 Microsoft Dataverse is a cloud storage platform that lets you securely store and manage data used by your business applications. Microsoft Dynamics 365 is a line of intelligent business applications built on the Dataverse Search platform, designed for enterprise resource planning and customer relationship management. With Dataverse results in Microsoft Search, users of both classic Dynamics 365 applications and custom model-driven Power Apps built on Dataverse are able to easily find their relevant customer data. The Dataverse connector provides some key benefits:
 
