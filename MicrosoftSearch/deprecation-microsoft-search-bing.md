@@ -23,7 +23,7 @@ While Microsoft Search is being removed from Bing, the core Microsoft Search exp
 
 ## What is being retired?
 
-Bing.com will no longer show work search results. Work-related answers will no longer appear among Bing's search results and there will no longer be a dedicated page for work results (the "Work" tab) on Bing. Search boxes that IT admins configured to point to Microsoft Search in Bing will no longer provide work results. People who have bookmarks for www.bing.com/work will be redirected to Microsoft365.com through June 30, 2025.
+Bing.com will no longer show work search results. Work-related answers will no longer appear among Bing's search results and there will no longer be a dedicated page for work results (the "Work" tab) on Bing. Search boxes that IT admins configured to point to Microsoft Search in Bing will no longer provide work results. People who go directly to or have bookmarks for www.bing.com/work will be redirected to Microsoft365.com through June 30, 2025.
 
 ## When and where are these changes taking place? 
 
