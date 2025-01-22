@@ -21,9 +21,9 @@ After March 31, 2025, work search through Bing.com is being retired. This change
 
 While Microsoft Search is being removed from Bing, the core Microsoft Search experience remains accessible through Microsoft365.com, Office.com, and SharePoint Online. Users can also still find people in their organization, files, and SharePoint sites using the Edge for Business address bar and Windows search box, each of which routes them to a Microsoft Search experience.
 
-## What is being retired?
+## What's changing?
 
-Bing.com will no longer show work search results. Work-related answers will no longer appear among Bing's search results and there will no longer be a dedicated page for work results (the "Work" tab) on Bing. Search boxes that IT admins configured to point to Microsoft Search in Bing will no longer provide work results. People who go directly to or have bookmarks for www.bing.com/work will be redirected to Microsoft365.com through June 30, 2025.
+Users will find work search results on Microsoft365.com rather than on Bing.com. Likewise, the Microsoft Edge for Business address bar will send users to work results on Microsoft365.com rather than Bing.com. Bing's dedicated page for work results (the "Work" tab) is being retired, so Microsoft365.com, Office.com, and SharePoint Online are the new homes for Microsoft Search. Search boxes that IT admins configured to point to Microsoft Search in Bing will no longer provide work results. People who go directly to or have bookmarks for www.bing.com/work will be redirected to Microsoft365.com through June 30, 2025.
 
 ## When and where are these changes taking place? 
 
@@ -58,7 +58,7 @@ Customer productivity is our mission and making work search a better experience 
 
 ## Is there any impact on users before March 31, 2025? 
 
-Users who click on suggestions in the Edge for Business address bar may be redirected to Microsoft365.com before March 31, 2025. Also, as we begin testing the deprecation experience, a small set of users may find before March 31 that Bing is intermittently unavailable as an endpoint for work search. We recommend that you inform your users of the change and direct them to Microsoft365.com, Office.com, and SharePoint Online instead. Adding these entry points to their favorites or to the favorites bar in Edge for Business may be a helpful alternative pathway.
+Users who click on suggestions in the Edge for Business address bar may be redirected to Microsoft365.com before March 31, 2025. Also, as we begin testing the retirement experience, a small set of users may find before March 31 that Bing is intermittently unavailable as an endpoint for work search. We recommend that you inform your users of the change and direct them to Microsoft365.com, Office.com, and SharePoint Online instead. Adding these entry points to their favorites or to the favorites bar in Edge for Business may be a helpful alternative pathway.
 
 ## Can customers try to opt out of this change? 
 
