@@ -18,7 +18,7 @@ ms.date: 04/23/2019
 # Set up Microsoft Search
 
 > [!IMPORTANT]
-> Beginning March 31, 2025, Microsoft365.com, Office.com, and SharePoint Online will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search in Bing users to update your bookmarks now. [Learn more](/microsoftsearch/retirement-microsoft-search-bing)
+> Beginning March 31, 2025, Microsoft365.com, Office.com, and SharePoint Online will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search in Bing users to update your bookmarks now. [Learn more](/microsoftsearch/retirement-microsoft-search-bing). 
 
 Microsoft Search provides a user-friendly interface to help users find information like files and documents, internal sites and business tools, people and groups, locations and directions, conversations and answers. It does this by securely accessing all data sources, including emails, files, SharePoint files, OneDrive content, and other shared resources as well. With Microsoft Search in Bing you can get search results from the internet as well.
 
