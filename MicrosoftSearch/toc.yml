@@ -277,6 +277,8 @@ items:
     items:
     - name: Overview
       href: overview-microsoft-search-bing.md
+    - name: Retirement of Microsoft Search in Bing
+      href: retirement-microsoft-search-bing.md
     - name: Security and Privacy
       href: security-for-search.md
     - name: Use Windows Search to find work or school results
