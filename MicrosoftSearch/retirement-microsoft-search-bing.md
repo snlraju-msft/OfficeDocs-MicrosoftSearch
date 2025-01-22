@@ -46,6 +46,7 @@ The Windows search box is removing the "Work" tab, but continues to support work
 - Prepare users for the removal of work search results on Bing.com by March 31, 2025.
 - Transition to the Edge for Business address bar, the Windows search box, Microsoft365.com, Office.com, or SharePoint Online as entry points to Microsoft Search. Customers can add these entry points to favorites or the favorites bar in Edge for Business as a helpful alternative pathway. Admins can easily set favorites in Edge for Business for their organization—[see details here](/deployedge/edge-learnmore-provision-favorites).
 - Inform your users as soon as possible about the upcoming changes and the alternatives available.
+- Inform your users how to use the Edge address bar to perform work searches. [Get details here](/MicrosoftSearch/retirement-microsoft-search-bing#edge-address-bar)
 - Consider retiring Microsoft Search in Bing before March 31, 2025 for your organization. If you choose to do so, you can turn off Microsoft Search in Bing by going to Settings in the Microsoft 365 admin center > Settings > Search & Intelligence.
 
 ## Why is this announcement important?  
