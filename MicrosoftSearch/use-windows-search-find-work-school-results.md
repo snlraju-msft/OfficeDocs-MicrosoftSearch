@@ -20,7 +20,7 @@ ms.date: 08/12/2022
 # Use Windows Search to find work or school results
 
 > [!IMPORTANT]
-> Beginning March 31, 2025, Office.com and SharePoint will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search in Bing users to update your bookmarks now.
+> Beginning March 31, 2025, Microsoft365.com, Office.com, and SharePoint Online will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search in Bing users to update your bookmarks now. [Learn more](/microsoftsearch/retirement-microsoft-search-bing)
 
 Windows Search is a desktop search experience that helps users find relevant results. When users search from the taskbar, they'll get results from:
 
