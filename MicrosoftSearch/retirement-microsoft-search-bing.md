@@ -35,7 +35,7 @@ Microsoft365.com, Office.com, and SharePoint Online are the new homes for Micros
 
 ## Edge address bar 
 
-The Microsoft Edge for Business address bar will send users to work results on Microsoft365.com rather than Bing.com. Users of the address bar can also continue to find work-related documents, bookmarks, and people in suggested results. In short, much of the experience remains the same, but results are now on a Microsoft365.com page.
+The Microsoft Edge for Business address bar will send users to work results on Microsoft365.com rather than Bing.com. Users of the address bar can continue to find work-related documents, bookmarks, and people in suggested results—clicking on these suggestions takes users to work results on Microsoft365.com. Users can also type "work" in the address bar, hit tab, then type in their work-related query to get work results on a Microsoft365.com page.
 
 ## Windows search box 
 
