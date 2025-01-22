@@ -60,5 +60,4 @@ For creating and managing answers, see [Plan your content](plan-your-content.md)
 If you'd like to learn more about how your users will use Microsoft Search, see the following articles:
 
 - [Find what you need with Microsoft Search in Office](https://support.office.com/article/find-what-you-need-with-microsoft-search-in-office-2457d4d8-48a8-4ad4-ab89-5a0657aa8446)
-- [Office 365 Training Center](https://support.office.com/office-training-center)
 - [Microsoft Search Center](https://support.office.com/article/-working-title-microsoft-search-center-b8bf5a2c-7515-40a9-9a6a-b8ed382c86bc)
