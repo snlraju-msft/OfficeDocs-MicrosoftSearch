@@ -21,7 +21,7 @@ Search verticals are tabs on the search result page that show results of a speci
 
 You can manage verticals at two levels:
 
-- **Organization level** – A vertical at the organization level appears on the search results page when users search from their [SharePoint](https://sharepoint.com/) start page, [Microsoft Office](https://office.com), and Microsoft Search in [Bing](https://bing.com)
+- **Organization level** – A vertical at the organization level appears on the search results page when users search from their [SharePoint](https://sharepoint.com/) start page, [Microsoft Office](https://office.com), and Microsoft Search in [Bing](https://bing.com).
 - **Site level** – A vertical at the site level appears on the search results page when users search on a SharePoint site. For example, you might want to enable your customer service employees to search for Severity 1 incidents directly from their department’s SharePoint site.
 
 ## Default verticals
