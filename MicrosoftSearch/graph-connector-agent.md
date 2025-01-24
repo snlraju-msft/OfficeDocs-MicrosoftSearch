@@ -190,11 +190,11 @@ Using the sample script to generate a certificate would save the PFX file in the
 
 5. Select the newly installed certificate under **Personal** > **Certificates**.
 
-6. Select and hold (or right-click) on the certificate and select **All tasks** > **Manage private keys** Option.
+6. Select and hold (or right-click) on the certificate and select **All tasks** > **Manage private keys**.
 
-7. In the permissions dialog, select the **Add**. It pops up a new window. Select the 'Locations' option in it. Select the machine on which the agent is installed among the listed locations shown and select **Ok**.
+7. In the permissions dialog, select **Add**. It pops up a new window. Select 'Locations'. Select the machine on which the agent is installed among the listed locations shown and select **Ok**.
 
-8. In the user selection dialog, write: **NT Service\GcaHostService** and select **Ok**. Don't select the **Check names** button.
+8. In the user selection dialog, write: **NT Service\GcaHostService** and select **Ok**. Don't select **Check names**.
 
 9. Select ok on the permissions dialog. The agent machine is now configured for the agent to generate tokens using the certificate.
 
@@ -222,7 +222,7 @@ Post registration, some local settings may affect the connectivity of the agent.
 
 The agent is considered offline if it isn't able to contact the Microsoft Graph connector services. In such cases, follow these steps:
 
-1. Check if the agent is running - Sign in to the machine where the agent is installed and check if it's running. In Task Manager, go to **Services**, and check if GcaHostService is in a running state. If not, right-click and start the service. 
+1. Check if the agent is running - Sign in to the machine where the agent is installed and check if it's running. In Task Manager, go to **Services**, and check if the **GcaHostService** is in a running state. If not, right-click and start the service. 
 
     ![Screenshot of services in Task Manager.](media/onprem-agent/GcaHostService_GcaUpdateService.png)
 
