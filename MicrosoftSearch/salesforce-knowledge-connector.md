@@ -65,8 +65,8 @@ To connect to your Salesforce instance, you need your Salesforce instance URL, t
     - Find the app you created and select the drop-down on the right. Select **Manage**.
     - Select **edit policies**.
     - For the refresh token policy, select **Refresh token is valid until revoked**.
-  > [!div class="mx-imgBorder"]
-  > [![Screenshot that shows select the Refresh Token Policy named "Refresh token is valid until revoked ".](media/salesforce-connector/oauthpolicies.png)](media/salesforce-connector/oauthpolicies.png#lightbox)
+    > [!div class="mx-imgBorder"]
+    > [![Screenshot that shows select the Refresh Token Policy named "Refresh token is valid until revoked ".](media/salesforce-connector/oauthpolicies.png)](media/salesforce-connector/oauthpolicies.png#lightbox)
 
 You can now use the [Microsoft 365 Admin Center](https://admin.microsoft.com/) to complete the rest of the setup process for your Salesforce Knowledge Microsoft Graph connector.
      
