@@ -25,9 +25,6 @@ This documentation is for Microsoft 365 administrators or anyone who configures,
 >[!NOTE]
 >The Salesforce Knowledge Microsoft Graph connector is in preview. If you wish to get early access to try it, sign up using [this form](https://forms.office.com/r/JniPmK5bzm).
 
->[!NOTE]
->Make sure that the Salesforce account used to log in for the Salesforce Knowledge Microsoft Graph connector is the same as the account already logged into Salesforce.
-
 ## Capabilities
 - Index Salesforce Knowledge articles.
 - Enable users within the company to ask questions in natural language using Copilot and receive answers based on articles in Salesforce. Examples:
@@ -40,9 +37,13 @@ This documentation is for Microsoft 365 administrators or anyone who configures,
 - The connector doesn't support ACLs (access control lists). All the data indexed using the Salesforce Knowledge Microsoft Graph connector is visible to all Microsoft 365 users in your tenant, accessible through Microsoft Search or Microsoft 365 Copilot.
 
 ## Prerequisites
+
+>[!NOTE]
+>Make sure that the Salesforce account used to log in for the Salesforce Knowledge Microsoft Graph connector is the same as the account already logged into Salesforce.
+
 To connect to your Salesforce instance, you need your Salesforce instance URL, the client ID, and the client secret for OAuth 2.0 authentication. The following steps explain how you or your Salesforce administrator can get this information from your Salesforce account:
 
-- Log in to your Salesforce instance and go to Setup
+- Log in to your Salesforce instance and go to **Setup**.
 - Navigate to Apps -> App Manager.
 - Select **New connected app**.
 - Complete the API section as follows:
