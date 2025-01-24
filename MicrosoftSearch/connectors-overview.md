@@ -34,7 +34,6 @@ This article is intended to help Microsoft 365 administrators locate the resourc
 * [What data sources can be connected to Microsoft Search and Microsoft 365 Copilot?](#what-data-sources-can-be-connected-to-microsoft-search-and-microsoft-365-copilot)
 * [How do I manage my connections?](#how-do-i-manage-my-connections)
 * [What are the license requirements and terms of use for Microsoft Graph connectors?](#what-are-the-license-requirements-and-terms-of-use-for-connectors)
-* [What are the preview features?](#what-are-the-preview-features)
 * [How do I customize and configure search results?](#how-do-i-customize-and-configure-search-results)
 * [How do I search my connector data from a custom application?](#how-do-i-search-my-connector-data-from-a-custom-application)
 * [How do I customize search results?](#how-do-i-customize-and-configure-search-results)
