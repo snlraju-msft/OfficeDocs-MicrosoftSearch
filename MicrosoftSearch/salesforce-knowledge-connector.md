@@ -25,6 +25,9 @@ This documentation is for Microsoft 365 administrators or anyone who configures,
 >[!NOTE]
 >The Salesforce Knowledge Microsoft Graph connector is in preview. If you wish to get early access to try it, sign up using [this form](https://forms.office.com/r/JniPmK5bzm).
 
+>[!NOTE]
+>Make sure that the Salesforce account used to log in for the Salesforce Knowledge Microsoft Graph connector is the same as the account already logged into Salesforce.
+
 ## Capabilities
 - Index Salesforce Knowledge articles.
 - Enable users within the company to ask questions in natural language using Copilot and receive answers based on articles in Salesforce. Examples:
