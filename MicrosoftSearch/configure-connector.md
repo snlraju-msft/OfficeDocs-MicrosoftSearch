@@ -15,7 +15,6 @@ search.appverid:
 - MOE150
 description: "Learn how to configure your Microsoft Graph connector for Microsoft Copilot."
 ---
-<!-- Previous ms.author: monaray -->
 
 <!-- markdownlint-disable no-trailing-punctuation -->
 
@@ -27,8 +26,7 @@ This article outlines the steps to set up a Microsoft Graph connector in the Mic
 > The setup process is similar for all the Microsoft Graph connectors but is not exactly the same. In addition to reading this article, be sure to read the connector-specific information for your data source.
 
 > [!NOTE]
-> You can add a maximum of thirty(30) Microsoft Graph connections to each tenant.
-
+> You can add a maximum of thirty (30) Microsoft Graph connections to each tenant.
 
 > [!TIP]
 > **Product survey**
@@ -275,4 +273,12 @@ Here selecting the "Run once in a day" checkbox will let you choose the "Start t
 
 :::image type="content" alt-text="Screenshot that shows run full crawl every week on Friday at 8:00 PM." source="media/refresh-settings/full-week-view.png":::
 
----
+### IP Firewall rules
+
+IP firewall rules are configured to secure access to your data source by allowing only specific IP addresses. In such scenario, permit access to the Graph connectors service IP ranges to allow access to your data source. Specify the following IP ranges in the firewall settings of your SaaS platform.
+
+| Region | Microsoft 365 Enterprise | Microsoft 365 Government
+| ------------ | ------------ | ------------ |
+| NAM | 52.250.92.252/30, 52.224.250.216/30 | 52.245.230.216/30, 20.141.117.64/30|
+| EUR | 20.54.41.208/30, 51.105.159.88/30 | NA|
+| APC | 52.139.188.212/30, 20.43.146.44/30 | NA|
