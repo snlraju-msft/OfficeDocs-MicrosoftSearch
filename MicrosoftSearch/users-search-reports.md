@@ -7,7 +7,7 @@ ms.topic: article
 ms.service: mssearch
 audience: Admin
 ms.audience: Admin
-ms.date: 07/07/2022 
+ms.date: 01/27/2025 
 ms.localizationpriority: medium
 ms.collection:
 - scotvorg
@@ -122,7 +122,7 @@ To view the previous search analytics reports, select the **New user analytics
 
 ## Prevent filtering by country, occupation, department, or division 
 
-By default, users with global administrator, search administrator, and search editor roles can filter search data by country, occupation, or department/division. If you do not want administrators to filter your report data using these dimensions, you can go into your organizational settings in the Microsoft 365 admin center and configure this setting. When this setting is unchecked, administrators will not be able to filter the **Query details** reports by these filters. 
+By default, users with search administrator and search editor roles can filter search data by country, occupation, or department/division. If you do not want administrators to filter your report data using these dimensions, you can go into your organizational settings in the Microsoft 365 admin center and configure this setting. When this setting is unchecked, administrators will not be able to filter the **Query details** reports by these filters. 
 
 Only global administrators can configure this setting. 
 
