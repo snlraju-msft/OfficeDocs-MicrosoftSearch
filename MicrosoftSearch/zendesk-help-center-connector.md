@@ -52,31 +52,24 @@ A display name is used to identify each citation in Copilot, helping users easil
 To connect to your Zendesk data, you need your organization's Zendesk instance URL. Your organization's Zendesk instance URL typically looks like `https://<your-organization-domain>.zendesk.com`.
 
 ### 3. Authentication Type
-To authenticate and sync content from Zendesk, choose **one of the two** supported methods:<br>
 
-   a. **Basic authentication** <br>
-     Enter the username and password of Zendesk account to authenticate to your instance. 
-     <br>
+**Zendesk OAuth (Recommended)**
+To use the Zendesk OAuth for authentication, follow these steps.
 
-   b. **Zendesk OAuth (Recommended)**
-   <details>
-   <summary>[Click to expand] To use the Zendesk OAuth for authentication, follow these steps.</summary><br>
+A Zendesk admin needs to create an OAuth client in the [Zendesk Admin Center](https://support.zendesk.com/hc/articles/4581766374554-Using-Zendesk-Admin-Center). To learn more, see [Managing access to the Zendesk API](https://support.zendesk.com/hc/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_mmh_gm1_2yb) in the Zendesk documentation.
 
-   A Zendesk admin needs to create an OAuth client in the [Zendesk Admin Center](https://support.zendesk.com/hc/articles/4581766374554-Using-Zendesk-Admin-Center). To learn more, see [Managing access to the Zendesk API](https://support.zendesk.com/hc/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_mmh_gm1_2yb) in the Zendesk documentation.
+The following table provides guidance on how to fill out the OAuth client creation form:
 
-   The following table provides guidance on how to fill out the OAuth client creation form:
-
-   Field | Description | Recommended Value
-   --- | --- | ---
-   Client name | Unique value that identifies the application that you require OAuth access for. | Microsoft Search
-   Description | (Optional) A short description of the OAuth client | Use an appropriate description   
-   Company | The name of your company | Use an appropriate value
-   Logo | A file that contains the image for the application logo. | Any appropriate logo or use default.
-   Client kind | Choose between Confidential and Public Oauth client | Confidential
-   Redirect URL | A required callback URL that the authorization server redirects to. | For **M365 Enterprise**: https://<span>gcs.office.</span>com/v1.0/admin/oauth/callback,</br> For **M365 Government**: https://<span>gcsgcc.office.<span>com/v1.0/admin/oauth/callback
+Field | Description | Recommended Value
+--- | --- | ---
+Client name | Unique value that identifies the application that you require OAuth access for. | Microsoft Search
+Description | (Optional) A short description of the OAuth client | Use an appropriate description   
+Company | The name of your company | Use an appropriate value
+Logo | A file that contains the image for the application logo. | Any appropriate logo or use default.
+Client kind | Choose between Confidential and Public Oauth client | Confidential
+Redirect URL | A required callback URL that the authorization server redirects to. | For **M365 Enterprise**: https://<span>gcs.office.</span>com/v1.0/admin/oauth/callback,</br> For **M365 Government**: https://<span>gcsgcc.office.<span>com/v1.0/admin/oauth/callback
    
-   Enter the client ID and Secret to connect to your instance. After connecting, use a Zendesk account credential to authenticate permission to crawl.
-</details>
+Enter the client ID (Unique identifier) and Secret to connect to your instance. After connecting, use a Zendesk account credential to authenticate permission to crawl.
 
 ### 4. Roll out to limited audience
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, [click here](staged-rollout-for-graph-connectors.md).
@@ -123,6 +116,8 @@ To identify which option is suitable for your organization:
 2. Choose the **Non-Microsoft Entra ID** option if the Email ID of Zendesk users is **different** from the UserPrincipalName (UPN) and Email of users in Microsoft Entra ID.
 
 ### Content
+
+[![Screenshot that shows Content tab where you can configure properties and schema.](media/Zendesk-help-center-content-tab.png)](media/Zendesk-help-center-content-tab.png#lightbox)
 
 **Manage properties**
 
