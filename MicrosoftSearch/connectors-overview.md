@@ -50,7 +50,7 @@ The Microsoft Graph connectors API instantiates one connection per data source. 
 
 You can use the Microsoft 365 [admin center](https://admin.microsoft.com) to set up and manage any of the Microsoft Graph connectors. The admin center has a simple user interface that makes it easy to establish a connection to your data source and monitor connection status and utilization.
 
-To create a **connection** to a data source, admins need authenticated access to the data and the entire content repository. The data is fed to the Microsoft Graph connector service for indexing.--->
+To create a **connection** to a data source, admins need authenticated access to the data and the entire content repository. The data is fed to the Microsoft Graph connector service for indexing.
 
 ## What data sources can be connected to Microsoft Search and Microsoft 365 Copilot?
 
