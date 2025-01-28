@@ -77,7 +77,7 @@ Deploy this connection to a limited user base if you want to validate it in Copi
 
 At this point, you're ready to create the connection for Zendesk Help Center. You can click on the "Create" button to publish your connection and index articles from your Zendesk account.
 
-For other settings, like **Access permissions**, **Schema**, **Crawl frequency**, etc., we have default values based on what works best with Zendesk data.
+For other settings, like **Access permissions**, **Schema**, and **Crawl frequency**, we have default values based on what works best with Zendesk data.
 
 | Users | Description |
 |----|---|
@@ -105,7 +105,7 @@ Custom setup is for those admins who want to edit the default values for setting
 
 **Access permissions**
 
-The Zendesk Help center Microsoft Graph connector supports search permissions visible to **Everyone** or **Only people with access to this data source**. If you choose **Everyone**, indexed data appears in the search results for all users. If you choose **Only people with access to this data source**, indexed data appears in the search results for users who have access to them.
+The Zendesk Help center Microsoft Graph connector supports search permissions visible to **Everyone** or **Only people with access to this data source**. If you choose **Everyone**, indexed data appears in the search results for all users. If you choose **Only people with access to this data source**, indexed data appears in the search results for users who have access to them.
 
 **Mapping identities**
 
