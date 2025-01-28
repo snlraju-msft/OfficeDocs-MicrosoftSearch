@@ -21,13 +21,13 @@ Filters allow users to refine the results of their queries and display the refin
 
 There are three types of filters available on the search page.
 
-- Out of the box filters
+- Out-of-the-box filters
 - Content source filters
 - Custom filters
 
-## Out of the box filters
+## Out-of-the-box filters
 
-Out of the box filters are available by default in search verticals such as All, Files, Images, and News. On the ‘All' and ‘File' verticals, you can see the "File type" filter on the FileType property and the "Last modified" filter on the LastModifiedTime property. These filters are available in SharePoint Home, Office.com, SharePoint Sites, and Work vertical in Bing.
+Out-of-the-box filters are available by default in search verticals such as All, Files, Images, and News. On the ‘All' and ‘File' verticals, you can see the "File type" filter on the FileType property and the "Last modified" filter on the LastModifiedTime property. These filters are available in SharePoint Home, Office.com, SharePoint Sites, and Work vertical in Bing.
 
 ## Content source filters 
 
@@ -42,7 +42,7 @@ To group together multiple connections into a single value in the filter, set th
 > [!NOTE]
 > The "int" datatype properties cannot be refined, even if marked as refinable.
 
-Filters can be added to custom search verticals at the organization and site level. Refinable managed properties are used to configure filters in the vertical administration wizard.  Then a custom filter can be created inside a vertical based on a connection property. For example, you can create a Published On filter for a ServiceNow connection inside a vertical.
+Filters can be added to custom search verticals at the organization and site level. Refinable managed properties are used to configure filters in the vertical administration wizard.  Then a custom filter can be created inside a vertical based on a connection property. For example, you can create a published-on filter for a ServiceNow connection inside a vertical.
 
 Filters configured for verticals in the organization scope will be available at the organization scope. Filters can be configured in the site’s scope as well.  
 
@@ -50,8 +50,8 @@ Filters configured for verticals in the organization scope will be available at 
 
 1. In [Microsoft 365 admin center](https://admin.microsoft.com/), go to [**Verticals**](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/verticals)
 1. Select your preferred vertical where you want to create a filter and click **Edit**.  
-1. Navigate to the Filters step in the vertical's wizard.
-1. Click **Add a Filter** to configure filters on refinable managed properties.
+1. Navigate to the Filters step in the vertical wizard.
+1. Click **Add a filter** to configure filters on refinable managed properties.
 1. After adding filters, you can review and save the vertical.
 
 ## Create SharePoint site-level filters
@@ -77,8 +77,8 @@ Verticals may be created with one or more content sources. When a vertical is co
 ## Important details
 
 - Filters are configurable on Text and DateTime properties.
-- A filter will show a maximum of 50 values in the drop-down.
+- A filter shows a maximum of 50 values in the drop-down.
 - The order of out-of-the-box filters cannot be adjusted.
-- Filters are not supported for OneDrive content. Filter values corresponding to search results from OneDrive content will not appear on filters.
+- Filters are not supported for OneDrive content. Filter values corresponding to search results from OneDrive content don't appear on filters.
 - Custom filter values show options from SharePoint content and not from One Drive content. For example, if you create a custom filter for ‘Author’ and SharePoint content contains results only from an author, ‘Amy,’ and OneDrive content contains results only from an author called ‘John,’ the author custom filter shows ‘Amy’ as the only option.
 - A filter value shown for SharePoint content is applied to OneDrive content when used.
