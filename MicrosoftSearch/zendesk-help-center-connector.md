@@ -53,7 +53,8 @@ To connect to your Zendesk data, you need your organization's Zendesk instance U
 
 ### 3. Authentication Type
 
-**Zendesk OAuth (Recommended)**
+**Zendesk OAuth**
+
 To use the Zendesk OAuth for authentication, follow these steps.
 
 A Zendesk admin needs to create an OAuth client in the [Zendesk Admin Center](https://support.zendesk.com/hc/articles/4581766374554-Using-Zendesk-Admin-Center). To learn more, see [Managing access to the Zendesk API](https://support.zendesk.com/hc/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_mmh_gm1_2yb) in the Zendesk documentation.
