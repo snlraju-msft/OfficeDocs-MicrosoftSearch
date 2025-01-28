@@ -26,8 +26,8 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 ## Limitations
 - Microsoft SQL Server connector: The on-premises database must run SQL Server version 2008 or later.
-- Azure SQL connector: The Microsoft 365 subscription and Azure subscription (hosting Azure SQL database) must lie within the same Microsoft Entra ID. Cross-tenant data flow is not supported.
-- To support high crawl speed and better performance, the connector is built to support OLTP (Online Transaction Processing) workloads only. OLAP (Online Analytical Processing) workloads which do not execute the provided SQL query in 40 seconds timeout and aren't supported.
+- Azure SQL connector: The Microsoft 365 subscription and Azure subscription (hosting Azure SQL database) must lie within the same Microsoft Entra ID. Cross-tenant data flow isn't supported.
+- To support high crawl speed and better performance, the connector is built to support OLTP (Online Transaction Processing) workloads only. OLAP (Online Analytical Processing) workloads which don't execute the provided SQL query in 40-seconds timeout and aren't supported.
 - ACLs are only supported by using a User Principal Name (UPN), Microsoft Entra ID, or Active Directory Security.
 - Indexing rich content inside database columns isn't supported. Examples of such content are HTML, JSON, XML, blobs, and document parsings that exist as links inside the database columns.
 
@@ -37,7 +37,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 - **Service Account**: To connect to your SQL database and allow Microsoft Graph Connector to update records regularly, you need a service account with read permissions granted to the service account.
 
 >[!NOTE]
->If you use Windows authentication while configuring the Microsoft SQL Server connector, the user with which you are trying to sign in needs to have interactive login rights to the machine where the connector agent is installed. For more information, see [login policy management](/windows/security/threat-protection/security-policy-settings/allow-log-on-locally#policy-management).
+>If you use Windows authentication while configuring the Microsoft SQL Server connector, the user with which you're trying to sign in needs to have interactive login rights to the machine where the connector agent is installed. For more information, see [login policy management](/windows/security/threat-protection/security-policy-settings/allow-log-on-locally#policy-management).
 
 ## Get Started with Setup
 
@@ -76,7 +76,7 @@ For added security, you may configure IP firewall rules for your Azure SQL Serve
 | APC | 52.139.188.212/30, 20.43.146.44/30 | NA|
 
 ### 4. Roll out to limited audience
-Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the roll out to a broader audience. To know more about limited rollout, [click here](staged-rollout-for-graph-connectors.md).
+Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the roll-out to a broader audience. To know more about limited rollout, [click here](staged-rollout-for-graph-connectors.md).
 
 ## Content
 To search your database content, you must specify SQL queries when you configure the connector. These SQL queries need to name all the database columns that you want to index (source properties). This includes any SQL joins that need to be performed to get all the columns. To restrict access to search results, you must specify Access Control Lists (ACLs) within SQL queries when you configure the connector.
@@ -100,7 +100,7 @@ The example demonstrates a selection of five data columns that hold the data for
 Select data columns as shown in this example query: 
  `SELECT orderId, orderTitle, orderDesc, allowedUsers, allowedGroups, deniedUsers, deniedGroups, createdDateTime, isDeleted`
 
-The SQL connectors don't allow column names with non-alphanumeric characters in the SELECT clause. Remove any non-alphanumeric characters from column names using an alias. Example - SELECT *column_name* AS *columnName*
+The SQL connectors don't allow column names with nonalphanumeric characters in the SELECT clause. Remove any nonalphanumeric characters from column names using an alias. Example - SELECT *column_name* AS *columnName*
 
 To manage access to the search results, you can specify one or more ACL columns in the query. The SQL connector allows you to control access at per record level. You can choose to have the same access control for all records in a table. If the ACL information is stored in a separate table, you might have to do a join with those tables in your query.
 
@@ -108,8 +108,8 @@ The use of each of the ACL columns in the above query is described below. The fo
 
 - **AllowedUsers**: This column specifies the list of user IDs who can access the search results. In the following example, a list of users: john@contoso.com, keith@contoso.com, and lisa@contoso.com would only have access to a record with OrderId = 12.
 - **AllowedGroups**: This column specifies the group of users who will be able to access the search results. In the following example, group sales-team@contoso.com would only have access to record with OrderId = 12.
-- **DeniedUsers**: This column specifies the list of users who do **not** have access to the search results. In the following example, users john@contoso.com and keith@contoso.com do not have access to the record with OrderId = 13, whereas everyone else has access to this record.
-- **DeniedGroups**: This column specifies the group of users who do **not** have access to the search results. In the following example, groups engg-team@contoso.com and pm-team@contoso.com do not have access to a record with OrderId = 15, whereas everyone else has access to this record.  
+- **DeniedUsers**: This column specifies the list of users who do **not** have access to the search results. In the following example, users john@contoso.com and keith@contoso.com don't have access to the record with OrderId = 13, whereas everyone else has access to this record.
+- **DeniedGroups**: This column specifies the group of users who do **not** have access to the search results. In the following example, groups engg-team@contoso.com and pm-team@contoso.com don't have access to a record with OrderId = 15, whereas everyone else has access to this record.  
 
 ![Sample data showing the OrderTable and AclTable with example properties.](media/MSSQL-ACL1.png)
 
@@ -144,7 +144,7 @@ c. **Watermark (Required)** <br>
 <details>
 <summary>[Click to expand] Specifying the watermark column in full crawl query</summary><br>
 
-To prevent overloading the database, the connector batches and resumes full-crawl queries with a full-crawl watermark column. By using the value of the watermark column, each subsequent batch is fetched, and querying is resumed from the last checkpoint. Essentially this mechanism controls data refresh for full crawls.
+To prevent overloading the database, the connector batches and resumes full-crawl queries with a full-crawl watermark column. Using the value of the watermark column, each subsequent batch is fetched, and querying is resumed from the last checkpoint. Essentially this mechanism controls data refresh for full crawls.
 
 Create query snippets for watermarks as shown in these examples:
 
@@ -161,7 +161,7 @@ The first query fetches the first **N** number of rows by using: "CreatedDateTim
 
 ### 2. Manage properties
 
-The SQL connector picks up all columns specified in the full crawl SQL query as source properties for ingestion. In this step, you can define the search schema for your content. This involves defining the search annotations like search, retrieve, query and refine for selected source properties. This also includes assigning semantic labels and aliases to enhance search relevance. To learn more about search schema, refer to the documentation on [guidelines for 'manage properties'](/MicrosoftSearch/configure-connector#guidelines-for-manage-properties).
+The SQL connector picks up all columns specified in the full crawl SQL query as source properties for ingestion. In this step, you can define the search schema for your content. This involves defining the search annotations like search, retrieve, query, and refine for selected source properties. This also includes assigning semantic labels and aliases to enhance search relevance. To learn more about search schema, refer to the documentation on [guidelines for 'manage properties'](/MicrosoftSearch/configure-connector#guidelines-for-manage-properties).
 
 ### 3. Incremental crawl (optional)
 
@@ -185,7 +185,7 @@ You can choose to use the **Only people with access to this data source** to res
 
 ### 1. Map columns containing access permissions information
 
-Choose the various access control (ACL) columns that specify the access control mechanism. Select the column name you specified in the full crawl SQL query. Note that ‘deny’ takes precedence over ‘allow’ permissions.
+Choose the various access control (ACL) columns that specify the access control mechanism. Select the column name you specified in the full crawl SQL query. Note that "deny" takes precedence over "allow" permissions.
 
 Each of the ACL columns is expected to be a multi-valued column. These multiple ID values can be separated by separators such as semicolon (;), comma (,), and so on. You need to specify this separator in the **value separator** field.
 
