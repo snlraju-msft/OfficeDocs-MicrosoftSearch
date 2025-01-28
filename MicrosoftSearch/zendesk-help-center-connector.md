@@ -79,6 +79,8 @@ At this point, you're ready to create the connection for Zendesk Help Center. Yo
 
 For other settings, like **Access permissions**, **Schema**, and **Crawl frequency**, we have default values based on what works best with Zendesk data.
 
+
+
 | Users | Description |
 |----|---|
 | Access permissions | _Only people with access to content in Data source._ |
@@ -96,7 +98,7 @@ For other settings, like **Access permissions**, **Schema**, and **Crawl frequen
 If you want to edit any of these values, you need to choose the "Custom Setup" option.
 
 ## Custom setup
-
+Custom setup is for those admins who want to edit the default values for settings listed in the above table. Once you click on the **Custom Setup** option, you see three more tabs - **Users**, **Content**, and **Sync**.
 Custom setup is for those admins who want to edit the default values for settings listed in the above table. Once you click on the "Custom Setup" option, you see three more tabs - Users, Content, and Sync.
 
 ### Users
@@ -104,8 +106,10 @@ Custom setup is for those admins who want to edit the default values for setting
 [![Screenshot that shows Users tab where you can configure access permissions and user mapping rules.](media/Zendesk-help-center-users-tab.png)](media/Zendesk-help-center-users-tab.png#lightbox)
 
 **Access permissions**
-
 The Zendesk Help center Microsoft Graph connector supports search permissions visible to **Everyone** or **Only people with access to this data source**. If you choose **Everyone**, indexed data appears in the search results for all users. If you choose **Only people with access to this data source**, indexed data appears in the search results for users who have access to them.
+The Zendesk Help center Microsoft Graph connector supports search permissions visible to **Everyone** or **Only people with access to this data source**. If you choose **Everyone**, indexed data appears in the search results for all users. If you choose **Only people with access to this data source**, indexed data appears in the search results for users who have access to them.
+
+
 
 **Mapping identities**
 

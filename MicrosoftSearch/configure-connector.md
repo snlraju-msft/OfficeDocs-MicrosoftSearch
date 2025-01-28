@@ -52,19 +52,19 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
    - Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
 
 2. Navigate to Settings:
-   - In the left-hand navigation pane, select Settings.
-   - Click on Search & intelligence.
+   - In the left-hand navigation pane, select **Settings**.
+   - Click on **Search & intelligence**.
 
 3. Add a New Data Source:
-   - Go to the [Data sources tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
+   - Go to the [**Data sources** tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
    - Click on [+Add](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector).
-   - From the list of available connectors, select the data source you wish to connect (for example, ServiceNow Knowledge, Salesforce, etc.).
+   - From the list of available connectors, select the data source you wish to connect (for example, ServiceNow Knowledge, or Salesforce).
 
 ---
 
 ## Step 2: Enter Basic Connection Details
 
-![Screenshot that shows Connection creation screen for Microsoft Graph Connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph Connector for ServiceNow Knowledge")
+![Screenshot that shows Connection creation screen for Microsoft Graph Connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph Connector for ServiceNow Knowledge")(media/servicenow-knowledge-create-page.png#lightbox)
 
 1. **Display Name:**
    - To help users recognize the source in Copilot and search results, enter a name to identify the connector.
