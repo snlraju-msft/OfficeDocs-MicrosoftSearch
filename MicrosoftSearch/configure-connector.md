@@ -15,7 +15,6 @@ search.appverid:
 - MOE150
 description: "Learn how to configure your Microsoft Graph connector for Microsoft Copilot."
 ---
-<!-- Previous ms.author: monaray -->
 
 <!-- markdownlint-disable no-trailing-punctuation -->
 
@@ -24,11 +23,10 @@ description: "Learn how to configure your Microsoft Graph connector for Microsof
 This article outlines the steps to set up a Microsoft Graph connector in the Microsoft 365 admin center. The setup process is streamlined, with minimal inputs that simplify connection creation. However, you can opt for a custom setup to fine-tune specific settings.
 
 > [!NOTE]
-> The setup process is similar for all the Microsoft Graph connectors but is not exactly the same. In addition to reading this article, be sure to read the connector-specific information for your data source.
+> The setup process is similar for all the Microsoft Graph connectors but isn't exactly the same. In addition to reading this article, be sure to read the connector-specific information for your data source.
 
 > [!NOTE]
-> You can add a maximum of thirty(30) Microsoft Graph connections to each tenant.
-
+> You can add a maximum of thirty (30) Microsoft Graph connections to each tenant.
 
 > [!TIP]
 > **Product survey**
@@ -39,7 +37,7 @@ This article outlines the steps to set up a Microsoft Graph connector in the Mic
 
 Before you begin, ensure the following:
 
-- **Admin Access:** You must have either of the following roles in M365 admin center to configure a Graph connector - Global admin, Search admin or Copilot admin.
+- **Admin Access:** You must have either of the following roles in Microsoft 365 admin center to configure a Graph connector - Global admin, Search admin, or Copilot admin.
 - **Data Source Credentials:** Collect the necessary credentials and permissions for the data source you want to connect.
 - **Service Account (if applicable):** If your data source requires a service account, ensure it has the necessary roles or permissions.
 
@@ -54,19 +52,19 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
    - Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
 
 2. Navigate to Settings:
-   - In the left-hand navigation pane, select Settings.
-   - Click on Search & intelligence.
+   - In the left-hand navigation pane, select **Settings**.
+   - Click on **Search & intelligence**.
 
 3. Add a New Data Source:
-   - Go to the [Data sources tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
+   - Go to the [**Data sources** tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
    - Click on [+Add](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector).
-   - From the list of available connectors, select the data source you wish to connect (for example, ServiceNow Knowledge, Salesforce, etc.).
+   - From the list of available connectors, select the data source you wish to connect (for example, ServiceNow Knowledge, or Salesforce).
 
 ---
 
 ## Step 2: Enter Basic Connection Details
 
-![Screenshot that shows Connection creation screen for Microsoft Graph Connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph Connector for ServiceNow Knowledge")
+![Screenshot that shows Connection creation screen for Microsoft Graph Connector for ServiceNow Knowledge](media/servicenow-knowledge-create-page.png "Add Microsoft Graph Connector for ServiceNow Knowledge")(media/servicenow-knowledge-create-page.png#lightbox)
 
 1. **Display Name:**
    - To help users recognize the source in Copilot and search results, enter a name to identify the connector.
@@ -175,7 +173,7 @@ Label | Description
 **Created date time** | Time when the item was created
 **Last modified date time** | Time when the item was most recently edited
 **File name** | Name of the file item
-**File extension** | Type of file item such as .pdf or .word
+**File extension** | Type of file item such as pdf or doc
 
 The properties on this page are pre-selected based on your data source, but you can change this selection if there's a different property that is better suited for a particular label.  
 
@@ -230,28 +228,28 @@ With a full refresh, the search engine processes and indexes the items that have
 With an **Incremental refresh**, the search engine can process and index only the items that were created or modified since the last successful crawl. As a result, not all the data in the content source is reindexed. Incremental refreshes work best to detect content, metadata, and other updates.
 
 > [!NOTE]
-> Incremental crawls do not currently support processing of updates to **permissions**.
+> Incremental crawls don't currently support processing of updates to **permissions**.
 
 Incremental refreshes are faster than full refreshes because unchanged items aren't processed. However, if you choose to run incremental refreshes, you still need to run full refreshes periodically to maintain correct data sync between the content source and the search index.
 
 ### Crawl Scheduling
 
-You can configure full and incremental crawls based on the advanced scheduling options present on the Refresh Settings page. Some connectors do not support incremental crawls and the option to configure incremental crawls will not be available for those connectors. For others, the incremental crawl is an optional crawl and enabled by default. A crawl schedule is selected by default for you based on the connector type. This default setting can be changed during connection creation or edited after a connection is published from the "Edit" flow of a connection. You can choose from these fields:
+You can configure full and incremental crawls based on the advanced scheduling options present on the Refresh Settings page. Some connectors don't support incremental crawls and the option to configure incremental crawls isn't available for those connectors. For others, the incremental crawl is an optional crawl and enabled by default. A crawl schedule is selected by default for you based on the connector type. This default setting can be changed during connection creation or edited after a connection is published from the "Edit" flow of a connection. You can choose from these fields:
 
-* **Recurrence**: You can choose to run the crawls every day, week, 2nd week or 4th week.
+* **Recurrence**: You can choose to run the crawls every day, week, second week or fourth week.
 * **Day(s)**: This option is enabled when you choose to run crawls only on specific days of the week.
-* Run once a day check box lets you choose the start time of the crawl in a day. If not selected, the crawls will repeat in a day by default. You can choose the repeat interval from the dropdown.
+* Run once a day check box lets you choose the start time of the crawl in a day. If not selected, the crawls repeat in a day by default. You can choose the repeat interval from the dropdown.
 * **Frequency**: Select this option if you want to repeat crawls in a day after certain time intervals. The smallest repeat frequency is 15 minutes, and the largest is 12 hours.
 * **Starting Time**: Select the time when you want the crawl to start.
-* **Reset**: This option will reset the schedule to the connector's default schedule.
+* **Reset**: This option resets the schedule to the connector's default schedule.
 
 :::image type="content" alt-text="Screenshot that shows sample configuration setting." source="media/refresh-settings/incremental-week-view.png":::
 
 Here are certain points to note while configuring the crawl schedule:
 
-* If you leave any of the fields empty, or unselected, Graph connectors will pick the best time to start a crawl. For example if you choose a crawl Recurrence as "Day" and do not select the start time, Graph connectors choose the time based on your last crawl to start the new crawl. If you do not want to specify a start time of the crawl, it is a good practice to let the connector decide when to start the crawl.
+* If you leave any of the fields empty, or unselected, Graph connectors pick the best time to start a crawl. For example if you choose a crawl Recurrence as "Day" and don't select the start time, Graph connectors choose the time based on your last crawl to start the new crawl. If you don't want to specify a start time of the crawl, it's a good practice to let the connector decide when to start the crawl.
 * Even if the start time is mentioned, the crawl start may delay by an hour. This delay can be because of reasons such as network load etc.
-* If the previous crawl overruns to the time of the next crawl, we do not stop the ongoing crawl and queue the next crawl. After the ongoing crawl is complete, we run the queued crawl only if it is of a different type (full/incremental) than the previous crawl. For example, if an incremental crawl overruns the next full crawl, we do not suspend the incremental crawl and queue the full crawl. After the completion of the incremental crawl, since the queued crawl is of different type (full), we start the full crawl immediately.
+* If the previous crawl overruns to the time of the next crawl, we don't stop the ongoing crawl and queue the next crawl. After the ongoing crawl is complete, we run the queued crawl only if it is of a different type (full/incremental) than the previous crawl. For example, if an incremental crawl overruns the next full crawl, we don't suspend the incremental crawl and queue the full crawl. After the completion of the incremental crawl, since the queued crawl is of different type (full), we start the full crawl immediately.
 
 These are some of the scenarios:
 
@@ -259,7 +257,7 @@ These are some of the scenarios:
 
 :::image type="content" alt-text="Screenshot that shows run incremental crawl daily after every 15 minutes." source="media/refresh-settings/incremental-daily-view.png":::
 
-Here selecting the "Run once in a day" checkbox will let you choose the "Start time" to run incremental crawl only once in a day starting at the specified time. However, unselecting it will let you choose the frequency of crawl repetitions in a day. If you want your data to be continuously refreshed, you can choose to run incremental crawls frequently in a day. But if the number of items in data source is large and the crawls tend to be longer, or if frequent updates are not needed for the content, you can choose the incremental crawl to run once in a day.
+Here selecting the "Run once in a day" checkbox lets you choose the "Start time" to run incremental crawl only once in a day starting at the specified time. However, unselecting it lets you choose the frequency of crawl repetitions in a day. If you want your data to be continuously refreshed, you can choose to run incremental crawls frequently in a day. But if the number of items in data source is large and the crawls tend to be longer, or if frequent updates aren't needed for the content, you can choose the incremental crawl to run once in a day.
 
 :::image type="content" alt-text="Screenshot that shows run incremental crawl daily at 2:00 PM" source="media/refresh-settings/incremental-run-once.png":::
 
@@ -275,4 +273,12 @@ Here selecting the "Run once in a day" checkbox will let you choose the "Start t
 
 :::image type="content" alt-text="Screenshot that shows run full crawl every week on Friday at 8:00 PM." source="media/refresh-settings/full-week-view.png":::
 
----
+### IP Firewall rules
+
+IP firewall rules are configured to secure access to your data source by allowing only specific IP addresses. In such scenario, permit access to the Graph connectors service IP ranges to allow access to your data source. Specify the following IP ranges in the firewall settings of your SaaS platform.
+
+| Region | Microsoft 365 Enterprise | Microsoft 365 Government
+| ------------ | ------------ | ------------ |
+| NAM | 52.250.92.252/30, 52.224.250.216/30 | 52.245.230.216/30, 20.141.117.64/30|
+| EUR | 20.54.41.208/30, 51.105.159.88/30 | NA|
+| APC | 52.139.188.212/30, 20.43.146.44/30 | NA|
