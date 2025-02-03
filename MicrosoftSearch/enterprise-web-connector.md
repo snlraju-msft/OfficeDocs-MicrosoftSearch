@@ -100,7 +100,7 @@ c. The crawler then crawls all webpages as listed in the sitemap files.
 d. If there is failure in any of the above steps, the crawler performs a deep crawl of the website, without throwing any error.
 
 ### 3. Authentication Type
-The authentication method you choose applies for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the four** supported methods:<br>
+The authentication method you choose applies for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the five** supported methods:<br>
 
 a. **None** <br>
 Select this option if your websites are publicly accessible without any authentication requirements. <br>
@@ -195,6 +195,43 @@ The resource ID, client ID, and client secret values depend on how you did the s
     
     Once the permissions are assigned, you need to create a new client secret for this application by going to the Certificates & secrets section.
     Copy the client secret value shown on the page as it isn't displayed again. Use the application ID from this app as the client ID, the secret from this app as the client secret, and the application ID of the first app as the resource ID.
+
+e. **OIDC Client Credentials (Any identity provider)** <br>
+The OIDC client credentials flow is designed for machine-to-machine authentication using any identity provider. To configure OIDC client credentials authentication, you need to register an application with the authorization server (e.g., Okta, Auth0, Keycloak, Ping Identity, etc.).
+
+Inputs Required for Configuration:
+- Client ID: The identifier assigned to the application during registration.
+- Client Secret: The secret key assigned to the application during registration.
+- Scopes: The list of permissions the application requires. These are pre-defined on the authorization server. (e.g. `read:data write:data admin:operations`)
+- Token Endpoint URL: The specific endpoint on the authorization server where tokens are requested.
+
+**Example: Okta OIDC client credentials authentication**
+
+To illustrate an example, let us look at configuring OIDC client credentials authentication with Okta as the identity provider. The following steps are illustrative and may vary as per your implementation. Refer the [documentation](https://help.okta.com/en-us/content/topics/apps/apps_app_integration_wizard_oidc.htm) by Okta to learn to configure OIDC authentication.
+
+1. Create an OIDC App Integration in Okta
+    - Navigate to _Applications > Applications_ in the Okta Admin Console.
+    - Click _Create App Integration_ and select _OIDC - OpenID Connect_.
+    - Choose Service or Web as the application type.
+2. Configure Application Settings:
+    - Application Name: Give your application a descriptive name (e.g., "My Client Credentials App").
+    - Logo (Optional): Upload a logo if desired.
+    - Grant Type: Select Client Credentials. Disable other grant types unless required for additional flows.
+    - Sign-in redirect URIs: Since you're using client credentials, you do not need to configure any redirect URIs.
+    - Logout redirect URIs (Optional): Not usually needed for client credentials.
+    - Click Done.
+3. Set Client Authentication Method
+    - Select _Client secret_ in the _Client Authentication_ dropdown.
+    - Click Save to generate a client secret (visible only once).
+4. Configure Scopes
+    - Under Scopes, assign OAuth 2.0 scopes (e.g. `read:data`, `write:data`). These are just names; you define what they mean in your application.
+    - Ensure scopes align with the API permissions required.
+5. Assign the App to Users/Groups
+    - In the Assignments tab, assign the app to the relevant users or groups.
+    - Even for service apps, assignments ensure policies apply correctly.
+6. Token Endpoint Configuration
+    - The token URL is typically `https://{yourOrg}.okta.com/oauth2/v1/token`.
+    - Use this endpoint to request access tokens.
 
 ### 4. Roll out to limited audience
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, see [staged rollout](staged-rollout-for-graph-connectors.md).
