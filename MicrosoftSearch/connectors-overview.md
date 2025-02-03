@@ -27,14 +27,12 @@ The Microsoft Graph connectors setup process for the Microsoft Search experience
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4SjFa]
 
-<!---link Microsoft Graph reference in line 19 when we have access to relevant documentation--->
-
 This article is intended to help Microsoft 365 administrators locate the resources that are available to answer the following questions:
 
+* [Microsoft Graph connectors architecture](#architecture)
 * [What data sources can be connected to Microsoft Search and Microsoft 365 Copilot?](#what-data-sources-can-be-connected-to-microsoft-search-and-microsoft-365-copilot)
 * [How do I manage my connections?](#how-do-i-manage-my-connections)
 * [What are the license requirements and terms of use for Microsoft Graph connectors?](#what-are-the-license-requirements-and-terms-of-use-for-connectors)
-* [What are the preview features?](#what-are-the-preview-features)
 * [How do I customize and configure search results?](#how-do-i-customize-and-configure-search-results)
 * [How do I search my connector data from a custom application?](#how-do-i-search-my-connector-data-from-a-custom-application)
 * [How do I customize search results?](#how-do-i-customize-and-configure-search-results)
@@ -47,52 +45,19 @@ The following architectural diagram of the Microsoft Graph platform shows how Mi
 ![Diagram: on-premises and cloud-based data is pulled by connectors and indexed by the Microsoft Search API, and then the Microsoft Search service delivers the results to users.](media/connectors-overview/highlevel-connectors.png)
 Microsoft Graph connectors can pull data from cloud-based (SaaS) data sources and on-premises data stores. The above diagram shows connections to only two data sources, but you can add connections to up to ten sources per tenant.
 
-The Microsoft Graph Connectors API instantiates one connection per data source. Then, the API indexes and stores the data. Established connections interact with Microsoft Search and Microsoft 365 Copilot so that users can get search results.
+The Microsoft Graph connectors API instantiates one connection per data source. Then, the API indexes and stores the data. Established connections interact with Microsoft Search and Microsoft 365 Copilot so that users can get search results.
 
 You can use the Microsoft 365 [admin center](https://admin.microsoft.com) to set up and manage any of the Microsoft Graph connectors. The admin center has a simple user interface that makes it easy to establish a connection to your data source and monitor connection status and utilization.
 
-To create a **connection** to a data source, admins need authenticated access to the data and the entire content repository. The data is fed to the graph connector service for indexing.--->
+To create a **connection** to a data source, admins need authenticated access to the data and the entire content repository. The data is fed to the Microsoft Graph connector service for indexing.
 
 ## What data sources can be connected to Microsoft Search and Microsoft 365 Copilot?
 
-Microsoft provides 18 Microsoft Graph connectors, and our ecosystem partners have created over 100 more connectors. You can also build your own connector.
-
-> [!TIP]
-> **Product survey**
->
-> To help us understand your requirements related to connecting more data sources to Microsoft 365 Copilot or Microsoft Search, we request you to take a few minutes to fill out this [survey form](https://forms.office.com/r/0Hh4GJNsJe). Based on the survey results, Microsoft will build connectors for the top-demanded data sources.
-
+Microsoft provides more than 30 Microsoft-built Graph connectors, and our ecosystem partners have created over 100 more connectors. You can also build your own connector.
 
 ### Microsoft Graph connectors by Microsoft
 
-You can connect to the following data sources by using connectors created by Microsoft:
-
-* [Azure Data Lake Storage Gen2](azure-data-lake-connector.md)
-* [Azure DevOps Work Items](azure-devops-connector.md)
-* [Azure DevOps Wiki](azure-devops-wiki-connector.md)
-* [Azure SQL and Microsoft SQL Server](MSSQL-connector.md)
-* [Confluence Cloud](confluence-cloud-connector.md)
-* [Confluence On-premises](confluence-onpremises-connector.md)
-* [CSV](csv-connector.md)
-* [Custom connector](/graph/custom-connector-sdk-sample-overview)
-* [Enterprise websites cloud](enterprise-web-connector.md)
-* [Enterprise websites on-premises](enterprise-web-connector-onprem.md)
-* [File share](fileshare-connector.md)
-* [GitHub](github-connector.md)
-* [Google Drive](google-drive-connector.md)
-* [Jira Cloud](jira-connector.md)
-* [MediaWiki](mediawiki-connector.md)
-* [Oracle SQL](OracleSQL-connector.md)
-* [PostgreSQL](postgresql-connector.md)
-* [Salesforce CRM](salesforce-connector.md)
-* [Salesforce Knowledge](salesforce-knowledge-connector.md)
-* [ServiceNow Knowledge](servicenow-knowledge-connector.md)
-* [ServiceNow Catalog](servicenow-catalog-connector.md)
-* [ServiceNow Tickets](servicenow-tickets-connector.md)
-* [SharePoint Server](sharepoint-server-connector.md)
-* [Stack Overflow](stack-overflow-connector.md)
-* [WordPress.org (on-prem)](wordpress-onprem-connector.md)
-* [Zendesk Help Center](zendesk-help-center-connector.md)
+You can connect to the many popular data sources using connectors created by Microsoft.
 
 The [Microsoft Graph connectors gallery](https://www.microsoft.com/microsoft-search/connectors) contains a brief description of each of these connectors. If you're ready to connect one of these data sources to your tenant, be sure to read the [Setup overview](configure-connector.md) and any other articles in the setup connectors by Microsoft section that apply to your data source.
 
@@ -110,17 +75,9 @@ You can manage your connections on the [Connectors tab](https://admin.microsoft.
 
 ## What are the license requirements and terms of use for connectors?
 
-For users in your organization to view data from connectors in their search results, you need a valid Microsoft 365 or Office 365 license and sufficient connectors quota.
+For users in your organization to view data from connectors in their search results, you need a valid Microsoft 365 or Office 365 license.
 
 To learn more, see [License requirements and pricing](licensing.md) and [Terms of use](terms-of-use.md).
-
-## What are the preview features?
-
-Although Microsoft Graph connectors and Microsoft Search APIs are now generally available, there are several features that are in preview.
-
-The set of connectors and features in preview include:
-
-* [Confluence On-premises connector](confluence-onpremises-connector.md)
 
 ## How do I customize and configure search results?
 
@@ -143,4 +100,3 @@ After custom data is indexed, developers can [query this data](/graph/search-con
 * There's a connection limit. Each tenant can create up to 30 connections. If you need more connections, fill out this [form](https://aka.ms/GraphConnectorsHigherCapacity).
 
 * There are limited edit capabilities that are supported after publishing a connection. If you need to change any details other than the ones enabled, you must delete and recreate the connection.
-

@@ -111,6 +111,12 @@ a. **None** <br>
 b. **Basic authentication** <br>
     Enter your account's username and password to authenticate using basic authentication. <br>
 
+> [!TIP]
+> Try out multiple permutations of the username for authentication. Examples -
+> * username
+> * username@domain.com
+> * domain/username
+
 c. **Windows** <br>
     Windows authentication requires a username, domain, and password. You need to provide the username and domain in the **Username** field, in any of the following formats: domain\username, or username@domain. A password must be entered in the **Password** field. For Windows authentication, the username provided must also be an administrator in the server where the agent is installed.
 

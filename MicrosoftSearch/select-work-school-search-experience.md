@@ -14,7 +14,11 @@ search.appverid:
 - MOE150
 description: "In organizations with education and enterprise service plans, admins can select the search experience users see when they search on Bing."
 ---
+
 # Select a school or work search experience
+
+> [!IMPORTANT]
+> Beginning March 31, 2025, Microsoft365.com, Office.com, and SharePoint Online will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search in Bing users to update your bookmarks now. [Learn more](/microsoftsearch/retirement-microsoft-search-bing). 
 
 If your organization has education and enterprise service plans, you can select a Microsoft Search in Bing experience for your users, either school or work. Because this setting will apply to all users, we suggest you select the option that aligns with most people in your organization.
 

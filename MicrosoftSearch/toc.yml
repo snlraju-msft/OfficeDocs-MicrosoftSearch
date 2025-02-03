@@ -79,6 +79,10 @@ items:
       - name: Microsoft Graph built connectors
         href: pre-built-connectors-overview.md
         items:
+        - name: Adobe Experience Manager Sites
+          items:
+          - name: Setup
+            href: aem-sites-cloud-connector.md
         - name: Azure Data Lake Storage Gen2
           items:
           - name: Setup
@@ -273,6 +277,8 @@ items:
     items:
     - name: Overview
       href: overview-microsoft-search-bing.md
+    - name: Retirement of Microsoft Search in Bing
+      href: retirement-microsoft-search-bing.md
     - name: Security and Privacy
       href: security-for-search.md
     - name: Use Windows Search to find work or school results
