@@ -95,9 +95,9 @@ To connect to your Salesforce instance, you need your Salesforce instance URL, t
 
 - This consumer key and secret is used as the client ID and the client secret when you configure the connection settings for your Salesforce Microsoft Graph connector in the Microsoft 365 admin portal. Acquire this information as follows:
     1. Go to Setup and navigate to Apps -> App Manager.
-    1. Select the connected app you created in the previously.
+    1. Select the connected app you created in the previous step.
     1. Click on **Manage Consumer Details**.
-    1. Copy the consumer key and the consumer secret. 
+    1. Copy the consumer key and the consumer secret.
 
   > [!div class="mx-imgBorder"]
   > ![Results returned by API section in Salesforce instance after admin has submitted all required configurations. Consumer Key is at top of left column and Consumer Secret is at top of right column.](media/salesforce-connector/clientsecret.png)
