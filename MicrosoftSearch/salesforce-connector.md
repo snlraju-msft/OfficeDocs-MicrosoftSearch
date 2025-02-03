@@ -94,22 +94,22 @@ To connect to your Salesforce instance, you need your Salesforce instance URL, t
       > ![API section in Salesforce instance after admin has entered all required configurations listed above.](media/salesforce-connector/sf1.png)
 
 - This consumer key and secret is used as the client ID and the client secret when you configure the connection settings for your Salesforce Microsoft Graph connector in the Microsoft 365 admin portal. Acquire this information as follows:
-    - Go to Setup and navigate to Apps -> App Manager.
-    - Select the connected app you created in the previously.
-    - Click on **Manage Consumer Details**.
-    - Copy the consumer key and the consumer secret. 
+    1. Go to Setup and navigate to Apps -> App Manager.
+    1. Select the connected app you created in the previously.
+    1. Click on **Manage Consumer Details**.
+    1. Copy the consumer key and the consumer secret. 
 
   > [!div class="mx-imgBorder"]
   > ![Results returned by API section in Salesforce instance after admin has submitted all required configurations. Consumer Key is at top of left column and Consumer Secret is at top of right column.](media/salesforce-connector/clientsecret.png)
   
 - Before closing your Salesforce instance, follow these steps to ensure that refresh tokens don't expire:
-    - Go to Apps -> App Manager.
-    - Find the app you created and select the drop-down on the right. Select **Manage**.
-    - Select **edit policies**.
-    - For the refresh token policy, select **Refresh token is valid until revoked**.
+    1. Go to **Apps** -> **App Manager**.
+    1. Find the app you created and select the drop-down on the right. Select **Manage**.
+    1. Select **edit policies**.
+    1. For the refresh token policy, select **Refresh token is valid until revoked**.
 
   > [!div class="mx-imgBorder"]
-  > ![Select the Refresh Token Policy named "Refresh token is valid until revoked ".](media/salesforce-connector/oauthpolicies.png)
+  > ![Select the Refresh Token Policy named "Refresh token is valid until revoked".](media/salesforce-connector/oauthpolicies.png)
 
 You can now use the [Microsoft 365 Admin Center](https://admin.microsoft.com/) to complete the rest of the setup process for your Microsoft Graph connector.
 
@@ -127,7 +127,7 @@ For the Instance URL, use https://[domain].my.salesforce.com where the domain wo
 
 ### 3. Authentication Type
 
-To authenticate and sync content from Salesforce CRM, choose **OAuth 2.0**.  Enter the client ID and client Secret you obtained from your Salesforce instance and select Authorize.
+To authenticate and sync content from Salesforce CRM, choose **OAuth 2.0**.  Enter the client ID and client Secret you obtained from your Salesforce instance and select **Authorize**.
 
 The first time you've attempted to sign in with these settings, you'll get a pop-up asking you to log in to Salesforce with your admin username and password. The screenshot below shows the popup. Enter your credentials and select "Log In".
 
@@ -150,7 +150,7 @@ Deploy this connection to a limited user base if you want to validate it in Copi
 
 At this point, you're ready to create the connection for Salesforce CRM. You can click **Create** to publish your connection and index content from your Salesforce instance.
 
-For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, **Crawl frequency**, etc., we have defaults based on what works best with Jira data. You can see the default values below:
+For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, and **Crawl frequency**, we have defaults based on what works best with Jira data. You can see the default values below:
 
 | Users | Description |
 |----|---|
