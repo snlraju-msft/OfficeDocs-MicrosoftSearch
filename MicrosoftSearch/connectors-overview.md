@@ -25,7 +25,7 @@ Microsoft Search indexes all your [Microsoft 365](https://www.microsoft.com/micr
 
 The Microsoft Graph connectors setup process for the Microsoft Search experience is explained in the following video.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4SjFa]
+> [!VIDEO 4f4668c6-445a-4895-8627-92880eafad68]
 
 This article is intended to help Microsoft 365 administrators locate the resources that are available to answer the following questions:
 
