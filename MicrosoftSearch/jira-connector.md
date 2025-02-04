@@ -202,7 +202,7 @@ Here, you can add or remove available properties from your Jira data source, ass
 |Source property|Label|Description|Schema|
 |---|---|---|---|
 | Authors | Authors | Name all the people who participated/collaborated on the item in the data source | Retrieve |
-| Created | Created date time | Data and time that the item was created in the data source | Query, Retrieve |
+| Created | Created date time | Date and time that the item was created in the data source | Query, Retrieve |
 | IssueDescription | Content | The description of the issue | Search |
 | IssueIconURL | IconUrl | Icon url that represents the issue type.| Retrieve |
 | IssueId | | | |
