@@ -50,11 +50,11 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
 1. **Open the Microsoft 365 Admin Center:**
    - Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
 
-2. Navigate to Settings:
+2. **Navigate to Settings:**
    - In the left-hand navigation pane, select **Settings**.
    - Click on **Search & intelligence**.
 
-3. Add a New Data Source:
+3. **Add a New Data Source:**
    - Go to the [**Data sources** tab](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/Connectors).
    - Click on [+Add](https://admin.microsoft.com/adminportal/home#/MicrosoftSearch/Connectors/add?ms_search_referrer=MicrosoftSearchDocs_Configure_Connector).
    - From the list of available connectors, select the data source you wish to connect (for example, ServiceNow Knowledge, or Salesforce).
