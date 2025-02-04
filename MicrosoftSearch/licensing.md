@@ -24,9 +24,12 @@ Depending on the type of data source, an item is defined as–
 -	1 webpage on a website
 -	1 ticket or issue in Jira
 
-The total quota utilized is based on the number of items stored in the index. The frequency of updates or changes to an item does not affect the quota calculation.
+The total quota utilized is based on the number of items stored in the index. The frequency of updates or changes to an item doesn't affect the quota calculation.
 
 ### Index quota for Microsoft 365 enterprise users
+
+> [!NOTE]
+> US Government Community Cloud (GCC) tenants are subject to the old quota rules. G1 and G3 don't qualify for any quota, but G5 does. G1 and G3 customers can purchase the Microsoft Graph connector add-on.
 
 All eligible Microsoft 365 enterprise customers with one of the following licenses are entitled to 50 million items of index quota. This quota contributes to your organization’s allocation for ingesting content through Microsoft Graph connectors.
 
@@ -49,6 +52,6 @@ All eligible Microsoft 365 enterprise customers with one of the following licens
 |Office 365 F3|
 
 > [!NOTE]
->Microsoft Graph connectors support up to 50 million items of total index quota at no additional cost. By default, the item limit per connection is 5 million items. If you require a higher item count per connection or wish to increase your overall index quota, please contact your Microsoft account manager or complete this [form](https://aka.ms/GraphConnectorsHigherCapacity).
+> Microsoft Graph connectors support up to 50 million items of total index quota at no extra cost. By default, the item limit per connection is 5 million items. If you require a higher item count per connection or wish to increase your overall index quota, contact your Microsoft account manager or complete this [form](https://aka.ms/GraphConnectorsHigherCapacity).
 > 
->Preview connectors do not count against the quota. Once a connector transitions to general availability, it starts counting toward the total index quota.
+>Preview connectors don't count against the quota. Once a connector transitions to general availability, it starts counting toward the total index quota.
