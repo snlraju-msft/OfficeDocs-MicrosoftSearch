@@ -1,6 +1,6 @@
 ---
 title: "Map your non-Azure AD Identities" 
-ms.author: monaray 
+ms.author: misvenso 
 author: monaray97 
 manager: jameslau 
 ms.audience: Admin 
@@ -14,7 +14,7 @@ search.appverid:
 
 - MOE150 
 
-description: "Steps on how to map non-AAD identities" 
+description: "Steps on how to map non-Azure AD identities." 
 ms.date: 11/05/2020
 ---
 
@@ -50,13 +50,13 @@ You can select non-Azure AD properties pulled from your data source to apply reg
 
 You can select a non-Azure AD user property from the dropdown and provide a regular expression to be applied on those user property values.
 
-Below are some examples of regular expressions and their outputs applied to a sample string: 
+Following are some examples of regular expressions and their outputs applied to a sample string: 
 
-| Sample String                  | Regular expression                 | Output of regular expression on sample string           |
+| Sample String        | Regular expression   | Output of regular expression on sample string |
 | :------------------- | :------------------- |:---------------|
-| Alexis Vasquez  | .* | Alexis Vasquez |
-| Alexis Vasquez                 | ..$                 | ez            |
-| Alexis Vasquez                  | (\w+)$                  | Vasquez             |
+| Alexis Vasquez       | `.*`                 | Alexis Vasquez |
+| Alexis Vasquez       | `..$`                | ez             |
+| Alexis Vasquez       | `(\w+)$`             | Vasquez        |
 
 You can add as many non-Azure AD user properties as you would like expressions for. You can apply different regular expressions to the same user property if your final formula warrants that.  
 
@@ -66,23 +66,23 @@ You can combine the outputs of the regular expressions applied to each of your n
 
 In the formula box, "{0}" corresponds to the output of the regular expression applied to the *first* non-Azure AD property you selected. "{1}" corresponds to the output of the regular expression applied to the *second* non-Azure AD property you selected. "{2}" corresponds to the output of the regular expression applied to the *third* non-Azure AD property, and so on.  
 
-Below are some examples of formulas with sample regular expression outputs and formula outputs: 
+Following are some examples of formulas with sample regular expression outputs and formula outputs: 
 
 | Sample formula                  | Value of {0} on sample user                 | Value of {1} on sample user           | Output of formula                  |
 | :------------------- | :------------------- |:---------------|:---------------|
 | {0}.{1}@contoso.com  | firstname | lastname |firstname.lastname@contoso.com
 | {0}@domain.com                 | userid                 |             |userid@domain.com
 
-After you provide your formula, you can optionally click **Preview** to see a preview of 5 random users from your data source with their respective user mappings applied. The output of the preview includes the value of the non-Azure AD user properties selected in step 2 for those users and the output of the final formula provided in step 3 for that user. It also indicates whether the output of the formula could be resolved to a Microsoft Entra user in your tenant via a "Success" or "Failed" icon.  
+After you provide your formula, you can optionally select **Preview** to see a preview of 5 random users from your data source with their respective user mappings applied. The output of the preview includes the value of the non-Azure AD user properties selected in step 2 for those users and the output of the final formula provided in step 3 for that user. It also indicates whether the output of the formula could be resolved to a Microsoft Entra user in your tenant via a "Success" or "Failed" icon.  
 
 >[!NOTE]
->You can still proceed with creating your connection if one or more user mappings have a "Failed" status after you click **Preview**. The preview shows 5 random users and their mappings from your data source. If the mapping you provide does not map all users, you may experience this case.
+>You can still proceed with creating your connection if one or more user mappings have a "Failed" status after you select **Preview**. The preview shows 5 random users and their mappings from your data source. If the mapping you provide does not map all users, you may experience this case.
 
 ## Sample non-Azure AD mapping
 
-See the snapshot below for a sample non-Azure AD mapping.
+See the following snapshot for a sample non-Azure AD mapping.
 
-![Sample snapshot of how to fill out the non-Azure AD mapping page.](media/non-aad-mapping.png)
+:::image type="content" alt-text="Sample snapshot of how to fill out the non-Azure AD mapping page." source="media/non-aad-mapping.png" lightbox="media/non-aad-mapping.png":::
 
 ## Limitations  
 

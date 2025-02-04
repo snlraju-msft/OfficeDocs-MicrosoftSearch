@@ -17,6 +17,9 @@ ms.date: 09/14/2021
 
 # Overview of Microsoft Search in Bing
 
+> [!IMPORTANT]
+> Beginning March 31, 2025, Microsoft365.com, Office.com, and SharePoint Online will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search in Bing users to update your bookmarks now. [Learn more](/microsoftsearch/retirement-microsoft-search-bing). 
+
 Microsoft Search in Bing brings together the capabilities of Microsoft Search and Bing web search. It provides a familiar search experience that helps users find relevant results from your organization and the web. To help keep your users and your data private and secure, users must sign in to their work or school account on Bing before they can find internal results. Users already signed in to a Microsoft app, including Microsoft Edge, Outlook, and SharePoint, are automatically signed in when they go Bing.
 
 ## What users see

@@ -79,6 +79,10 @@ items:
       - name: Microsoft Graph built connectors
         href: pre-built-connectors-overview.md
         items:
+        - name: Adobe Experience Manager Sites
+          items:
+          - name: Setup
+            href: aem-sites-cloud-connector.md
         - name: Azure Data Lake Storage Gen2
           items:
           - name: Setup
@@ -97,6 +101,12 @@ items:
             href: azure-devops-wiki-connector.md
           - name: Troubleshooting
             href: troubleshoot-azure-devops-wiki-connector.md
+        - name: Azure File Share
+          items:
+          - name: Setup
+            href: Azure-File-Share-connector.md
+          - name: Troubleshooting
+            href: troubleshoot-azure-file-share-connector.md
         - name: Azure SQL and Microsoft SQL Server
           items:
           - name: Setup
@@ -123,6 +133,10 @@ items:
               href: jira-connector.md
             - name: Troubleshooting
               href: troubleshoot-jira-cloud-connector.md
+        - name: Jira Data Center
+          items:
+            - name: Setup
+              href: jira-data-center-connector.md
         - name: CSV
           items:
           - name: Setup
@@ -171,12 +185,16 @@ items:
           items:
           - name: Setup
             href: postgresql-connector.md
-        - name: Salesforce
+        - name: Salesforce CRM
           items:
           - name: Setup
             href: salesforce-connector.md
           - name: Troubleshooting
             href: troubleshoot-salesforce-connector.md
+        - name: Salesforce Knowledge
+          items:
+          - name: Setup
+            href: salesforce-knowledge-connector.md
         - name: ServiceNow Catalog
           items:
           - name: Setup
@@ -187,6 +205,8 @@ items:
           items:
           - name: Setup
             href: servicenow-knowledge-connector.md
+          - name: Grant Table Access to a Service Account in ServiceNow
+            href: granting-table-access-servicenow.md
           - name: Troubleshooting
             href: troubleshoot-servicenow-knowledge-connector.md
         - name: ServiceNow Tickets
@@ -269,6 +289,8 @@ items:
     items:
     - name: Overview
       href: overview-microsoft-search-bing.md
+    - name: Retirement of Microsoft Search in Bing
+      href: retirement-microsoft-search-bing.md
     - name: Security and Privacy
       href: security-for-search.md
     - name: Use Windows Search to find work or school results

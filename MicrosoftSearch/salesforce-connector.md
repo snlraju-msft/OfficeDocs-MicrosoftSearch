@@ -68,13 +68,13 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
 To connect to your Salesforce instance, you need your Salesforce instance URL, the client ID, and the client secret for OAuth authentication. The following steps explain how you or your Salesforce administrator can get this information from your Salesforce account:
 
-- Log in to your Salesforce instance and go to Setup
+1. Log in to your Salesforce instance and go to Setup
 
-- Navigate to Apps -> App Manager.
+1. Navigate to Apps -> App Manager.
 
-- Select **New connected app**.
+1. Select **New connected app**.
 
-- Complete the API section as follows:
+1. Complete the API section as follows:
 
     - Select the checkbox for **Enable Oauth settings**.
 
@@ -93,19 +93,23 @@ To connect to your Salesforce instance, you need your Salesforce instance URL, t
       > [!div class="mx-imgBorder"]
       > ![API section in Salesforce instance after admin has entered all required configurations listed above.](media/salesforce-connector/sf1.png)
 
-- Copy the consumer key and the consumer secret. This information is used as the client ID and the client secret when you configure the connection settings for your Salesforce Microsoft Graph connector in the Microsoft 365 admin portal.
+1. This consumer key and secret is used as the client ID and the client secret when you configure the connection settings for your Salesforce Microsoft Graph connector in the Microsoft 365 admin portal. Acquire this information as follows:
+    1. Go to Setup and navigate to Apps -> App Manager.
+    1. Select the connected app you created in the previous step.
+    1. Click on **Manage Consumer Details**.
+    1. Copy the consumer key and the consumer secret.
 
-  > [!div class="mx-imgBorder"]
-  > ![Results returned by API section in Salesforce instance after admin has submitted all required configurations. Consumer Key is at top of left column and Consumer Secret is at top of right column.](media/salesforce-connector/clientsecret.png)
+      > [!div class="mx-imgBorder"]
+      > ![Results returned by API section in Salesforce instance after admin has submitted all required configurations. Consumer Key is at top of left column and Consumer Secret is at top of right column.](media/salesforce-connector/clientsecret.png)
   
-- Before closing your Salesforce instance, follow these steps to ensure that refresh tokens don't expire:
-    - Go to Apps -> App Manager.
-    - Find the app you created and select the drop-down on the right. Select **Manage**.
-    - Select **edit policies**.
-    - For the refresh token policy, select **Refresh token is valid until revoked**.
+1. Before closing your Salesforce instance, follow these steps to ensure that refresh tokens don't expire:
+    1. Go to **Apps** -> **App Manager**.
+    1. Find the app you created and select the drop-down on the right. Select **Manage**.
+    1. Select **edit policies**.
+    1. For the refresh token policy, select **Refresh token is valid until revoked**.
 
-  > [!div class="mx-imgBorder"]
-  > ![Select the Refresh Token Policy named "Refresh token is valid until revoked ".](media/salesforce-connector/oauthpolicies.png)
+      > [!div class="mx-imgBorder"]
+      > ![Select the Refresh Token Policy named "Refresh token is valid until revoked".](media/salesforce-connector/oauthpolicies.png)
 
 You can now use the [Microsoft 365 Admin Center](https://admin.microsoft.com/) to complete the rest of the setup process for your Microsoft Graph connector.
 
@@ -123,7 +127,7 @@ For the Instance URL, use https://[domain].my.salesforce.com where the domain wo
 
 ### 3. Authentication Type
 
-To authenticate and sync content from Salesforce CRM, choose **OAuth 2.0**.  Enter the client ID and client Secret you obtained from your Salesforce instance and select Authorize.
+To authenticate and sync content from Salesforce CRM, choose **OAuth 2.0**.  Enter the client ID and client Secret you obtained from your Salesforce instance and select **Authorize**.
 
 The first time you've attempted to sign in with these settings, you'll get a pop-up asking you to log in to Salesforce with your admin username and password. The screenshot below shows the popup. Enter your credentials and select "Log In".
 
@@ -131,7 +135,7 @@ The first time you've attempted to sign in with these settings, you'll get a pop
 
   >[!NOTE]
   >
-  > - If the pop-up does not appear, it might be getting blocked in your browser, so you must allow pop-ups and redirects.
+  > - If the pop-up doesn't appear, it might be getting blocked in your browser, so you must allow pop-ups and redirects.
   > - Ensure that the Salesforce account being used to log in for the Graph connector is the same as the user already logged into Salesforce.
   > - Ensure the user logging in has all the necessary object permissions for the organization.
 
@@ -146,7 +150,7 @@ Deploy this connection to a limited user base if you want to validate it in Copi
 
 At this point, you're ready to create the connection for Salesforce CRM. You can click **Create** to publish your connection and index content from your Salesforce instance.
 
-For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, **Crawl frequency**, etc., we have defaults based on what works best with Jira data. You can see the default values below:
+For other settings, like **Access Permissions**, **Data Inclusion Rules**, **Schema**, and **Crawl frequency**, we have defaults based on what works best with Jira data. You can see the default values below:
 
 | Users | Description |
 |----|---|
@@ -208,9 +212,9 @@ Select the Salesforce objects that you want the connector to crawl and include i
 
 _Filter data_
 
-   You may further choose to filter the Salesforce content that are indexed in two ways:
+   You may further choose to filter the Salesforce content that is indexed in two ways:
 
-   * Specify the item **modified time period**. This option will only index the Salesforce content that are created or modified in the time period selected on a **rolling basis** based on current crawl.
+   * Specify the item **modified time period**. This option will only index the Salesforce content that is created or modified in the time period selected on a **rolling basis** based on current crawl.
    * Enter the Salesforce query ([SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_conditionexpression.htm)) specifying what you want to index using the **WHERE** clause.
 
   > [!div class="mx-imgBorder"]
@@ -221,7 +225,7 @@ _Filter data_
 
 **Manage Properties**
 
-Here, you can add or remove available properties from your Salesforce CRM data source, assign a schema to the property (define whether a property is searchable, queryable, retrievable, or refinable), change the semantic label and add an alias to the property. While this step is not mandatory, having some property labels improves the relevance and ensures better results for end users. By default, some of the Labels like "Title," "URL," "CreatedBy," and  "LastModifiedBy" have already been assigned source properties. Properties that are selected by default are listed below.
+Here, you can add or remove available properties from your Salesforce CRM data source, assign a schema to the property (define whether a property is searchable, queryable, retrievable, or refinable), change the semantic label and add an alias to the property. While this step is not mandatory, having some property labels improves the relevance and ensures better results for end users. By default, some of the Labels like "Title," "URL," "CreatedBy," and "LastModifiedBy" have already been assigned source properties. Properties that are selected by default are listed below.
 
 *The list of properties that you select here, can impact how you can filter, search, and view your results in Microsoft 365 Copilot.*
 
@@ -243,7 +247,7 @@ Use the preview results button to verify the sample values of the selected prope
 
 [![Screenshot that shows Sync tab where you can configure crawl frequency.](media/salesforce-connector/SalesforceSyncTab.png)](media/salesforce-connector/SalesforceSyncTab.png#lightbox)
 
-The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#step-8-refresh-settings).
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#guidelines-for-sync-settings).
 
 You can change the default values of refresh interval from here if you want to.
 

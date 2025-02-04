@@ -67,15 +67,17 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 
      | Category | Permission | Permission Level |
      | ------------ | ------------ | ------------ |
-     | Account Permissions | Email addresses | Read-only |
-     | Repository Permissions | Metadata | Read-only |
      | Repository Permissions | Contents | Read-only |
+     | Repository Permissions | Metadata | Read-only |
+     | Account Permissions | Email addresses | Read-only |
 
 - If you have organization-owned repositories, follow these extra steps:
    - The organization administrator needs to allow access via personal access tokens. For instructions, see [Setting a personal access token policy for your organization - GitHub Docs](https://docs.github.com/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization#restricting-access-by-personal-access-tokens)
    - If you're using fine-grained tokens, select the organization as the resource owner.
 
 ## Get Started
+
+[![Screenshot that shows connection creation screen for Microsoft Graph Connector for GitHub.](media/github-connector/GitHub-create-page.png)](media/github-connector/GitHub-create-page.png#lightbox)
 
 ### 1. Display name 
 A display name is used to identify each citation in Copilot, helping users easily recognize the associated file or item. Display name also signifies trusted content. Display name is also used as a [content source filter](/MicrosoftSearch/custom-filters#content-source-filters). A default value is present for this field, but you can customize it to a name that users in your organization recognize.
@@ -88,7 +90,10 @@ To authenticate and sync content from GitHub:<br>
 Choose the "Basic" option
 
 2. **Personal Access Token (PAT)** <br>
-Use your personal access token in place of a password. The repositories available for indexing depends on the access granted by your token.
+
+[![Screenshot that shows PAT screen for GitHub.](media/github-connector/GitHub-personal-access-token.png)](media/github-connector/GitHub-personal-access-token.png#lightbox)
+
+Use your personal access token in place of a password. The repositories available for indexing depend on the access granted by your token.
  
 ## Custom Setup
 
@@ -107,11 +112,15 @@ Choose the repositories and file types (initially markdown files and other non-c
 
 **Manage Properties**
 
+[![Screenshot that shows manage properties screen for Microsoft Graph Connector for GitHub.](media/github-connector/GitHub-data-manage-properties.png)](media/github-connector/GitHub-data-manage-properties.png#lightbox)
+
 Here, you can add or remove available properties from your GitHub data source, assign a schema to the property (define whether a property is searchable, queryable, retrievable, or refinable), change the semantic label and add an alias to the property.
 
 ### Sync
 
-The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more information, see [refresh settings](configure-connector.md#step-8-refresh-settings).
+[![Screenshot that shows Sync tab where you can configure crawl frequency.](media/github-connector/GitHub-sync-tab.png)](media/github-connector/GitHub-sync-tab.png#lightbox)
+
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more information, see [refresh settings](configure-connector.md#guidelines-for-sync-settings).
 
 You can change the default values of refresh interval from here if you want to.
 

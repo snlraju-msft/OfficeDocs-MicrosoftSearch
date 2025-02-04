@@ -13,6 +13,9 @@ description: "Manage how Dataverse and Dynamics 365 content appears in search re
 ---
 # Dataverse and Dynamics 365 results in Microsoft Search
 
+> [!Note]
+> The Dynamics 365 search provider for Microsoft 365 is deprecated and will stop returning data on January 21, 2025. Please use Microsoft Graph connectors to ingest Dynamics 365 content for Microsoft Search. For more information, see [Use the Microsoft Graph connectors API](/graph/api/resources/connectors-api-overview?view=graph-rest-1.0).
+
 Microsoft Dataverse is a cloud storage platform that lets you securely store and manage data used by your business applications. Microsoft Dynamics 365 is a line of intelligent business applications built on the Dataverse Search platform, designed for enterprise resource planning and customer relationship management. With Dataverse results in Microsoft Search, users of both classic Dynamics 365 applications and custom model-driven Power Apps built on Dataverse are able to easily find their relevant customer data. The Dataverse connector provides some key benefits:
 
 * **Easy to use:** Users can easily and quickly find key information stored in Dataverse and Dynamics 365, without needing to navigate to a new app or page.
@@ -37,7 +40,7 @@ Clicking or tapping any result opens Dynamics 365 or your custom application and
 
 No matter where your users start their search their experience will be consistent and enable them to quickly find the most relevant Dataverse results. Check out our Microsoft Build 2022 video for a demonstration.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4Zf9u]
+> [!VIDEO a7903454-e34d-4beb-8d64-96d9eb7fb18a]
 
 ### Supported query patterns
 
@@ -80,7 +83,7 @@ After verifying these settings, follow these steps to set up the connector:
 
 6. After a successful setup, your Dynamics 365 connection should show a Connection state of Ready.
 
-:::image type="content" alt-text="Screenshot of a Dynamics 365 connection successfully set up and showing a Ready connection state in the Microsoft 365 admin center." source="media/dynamics365/dynamic365-connection-setup.png" lightbox="media/dynamics365/dynamic365-connection-setup.png":::
+   :::image type="content" alt-text="Screenshot of a Dynamics 365 connection successfully set up and showing a Ready connection state in the Microsoft 365 admin center." source="media/dynamics365/dynamic365-connection-setup.png" lightbox="media/dynamics365/dynamic365-connection-setup.png":::
 
 > [!TIP]
 > To clarify the type of content users can find in the search vertical, we recommend updating the vertical name. To customize the name of your vertical, click **Edit vertical**. For more information, see [Manage search verticals](/microsoftsearch/manage-verticals).

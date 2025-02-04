@@ -14,7 +14,11 @@ search.appverid:
 - MOE150
 description: "Add custom Microsoft Edge shortcuts for Microsoft Search in Bing or turn off these shortcuts for your organization"
 ---
+
 # Customize address bar shortcuts for Microsoft Edge
+
+> [!IMPORTANT]
+> Beginning March 31, 2025, Microsoft365.com, Office.com, and SharePoint Online will be the new homes for Microsoft Search. Microsoft Search in Bing will no longer be available. We encourage Microsoft Search in Bing users to update your bookmarks now. [Learn more](/microsoftsearch/retirement-microsoft-search-bing). 
 
 Help your users stay focused and find work results faster when searching from the Microsoft Edge address bar. Two shortcuts are enabled by default, 'work' and your organization's preferred or shortened name. In the Microsoft Edge address bar, users can type a keyword, then press the Tab key. The address bar will indicate they're searching within your organization. When they type their search and press the Enter key, they'll see a search results page with relevant answers and results. You can add two custom shortcuts keywords.
 
