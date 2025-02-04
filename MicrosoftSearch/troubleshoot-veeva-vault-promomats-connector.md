@@ -21,4 +21,4 @@ description: "Troubleshooting the Veeva Vault - PromoMats Graph connector for Mi
 | `API_LIMIT_EXCEEDED`    | Too many API requests made in a short period. | Adjust crawl frequency or retry after some time.                        |
 | **Missing Properties or Documents** | Required metadata properties are not enabled. | Ensure metadata properties are enabled in Veeva Vault and test retrieval.|
 
-To view more error types, select the connection and click **error details** > **error code**. For more information, see [Monitor your connections](./manage-connector.md)
+To view more error types, select the connection and click **error details** > **error code**. For more information, see [Monitor your connections](./manage-connector.md).
