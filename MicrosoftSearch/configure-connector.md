@@ -236,7 +236,7 @@ Incremental refreshes are faster than full refreshes because unchanged items are
 
 ### Crawl Scheduling
 
-You can configure full and incremental crawls based on the advanced scheduling options present on the Refresh Settings page. Some connectors do not support incremental crawls and the option to configure incremental crawls will not be available for those connectors. For others, the incremental crawl is an optional crawl and is enabled by default. A crawl schedule is selected by default for you based on the connector type. This default setting can be changed during connection creation or edited after a connection is published from the "Edit" flow of a connection. You can choose from these fields:
+You can configure full and incremental crawls based on the advanced scheduling options present on the Refresh Settings page. Some connectors don't support incremental crawls and the option to configure incremental crawls aren't available for those connectors. For others, the incremental crawl is an optional crawl and is enabled by default. A crawl schedule is selected by default for you based on the connector type. This default setting can be changed during connection creation or edited after a connection is published from the "Edit" flow of a connection. You can choose from these fields:
 
 * **Recurrence**: You can choose to run the crawls every day, week, 2nd week, or 4th week.
 * **Day(s)**: This option is enabled when you choose to run crawls only on specific days of the week.
