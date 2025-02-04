@@ -19,12 +19,12 @@ ms.date: 03/13/2024
 
 # Manage search schema (preview)
 
-The search schema determines how your content ingested via a Graph connector is used in various Microsoft Graph experiences. The schema defines the structure of how content is collected from data source, indexed, queried and retrieved from search index. By changing the search schema, you can control what users can search for, how users can search it, and how you can present the results on Microsoft Search endpoints.
+The search schema determines how your content ingested via a Microsoft Graph connector is used in various Microsoft Graph experiences. The schema defines the structure of how content is collected from data sources, indexed, queried, and retrieved from the search index. By changing the search schema, you can control what users can search for, how users can search for it, and how you can present the results on Microsoft Search endpoints.
 
-The search schema contains crawled properties, search attributes, semantic labels and aliases. The next sections will define the various constituents of schema and management capabilities provided.
+The search schema contains crawled properties, search attributes, semantic labels, and aliases. The next sections will define the various constituents of schema and management capabilities provided.
 
 > [!NOTE]
-> Read the [**Setup your Graph connector**](configure-connector.md) article to understand the general Graph connectors setup instructions. Steps 6 and 7 define the schema while setting up a new connection.
+> Read the [**Setup your Microsoft Graph connector**](configure-connector.md) article to understand the general Microsoft Graph connectors setup instructions. Steps 6 and 7 define the schema while setting up a new connection.
 
 > [!NOTE]
 > If you are looking to modify the SharePoint Online search schema, read [**Manage the search schema in SharePoint**](/sharepoint/manage-search-schema).
@@ -52,7 +52,7 @@ For example, the following table presents sample crawled properties for a work t
 | resolved       | Boolean          |
 
 > [!NOTE]
-> * For Microsoft built connectors, the crawled properties are selected in step 4 of [**Setup your Graph connector**](configure-connector.md) article.
+> * For Microsoft built connectors, the crawled properties are selected in step 4 of [**Setup your Microsoft Graph connector**](configure-connector.md) article.
 
 ## Search attributes
 
@@ -64,9 +64,9 @@ If you select a content property, you have the option of using the system-genera
 
 ### Searchable
 
-If a property is searchable, its value is added to the full text index. When a user performs a search, we return results if there is a search hit in one of the searchable fields or its content.
+If a property is searchable, its value is added to the full-text index. When a user performs a search, we return results if there is a search hit in one of the searchable fields or its content.
 
-![Diagram that showsaA search for "design" displaying results for hits against the property title and content.](./media/manage-schema-images/connecting-external-content-manage-items-schema-1.png)
+![Diagram that shows a search for "design" displaying results for hits against the property title and content.](./media/manage-schema-images/connecting-external-content-manage-items-schema-1.png)
 
 *A search for "design" displaying results for hits against the property (`title`) and content.*
 
@@ -83,32 +83,34 @@ If a property is queryable, you can query against it using knowledge query langu
 
 ![Diagram that shows a search for "tags:design" scoping down results to items with "design" in the tags property.](./media/manage-schema-images/connecting-external-content-manage-items-schema-3.svg)
 
-*A search for "tags:design" scoping down results to items with "design" in the `tags` property.*
+*A search for "tags:design" scoping down results in items with "design" in the `tags` property.*
 
 ### Retrievable
 
-If a property is retrievable, its value can be returned in search results. Any property that you want to add in the display template or be returned from the query and be relevant in search results must be retrievable. Marking large or too many properties as retrievable increases search latency. Be selective and choose relevant properties.
+If a property is retrievable, its value can be returned in search results. Any property that you want to add to the display template or be returned from the query and be relevant in search results must be retrievable. Marking large or too many properties as retrievable increases search latency. Be careful when choosing the right properties.
 
 ![Diagram that shows a set of retrievable properties rendered as a result.](./media/manage-schema-images/connecting-external-content-manage-schema-4.svg)
 
-*A set of retrievable properties (`title` and `lastEditedBy`) rendered as a result.*
+*As a result, a set of retrievable properties (`title` and `lastEditedBy`) is rendered.*
 
 ### Refinable
+> [!NOTE]
+> The "int" datatype properties cannot be refined, even if marked as refinable.
 
-If a property is refinable, an admin can configure it as a custom filter in the Microsoft Search results page. A `refinable` property cannot be `searchable`.
+If a property is refinable, an admin can configure it as a custom filter on the Microsoft Search results page. A `refinable` property cannot be `searchable`.
 
 ![Diagram that shows refine results by tags, a refinable property.](./media/manage-schema-images/connecting-external-content-manage-schema-5.svg)
 
 *Refine results by `tags`, a refinable property.*
 
 > [!NOTE]
-> * For Microsoft built connectors, the search attributes are selected in step 7 of [**Setup your Graph connector**](configure-connector.md) article.
+> * For Microsoft built connectors, the search attributes are selected in step 7 of [**Setup your Microsoft Graph connector**](configure-connector.md) article.
 
 ## Semantic labels
 
 A semantic label is a well-known tag published by Microsoft that you can add against a property in your schema. Adding a semantic label helps various Microsoft products understand the property and provide a better experience.
 
-Semantic labels provide a domain-independent approach to assigning properties from different content domains to a set of well-known classes. They find applications in many different content experiences, and provide automated support for tasks such as:
+Semantic labels provide a domain-independent approach to assigning properties from different content domains to a set of well-known classes. They find applications in many different content experiences and provide automated support for tasks such as:
 
 * Data integration in heterogenous experiences
 * Building common knowledge graphs (for example, Topics)
@@ -118,15 +120,15 @@ Labels provide semantic meaning, and let you integrate your connector data into 
 
 | Label                 | Description                                                                               |
 |---------------------- |------------------------------------------------------------------------------------------ |
-| title                 | The title of the item that you want shown in search and other experiences.                |
+| title                 | The title of the item that you want to be shown in search and other experiences.                |
 | url                   | The target URL of the item in the data source.                                            |
 | createdBy             | The name of the person who created the item in the data source.                           |
 | lastModifiedBy        | The name of the person who most recently edited the item in the data source.              |
 | authors               | The names of all the people who participated/collaborated on the item in the data source. |
 | createdDateTime       | The date and time that the item was created in the data source.                           |
 | lastModifiedDateTime  | The date and time that the item was last modified in the data source.                     |
-| fileName              | In case of a file, the name of the file in the data source.                               |
-| fileExtension         | In case of a file, the extension of the file in the data source.                          |
+| fileName              | In the case of a file, the name of the file in the data source.                               |
+| fileExtension         | In the case of a file, the extension of the file is in the data source.                          |
 | iconUrl               | The URL of an icon.                                                                       |
 
 For example, the crawled property **lastEditedBy** has the same meaning as the Microsoft label *lastModifiedBy*.
@@ -137,18 +139,18 @@ For example, the crawled property **lastEditedBy** has the same meaning as the M
 The label **title** is the most important label. Make sure that you assign a property to this label to allow your connection to participate in the result cluster experience. Incorrectly mapping labels degrades the search experience. It's okay for some labels to not have a property assigned to them.
 
 > [!NOTE]
-> * For Microsoft built connectors, the semantic labels are selected in step 6 of [**Setup your Graph connector**](configure-connector.md) article.
+> * For Microsoft built connectors, the semantic labels are selected in step 6 of [**Setup your Microsoft Graph connector**](configure-connector.md) article.
 
 ## Aliases
 
 Aliases are friendly names for properties that you assign. These are used in queries and selections in refinable property filters.
 
 > [!NOTE]
-> * For Microsoft built connectors, aliases are defined in step 7 of [**Setup your Graph connector**](configure-connector.md) article.
+> * For Microsoft built connectors, aliases are defined in step 7 of [**Setup your Microsoft Graph connector**](configure-connector.md) article.
 
 ## Schema update capabilities
 
-This section includes information about the update capabilities for the search schema of Microsoft built Graph connectors.
+This section includes information about the update capabilities for the search schema of Microsoft built connectors.
 
 > [!NOTE]
 > We recommend that you run a full crawl after an update to bring them to the latest schema. Without a full crawl, the behavior of the items will be inconsistent.
@@ -156,7 +158,7 @@ This section includes information about the update capabilities for the search s
 ### Manage schema
 
 1. In the [Microsoft 365 admin center](https://admin.microsoft.com), go to the [**Schema**](https://admin.microsoft.com/Adminportal/Home#/MicrosoftSearch/schema) page in the **Customization** section.
-2. Click **View Details** under **Graph Connectors schema**.
+2. Click **View details** under **Microsoft Graph connectors schema**.
 3. Select the connection for which you want to update the schema and click **Customize schema**.
 4. After making the required schema changes, click **Publish schema changes** to publish the new schema.
 
@@ -166,7 +168,7 @@ You can add a property to your schema. When you add a property, you can include 
 
 ![Screenshot of option to add a new source property](./media/manage-schema-images/schema-update-add-source-properties.png)
 
-*Add a new source property from list of supported properties by connector*
+*Add a new source property from the list of supported properties by connector.*
 
 > [!IMPORTANT]
 > 
@@ -182,7 +184,7 @@ You can add or remove specific search attributes to a property. Adding a search 
 
 > [!IMPORTANT]
 > * You cannot remove a retrievable search attribute from a property.
-> * You cannot add or remove refinable search attribute to a property.
+> * You cannot add or remove a refinable search attribute to a property.
 
 ### Add/remove a semantic label
 
