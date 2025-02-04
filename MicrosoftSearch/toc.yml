@@ -223,12 +223,6 @@ items:
           items:
           - name: Setup
             href: stack-overflow-connector.md
-        - name: Veeva Vault - PromoMats
-          items:
-          - name: Setup
-            href: Veeva-Vault-PromoMats-connector.md
-          - name: Troubleshooting
-            href: troubleshoot-veeva-vault-promomats-connector.md
         - name: WordPress.org (on-prem)
           items:
           - name: Setup
