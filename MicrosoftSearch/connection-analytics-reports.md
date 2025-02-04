@@ -7,7 +7,7 @@ ms.topic: article
 ms.service: mssearch
 audience: Admin
 ms.audience: Admin
-ms.date: 10/15/2024 
+ms.date: 01/27/2025 
 ms.localizationpriority: medium
 ms.collection:
 - scotvorg
@@ -99,7 +99,7 @@ Downloading a report allows you to see reports from a broader range of time. The
 
 ## Prevent filtering by country, occupation, department, or division
 
-By default, users with global administrator, search administrator, and search editor roles can filter search data by country, occupation, or department/division. If you don't want administrators to filter your report data using these dimensions, you can go into your organizational settings in the Microsoft 365 admin center and configure this setting.  When this setting is unchecked, administrators won't be able to filter the **Connection analytics details** reports by these filters.  
+By default, users with search administrator and search editor roles can filter search data by country, occupation, or department/division. If you don't want administrators to filter your report data using these dimensions, you can go into your organizational settings in the Microsoft 365 admin center and configure this setting.  When this setting is unchecked, administrators won't be able to filter the **Connection analytics details** reports by these filters.  
 
 Only global administrators can configure this setting.
 
