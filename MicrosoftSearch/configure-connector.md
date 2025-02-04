@@ -63,7 +63,7 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
 
 ## Step 2: Enter basic connection details
 
-![Screenshot that shows Connection creation screen for ServiceNow Knowledge Microsoft Graph connector](media/servicenow-knowledge-create-page.png "Add Microsoft Graph connector for ServiceNow Knowledge")
+![Screenshot that shows Connection creation screen for ServiceNow Knowledge Microsoft Graph connector.](media/servicenow-knowledge-create-page.png "Add Microsoft Graph connector for ServiceNow Knowledge")
 
 
 1. **Display name:**
@@ -88,7 +88,7 @@ Complete the following steps to configure any of the Microsoft Graph connectors 
 
 - Click **Create** to set up the connection. The connector begins indexing content from your data source using default settings.
 
-![Screenshot that shows success screen once Microsoft Graph connector is created](media/configure-connector-success-page.png "Connection created successfully")
+![Screenshot that shows success screen once Microsoft Graph connector is created.](media/configure-connector-success-page.png "Connection created successfully")
 
 Once the connection is created, you can add a description for the connection in the success screen. To help Copilot enhance connection results for users, the description should answer the following questions briefly:  
 * What kind of content does this connection have? 
