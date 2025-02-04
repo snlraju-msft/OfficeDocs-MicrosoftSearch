@@ -20,7 +20,7 @@ description: "Set up the Enterprise Websites cloud Microsoft Graph connector for
 
 The Enterprise Websites cloud Microsoft Graph connector allows your organization to index webpages and **content from your company-owned websites** or public websites on the internet. After you configure the connector and index content from the website, end users can search for that content in Microsoft Search and Microsoft 365 Copilot.
 
-This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors a Enterprise Websites cloud Microsoft Graph connector. 
+This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors an Enterprise Websites cloud Microsoft Graph connector. 
 
 >[!IMPORTANT]
 >You may utilize the [Enterprise Websites on-premises Microsoft Graph connector](enterprise-web-connector-onprem.md) to index websites hosted on-premises or on private clouds.
@@ -68,7 +68,7 @@ This article is for Microsoft 365 administrators or anyone who configures, runs,
 ## Prerequisites
 - You must be the **search admin** for your organization's Microsoft 365 tenant.
 - **Website URLs**: To connect to your website content, you need the URL to the website. You can index multiple websites (up to 50) in a single connection. 
-- **Service Account (optional)**: A service account is only needed when your websites require authentication. Public websites don't require authentication and can be crawled directly. For websites requiring authentication, it is advised to have a dedicated account to authenticate and crawl the content.
+- **Service Account (optional)**: A service account is only needed when your websites require authentication. Public websites don't require authentication and can be crawled directly. For websites requiring authentication, it's advised to have a dedicated account to authenticate and crawl the content.
 
 ## Get Started
 
@@ -81,7 +81,7 @@ A display name is used to identify each citation in Copilot, helping users easil
 Specify the root of the website that you'd like to crawl. The Enterprise Websites cloud Microsoft Graph connector uses this URL as the starting point and follow all the links from this URL for its crawl. You can index up to 50 different site URLs in a single connection. In the URLs field, enter the site URLs separated by commas (,). For example, `https://www.contoso.com,https://www.contosoelectronics.com`.
 
 > [!NOTE]
-> The connector always starts crawling from the root of the URL. For example - if your provided URL is `https://www.contoso.com/electronics`, then the connector will start crawl from `https://www.contoso.com`.
+> The connector always starts crawling from the root of the URL. For example - if your provided URL is `https://www.contoso.com/electronics`, then the connector starts crawl from `https://www.contoso.com`.
 
 The connector only crawls webpages in the domain of root URLs and doesn't support crawling of out-of-domain URLs. Redirection is only supported within the same domain. If there are redirections in the webpages to be crawled, you may add the redirected URL directly in list of URLs to be crawled.
 
@@ -97,16 +97,16 @@ b. Upon locating the robots.txt file, the crawler finds the sitemap links in the
 
 c. The crawler then crawls all webpages as listed in the sitemap files.
 
-d. If there is failure in any of the above steps, the crawler performs a deep crawl of the website, without throwing any error.
+d. If there's failure in any of the above steps, the crawler performs a deep crawl of the website, without throwing any error.
 
 ### 3. Authentication Type
-The authentication method you choose applies for all websites you have provided to index in a connection. To authenticate and sync content from websites, choose **one of the four** supported methods:<br>
+The authentication method you choose applies for all websites you provided to index in a connection. To authenticate and sync content from websites, choose **one of the five** supported methods:<br>
 
 a. **None** <br>
 Select this option if your websites are publicly accessible without any authentication requirements. <br>
 
 b. **Basic authentication** <br>
-Enter your account's username and password to authenticate using basic authentication. <br>
+To authenticate using basic authentication, enter your account's username and password. <br>
 
 > [!TIP]
 > Try out multiple permutations of the username for authentication. Examples -
@@ -142,7 +142,7 @@ The resource ID, client ID, and client secret values depend on how you did the s
       > [ ![Image showing the settings section on the authentication page.](media/enterprise-web-connector/connectors-enterpriseweb-authentication.png) ](media/enterprise-web-connector/connectors-enterpriseweb-authentication.png#lightbox)
     
       > [!NOTE]
-      > It is not required to have the above-specified route for Redirect URI on your website. Only if you use the user token sent by Azure in your website for authentication you will need to have the route.
+      > It isn't required to have the above-specified route for Redirect URI on your website. Only if you use the user token sent by Azure in your website for authentication you need to have the route.
     
     * View of the client ID on the **Essentials** section:
     
@@ -195,6 +195,43 @@ The resource ID, client ID, and client secret values depend on how you did the s
     
     Once the permissions are assigned, you need to create a new client secret for this application by going to the Certificates & secrets section.
     Copy the client secret value shown on the page as it isn't displayed again. Use the application ID from this app as the client ID, the secret from this app as the client secret, and the application ID of the first app as the resource ID.
+
+e. **OIDC Client Credentials (Any identity provider)** <br>
+The OIDC client credentials flow is designed for machine-to-machine authentication using any identity provider. To configure OIDC client credentials authentication, you need to register an application with the authorization server (for example, Okta, Auth0, Keycloak, Ping Identity, etc.).
+
+Inputs Required for Configuration:
+- Client ID: The identifier assigned to the application during registration.
+- Client Secret: The secret key assigned to the application during registration.
+- Scopes: The list of permissions the application requires. These scopes are predefined on the authorization server. (for example, `read:data write:data admin:operations`)
+- Token Endpoint URL: The specific endpoint on the authorization server where tokens are requested.
+
+**Example: Okta OIDC client credentials authentication**
+
+To illustrate an example, let us look at configuring OIDC client credentials authentication with Okta as the identity provider. The following steps are illustrative and may vary as per your implementation. Refer the [documentation](https://help.okta.com/en-us/content/topics/apps/apps_app_integration_wizard_oidc.htm) by Okta to learn to configure OIDC authentication.
+
+1. Create an OIDC App Integration in Okta
+    - Navigate to _Applications > Applications_ in the Okta Admin Console.
+    - Click _Create App Integration_ and select _OIDC - OpenID Connect_.
+    - Choose Service or Web as the application type.
+2. Configure Application Settings:
+    - Application Name: Give your application a descriptive name (for example, "My Client Credentials App").
+    - Logo (Optional): Upload a logo if desired.
+    - Grant Type: Select Client Credentials. Disable other grant types unless required for other flows.
+    - Sign-in redirect URIs: Since you're using client credentials, you don't need to configure any redirect URIs.
+    - Logout redirect URIs (Optional): Not usually needed for client credentials.
+    - Click Done.
+3. Set Client Authentication Method
+    - Select _Client secret_ in the _Client Authentication_ dropdown.
+    - Click Save to generate a client secret (visible only once).
+4. Configure Scopes
+    - Under Scopes, assign OAuth 2.0 scopes (for example, `read:data`, `write:data`). These are just names; you define what they mean in your application.
+    - Ensure scopes align with the API permissions required.
+5. Assign the App to Users/Groups
+    - In the Assignments tab, assign the app to the relevant users or groups.
+    - Even for service apps, assignments ensure policies apply correctly.
+6. Token Endpoint Configuration
+    - The token URL is typically `https://{yourOrg}.okta.com/oauth2/v1/token`.
+    - Use this endpoint to request access tokens.
 
 ### 4. Roll out to limited audience
 Deploy this connection to a limited user base if you want to validate it in Copilot and other Search surfaces before expanding the rollout to a broader audience. To know more about limited rollout, see [staged rollout](staged-rollout-for-graph-connectors.md).
@@ -295,7 +332,7 @@ To learn more about regex expressions, see [.NET regular expressions](/dotnet/st
 
 [![Screenshot that shows Sync tab where you can configure crawl frequency.](media/enterprise-web-connector/enterprise-website-cloud-sync-tab.png)](media/enterprise-web-connector/enterprise-website-cloud-sync-tab.png#lightbox)
 
-The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more details, see [refresh settings](configure-connector.md#guidelines-for-sync-settings).
+The refresh interval determines how often your data is synced between the data source and the Graph connector index. There are two types of refresh intervals - full crawl and incremental crawl. For more information, see [refresh settings](configure-connector.md#guidelines-for-sync-settings).
 
 You can change the default values of refresh interval from here if you want to.
 
