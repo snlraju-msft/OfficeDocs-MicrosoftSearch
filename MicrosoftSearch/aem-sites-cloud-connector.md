@@ -104,7 +104,7 @@ Here, you can check available properties from your Adobe Experience Manager Site
 | CreatedTime         | Created date time       | Date and time that the item was created in the data source                      | Query, Retrieve             |
 | Description         | Description             | A brief summary of the page's content                                           | Query, Retrieve             |
 | HtmlContent         | Content                 | The content of static webpages, not available for dynamic webpages              | Search                      |
-| JcrTitle            |                          |                                                                                 | Query, Retrieve             |
+| Title            |                          |  The title of the items                                                                               | Query, Retrieve             |
 | LastModifiedBy      | Last modified by        | Name of the person who most recently edited the item in the data source         | Search, Query, Retrieve     |
 | Link                | URL                     | The target URL of the item in the data source                                   | Query, Retrieve             |
 | ModifiedTime        | Last modified date time | Date and time the item was last modified in the data source                     | Query, Retrieve             |
@@ -112,7 +112,7 @@ Here, you can check available properties from your Adobe Experience Manager Site
 | PublishedBy         | Published by            | Name of the person who published the item in the data source                    | Query, Retrieve             |
 | PublishedTime       | Published date time     | Date and time the item was published in the data source                         | Query, Retrieve             |
 | Subtitle            | Subtitle                | The subtitle of the items                                                      | Query, Retrieve             |
-| Title               | Title                   | The title of the items                                                          | Query, Retrieve             |
+| PageTitle               | Title               | The pagetitle of the webpages                                                          | Query, Retrieve             |
 | Tags                | Tags                    | Tags defined in AEM Sites metadata. In AEM, tags are organized hierarchically   | Query, Retrieve, Search     |
 
 
