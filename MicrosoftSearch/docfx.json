@@ -45,18 +45,19 @@
       "feedback_system": "None",
       "searchScope": ["Microsoft Search"],
       "contributors_to_exclude": [
-        "rjagiewich",  
-        "American-Dipper",
-        "claydetels19", 
-        "jborsecnik",
+        "rjagiewich",
+        "American-Dipper",  
+        "claydetels19",
+         "jborsecnik",
         "v-stchambers",
         "shdyas",
-        "Stacyrch140",
+        "Stacyrch140", 
         "garycentric",
         "beccarobins",
         "dstrome",
         "padmagit77",
-        "aditisrivastava07"
+        "aditisrivastava07",
+        "Ruchika-mittal01"
       ]
     },
     "fileMetadata": {},
