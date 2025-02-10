@@ -24,7 +24,7 @@ With the Adobe Experience Manager Sites Microsoft Graph connector, your organiza
 This article is for Microsoft 365 administrators or anyone who configures, runs, and monitors an Adobe Experience Manager Sites Microsoft Graph connector. 
 
 >[!NOTE]
->The Adobe Experience Manager Sites Microsoft Graph connector is in preview. If you wish to get early access to try it, sign up using [this form](https://forms.office.com/r/JniPmK5bzm).
+>The Adobe Experience Manager Sites connector is in public preview. If you wish to get access to try it, you need to enable [Targeted Release](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center) ring for your Admin account.
 
 ## Capabilities
 - Index published webpages of your AEM Sites.
