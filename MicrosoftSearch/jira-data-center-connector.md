@@ -22,6 +22,10 @@ The Jira Data Center Microsoft Graph connector enables your organization to inde
 
 This article is intended for Microsoft 365 administrators who are responsible for configuring, running, and monitoring the Jira Data Center Microsoft Graph connector. It supplements the general instructions provided in [Set up Microsoft Graph connectors in the Microsoft 365 admin center](/microsoftsearch/configure-connector).
 
+
+>[!NOTE]
+>The Jira Data Center connector is in public preview. If you wish to get access to try it, you need to enable [Targeted Release](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center) ring for your Admin account.
+
 ## Capabilities
 
 Enhanced Copilot Capabilities: Users can ask natural language questions about Jira issues and project data in Microsoft 365 Copilot. For example: 
